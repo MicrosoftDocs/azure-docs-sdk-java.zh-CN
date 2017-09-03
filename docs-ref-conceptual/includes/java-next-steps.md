@@ -1,1 +1,1 @@
-若要详细了解如何在 Azure 中创建和部署 Java 应用，请访问 [Java 开发人员中心](https://docs.microsoft.com/java/api)。
+有关在 Azure 中创建和部署 Java 应用的详细信息，请访问 [Java 开发人员中心](https://docs.microsoft.com/java/api)。
