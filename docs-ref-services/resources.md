@@ -17,17 +17,17 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
 ---
-# <a name="azure-resource-manager-libraries-for-java"></a>用于 Java 的 Azure 资源管理器库
+# <a name="azure-resource-manager-libraries-for-java"></a><span data-ttu-id="9b486-104">用于 Java 的 Azure 资源管理器库</span><span class="sxs-lookup"><span data-stu-id="9b486-104">Azure Resource Manager libraries for Java</span></span>
 
-## <a name="overview"></a>概述
+## <a name="overview"></a><span data-ttu-id="9b486-105">概述</span><span class="sxs-lookup"><span data-stu-id="9b486-105">Overview</span></span>
 
-使用 [Azure 资源管理器](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)部署、监视和管理组中的资源。
+<span data-ttu-id="9b486-106">使用 [Azure 资源管理器](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)部署、监视和管理组中的资源。</span><span class="sxs-lookup"><span data-stu-id="9b486-106">Deploy, monitor, and manage resources in groups with [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview).</span></span>
 
-## <a name="management-api"></a>管理 API
+## <a name="management-api"></a><span data-ttu-id="9b486-107">管理 API</span><span class="sxs-lookup"><span data-stu-id="9b486-107">Management API</span></span>
 
-使用管理 API 通过模板创建资源组和部署资源。
+<span data-ttu-id="9b486-108">使用管理 API 通过模板创建资源组和部署资源。</span><span class="sxs-lookup"><span data-stu-id="9b486-108">Use the management API to create resource groups and deploy resources from templates.</span></span>
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。
+<span data-ttu-id="9b486-109">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。</span><span class="sxs-lookup"><span data-stu-id="9b486-109">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
 
 
 ```XML
@@ -38,9 +38,9 @@ ms.lasthandoff: 08/28/2017
 </dependency>
 ```
 
-## <a name="example"></a>示例
+## <a name="example"></a><span data-ttu-id="9b486-110">示例</span><span class="sxs-lookup"><span data-stu-id="9b486-110">Example</span></span>
 
-在 Azure 美国东部区域中创建新的资源组。
+<span data-ttu-id="9b486-111">在 Azure 美国东部区域中创建新的资源组。</span><span class="sxs-lookup"><span data-stu-id="9b486-111">Create a new resource group in the Azure Eastern US region.</span></span>
 
 ```java
 ResourceGroup resourceGroup = azure.resourceGroups().define("myResourceGroup")
@@ -49,14 +49,15 @@ ResourceGroup resourceGroup = azure.resourceGroups().define("myResourceGroup")
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/resources/managementapi)
+> [<span data-ttu-id="9b486-112">了解管理 API</span><span class="sxs-lookup"><span data-stu-id="9b486-112">Explore the Management APIs</span></span>](/java/api/overview/azure/resources/managementapi)
 
-## <a name="samples"></a>示例
+## <a name="samples"></a><span data-ttu-id="9b486-113">示例</span><span class="sxs-lookup"><span data-stu-id="9b486-113">Samples</span></span>
 
-[使用 Java 管理 Azure 资源组][1] 
-[使用 ARM 模板部署资源][2]
+<span data-ttu-id="9b486-114">[使用 Java 管理 Azure 资源组][1] 
+[使用 ARM 模板部署资源][2]</span><span class="sxs-lookup"><span data-stu-id="9b486-114">[Manage Azure Resource Groups with Java][1] 
+[Deploy resources using an ARM template][2]</span></span>
 
 [1]: https://github.com/Azure-Samples/resources-java-manage-resource-group
 [2]: https://github.com/Azure-Samples/resources-java-deploy-using-arm-template
 
-查看 Azure 资源管理器示例的[完整列表](https://azure.microsoft.com/resources/samples/?platform=java&term=resource)。
+<span data-ttu-id="9b486-115">查看 Azure 资源管理器示例的[完整列表](https://azure.microsoft.com/resources/samples/?platform=java&term=resource)。</span><span class="sxs-lookup"><span data-stu-id="9b486-115">View the [complete list](https://azure.microsoft.com/resources/samples/?platform=java&term=resource) of Azure Resource Manager samples.</span></span>

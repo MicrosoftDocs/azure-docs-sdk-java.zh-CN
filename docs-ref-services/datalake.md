@@ -17,20 +17,20 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
 ---
-# <a name="azure-data-lake-store-libraries-for-java"></a>用于 Java 的 Azure Data Lake Store 库
+# <a name="azure-data-lake-store-libraries-for-java"></a><span data-ttu-id="784e3-104">用于 Java 的 Azure Data Lake Store 库</span><span class="sxs-lookup"><span data-stu-id="784e3-104">Azure Data Lake Store libraries for Java</span></span>
 
-## <a name="overview"></a>概述
+## <a name="overview"></a><span data-ttu-id="784e3-105">概述</span><span class="sxs-lookup"><span data-stu-id="784e3-105">Overview</span></span>
 
-使用 [Azure Data Lake Store](/azure/data-lake-store/data-lake-store-overview) 在单个位置捕获任意大小、类型和集成速度的数据以进行分析。
+<span data-ttu-id="784e3-106">使用 [Azure Data Lake Store](/azure/data-lake-store/data-lake-store-overview) 在单个位置捕获任意大小、类型和集成速度的数据以进行分析。</span><span class="sxs-lookup"><span data-stu-id="784e3-106">Capture data of any size, type, and ingestion speed in a single place for analytics with [Azure Data Lake Store](/azure/data-lake-store/data-lake-store-overview).</span></span>
 
-若要开始使用 Data Lake Store，请参阅[通过 Java 开始使用 Azure Data Lake Store](/azure/data-lake-store/data-lake-store-get-started-java-sdk)。
+<span data-ttu-id="784e3-107">若要开始使用 Data Lake Store，请参阅[通过 Java 开始使用 Azure Data Lake Store](/azure/data-lake-store/data-lake-store-get-started-java-sdk)。</span><span class="sxs-lookup"><span data-stu-id="784e3-107">To get started with Data Lake Store, see [Get started with Azure Data Lake Store using Java](/azure/data-lake-store/data-lake-store-get-started-java-sdk).</span></span>
 
 
-## <a name="client-library"></a>客户端库
+## <a name="client-library"></a><span data-ttu-id="784e3-108">客户端库</span><span class="sxs-lookup"><span data-stu-id="784e3-108">Client library</span></span>
 
-使用客户端库在 Data Lake Store 中读取和写入文件、设置权限和元数据，以及管理文件和目录。
+<span data-ttu-id="784e3-109">使用客户端库在 Data Lake Store 中读取和写入文件、设置权限和元数据，以及管理文件和目录。</span><span class="sxs-lookup"><span data-stu-id="784e3-109">Read and write files, set permissions and metadata, and manage files and directories in Data Lake Store with the client library.</span></span>
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。
+<span data-ttu-id="784e3-110">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。</span><span class="sxs-lookup"><span data-stu-id="784e3-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>
 
 ```XML
 <dependency>
@@ -40,9 +40,9 @@ ms.lasthandoff: 08/28/2017
 </dependency>
 ```   
 
-## <a name="example"></a>示例
+## <a name="example"></a><span data-ttu-id="784e3-111">示例</span><span class="sxs-lookup"><span data-stu-id="784e3-111">Example</span></span>
 
-通过完全限定的域名和 OAuth2 访问令牌创建 Data Lake 客户端，然后在 Data Lake 中创建文件和写入数据。
+<span data-ttu-id="784e3-112">通过完全限定的域名和 OAuth2 访问令牌创建 Data Lake 客户端，然后在 Data Lake 中创建文件和写入数据。</span><span class="sxs-lookup"><span data-stu-id="784e3-112">Create a Data Lake client from a fully qualified domain name and OAuth2 access token, then create a file in Data Lake and write to it.</span></span>
 
 ```java
 // AccessTokenProvider provider = new ClientCredsTokenProvider(authTokenEndpoint, clientId, clientKey);
@@ -63,14 +63,14 @@ out.close();
 ```
 
 > [!div class="nextstepaction"]
-> [了解客户端 API](/java/api/overview/azure/datalakestore/clientlibrary)
+> [<span data-ttu-id="784e3-113">了解客户端 API</span><span class="sxs-lookup"><span data-stu-id="784e3-113">Explore the Client APIs</span></span>](/java/api/overview/azure/datalakestore/clientlibrary)
 
 
-## <a name="management-api"></a>管理 API
+## <a name="management-api"></a><span data-ttu-id="784e3-114">管理 API</span><span class="sxs-lookup"><span data-stu-id="784e3-114">Management API</span></span>
 
-使用管理 API 来管理 Data Lake Store 帐户、防火墙规则和受信任的标识提供者。
+<span data-ttu-id="784e3-115">使用管理 API 来管理 Data Lake Store 帐户、防火墙规则和受信任的标识提供者。</span><span class="sxs-lookup"><span data-stu-id="784e3-115">Use the management API to manage Data Lake Store accounts, firewall rules, and trusted identity providers.</span></span>
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。
+<span data-ttu-id="784e3-116">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。</span><span class="sxs-lookup"><span data-stu-id="784e3-116">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
 
 
 ```XML
@@ -82,12 +82,12 @@ out.close();
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/datalakestore/managementapi)
+> [<span data-ttu-id="784e3-117">了解管理 API</span><span class="sxs-lookup"><span data-stu-id="784e3-117">Explore the Management APIs</span></span>](/java/api/overview/azure/datalakestore/managementapi)
 
-## <a name="samples"></a>示例
+## <a name="samples"></a><span data-ttu-id="784e3-118">示例</span><span class="sxs-lookup"><span data-stu-id="784e3-118">Samples</span></span>
 
-[Azure Data Lake 入门][1] 
+<span data-ttu-id="784e3-119">[Azure Data Lake 入门][1]</span><span class="sxs-lookup"><span data-stu-id="784e3-119">[Azure Data Lake Get Started][1]</span></span> 
 
 [1]: https://github.com/Azure-Samples/data-lake-store-java-upload-download-get-started
 
-详细了解可在应用中使用的 [Azure Data Lake Store 示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=lake)。
+<span data-ttu-id="784e3-120">详细了解可在应用中使用的 [Azure Data Lake Store 示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=lake)。</span><span class="sxs-lookup"><span data-stu-id="784e3-120">Explore more [sample Java code for Azure Data Lake Store](https://azure.microsoft.com/resources/samples/?platform=java&term=lake) you can use in your apps.</span></span>

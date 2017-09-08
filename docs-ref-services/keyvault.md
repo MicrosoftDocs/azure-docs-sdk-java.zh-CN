@@ -17,19 +17,19 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
 ---
-# <a name="azure-key-vault-libraries-for-java"></a>用于 Java 的 Azure Key Vault 库
+# <a name="azure-key-vault-libraries-for-java"></a><span data-ttu-id="edddd-104">用于 Java 的 Azure Key Vault 库</span><span class="sxs-lookup"><span data-stu-id="edddd-104">Azure Key Vault libraries for Java</span></span>
 
-## <a name="overview"></a>概述
+## <a name="overview"></a><span data-ttu-id="edddd-105">概述</span><span class="sxs-lookup"><span data-stu-id="edddd-105">Overview</span></span>
 
-使用 [Azure Key Vault](/azure/key-vault/) 保护及管理云应用程序与服务使用的加密密钥和机密。
+<span data-ttu-id="edddd-106">使用 [Azure Key Vault](/azure/key-vault/) 保护及管理云应用程序与服务使用的加密密钥和机密。</span><span class="sxs-lookup"><span data-stu-id="edddd-106">Safeguard and manage cryptographic keys and secrets used by cloud applications and services with [Azure Key Vault](/azure/key-vault/).</span></span>
 
-若要开始使用 Azure Key Vault，请参阅 [Azure Key Vault 入门](/azure/key-vault/key-vault-get-started)。
+<span data-ttu-id="edddd-107">若要开始使用 Azure Key Vault，请参阅 [Azure Key Vault 入门](/azure/key-vault/key-vault-get-started)。</span><span class="sxs-lookup"><span data-stu-id="edddd-107">To get started with Azure Key Vault, see [Get started with Azure Key Vault](/azure/key-vault/key-vault-get-started).</span></span>
 
-## <a name="client-library"></a>客户端库
+## <a name="client-library"></a><span data-ttu-id="edddd-108">客户端库</span><span class="sxs-lookup"><span data-stu-id="edddd-108">Client library</span></span>
 
-使用客户端库在 Azure Key Vault 中创建、更新和删除密钥与机密。
+<span data-ttu-id="edddd-109">使用客户端库在 Azure Key Vault 中创建、更新和删除密钥与机密。</span><span class="sxs-lookup"><span data-stu-id="edddd-109">Create, update, and delete keys and secrets in Azure Key Vault with the client libraries.</span></span>
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。  
+<span data-ttu-id="edddd-110">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。</span><span class="sxs-lookup"><span data-stu-id="edddd-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -39,9 +39,9 @@ ms.lasthandoff: 08/28/2017
 </dependency>
 ```   
 
-## <a name="example"></a>示例
+## <a name="example"></a><span data-ttu-id="edddd-111">示例</span><span class="sxs-lookup"><span data-stu-id="edddd-111">Example</span></span>
 
-从 Key Vault 检索[JSON Web 密钥](https://tools.ietf.org/html/draft-ietf-jose-json-web-key-18)。
+<span data-ttu-id="edddd-112">从 Key Vault 检索[JSON Web 密钥](https://tools.ietf.org/html/draft-ietf-jose-json-web-key-18)。</span><span class="sxs-lookup"><span data-stu-id="edddd-112">Retrieve a [JSON web key](https://tools.ietf.org/html/draft-ietf-jose-json-web-key-18) from a Key Vault.</span></span>
 
 ```java
 KeyVaultClient kvc = new KeyVaultClient(credentials);
@@ -50,14 +50,14 @@ JsonWebKey jsonKey = returnedKeyBundle.key();
 ```
 
 > [!div class="nextstepaction"]
-> [了解客户端 API](/java/api/overview/azure/keyvault/clientlibrary)
+> [<span data-ttu-id="edddd-113">了解客户端 API</span><span class="sxs-lookup"><span data-stu-id="edddd-113">Explore the Client APIs</span></span>](/java/api/overview/azure/keyvault/clientlibrary)
 
 
-## <a name="management-api"></a>管理 API
+## <a name="management-api"></a><span data-ttu-id="edddd-114">管理 API</span><span class="sxs-lookup"><span data-stu-id="edddd-114">Management API</span></span>
 
-使用 Azure Key Vault 管理库来创建 Key Vault、授权应用程序及管理权限。 
+<span data-ttu-id="edddd-115">使用 Azure Key Vault 管理库来创建 Key Vault、授权应用程序及管理权限。</span><span class="sxs-lookup"><span data-stu-id="edddd-115">Use the Azure Key Vault management libraries to create key vaults, authorize applications, and manage permissions.</span></span> 
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。  
+<span data-ttu-id="edddd-116">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。</span><span class="sxs-lookup"><span data-stu-id="edddd-116">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -67,9 +67,9 @@ JsonWebKey jsonKey = returnedKeyBundle.key();
 </dependency>
 ```
 
-## <a name="example"></a>示例
+## <a name="example"></a><span data-ttu-id="edddd-117">示例</span><span class="sxs-lookup"><span data-stu-id="edddd-117">Example</span></span>
 
-使用[服务主体](/azure/azure-resource-manager/resource-group-create-service-principal-portal) `clientId` 授权运行的应用程序，以便从 Key Vault 中检索机密。 
+<span data-ttu-id="edddd-118">使用[服务主体](/azure/azure-resource-manager/resource-group-create-service-principal-portal) `clientId` 授权运行的应用程序，以便从 Key Vault 中检索机密。</span><span class="sxs-lookup"><span data-stu-id="edddd-118">Authorize and application running with [service principal](/azure/azure-resource-manager/resource-group-create-service-principal-portal) `clientId` to list and retrieve secrets from a key vault.</span></span> 
 
 ```java
 vault1 = vault1.update()
@@ -83,13 +83,13 @@ vault1 = vault1.update()
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/keyvault/managementapi)
+> [<span data-ttu-id="edddd-119">了解管理 API</span><span class="sxs-lookup"><span data-stu-id="edddd-119">Explore the Management APIs</span></span>](/java/api/overview/azure/keyvault/managementapi)
 
 
-## <a name="samples"></a>示例
+## <a name="samples"></a><span data-ttu-id="edddd-120">示例</span><span class="sxs-lookup"><span data-stu-id="edddd-120">Samples</span></span>
 
-[管理 Key Vault][1]   
+<span data-ttu-id="edddd-121">[管理 Key Vault][1]</span><span class="sxs-lookup"><span data-stu-id="edddd-121">[Manage Key Vaults][1]</span></span>   
 
 [1]: https://github.com/Azure-Samples/key-vault-java-manage-key-vaults
 
-详细了解可在应用中使用的 [Azure Key Vault 示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=key+vault)。
+<span data-ttu-id="edddd-122">详细了解可在应用中使用的 [Azure Key Vault 示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=key+vault)。</span><span class="sxs-lookup"><span data-stu-id="edddd-122">Explore more [sample Java code for Azure Key Vault](https://azure.microsoft.com/resources/samples/?platform=java&term=key+vault) you can use in your apps.</span></span>

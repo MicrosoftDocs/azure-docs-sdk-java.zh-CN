@@ -17,8 +17,8 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
 ---
-# <a name="java-samples-for-azure-container-service"></a>Azure 容器服务的 Java 示例
+# <a name="java-samples-for-azure-container-service"></a><span data-ttu-id="7a6df-104">Azure 容器服务的 Java 示例</span><span class="sxs-lookup"><span data-stu-id="7a6df-104">Java samples for Azure Container Service</span></span>
 
-下表提供了可用于创建和配置在容器中运行的应用程序的 Java 源代码的链接。
+<span data-ttu-id="7a6df-105">下表提供了可用于创建和配置在容器中运行的应用程序的 Java 源代码的链接。</span><span class="sxs-lookup"><span data-stu-id="7a6df-105">The following table links to Java source you can use to create and configure applications running in containers.</span></span>
 
 [!INCLUDE [java-container-samples](includes/java-container-samples.md)]

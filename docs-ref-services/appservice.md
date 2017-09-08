@@ -17,19 +17,19 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
 ---
-# <a name="azure-app-service-libraries-for-java"></a>用于 Java 的 Azure 应用服务库
+# <a name="azure-app-service-libraries-for-java"></a><span data-ttu-id="a50cb-104">用于 Java 的 Azure 应用服务库</span><span class="sxs-lookup"><span data-stu-id="a50cb-104">Azure App Service libraries for Java</span></span>
 
-## <a name="overview"></a>概述
+## <a name="overview"></a><span data-ttu-id="a50cb-105">概述</span><span class="sxs-lookup"><span data-stu-id="a50cb-105">Overview</span></span>
 
-使用 [Azure 应用服务](/azure/app-service)部署和管理网站、Web 应用程序与 REST API。
+<span data-ttu-id="a50cb-106">使用 [Azure 应用服务](/azure/app-service)部署和管理网站、Web 应用程序与 REST API。</span><span class="sxs-lookup"><span data-stu-id="a50cb-106">Deploy and manage websites, web applications, and REST APIs with [Azure App Service](/azure/app-service).</span></span>
 
-若要开始使用 Azure 应用服务，请参阅[在 Azure 中创建第一个 Java Web 应用](/azure/app-service-web/app-service-web-get-started-java)。
+<span data-ttu-id="a50cb-107">若要开始使用 Azure 应用服务，请参阅[在 Azure 中创建第一个 Java Web 应用](/azure/app-service-web/app-service-web-get-started-java)。</span><span class="sxs-lookup"><span data-stu-id="a50cb-107">To get started with Azure App Service, see [Create your first Java web app in Azure](/azure/app-service-web/app-service-web-get-started-java).</span></span>
 
-## <a name="management-api"></a>管理 API
+## <a name="management-api"></a><span data-ttu-id="a50cb-108">管理 API</span><span class="sxs-lookup"><span data-stu-id="a50cb-108">Management API</span></span>
 
-使用管理 API 在 Azure 应用服务中部署、缩放和配置应用程序。
+<span data-ttu-id="a50cb-109">使用管理 API 在 Azure 应用服务中部署、缩放和配置应用程序。</span><span class="sxs-lookup"><span data-stu-id="a50cb-109">Deploy, scale, and configure applications in Azure App Service with the management API.</span></span>
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。
+<span data-ttu-id="a50cb-110">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。</span><span class="sxs-lookup"><span data-stu-id="a50cb-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
 
 ```XML
 <dependency>
@@ -40,11 +40,11 @@ ms.lasthandoff: 08/28/2017
 ```   
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure)
+> [<span data-ttu-id="a50cb-111">了解管理 API</span><span class="sxs-lookup"><span data-stu-id="a50cb-111">Explore the Management APIs</span></span>](/java/api/overview/azure)
 
-### <a name="example"></a>示例
+### <a name="example"></a><span data-ttu-id="a50cb-112">示例</span><span class="sxs-lookup"><span data-stu-id="a50cb-112">Example</span></span>
 
-将 Docker 映像中的 Web 应用部署到 Linux 上运行的 Azure Web 应用。
+<span data-ttu-id="a50cb-113">将 Docker 映像中的 Web 应用部署到 Linux 上运行的 Azure Web 应用。</span><span class="sxs-lookup"><span data-stu-id="a50cb-113">Deploy a webapp from a Docker image into an Azure Web App running on Linux.</span></span>
 
 ```java
 WebApp app = azure.webApps().define("newLinuxWebApp")
@@ -56,14 +56,14 @@ WebApp app = azure.webApps().define("newLinuxWebApp")
     .create();
 ```
 
-## <a name="samples"></a>示例
+## <a name="samples"></a><span data-ttu-id="a50cb-114">示例</span><span class="sxs-lookup"><span data-stu-id="a50cb-114">Samples</span></span>
 
-[从 FTP 或 GitHub 部署 Web 应用][1]  
-[使用部署槽交换应用版本][2]  
-[配置自定义域][3]   
-[跨多个区域缩放 Web 应用][4]   
+<span data-ttu-id="a50cb-115">[从 FTP 或 GitHub 部署 Web 应用][1]</span><span class="sxs-lookup"><span data-stu-id="a50cb-115">[Deploy a web app from FTP or GitHub][1]</span></span>  
+<span data-ttu-id="a50cb-116">[使用部署槽交换应用版本][2]</span><span class="sxs-lookup"><span data-stu-id="a50cb-116">[Swap between app versions with deployment slots][2]</span></span>  
+<span data-ttu-id="a50cb-117">[配置自定义域][3] </span><span class="sxs-lookup"><span data-stu-id="a50cb-117">[Configure a custom domain][3] </span></span>  
+<span data-ttu-id="a50cb-118">[跨多个区域缩放 Web 应用][4]</span><span class="sxs-lookup"><span data-stu-id="a50cb-118">[Scale a web app across multiple regions][4]</span></span>   
 
-详细了解可在应用中使用的 [Azure 应用服务示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=appservice)。
+<span data-ttu-id="a50cb-119">详细了解可在应用中使用的 [Azure 应用服务示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=appservice)。</span><span class="sxs-lookup"><span data-stu-id="a50cb-119">Explore more [sample Java code for Azure App Service](https://azure.microsoft.com/resources/samples/?platform=java&term=appservice) you can use in your apps.</span></span>
 
 [1]: ../docs-ref-conceptual/java-sdk-configure-webapp-sources.md
 [2]: https://azure.microsoft.com/resources/samples/app-service-java-manage-staging-and-production-slots-for-web-apps/

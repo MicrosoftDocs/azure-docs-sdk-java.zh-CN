@@ -17,19 +17,19 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
 ---
-# <a name="azure-database-for-postgresql-libraries-for-java"></a>用于 Java 的 Azure Database for PostgreSQL 库
+# <a name="azure-database-for-postgresql-libraries-for-java"></a><span data-ttu-id="be3af-104">用于 Java 的 Azure Database for PostgreSQL 库</span><span class="sxs-lookup"><span data-stu-id="be3af-104">Azure Database for PostgreSQL libraries for Java</span></span>
 
-## <a name="overview"></a>概述
+## <a name="overview"></a><span data-ttu-id="be3af-105">概述</span><span class="sxs-lookup"><span data-stu-id="be3af-105">Overview</span></span>
 
-[Azure Database for PostgreSQL](/azure/sql-database/sql-database-technical-overview) 是 Azure 中基于开源 [PostgreSQL](https://www.postgresql.org/) 数据库引擎的社区版本、为开发人员构建的关系型数据库服务。
+<span data-ttu-id="be3af-106">[Azure Database for PostgreSQL](/azure/sql-database/sql-database-technical-overview) 是 Azure 中基于开源 [PostgreSQL](https://www.postgresql.org/) 数据库引擎的社区版本、为开发人员构建的关系型数据库服务。</span><span class="sxs-lookup"><span data-stu-id="be3af-106">[Azure Database for PostgreSQL](/azure/sql-database/sql-database-technical-overview) is a relational database service in Azure built for developers based on the community version of open source [PostgreSQL](https://www.postgresql.org/) database engine.</span></span>
 
-若要开始使用 Azure Database for PostgreSQL，请参阅[使用 Java 连接和查询数据](/azure/postgresql/connect-java)。
+<span data-ttu-id="be3af-107">若要开始使用 Azure Database for PostgreSQL，请参阅[使用 Java 连接和查询数据](/azure/postgresql/connect-java)。</span><span class="sxs-lookup"><span data-stu-id="be3af-107">To get started with Azure Database for PostgreSQL, see [Use Java to connect and query data](/azure/postgresql/connect-java).</span></span>
 
-## <a name="client-jdbc-driver"></a>客户端 JDBC 驱动程序
+## <a name="client-jdbc-driver"></a><span data-ttu-id="be3af-108">客户端 JDBC 驱动程序</span><span class="sxs-lookup"><span data-stu-id="be3af-108">Client JDBC driver</span></span>
 
-使用开源 [PostgreSQL JDBC 驱动程序](https://jdbc.postgresql.org/)从应用程序连接到 Azure Database for PostgreSQL。 可以使用 [Java JDBC API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) 直接连接到数据库，或使用通过 JDBC 与数据库交互的数据访问框架（例如 [Hibernate](http://hibernate.org/)）。
+<span data-ttu-id="be3af-109">使用开源 [PostgreSQL JDBC 驱动程序](https://jdbc.postgresql.org/)从应用程序连接到 Azure Database for PostgreSQL。</span><span class="sxs-lookup"><span data-stu-id="be3af-109">Connect to Azure Database for PostgreSQL from your applications using the open-source [PostgreSQL JDBC driver](https://jdbc.postgresql.org/).</span></span> <span data-ttu-id="be3af-110">可以使用 [Java JDBC API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) 直接连接到数据库，或使用通过 JDBC 与数据库交互的数据访问框架（例如 [Hibernate](http://hibernate.org/)）。</span><span class="sxs-lookup"><span data-stu-id="be3af-110">You can use the [Java JDBC API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) to directly connect to the database or use data access frameworks that interact with the database through JDBC such as [Hibernate](http://hibernate.org/).</span></span>
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端 JDBC 驱动程序。  
+<span data-ttu-id="be3af-111">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端 JDBC 驱动程序。</span><span class="sxs-lookup"><span data-stu-id="be3af-111">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client JDBC driver in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -39,9 +39,9 @@ ms.lasthandoff: 08/28/2017
 </dependency>
 ```   
 
-## <a name="example"></a>示例
+## <a name="example"></a><span data-ttu-id="be3af-112">示例</span><span class="sxs-lookup"><span data-stu-id="be3af-112">Example</span></span>
 
-使用 JDBC 连接到 Azure Database for PostgreSQL，并选择销售表中的所有记录。 可以从 Azure 门户获取数据库的 JDBC 连接字符串。
+<span data-ttu-id="be3af-113">使用 JDBC 连接到 Azure Database for PostgreSQL，并选择销售表中的所有记录。</span><span class="sxs-lookup"><span data-stu-id="be3af-113">Connect to Azure Database for PostgreSQL using JDBC and select all records in the sales table.</span></span> <span data-ttu-id="be3af-114">可以从 Azure 门户获取数据库的 JDBC 连接字符串。</span><span class="sxs-lookup"><span data-stu-id="be3af-114">You can get the JDBC connection string for the database from the Azure Portal.</span></span>
 
 ```java
 String url = String.format("jdbc:postgresql://mypostgresdb.postgres.database.azure.com:5432/mydb?user=frank@mypostgresdb&password=AbCdEfGhIjK&ssl=true");
@@ -54,8 +54,8 @@ try {
 }
 ```
 
-## <a name="samples"></a>示例
+## <a name="samples"></a><span data-ttu-id="be3af-115">示例</span><span class="sxs-lookup"><span data-stu-id="be3af-115">Samples</span></span>
 
-[使用 Azure CLI 设计 PostgreSQL 数据库](https://docs.microsoft.com/azure/postgresql/tutorial-design-database-using-azure-cli) 
+[<span data-ttu-id="be3af-116">使用 Azure CLI 设计 PostgreSQL 数据库</span><span class="sxs-lookup"><span data-stu-id="be3af-116">Design a PostgreSQL database using the Azure CLI</span></span>](https://docs.microsoft.com/azure/postgresql/tutorial-design-database-using-azure-cli) 
 
-详细了解可在应用中使用的 [Azure Database for PostgreSQL 示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=postgres)。
+<span data-ttu-id="be3af-117">详细了解可在应用中使用的 [Azure Database for PostgreSQL 示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=postgres)。</span><span class="sxs-lookup"><span data-stu-id="be3af-117">Explore more [sample Java code for Azure Database for PostgreSQL](https://azure.microsoft.com/resources/samples/?platform=java&term=postgres) you can use in your apps.</span></span>

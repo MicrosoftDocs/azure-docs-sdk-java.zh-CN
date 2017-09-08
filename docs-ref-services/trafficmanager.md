@@ -17,19 +17,19 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
 ---
-# <a name="azure-traffic-manager-libraries-for-java"></a>用于 Java 的 Azure 流量管理器库
+# <a name="azure-traffic-manager-libraries-for-java"></a><span data-ttu-id="7eac0-104">用于 Java 的 Azure 流量管理器库</span><span class="sxs-lookup"><span data-stu-id="7eac0-104">Azure Traffic Manager libraries for Java</span></span>
 
-## <a name="overview"></a>概述
+## <a name="overview"></a><span data-ttu-id="7eac0-105">概述</span><span class="sxs-lookup"><span data-stu-id="7eac0-105">Overview</span></span>
 
-使用 [Azure 流量管理器](/azure/traffic-manager/traffic-manager-overview)控制不同数据中心内服务终结点的用户流量分配。
+<span data-ttu-id="7eac0-106">使用 [Azure 流量管理器](/azure/traffic-manager/traffic-manager-overview)控制不同数据中心内服务终结点的用户流量分配。</span><span class="sxs-lookup"><span data-stu-id="7eac0-106">Control the distribution of user traffic for service endpoints in different datacenters with [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview).</span></span>
 
-若要开始使用 Azure 流量管理器，请参阅[创建流量管理器配置文件](/azure/traffic-manager/traffic-manager-create-profile)。
+<span data-ttu-id="7eac0-107">若要开始使用 Azure 流量管理器，请参阅[创建流量管理器配置文件](/azure/traffic-manager/traffic-manager-create-profile)。</span><span class="sxs-lookup"><span data-stu-id="7eac0-107">To get started with Azure Traffic Manager, see [Create a Traffic Manager profile](/azure/traffic-manager/traffic-manager-create-profile).</span></span>
 
-## <a name="management-api"></a>管理 API
+## <a name="management-api"></a><span data-ttu-id="7eac0-108">管理 API</span><span class="sxs-lookup"><span data-stu-id="7eac0-108">Management API</span></span>
 
-使用管理 API 创建流量管理器配置文件、定义终结点和更改路由方法。 
+<span data-ttu-id="7eac0-109">使用管理 API 创建流量管理器配置文件、定义终结点和更改路由方法。</span><span class="sxs-lookup"><span data-stu-id="7eac0-109">Create Traffic Manager profiles, define endpoints, and change the routing method with the management API.</span></span> 
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。  
+<span data-ttu-id="7eac0-110">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。</span><span class="sxs-lookup"><span data-stu-id="7eac0-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -39,9 +39,9 @@ ms.lasthandoff: 08/28/2017
 </dependency>
 ```   
 
-## <a name="example"></a>示例
+## <a name="example"></a><span data-ttu-id="7eac0-111">示例</span><span class="sxs-lookup"><span data-stu-id="7eac0-111">Example</span></span>
 
-创建流量管理器配置文件并分配单个终结点。
+<span data-ttu-id="7eac0-112">创建流量管理器配置文件并分配单个终结点。</span><span class="sxs-lookup"><span data-stu-id="7eac0-112">Create a Traffic Manager profile and assign a single endpoint.</span></span>
 
 ```java
 TrafficManagerProfile tmProfile = azure.trafficManagerProfiles().define("testTMProfile")
@@ -56,10 +56,10 @@ TrafficManagerProfile tmProfile = azure.trafficManagerProfiles().define("testTMP
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/trafficmanager/managementapi)
+> [<span data-ttu-id="7eac0-113">了解管理 API</span><span class="sxs-lookup"><span data-stu-id="7eac0-113">Explore the Management APIs</span></span>](/java/api/overview/azure/trafficmanager/managementapi)
 
-## <a name="samples"></a>示例
+## <a name="samples"></a><span data-ttu-id="7eac0-114">示例</span><span class="sxs-lookup"><span data-stu-id="7eac0-114">Samples</span></span>
 
-[跨多个区域均衡 Web 应用流量](https://github.com/Azure-Samples/traffic-manager-java-manage-profiles)
+[<span data-ttu-id="7eac0-115">跨多个区域均衡 Web 应用流量</span><span class="sxs-lookup"><span data-stu-id="7eac0-115">Balance web app traffic across multiple regions</span></span>](https://github.com/Azure-Samples/traffic-manager-java-manage-profiles)
 
-详细了解可在应用中使用的 [Azure 流量管理器示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=traffic)。
+<span data-ttu-id="7eac0-116">详细了解可在应用中使用的 [Azure 流量管理器示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=traffic)。</span><span class="sxs-lookup"><span data-stu-id="7eac0-116">Explore more [sample Java code for Azure Traffic Manager](https://azure.microsoft.com/resources/samples/?platform=java&term=traffic) you can use in your apps.</span></span>
