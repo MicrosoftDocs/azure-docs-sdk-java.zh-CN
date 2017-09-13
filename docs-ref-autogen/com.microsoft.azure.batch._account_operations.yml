@@ -1,332 +1,339 @@
 ### YamlMime:ManagedReference
 items:
-  - uid: com.microsoft.azure.batch._account_operations
-    id: _account_operations
-    parent: com.microsoft.azure.batch
-    children:
-      - com.microsoft.azure.batch._account_operations.customBehaviors()
-      - com.microsoft.azure.batch._account_operations.listNodeAgentSkus()
-      - com.microsoft.azure.batch._account_operations.listNodeAgentSkus(DetailLevel)
-      - 'com.microsoft.azure.batch._account_operations.listNodeAgentSkus(DetailLevel,Iterable<BatchClientBehavior>)'
-      - com.microsoft.azure.batch._account_operations.withCustomBehaviors(Collection<BatchClientBehavior>)
-    href: com.microsoft.azure.batch._account_operations.yml
-    langs:
-      - java
-    name: AccountOperations
-    nameWithType: AccountOperations
-    fullName: com.microsoft.azure.batch.AccountOperations
-    type: Class
-    source:
-      remote: &ref_0
-        path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
-        branch: master
-        repo: 'https://github.com/Azure/azure-batch-sdk-for-java'
+- uid: com.microsoft.azure.batch._account_operations
+  id: _account_operations
+  parent: com.microsoft.azure.batch
+  children:
+  - com.microsoft.azure.batch._account_operations.customBehaviors()
+  - com.microsoft.azure.batch._account_operations.listNodeAgentSkus()
+  - com.microsoft.azure.batch._account_operations.listNodeAgentSkus(DetailLevel)
+  - com.microsoft.azure.batch._account_operations.listNodeAgentSkus(DetailLevel,Iterable<BatchClientBehavior>)
+  - com.microsoft.azure.batch._account_operations.withCustomBehaviors(Collection<BatchClientBehavior>)
+  href: com.microsoft.azure.batch._account_operations.yml
+  langs:
+  - java
+  name: AccountOperations
+  nameWithType: AccountOperations
+  fullName: com.microsoft.azure.batch.AccountOperations
+  type: Class
+  source:
+    remote: &o0
       path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
-      startLine: 19
-    package: com.microsoft.azure.batch
-    summary: <p>执行对 Azure 批处理帐户与帐户相关的操作。 </p>
-    syntax:
-      content: public class AccountOperations implements IInheritedBehaviors
-    inheritance:
-      - java.lang.Object
-      - com.microsoft.azure.batch._i_inherited_behaviors
-  - uid: com.microsoft.azure.batch._account_operations.customBehaviors()
-    id: customBehaviors()
-    parent: com.microsoft.azure.batch._account_operations
-    href: com.microsoft.azure.batch._account_operations.yml
-    langs:
-      - java
-    name: customBehaviors()
-    nameWithType: AccountOperations.customBehaviors()
-    fullName: Collection<BatchClientBehavior> com.microsoft.azure.batch.AccountOperations.customBehaviors()
-    overload: com.microsoft.azure.batch._account_operations.customBehaviors*
-    type: Method
-    source:
-      remote: *ref_0
-      path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
-      startLine: 38
-    package: com.microsoft.azure.batch
-    summary: |-
-      <p>获取行为的修改或自定义对批处理服务的请求的集合。</p>
-      <p></p>
-    syntax:
-      content: public Collection<BatchClientBehavior> customBehaviors()
-      return:
-        type: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
-        description: <p>集合<xref href="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false"></xref>实例。 </p>
-    overridden: com.microsoft.azure.batch._i_inherited_behaviors.customBehaviors()
-  - uid: com.microsoft.azure.batch._account_operations.listNodeAgentSkus()
-    id: listNodeAgentSkus()
-    parent: com.microsoft.azure.batch._account_operations
-    href: com.microsoft.azure.batch._account_operations.yml
-    langs:
-      - java
-    name: listNodeAgentSkus()
-    nameWithType: AccountOperations.listNodeAgentSkus()
-    fullName: List<NodeAgentSku> com.microsoft.azure.batch.AccountOperations.listNodeAgentSkus()
-    overload: com.microsoft.azure.batch._account_operations.listNodeAgentSkus*
-    type: Method
-    source:
-      remote: *ref_0
-      path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
-      startLine: 61
-    package: com.microsoft.azure.batch
-    summary: |-
-      <p>列出了批处理服务支持的节点代理 SKU 值。</p>
-      <p></p>
-    syntax:
-      content: public List<NodeAgentSku> listNodeAgentSkus()
-      return:
-        type: 5618da2dcom.microsoft.azure.batch.protocol.models._node_agent_skua08ddfce
-        description: <p>一份<ref refid="" kindref="compound">NodeAgentSku</ref>对象。 </p>
-    exceptions:
-      - type: c8683d81
-        description: <p>当从批处理服务收到错误响应时引发的异常。 </p>
-      - type: cbf33bbe
-        description: <p>在序列化/反序列化数据发送到 / 从批处理服务收到的错误时引发的异常。 </p>
-  - uid: com.microsoft.azure.batch._account_operations.listNodeAgentSkus(DetailLevel)
-    id: listNodeAgentSkus(DetailLevel)
-    parent: com.microsoft.azure.batch._account_operations
-    href: com.microsoft.azure.batch._account_operations.yml
-    langs:
-      - java
-    name: listNodeAgentSkus(DetailLevel detailLevel)
-    nameWithType: AccountOperations.listNodeAgentSkus(DetailLevel detailLevel)
-    fullName: List<NodeAgentSku> com.microsoft.azure.batch.AccountOperations.listNodeAgentSkus(DetailLevel detailLevel)
-    overload: com.microsoft.azure.batch._account_operations.listNodeAgentSkus*
-    type: Method
-    source:
-      remote: *ref_0
-      path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
-      startLine: 73
-    package: com.microsoft.azure.batch
-    summary: |-
-      <p>列出了批处理服务支持的节点代理 SKU 值。</p>
-      <p></p>
-    syntax:
-      content: public List<NodeAgentSku> listNodeAgentSkus(DetailLevel detailLevel)
-      parameters:
-        - id: detailLevel
-          type: com.microsoft.azure.batch._detail_level
-          description: <p>A<xref href="com.microsoft.azure.batch._detail_level" data-throw-if-not-resolved="false"></xref>用于筛选列表，用于控制从服务检索的属性。 </p>
-      return:
-        type: 5618da2dcom.microsoft.azure.batch.protocol.models._node_agent_skua08ddfce
-        description: <p>一份<ref refid="" kindref="compound">NodeAgentSku</ref>对象。 </p>
-    exceptions:
-      - type: c8683d81
-        description: <p>当从批处理服务收到错误响应时引发的异常。 </p>
-      - type: cbf33bbe
-        description: <p>在序列化/反序列化数据发送到 / 从批处理服务收到的错误时引发的异常。 </p>
-  - uid: 'com.microsoft.azure.batch._account_operations.listNodeAgentSkus(DetailLevel,Iterable<BatchClientBehavior>)'
-    id: 'listNodeAgentSkus(DetailLevel,Iterable<BatchClientBehavior>)'
-    parent: com.microsoft.azure.batch._account_operations
-    href: com.microsoft.azure.batch._account_operations.yml
-    langs:
-      - java
-    name: 'listNodeAgentSkus(DetailLevel detailLevel, Iterable<BatchClientBehavior> additionalBehaviors)'
-    nameWithType: 'AccountOperations.listNodeAgentSkus(DetailLevel detailLevel, Iterable<BatchClientBehavior> additionalBehaviors)'
-    fullName: 'List<NodeAgentSku> com.microsoft.azure.batch.AccountOperations.listNodeAgentSkus(DetailLevel detailLevel, Iterable<BatchClientBehavior> additionalBehaviors)'
-    overload: com.microsoft.azure.batch._account_operations.listNodeAgentSkus*
-    type: Method
-    source:
-      remote: *ref_0
-      path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
-      startLine: 86
-    package: com.microsoft.azure.batch
-    summary: |-
-      <p>列出了批处理服务支持的节点代理 SKU 值。</p>
-      <p></p>
-    syntax:
-      content: 'public List<NodeAgentSku> listNodeAgentSkus(DetailLevel detailLevel, Iterable<BatchClientBehavior> additionalBehaviors)'
-      parameters:
-        - id: detailLevel
-          type: com.microsoft.azure.batch._detail_level
-          description: <p>A<xref href="com.microsoft.azure.batch._detail_level" data-throw-if-not-resolved="false"></xref>用于筛选列表，用于控制从服务检索的属性。 </p>
-        - id: additionalBehaviors
-          type: 2a13b5a5com.microsoft.azure.batch._batch_client_behaviora08ddfce
-          description: <p>集合<xref href="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false"></xref>适用于在批处理服务请求的实例。 </p>
-      return:
-        type: 5618da2dcom.microsoft.azure.batch.protocol.models._node_agent_skua08ddfce
-        description: <p>一份<ref refid="" kindref="compound">NodeAgentSku</ref>对象。 </p>
-    exceptions:
-      - type: c8683d81
-        description: <p>当从批处理服务收到错误响应时引发的异常。 </p>
-      - type: cbf33bbe
-        description: <p>在序列化/反序列化数据发送到 / 从批处理服务收到的错误时引发的异常。 </p>
-  - uid: com.microsoft.azure.batch._account_operations.withCustomBehaviors(Collection<BatchClientBehavior>)
-    id: withCustomBehaviors(Collection<BatchClientBehavior>)
-    parent: com.microsoft.azure.batch._account_operations
-    href: com.microsoft.azure.batch._account_operations.yml
-    langs:
-      - java
-    name: withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
-    nameWithType: AccountOperations.withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
-    fullName: IInheritedBehaviors com.microsoft.azure.batch.AccountOperations.withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
-    overload: com.microsoft.azure.batch._account_operations.withCustomBehaviors*
-    type: Method
-    source:
-      remote: *ref_0
-      path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
-      startLine: 49
-    package: com.microsoft.azure.batch
-    summary: |-
-      <p>设置的修改或自定义对批处理服务的请求的行为的集合。</p>
-      <p></p>
-    syntax:
-      content: public IInheritedBehaviors withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
-      parameters:
-        - id: behaviors
-          type: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
-          description: <p>集合<xref href="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false"></xref>实例。 </p>
-      return:
-        type: com.microsoft.azure.batch._i_inherited_behaviors
-        description: <p>当前实例。 </p>
-    overridden: com.microsoft.azure.batch._i_inherited_behaviors.withCustomBehaviors(Collection<BatchClientBehavior>)
+      branch: master
+      repo: https://github.com/Azure/azure-batch-sdk-for-java
+    path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
+    startLine: 19
+  package: com.microsoft.azure.batch
+  summary: <p>Performs account-related operations on an Azure Batch account. </p>
+  syntax:
+    content: public class AccountOperations implements IInheritedBehaviors
+  inheritance:
+  - java.lang.Object
+  - com.microsoft.azure.batch._i_inherited_behaviors
+- uid: com.microsoft.azure.batch._account_operations.customBehaviors()
+  id: customBehaviors()
+  parent: com.microsoft.azure.batch._account_operations
+  href: com.microsoft.azure.batch._account_operations.yml
+  langs:
+  - java
+  name: customBehaviors()
+  nameWithType: AccountOperations.customBehaviors()
+  fullName: Collection<BatchClientBehavior> com.microsoft.azure.batch.AccountOperations.customBehaviors()
+  overload: com.microsoft.azure.batch._account_operations.customBehaviors*
+  type: Method
+  source:
+    remote: *o0
+    path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
+    startLine: 38
+  package: com.microsoft.azure.batch
+  summary: >-
+    <p>Gets a collection of behaviors that modify or customize requests to the Batch service.</p>
+
+    <p></p>
+  syntax:
+    content: public Collection<BatchClientBehavior> customBehaviors()
+    return:
+      type: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
+      description: <p>A collection of <xref uid="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false">BatchClientBehavior</xref> instances. </p>
+  overridden: com.microsoft.azure.batch._i_inherited_behaviors.customBehaviors()
+- uid: com.microsoft.azure.batch._account_operations.listNodeAgentSkus()
+  id: listNodeAgentSkus()
+  parent: com.microsoft.azure.batch._account_operations
+  href: com.microsoft.azure.batch._account_operations.yml
+  langs:
+  - java
+  name: listNodeAgentSkus()
+  nameWithType: AccountOperations.listNodeAgentSkus()
+  fullName: List<NodeAgentSku> com.microsoft.azure.batch.AccountOperations.listNodeAgentSkus()
+  overload: com.microsoft.azure.batch._account_operations.listNodeAgentSkus*
+  type: Method
+  source:
+    remote: *o0
+    path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
+    startLine: 61
+  package: com.microsoft.azure.batch
+  summary: >-
+    <p>Lists the node agent SKU values supported by the Batch service.</p>
+
+    <p></p>
+  syntax:
+    content: public List<NodeAgentSku> listNodeAgentSkus()
+    return:
+      type: 5618da2dcom.microsoft.azure.batch.protocol.models._node_agent_skua08ddfce
+      description: <p>A list of <xref uid="" data-throw-if-not-resolved="false">NodeAgentSku</xref> objects. </p>
+  exceptions:
+  - type: c8683d81
+    description: <p>Exception thrown when an error response is received from the Batch service. </p>
+  - type: cbf33bbe
+    description: <p>Exception thrown when there is an error in serialization/deserialization of data sent to/received from the Batch service. </p>
+- uid: com.microsoft.azure.batch._account_operations.listNodeAgentSkus(DetailLevel)
+  id: listNodeAgentSkus(DetailLevel)
+  parent: com.microsoft.azure.batch._account_operations
+  href: com.microsoft.azure.batch._account_operations.yml
+  langs:
+  - java
+  name: listNodeAgentSkus(DetailLevel detailLevel)
+  nameWithType: AccountOperations.listNodeAgentSkus(DetailLevel detailLevel)
+  fullName: List<NodeAgentSku> com.microsoft.azure.batch.AccountOperations.listNodeAgentSkus(DetailLevel detailLevel)
+  overload: com.microsoft.azure.batch._account_operations.listNodeAgentSkus*
+  type: Method
+  source:
+    remote: *o0
+    path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
+    startLine: 73
+  package: com.microsoft.azure.batch
+  summary: >-
+    <p>Lists the node agent SKU values supported by the Batch service.</p>
+
+    <p></p>
+  syntax:
+    content: public List<NodeAgentSku> listNodeAgentSkus(DetailLevel detailLevel)
+    parameters:
+    - id: detailLevel
+      type: com.microsoft.azure.batch._detail_level
+      description: <p>A <xref uid="com.microsoft.azure.batch._detail_level" data-throw-if-not-resolved="false">DetailLevel</xref> used for filtering the list and for controlling which properties are retrieved from the service. </p>
+    return:
+      type: 5618da2dcom.microsoft.azure.batch.protocol.models._node_agent_skua08ddfce
+      description: <p>A list of <xref uid="" data-throw-if-not-resolved="false">NodeAgentSku</xref> objects. </p>
+  exceptions:
+  - type: c8683d81
+    description: <p>Exception thrown when an error response is received from the Batch service. </p>
+  - type: cbf33bbe
+    description: <p>Exception thrown when there is an error in serialization/deserialization of data sent to/received from the Batch service. </p>
+- uid: com.microsoft.azure.batch._account_operations.listNodeAgentSkus(DetailLevel,Iterable<BatchClientBehavior>)
+  id: listNodeAgentSkus(DetailLevel,Iterable<BatchClientBehavior>)
+  parent: com.microsoft.azure.batch._account_operations
+  href: com.microsoft.azure.batch._account_operations.yml
+  langs:
+  - java
+  name: listNodeAgentSkus(DetailLevel detailLevel, Iterable<BatchClientBehavior> additionalBehaviors)
+  nameWithType: AccountOperations.listNodeAgentSkus(DetailLevel detailLevel, Iterable<BatchClientBehavior> additionalBehaviors)
+  fullName: List<NodeAgentSku> com.microsoft.azure.batch.AccountOperations.listNodeAgentSkus(DetailLevel detailLevel, Iterable<BatchClientBehavior> additionalBehaviors)
+  overload: com.microsoft.azure.batch._account_operations.listNodeAgentSkus*
+  type: Method
+  source:
+    remote: *o0
+    path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
+    startLine: 86
+  package: com.microsoft.azure.batch
+  summary: >-
+    <p>Lists the node agent SKU values supported by the Batch service.</p>
+
+    <p></p>
+  syntax:
+    content: public List<NodeAgentSku> listNodeAgentSkus(DetailLevel detailLevel, Iterable<BatchClientBehavior> additionalBehaviors)
+    parameters:
+    - id: detailLevel
+      type: com.microsoft.azure.batch._detail_level
+      description: <p>A <xref uid="com.microsoft.azure.batch._detail_level" data-throw-if-not-resolved="false">DetailLevel</xref> used for filtering the list and for controlling which properties are retrieved from the service. </p>
+    - id: additionalBehaviors
+      type: 2a13b5a5com.microsoft.azure.batch._batch_client_behaviora08ddfce
+      description: <p>A collection of <xref uid="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false">BatchClientBehavior</xref> instances that are applied to the Batch service request. </p>
+    return:
+      type: 5618da2dcom.microsoft.azure.batch.protocol.models._node_agent_skua08ddfce
+      description: <p>A list of <xref uid="" data-throw-if-not-resolved="false">NodeAgentSku</xref> objects. </p>
+  exceptions:
+  - type: c8683d81
+    description: <p>Exception thrown when an error response is received from the Batch service. </p>
+  - type: cbf33bbe
+    description: <p>Exception thrown when there is an error in serialization/deserialization of data sent to/received from the Batch service. </p>
+- uid: com.microsoft.azure.batch._account_operations.withCustomBehaviors(Collection<BatchClientBehavior>)
+  id: withCustomBehaviors(Collection<BatchClientBehavior>)
+  parent: com.microsoft.azure.batch._account_operations
+  href: com.microsoft.azure.batch._account_operations.yml
+  langs:
+  - java
+  name: withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
+  nameWithType: AccountOperations.withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
+  fullName: IInheritedBehaviors com.microsoft.azure.batch.AccountOperations.withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
+  overload: com.microsoft.azure.batch._account_operations.withCustomBehaviors*
+  type: Method
+  source:
+    remote: *o0
+    path: src/main/java/com/microsoft/azure/batch/AccountOperations.java
+    startLine: 49
+  package: com.microsoft.azure.batch
+  summary: >-
+    <p>Sets a collection of behaviors that modify or customize requests to the Batch service.</p>
+
+    <p></p>
+  syntax:
+    content: public IInheritedBehaviors withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
+    parameters:
+    - id: behaviors
+      type: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
+      description: <p>The collection of <xref uid="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false">BatchClientBehavior</xref> instances. </p>
+    return:
+      type: com.microsoft.azure.batch._i_inherited_behaviors
+      description: <p>The current instance. </p>
+  overridden: com.microsoft.azure.batch._i_inherited_behaviors.withCustomBehaviors(Collection<BatchClientBehavior>)
 references:
-  - uid: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
-    spec.java:
-      - name: Collection<
-        fullName: Collection<
-      - uid: com.microsoft.azure.batch._batch_client_behavior
-        name: BatchClientBehavior
-        fullName: com.microsoft.azure.batch.BatchClientBehavior
-        href: com.microsoft.azure.batch._batch_client_behavior.yml
-      - name: '>'
-        fullName: '>'
-  - uid: com.microsoft.azure.batch._account_operations.customBehaviors*
-    name: customBehaviors
-    nameWithType: AccountOperations.customBehaviors
-    fullName: Collection<BatchClientBehavior> com.microsoft.azure.batch.AccountOperations.customBehaviors
-    package: com.microsoft.azure.batch
-  - uid: com.microsoft.azure.batch._account_operations.withCustomBehaviors*
-    name: withCustomBehaviors
-    nameWithType: AccountOperations.withCustomBehaviors
-    fullName: IInheritedBehaviors com.microsoft.azure.batch.AccountOperations.withCustomBehaviors
-    package: com.microsoft.azure.batch
-  - uid: c8683d81
-    spec.java:
-      - name: BatchErrorException
-        fullName: BatchErrorException
-  - uid: cbf33bbe
-    spec.java:
-      - name: IOException
-        fullName: IOException
-  - uid: 5618da2dcom.microsoft.azure.batch.protocol.models._node_agent_skua08ddfce
-    spec.java:
-      - name: List<
-        fullName: List<
-      - uid: com.microsoft.azure.batch.protocol.models._node_agent_sku
-        name: NodeAgentSku
-        fullName: com.microsoft.azure.batch.protocol.models.NodeAgentSku
-        href: com.microsoft.azure.batch.protocol.models._node_agent_sku.yml
-      - name: '>'
-        fullName: '>'
-  - uid: com.microsoft.azure.batch._account_operations.listNodeAgentSkus*
-    name: listNodeAgentSkus
-    nameWithType: AccountOperations.listNodeAgentSkus
-    fullName: List<NodeAgentSku> com.microsoft.azure.batch.AccountOperations.listNodeAgentSkus
-    package: com.microsoft.azure.batch
-  - uid: 2a13b5a5com.microsoft.azure.batch._batch_client_behaviora08ddfce
-    spec.java:
-      - name: Iterable<
-        fullName: Iterable<
-      - uid: com.microsoft.azure.batch._batch_client_behavior
-        name: BatchClientBehavior
-        fullName: com.microsoft.azure.batch.BatchClientBehavior
-        href: com.microsoft.azure.batch._batch_client_behavior.yml
-      - name: '>'
-        fullName: '>'
-  - uid: com.microsoft.azure.batch._i_inherited_behaviors
-    parent: com.microsoft.azure.batch
-    href: com.microsoft.azure.batch._i_inherited_behaviors.yml
-    name: IInheritedBehaviors
-    nameWithType: IInheritedBehaviors
-    fullName: com.microsoft.azure.batch.IInheritedBehaviors
-    type: Interface
-    summary: <p>此接口定义的方法和从实例化的父对象继承的属性。 在实例化它们时，实现此接口的类继承行为。 在此模型中，集合是独立但成员是共享的引用。 此集合的成员更改或自定义的 Azure Batch 服务客户端对象的各种行为。 这些行为通常由任何子类实例继承。 修改集合的顺序应用。 上次写入 wins。 </p>
-    syntax:
-      content: public interface IInheritedBehaviors
+- uid: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
+  spec.java:
+  - name: Collection<
+    fullName: Collection<
   - uid: com.microsoft.azure.batch._batch_client_behavior
-    parent: com.microsoft.azure.batch
-    href: com.microsoft.azure.batch._batch_client_behavior.yml
     name: BatchClientBehavior
-    nameWithType: BatchClientBehavior
     fullName: com.microsoft.azure.batch.BatchClientBehavior
-    type: Class
-    summary: <p>类派生自<xref href="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false"></xref>类修改的 Azure 批处理客户端的操作行为。 </p>
-    syntax:
-      content: public class BatchClientBehavior
-  - uid: com.microsoft.azure.batch._batch_client
-    parent: com.microsoft.azure.batch
-    href: com.microsoft.azure.batch._batch_client.yml
-    name: BatchClient
-    nameWithType: BatchClient
-    fullName: com.microsoft.azure.batch.BatchClient
-    type: Class
-    summary: <p>Azure 批处理帐户，用于访问批处理服务客户端。 </p>
-    syntax:
-      content: public class BatchClient
-  - uid: com.microsoft.azure.batch._i_inherited_behaviors.customBehaviors()
-    parent: com.microsoft.azure.batch._i_inherited_behaviors
-    href: com.microsoft.azure.batch._i_inherited_behaviors.yml
-    name: customBehaviors()
-    nameWithType: IInheritedBehaviors.customBehaviors()
-    fullName: Collection<BatchClientBehavior> com.microsoft.azure.batch.IInheritedBehaviors.customBehaviors()
-    type: Method
-    summary: |-
-      <p>获取行为的修改或自定义对批处理服务的请求的集合。</p>
-      <p></p>
-    syntax:
-      content: public Collection<BatchClientBehavior> customBehaviors()
-      return:
-        type: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
-        description: <p>集合<xref href="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false"></xref>实例。 </p>
-  - uid: com.microsoft.azure.batch._i_inherited_behaviors.withCustomBehaviors(Collection<BatchClientBehavior>)
-    parent: com.microsoft.azure.batch._i_inherited_behaviors
-    href: com.microsoft.azure.batch._i_inherited_behaviors.yml
-    name: withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
-    nameWithType: IInheritedBehaviors.withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
-    fullName: IInheritedBehaviors com.microsoft.azure.batch.IInheritedBehaviors.withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
-    type: Method
-    summary: |-
-      <p>设置的修改或自定义对批处理服务的请求的行为的集合。</p>
-      <p></p>
-    syntax:
-      content: public IInheritedBehaviors withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
-      parameters:
-        - id: behaviors
-          type: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
-          description: <p>集合<xref href="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false"></xref>实例。 </p>
-      return:
-        type: com.microsoft.azure.batch._i_inherited_behaviors
-        description: <p>当前实例。 </p>
+    href: com.microsoft.azure.batch._batch_client_behavior.yml
+  - name: '>'
+    fullName: '>'
+- uid: com.microsoft.azure.batch._account_operations.customBehaviors*
+  name: customBehaviors
+  nameWithType: AccountOperations.customBehaviors
+  fullName: Collection<BatchClientBehavior> com.microsoft.azure.batch.AccountOperations.customBehaviors
+  package: com.microsoft.azure.batch
+- uid: com.microsoft.azure.batch._account_operations.withCustomBehaviors*
+  name: withCustomBehaviors
+  nameWithType: AccountOperations.withCustomBehaviors
+  fullName: IInheritedBehaviors com.microsoft.azure.batch.AccountOperations.withCustomBehaviors
+  package: com.microsoft.azure.batch
+- uid: c8683d81
+  spec.java:
+  - name: BatchErrorException
+    fullName: BatchErrorException
+- uid: cbf33bbe
+  spec.java:
+  - name: IOException
+    fullName: IOException
+- uid: 5618da2dcom.microsoft.azure.batch.protocol.models._node_agent_skua08ddfce
+  spec.java:
+  - name: List<
+    fullName: List<
   - uid: com.microsoft.azure.batch.protocol.models._node_agent_sku
-    parent: com.microsoft.azure.batch.protocol.models
-    href: com.microsoft.azure.batch.protocol.models._node_agent_sku.yml
     name: NodeAgentSku
-    nameWithType: NodeAgentSku
     fullName: com.microsoft.azure.batch.protocol.models.NodeAgentSku
-    type: Class
-    summary: <p>节点代理 SKU 支持批处理服务。 Batch 节点代理是一个程序，在池中，每个节点上运行，并提供节点和批处理服务之间的命令控件接口。 节点代理对于不同操作系统有不同的实现（称为 SKU）。 </p>
-    syntax:
-      content: public class NodeAgentSku
-  - uid: com.microsoft.azure.batch.protocol.models._batch_error_exception
-    parent: com.microsoft.azure.batch.protocol.models
-    href: com.microsoft.azure.batch.protocol.models._batch_error_exception.yml
-    name: BatchErrorException
-    nameWithType: BatchErrorException
-    fullName: com.microsoft.azure.batch.protocol.models.BatchErrorException
-    type: Class
-    summary: <p>使用无效的响应时引发的异常<xref href="com.microsoft.azure.batch.protocol.models._batch_error" data-throw-if-not-resolved="false"></xref>信息。 </p>
-    syntax:
-      content: public class BatchErrorException
-  - uid: com.microsoft.azure.batch._detail_level
-    parent: com.microsoft.azure.batch
-    href: com.microsoft.azure.batch._detail_level.yml
-    name: DetailLevel
-    nameWithType: DetailLevel
-    fullName: com.microsoft.azure.batch.DetailLevel
-    type: Class
-    summary: <p>控制所需的 Azure 批处理服务列出或检索资源时从请求的详细信息。 </p>
-    syntax:
-      content: public class DetailLevel
+    href: com.microsoft.azure.batch.protocol.models._node_agent_sku.yml
+  - name: '>'
+    fullName: '>'
+- uid: com.microsoft.azure.batch._account_operations.listNodeAgentSkus*
+  name: listNodeAgentSkus
+  nameWithType: AccountOperations.listNodeAgentSkus
+  fullName: List<NodeAgentSku> com.microsoft.azure.batch.AccountOperations.listNodeAgentSkus
+  package: com.microsoft.azure.batch
+- uid: 2a13b5a5com.microsoft.azure.batch._batch_client_behaviora08ddfce
+  spec.java:
+  - name: Iterable<
+    fullName: Iterable<
+  - uid: com.microsoft.azure.batch._batch_client_behavior
+    name: BatchClientBehavior
+    fullName: com.microsoft.azure.batch.BatchClientBehavior
+    href: com.microsoft.azure.batch._batch_client_behavior.yml
+  - name: '>'
+    fullName: '>'
+- uid: com.microsoft.azure.batch._i_inherited_behaviors
+  parent: com.microsoft.azure.batch
+  href: com.microsoft.azure.batch._i_inherited_behaviors.yml
+  name: IInheritedBehaviors
+  nameWithType: IInheritedBehaviors
+  fullName: com.microsoft.azure.batch.IInheritedBehaviors
+  type: Interface
+  summary: <p>This interface defines methods and properties that are inherited from the instantiating parent object. Classes that implement this interface inherit behaviors when they are instantiated. In this model, the collections are independent but the members are shared references. Members of this collection alter or customize various behaviors of Azure Batch service client objects. These behaviors are generally inherited by any child class instances. Modifications are applied in the order of the collection. The last write wins. </p>
+  syntax:
+    content: public interface IInheritedBehaviors
+- uid: com.microsoft.azure.batch._batch_client_behavior
+  parent: com.microsoft.azure.batch
+  href: com.microsoft.azure.batch._batch_client_behavior.yml
+  name: BatchClientBehavior
+  nameWithType: BatchClientBehavior
+  fullName: com.microsoft.azure.batch.BatchClientBehavior
+  type: Class
+  summary: <p>Classes derived from the <xref uid="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false">BatchClientBehavior</xref> class modify operational behaviors of an Azure Batch client. </p>
+  syntax:
+    content: public class BatchClientBehavior
+- uid: com.microsoft.azure.batch._batch_client
+  parent: com.microsoft.azure.batch
+  href: com.microsoft.azure.batch._batch_client.yml
+  name: BatchClient
+  nameWithType: BatchClient
+  fullName: com.microsoft.azure.batch.BatchClient
+  type: Class
+  summary: <p>A client for an Azure Batch account, used to access the Batch service. </p>
+  syntax:
+    content: public class BatchClient
+- uid: com.microsoft.azure.batch._i_inherited_behaviors.customBehaviors()
+  parent: com.microsoft.azure.batch._i_inherited_behaviors
+  href: com.microsoft.azure.batch._i_inherited_behaviors.yml
+  name: customBehaviors()
+  nameWithType: IInheritedBehaviors.customBehaviors()
+  fullName: Collection<BatchClientBehavior> com.microsoft.azure.batch.IInheritedBehaviors.customBehaviors()
+  type: Method
+  summary: >-
+    <p>Gets a collection of behaviors that modify or customize requests to the Batch service.</p>
+
+    <p></p>
+  syntax:
+    content: public Collection<BatchClientBehavior> customBehaviors()
+    return:
+      type: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
+      description: <p>A collection of <xref uid="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false">BatchClientBehavior</xref> instances. </p>
+- uid: com.microsoft.azure.batch._i_inherited_behaviors.withCustomBehaviors(Collection<BatchClientBehavior>)
+  parent: com.microsoft.azure.batch._i_inherited_behaviors
+  href: com.microsoft.azure.batch._i_inherited_behaviors.yml
+  name: withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
+  nameWithType: IInheritedBehaviors.withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
+  fullName: IInheritedBehaviors com.microsoft.azure.batch.IInheritedBehaviors.withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
+  type: Method
+  summary: >-
+    <p>Sets a collection of behaviors that modify or customize requests to the Batch service.</p>
+
+    <p></p>
+  syntax:
+    content: public IInheritedBehaviors withCustomBehaviors(Collection<BatchClientBehavior> behaviors)
+    parameters:
+    - id: behaviors
+      type: 12ebb11acom.microsoft.azure.batch._batch_client_behaviora08ddfce
+      description: <p>The collection of <xref uid="com.microsoft.azure.batch._batch_client_behavior" data-throw-if-not-resolved="false">BatchClientBehavior</xref> instances. </p>
+    return:
+      type: com.microsoft.azure.batch._i_inherited_behaviors
+      description: <p>The current instance. </p>
+- uid: com.microsoft.azure.batch.protocol.models._node_agent_sku
+  parent: com.microsoft.azure.batch.protocol.models
+  href: com.microsoft.azure.batch.protocol.models._node_agent_sku.yml
+  name: NodeAgentSku
+  nameWithType: NodeAgentSku
+  fullName: com.microsoft.azure.batch.protocol.models.NodeAgentSku
+  type: Class
+  summary: <p>A node agent SKU supported by the Batch service. The Batch node agent is a program that runs on each node in the pool, and provides the command-and-control interface between the node and the Batch service. There are different implementations of the node agent, known as SKUs, for different operating systems. </p>
+  syntax:
+    content: public class NodeAgentSku
+- uid: com.microsoft.azure.batch.protocol.models._batch_error_exception
+  parent: com.microsoft.azure.batch.protocol.models
+  href: com.microsoft.azure.batch.protocol.models._batch_error_exception.yml
+  name: BatchErrorException
+  nameWithType: BatchErrorException
+  fullName: com.microsoft.azure.batch.protocol.models.BatchErrorException
+  type: Class
+  summary: <p>Exception thrown for an invalid response with <xref uid="com.microsoft.azure.batch.protocol.models._batch_error" data-throw-if-not-resolved="false">BatchError</xref> information. </p>
+  syntax:
+    content: public class BatchErrorException
+- uid: com.microsoft.azure.batch._detail_level
+  parent: com.microsoft.azure.batch
+  href: com.microsoft.azure.batch._detail_level.yml
+  name: DetailLevel
+  nameWithType: DetailLevel
+  fullName: com.microsoft.azure.batch.DetailLevel
+  type: Class
+  summary: <p>Controls the amount of detail requested from the Azure Batch service when listing or retrieving resources. </p>
+  syntax:
+    content: public class DetailLevel
