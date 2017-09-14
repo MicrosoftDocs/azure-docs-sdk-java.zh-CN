@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: storage
-ms.openlocfilehash: 7c8b6958d5e2892f35af8771d9d53eda28c430ef
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: 4223fed718e4ff3f89d3979ba97a892c2aba12e8
+ms.sourcegitcommit: ae39830d5a54fedceac78d8df1718e77741e03fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/09/2017
 ---
 # <a name="azure-storage-libraries-for-java"></a>用于 Java 的 Azure 存储库
 
@@ -71,7 +71,7 @@ blob.uploadFromFile("/Users/raisa/fabrikam.png");
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-mgmt-storage</artifactId>
-    <version>1.1.2</version>
+    <version>1.2.1</version>
 </dependency
 ```   
 

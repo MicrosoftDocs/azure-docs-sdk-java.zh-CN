@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: networking
-ms.openlocfilehash: 7be23ba896887cc88ccdf0fb049cb5f579d496c3
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: de03cf7c073c3a0dd636e23a4554987e7cad11f7
+ms.sourcegitcommit: ae39830d5a54fedceac78d8df1718e77741e03fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/09/2017
 ---
 # <a name="azure-network-libraries-for-java"></a>用于 Java 的 Azure 网络库
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 08/28/2017
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-mgmt-network</artifactId>
-    <version>1.1.2</version>
+    <version>1.2.1</version>
 </dependency>
 ```   
 

@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: 4278a777178f0848d27fd6173efcf920e9a4884c
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: c9b654ea927563e8255f5d189ddc84733a1202e2
+ms.sourcegitcommit: 30d502b3150fa14bcc1251f5f88c7c0dd83e531e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="get-started-with-the-azure-libraries-for-java"></a>用于 Java 的 Azure 库入门
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 08/28/2017
 
 - 一个 Azure 帐户。 如果没有帐户，可[获取一个免费试用帐户](https://azure.microsoft.com/free/)
 - [Azure Cloud Shell](https://docs.microsoft.coms/azure/cloud-shell/quickstart) 或 [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)。
-- [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)（Azure Cloud Shell 中已随附）
+- [Java 8](https://www.azul.com/downloads/zulu/)（Azure Cloud Shell 中已随附）
 - [Maven 3](http://maven.apache.org/download.cgi)（Azure Cloud Shell 中已随附）
 
 ## <a name="set-up-authentication"></a>设置身份验证
@@ -97,7 +97,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=testAzureApp  \
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure</artifactId>
-    <version>1.1.2</version>
+    <version>1.2.1</version>
 </dependency>
 <dependency>
     <groupId>com.microsoft.azure</groupId>

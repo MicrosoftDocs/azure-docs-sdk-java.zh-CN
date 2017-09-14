@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: appservice
-ms.openlocfilehash: 03ca1c4d73015b4ca7abbadf95609e32dfc82c66
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: e5d2a66dc984d34fb9a6668d2ea3bf1ee6164e70
+ms.sourcegitcommit: ae39830d5a54fedceac78d8df1718e77741e03fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/09/2017
 ---
 # <a name="azure-app-service-libraries-for-java"></a>用于 Java 的 Azure 应用服务库
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 08/28/2017
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-mgmt-appservice</artifactId>
-    <version>1.1.2</version>
+    <version>1.2.1</version>
 </dependency>
 ```   
 

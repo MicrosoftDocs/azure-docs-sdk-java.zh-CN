@@ -10,11 +10,11 @@ ms.service: Azure
 ms.technology: Azure
 ms.date: 4/10/2017
 ms.author: routlaw;asirveda
-ms.openlocfilehash: 01fe31f2c59810f972875331d49ce5130755c8f2
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: ce0b003cc7c48c8690f4236547ddec36e6ea9d53
+ms.sourcegitcommit: ae39830d5a54fedceac78d8df1718e77741e03fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/09/2017
 ---
 # <a name="azure-tools-for-java-developers"></a>面向 Java 开发人员的 Azure 工具
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 08/28/2017
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure</artifactId>
-    <version>1.1.2</version>
+    <version>1.2.1</version>
 </dependency>
 ```
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 08/28/2017
 
 ## <a name="eclipse-and-intellij-plugins"></a>Eclipse 和 IntelliJ 插件
 
-使用用于 [Eclipse](https://docs.microsoft.com/azure/azure-toolkit-for-eclipse) 和 [IntelliJ](https://docs.microsoft.com/azure/azure-toolkit-for-intellij) 的 Azure 工具包通过 IDE 管理 Azure 资源及部署应用。   
+使用用于 [Eclipse](eclipse/azure-toolkit-for-eclipse.md) 和 [IntelliJ](intellij/azure-toolkit-for-intellij.md) 的 Azure 工具包通过 IDE 管理 Azure 资源及部署应用。   
 
 ![显示 Azure 资源管理器的 IntelliJ 工具包](media/intelliJ-azure-explorer.png)
 
