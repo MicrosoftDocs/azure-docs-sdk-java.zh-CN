@@ -1,12 +1,12 @@
 ---
-title: "Azure 角色属性"
-description: "了解如何使用 Azure Toolkit for Eclipse 来配置 Azure 角色设置。"
+title: "Azure 项目属性"
+description: "介绍 Azure Toolkit for Eclipse 中的 Azure 项目属性设置。"
 services: 
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-ms.assetid: 5c0ec412-5702-465a-8f47-87a8ce99a267
+ms.assetid: 0fce53ec-0c5e-47b9-a453-59a0d4307556
 ms.service: multiple
 ms.workload: na
 ms.tgt_pltfrm: multiple
@@ -14,13 +14,13 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 09/11/2017
 ms.author: robmcm
-ms.openlocfilehash: 69bc92b668c89d0a69e89599606f9b3a645ae3d6
+ms.openlocfilehash: d4bf7fc7a9fe5ac534a7570df4319537ad0a9737
 ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/13/2017
 ---
-# <a name="azure-role-properties"></a>Azure 角色属性
+# <a name="azure-project-properties"></a>Azure 项目属性
 
 此文章中的信息已弃用。 有关详细信息，请参阅[用于 Eclipse 的 Azure 工具包](azure-toolkit-for-eclipse.md)。
 

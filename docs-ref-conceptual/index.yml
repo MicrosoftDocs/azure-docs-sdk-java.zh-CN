@@ -40,7 +40,7 @@ sections:
             html: <p>开发人员工具</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
-            title: SDK 和工具
+            title: IDE 插件 &amp; 工具
           - href: java-sdk-azure-install.md
             html: <p>用于 Java 的 Azure 库</p>
             image:
