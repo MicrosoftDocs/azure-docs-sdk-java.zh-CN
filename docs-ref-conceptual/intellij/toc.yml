@@ -1,0 +1,30 @@
+- name: Azure Toolkit for IntelliJ
+  href: azure-toolkit-for-intellij.md
+  items:
+    - name: 安装
+      href: azure-toolkit-for-intellij-installation.md
+    - name: 入门
+      href: /azure/app-service-web/app-service-web-intellij-create-hello-world-web-app
+      maintainContext: true
+    - name: 教程
+      items:
+        - name: 在 Linux 容器中部署 Hello World Web 应用
+          href: azure-toolkit-for-intellij-hello-world-web-app-linux.md
+        - name: 将容器部署到 Azure VM
+          href: azure-toolkit-for-intellij-publish-as-docker-container.md
+        - name: 将 Web 应用部署到 Azure 应用服务
+          href: azure-toolkit-for-intellij-publish-spring-boot-docker-app.md
+    - name: 操作说明
+      items:
+        - name: 设置身份验证
+          href: azure-toolkit-for-intellij-sign-in-instructions.md
+        - name: 管理 Azure 资源
+          items:
+            - name: 虚拟机
+              href: azure-toolkit-for-intellij-managing-virtual-machines-using-azure-explorer.md
+            - name: 存储帐户
+              href: azure-toolkit-for-intellij-managing-storage-accounts-using-azure-explorer.md
+            - name: Azure Redis 缓存
+              href: azure-toolkit-for-intellij-managing-redis-caches-using-azure-explorer.md
+    - name: 发行说明
+      href: azure-toolkit-for-intellij-whats-new.md
