@@ -155,7 +155,7 @@ IntelliJ 会将 Spring Boot 应用作为项目导入，并在导入完成后显�
    ![关闭“项目结构”对话框][ART05]
 
 > [!NOTE]
-> 有关在 IntelliJ 中创建项目的详细信息，请参阅 JetBrains 网站上的 [Configuring Artifacts]（配置项目）。
+> 有关在 IntelliJ 中创建项目的详细信息，请参阅 JetBrains 网站上的 [配置项目]。
 >
 
 ### <a name="build-the-artifact-for-deployment"></a>生成要部署的项目

@@ -178,7 +178,7 @@ Azure 工具包随即开始在 Docker 容器中将你的 Web 应用部署到 Azu
 
    ![项目名称框][ART03]
 
-有关在 IntelliJ 中创建项目的详细信息，请参阅 JetBrains 网站上的 [Configuring artifacts]（配置项目）。
+有关在 IntelliJ 中创建项目的详细信息，请参阅 JetBrains 网站上的 [配置项目]。
 
 ## <a name="next-steps"></a>后续步骤
 
