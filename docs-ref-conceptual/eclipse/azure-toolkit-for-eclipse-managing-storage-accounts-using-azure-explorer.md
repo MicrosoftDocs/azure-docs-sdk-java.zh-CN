@@ -46,8 +46,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    * **订阅**：指定要用于新存储帐户的 Azure 订阅。
 
-   * 
-            **资源组**：指定虚拟机的资源组。 选择以下选项之一：
+   * **资源组**：指定虚拟机的资源组。 选择以下选项之一：
       * **新建**：指定要创建新的资源组。
       * **使用现有**：指定将从与 Azure 帐户关联的资源组列表中进行选择。
 
@@ -102,7 +101,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 有关 Azure 存储帐户大小和定价的详细信息，请参阅以下资源：
 
 * [Microsoft Azure 存储空间简介]
-* [有关 Azure 存储帐户]
+* [关于 Azure 存储帐户]
 * Azure 存储帐户大小
   * [Azure 中的 Windows 存储帐户的大小]
   * [Azure 中的 Linux 存储帐户的大小]
@@ -114,11 +113,11 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 <!-- URL List -->
 
-[Microsoft Azure 存储简介]: /azure/storage/storage-introduction
-[有关 Azure 存储帐户]: /azure/storage/storage-create-storage-account
+[Microsoft Azure 存储空间简介]: /azure/storage/storage-introduction
+[关于 Azure 存储帐户]: /azure/storage/storage-create-storage-account
 [Azure 存储复制]: /azure/storage/storage-redundancy
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets
-[命名和引用容器、Blob 与元数据]: http://go.microsoft.com/fwlink/?LinkId=255555
+[命名和引用容器、Blob 和元数据]: http://go.microsoft.com/fwlink/?LinkId=255555
 
 [Azure 中的 Windows 存储帐户的大小]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Azure 中的 Linux 存储帐户的大小]: /azure/virtual-machines/virtual-machines-linux-sizes
