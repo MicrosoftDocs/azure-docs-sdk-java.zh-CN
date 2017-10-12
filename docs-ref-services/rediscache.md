@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: redis-cache
-ms.openlocfilehash: 2bba290e16cac638685aa91b435876433fc1ea91
-ms.sourcegitcommit: ae39830d5a54fedceac78d8df1718e77741e03fa
+ms.openlocfilehash: 6d436c49124fd0a406486e0c7bac4d1605de5d32
+ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="redis-cache-libraries-for-java"></a>用于 Java 的 Redis 缓存库
 
@@ -59,7 +59,7 @@ JedisShardInfo shardInfo = new JedisShardInfo("<name>.redis.cache.windows.net", 
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-mgmt-redis</artifactId>
-    <version>1.2.1</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 

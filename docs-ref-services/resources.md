@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: data-lake-store
-ms.openlocfilehash: 1e3ec9080da70477cd7d7bd966769c8d396abe9e
-ms.sourcegitcommit: ae39830d5a54fedceac78d8df1718e77741e03fa
+ms.openlocfilehash: 4b73f6b03258e7d99bcca235cc2728d5e085b32a
+ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="azure-resource-manager-libraries-for-java"></a>用于 Java 的 Azure 资源管理器库
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 09/09/2017
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-mgmt-resources</artifactId>
-    <version>1.2.1</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
