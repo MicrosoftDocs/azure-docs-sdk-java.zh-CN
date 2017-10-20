@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: data-lake-store
-ms.openlocfilehash: 19d580a8700aad36897b473ff96f1b05bb3f83c7
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: 70cfe1417d460172df0cb753d2b719a635978ca8
+ms.sourcegitcommit: 4b63ecd2c92a9115dfae018618e4e4046b061b3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 10/14/2017
 ---
 # <a name="azure-data-lake-analytics-libraries-for-java"></a>用于 Java 的 Azure Data Lake Analytics 库
 
@@ -71,6 +71,6 @@ JobInformation jobInfo = adlaJobClient.getJobOperations().create(accountName, jo
 
 [使用 Java SDK 管理 Azure Data Lake Analytics][1] 
 
-[1]: https://docs.microsoft.com/en-us/azure/data-lake-analytics/data-lake-analytics-get-started-java-sdk
+[1]: https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-get-started-java-sdk
 
 查看 Azure Data Lake Analytics 示例的[完整列表](https://azure.microsoft.com/resources/samples/?platform=java&term=analytics)。
