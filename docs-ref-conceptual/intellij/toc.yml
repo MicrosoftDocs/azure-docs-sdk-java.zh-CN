@@ -4,7 +4,7 @@
     - name: 安装
       href: azure-toolkit-for-intellij-installation.md
     - name: 入门
-      href: /azure/app-service-web/app-service-web-intellij-create-hello-world-web-app
+      href: azure-toolkit-for-intellij-create-hello-world-web-app.md
       maintainContext: true
     - name: 教程
       items:
@@ -27,4 +27,4 @@
             - name: Azure Redis 缓存
               href: azure-toolkit-for-intellij-managing-redis-caches-using-azure-explorer.md
     - name: 发行说明
-      href: azure-toolkit-for-intellij-whats-new.md
+      href: 'https://github.com/Microsoft/azure-tools-for-java/releases'

@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 10/19/2017
 ms.author: robmcm
-ms.openlocfilehash: 03767edf0b879e469dc6d47444fb862e6654d2f1
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: 497aba02f55383bf0b32461752d6681867cdfac8
+ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="installing-the-azure-toolkit-for-intellij"></a>安装 Azure Toolkit for IntelliJ
 借助 Azure Toolkit for IntelliJ 提供的模板和功能，可以轻松使用 IntelliJ IDEA 开发环境来创建、开发、测试和部署 Azure 应用程序。 Azure Toolkit for IntelliJ 是一个开放源代码项目，其源代码可从 GitHub 上项目站点的 MIT 许可证下获取，URL 为：
@@ -43,7 +43,7 @@ ms.lasthandoff: 09/13/2017
 
 1. 在“浏览存储库”对话框的搜索框中键入“Azure”。 突出显示“用于 IntelliJ 的 Azure 工具包”，并单击“安装”。
    
-   ![搜索用于 IntelliJ 的 Azure 工具包][03]
+   ![搜索 Azure Toolkit for IntelliJ][03]
    
    IntelliJ IDEA 会在一个对话框中显示安装进度。
    

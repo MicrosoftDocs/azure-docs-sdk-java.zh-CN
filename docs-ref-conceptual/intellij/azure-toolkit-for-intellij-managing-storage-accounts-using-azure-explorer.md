@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 10/19/2017
 ms.author: robmcm
-ms.openlocfilehash: 44d2ade8a0900b60222f06dfb9f93c1df17228c8
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: cb79f4c10cdaf5597106590b7aaf36dec266391f
+ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
 
@@ -56,7 +56,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    * **资源组**：指定虚拟机的资源组。 选择以下选项之一：
       * **新建**：指定要创建新的资源组。
-      * **使用现有**：指定将从与 Azure 帐户关联的资源组列表中进行选择。
+      * **使用现有**：指定将从与你的 Azure 帐户关联的资源组列表中进行选择。
 
 4. 指定了上述所有选项后，单击“确定”。
 
@@ -100,7 +100,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
 有关 Azure 存储帐户大小和定价的详细信息，请参阅以下资源：
 
-* [Microsoft Azure 存储空间简介]
+* [Microsoft Azure 存储简介]
 * [关于 Azure 存储帐户]
 * Azure 存储帐户大小
   * [Azure 中的 Windows 存储帐户的大小]
@@ -114,7 +114,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 <!-- URL List -->
 
 [用于 IntelliJ 的 Azure 工具包的登录说明]: ./azure-toolkit-for-intellij-sign-in-instructions.md
-[Microsoft Azure 存储空间简介]: /azure/storage/storage-introduction
+[Microsoft Azure 存储简介]: /azure/storage/storage-introduction
 [关于 Azure 存储帐户]: /azure/storage/storage-create-storage-account
 [Azure 存储复制]: /azure/storage/storage-redundancy
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets
