@@ -1,7 +1,7 @@
 ## <a name="prerequisites"></a>先决条件
-使用适用于 IntelliJ 的 Azure 工具包需要以下软件组件：
+若要完成文章中的步骤，需要安装用于 IntelliJ 的 Azure 工具包，该工具包需要以下软件组件：
 
-* IntelliJ IDEA 旗舰版，可从 [JetBrains 网站](https://www.jetbrains.com/idea/download/)下载。
+* IntelliJ IDEA 旗舰版或社区版，可从 [JetBrains 网站](https://www.jetbrains.com/idea/download/)下载。
 
 * Java 开发人员工具包 (JDK) 1.8 或更高版本。
 

@@ -1,5 +1,5 @@
 ## <a name="prerequisites"></a>先决条件
-使用适用于 Eclipse 的 Azure 工具包需要以下软件组件：
+若要完成文章中的步骤，需要安装用于 Eclipse 的 Azure 工具包，该工具包需要以下软件组件：
 
 * Eclipse IDE for Java EE Developers、Mars 或更高版本。 可以从 [Eclipse 网站](http://www.eclipse.org/downloads/)下载它。
 
