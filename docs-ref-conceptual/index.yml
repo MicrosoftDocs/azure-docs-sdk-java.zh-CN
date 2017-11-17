@@ -64,9 +64,9 @@ sections:
             title: 创建 Java 无服务器函数
             href: 'https://docs.microsoft.com/azure/azure-functions/functions-create-first-java-maven'
           - image:
-              src: 'https://docs.microsoft.com/azure/media/index/MySQL.svg'
-            title: 连接到 Azure Database for MySQL
-            href: 'https://docs.microsoft.com/azure/mysql/connect-java'
+              src: 'https://docs.microsoft.com/javascript/azure/media/k8s_logo.svg'
+            title: 部署到 Kubernetes
+            href: 'https://docs.microsoft.com/azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-kubernetes'
           - image:
               src: 'https://docs.microsoft.com/azure/media/index/CosmosDB_rgb_ui_lighttheme.svg'
             title: 使用 Cosmos DB 构建 Web 应用
@@ -77,7 +77,7 @@ sections:
             href: 'https://docs.microsoft.com/azure/jenkins/java-deploy-webapp-tutorial'
   - title: 示例
     items:
-      - type: listgit check
+      - type: list
         style: unordered
         items:
           - html: '<a href="https://github.com/Azure-Samples/mysql-spring-boot-todo">使用 Spring Boot 和 MySQL 创建 Web 应用</a>'
