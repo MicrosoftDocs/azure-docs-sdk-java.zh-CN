@@ -1,0 +1,38 @@
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/
+  items:
+    - name: 面向 Java 开发人员的 Azure
+      tocHref: /java/
+      topicHref: /java/azure/
+      items:
+        - name: 安装
+          tocHref: /java/azure/java-sdk-azure-install
+          topicHref: /java/azure/java-sdk-azure-install
+        - name: 入门
+          tocHref: /java/azure/java-sdk-azure-get-started
+          topicHref: /java/azure/java-sdk-azure-get-started
+        - name: 关键概念
+          tocHref: /java/azure/java-sdk-azure-concepts
+          topicHref: /java/azure/java-sdk-azure-concepts
+        - name: 身份验证
+          tocHref: /java/azure/java-sdk-azure-authenticate
+          topicHref: /java/azure/java-sdk-azure-authenticate
+          items:
+            - name: 创建服务主体
+              tocHref: /cli/azure/create-an-azure-service-principal-azure-cli
+              topicHref: /cli/azure/create-an-azure-service-principal-azure-cli
+        - name: 发行说明
+          tocHref: /java/azure/java-sdk-azure-release-notes
+          topicHref: /java/azure/java-sdk-azure-release-notes
+    - name: 代码示例
+      items:
+        - name: 虚拟机
+          tocHref: /java/azure/java-sdk-azure-virtual-machine-samples
+          topicHref: /java/azure/java-sdk-azure-virtual-machine-samples
+        - name: Web 应用
+          tocHref: /java/azure/java-sdk-azure-web-apps-samples
+          topicHref: /java/azure/java-sdk-azure-web-apps-samples
+        - name: SQL 数据库
+          tocHref: /java/azure/java-sdk-azure-sql-database-samples
+          topicHref: /java/azure/java-sdk-azure-sql-database-samples
