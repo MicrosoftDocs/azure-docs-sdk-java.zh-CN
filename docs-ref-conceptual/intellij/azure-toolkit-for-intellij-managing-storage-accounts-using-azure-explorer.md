@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 10/19/2017
+ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: cb79f4c10cdaf5597106590b7aaf36dec266391f
-ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
+ms.openlocfilehash: f37ae653286af1e36d730bda713527caa7504ac0
+ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
 
@@ -109,7 +109,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
   * [Windows 存储帐户定价]
   * [Linux 存储帐户定价]
 
-[!INCLUDE [azure-toolkit-additional-resources](../includes/azure-toolkit-additional-resources.md)]
+[!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
 <!-- URL List -->
 

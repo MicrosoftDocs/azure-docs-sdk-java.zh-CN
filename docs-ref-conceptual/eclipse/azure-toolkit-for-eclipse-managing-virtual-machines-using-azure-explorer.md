@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: f7526a49e8ba6432d6bf6af54a725a285a61fc07
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: 41bb9b8009c0cbae01fec42c56d6a74d84cc166b
+ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理虚拟机
 
@@ -151,7 +151,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
   * [Windows 虚拟机定价]
   * [Linux 虚拟机定价]
 
-[!INCLUDE [azure-toolkit-additional-resources](../includes/azure-toolkit-additional-resources.md)]
+[!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
 <!-- URL List -->
 

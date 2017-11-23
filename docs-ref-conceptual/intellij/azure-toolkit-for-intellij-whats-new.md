@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 10/19/2017
+ms.date: 11/01/2017
 ms.author: robmcm;asirveda;martinsawicki
-ms.openlocfilehash: 3e3d22cc5720346e31a096adfd935b2712aac4e9
-ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
+ms.openlocfilehash: 40d93306b840736bd7eb860933cdbfe03c82691c
+ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-intellij"></a>用于 IntelliJ 的 Azure 工具包中的新增功能
 
@@ -74,7 +74,7 @@ Azure Toolkit for IntelliJ - 2016 年 4 月版包含以下增强功能：
 
 ## <a name="next-steps"></a>后续步骤
 
-[!INCLUDE [azure-toolkit-additional-resources](../includes/azure-toolkit-additional-resources.md)]
+[!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
 <!-- URL List -->
 

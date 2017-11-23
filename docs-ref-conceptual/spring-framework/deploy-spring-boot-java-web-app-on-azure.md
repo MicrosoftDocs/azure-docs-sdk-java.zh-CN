@@ -13,13 +13,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 10/11/2017
+ms.date: 11/01/2017
 ms.author: asirveda;robmcm
-ms.openlocfilehash: 5a0f13e1883c1de1adb72c450c55dcb38b1520b9
-ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
+ms.openlocfilehash: 7a4234aefd4eb33f80c1978fb84721f2dbcb2e4f
+ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="deploy-a-spring-boot-application-to-the-azure-app-service"></a>将 Spring Boot 应用程序部署到 Azure 应用服务
 

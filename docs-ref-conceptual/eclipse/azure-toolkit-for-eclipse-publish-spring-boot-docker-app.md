@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 6894c319a74c3dba6972f2c78b597cd87b49cc66
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: a2aa6b0aa0689893143073be94539345e229e5f2
+ms.sourcegitcommit: 062e07cbd42cda74f02c82b933ce90da646a50a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>使用适用于 Eclipse 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 09/13/2017
 
 ### <a name="import-the-public-repository"></a>导入公共存储库
 
-以下步骤将指导你完成使用 IntelliJ 将 Spring Boot Docker 存储库克隆到本地计算机的步骤。 如果要使用命令行，请参阅[在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上][Deploy Spring Boot on Linux in ACS]。
+以下步骤将指导你完成使用 IntelliJ 将 Spring Boot Docker 存储库克隆到本地计算机的步骤。 如果要使用命令行，请参阅[在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上][Deploy Spring Boot on Linux in AKS]。
 
 1. 打开 Eclipse。
 
@@ -204,12 +204,12 @@ Spring Boot Docker 存储库包含一个已完成的 Maven 项目，可用于本
 
 有关 Docker 的其他资源，请参阅官方 [Docker 网站]。
 
-[!INCLUDE [azure-toolkit-additional-resources](../includes/azure-toolkit-additional-resources.md)]
+[!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
 <!-- URL List -->
 
 [Azure Management Portal]: http://go.microsoft.com/fwlink/?LinkID=512959
-[Deploy Spring Boot on Linux in ACS]: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-linux
+[Deploy Spring Boot on Linux in AKS]: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-linux
 [Docker]: https://www.docker.com/
 [Publish Container with Azure Toolkit]: azure-toolkit-for-eclipse-publish-as-docker-container.md
 [Spring Boot]: http://projects.spring.io/spring-boot/

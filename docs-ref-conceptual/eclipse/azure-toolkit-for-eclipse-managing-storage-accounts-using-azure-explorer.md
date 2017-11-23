@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: da08893abb6dc57083927ac3a90341f05dd9cfa9
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: a6127a43509766101e22ac4c21e66344fd231138
+ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
 
@@ -100,7 +100,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 有关 Azure 存储帐户大小和定价的详细信息，请参阅以下资源：
 
-* [Microsoft Azure 存储空间简介]
+* [Microsoft Azure 存储简介]
 * [关于 Azure 存储帐户]
 * Azure 存储帐户大小
   * [Azure 中的 Windows 存储帐户的大小]
@@ -109,11 +109,11 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
   * [Windows 存储帐户定价]
   * [Linux 存储帐户定价]
 
-[!INCLUDE [azure-toolkit-additional-resources](../includes/azure-toolkit-additional-resources.md)]
+[!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
 <!-- URL List -->
 
-[Microsoft Azure 存储空间简介]: /azure/storage/storage-introduction
+[Microsoft Azure 存储简介]: /azure/storage/storage-introduction
 [关于 Azure 存储帐户]: /azure/storage/storage-create-storage-account
 [Azure 存储复制]: /azure/storage/storage-redundancy
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets
