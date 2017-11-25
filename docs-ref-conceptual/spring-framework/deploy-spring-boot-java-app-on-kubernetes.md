@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 10/11/2017
+ms.date: 11/01/2017
 ms.author: asirveda;robmcm
 ms.custom: mvc
-ms.openlocfilehash: 44c20e9084d53fa366137fc191726aaa4be177f2
-ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
+ms.openlocfilehash: 7f72a0eaeb932b400cd12a3ccc43706e890aebf6
+ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-container-service"></a>在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 10/24/2017
 
 [Kubernetes] 和 [Docker] 是开源解决方案，可帮助开发人员自动部署、扩展和管理在容器中运行的应用程序。
 
-本教程将指导用户将这两种常用的开源技术进行结合，从而将 Spring Boot 应用程序开发和部署到 Microsoft Azure。 具体而言，将使用 [Spring Boot]进行应用程序开发，使用 [Kubernetes]进行容器部署，然后使用 [Azure 容器服务 (ACS)] 托管你的应用程序。
+本教程将指导用户将这两种常用的开源技术进行结合，从而将 Spring Boot 应用程序开发和部署到 Microsoft Azure。 具体而言，将使用 [Spring Boot] 进行应用程序开发，使用 [Kubernetes] 进行容器部署，使用 [Azure 容器服务 (AKS)] 来托管应用程序。
 
 ### <a name="prerequisites"></a>先决条件
 
@@ -189,7 +189,7 @@ ms.lasthandoff: 10/24/2017
 >
 > `docker push wingtiptoysregistry.azurecr.io/gs-spring-boot-docker`
 
-## <a name="create-a-kubernetes-cluster-on-acs-using-the-azure-cli"></a>使用 Azure CLI 在 ACS 上创建 Kubernetes 群集
+## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>使用 Azure CLI 在 AKS 上创建 Kubernetes 群集
 
 1. 在 Azure 容器服务中创建 Kubernetes 群集。 以下命令在 wingtiptoys-kubernetes 资源组中创建 kubernetes 群集，将 wingtiptoys-containerservice 作为群集名称，wingtiptoys-kubernetes 作为 DNS 前缀：
    ```azurecli
@@ -326,7 +326,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 <!-- URL List -->
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
-[Azure 容器服务 (ACS)]: https://azure.microsoft.com/services/container-service/
+[Azure 容器服务 (AKS)]: https://azure.microsoft.com/services/container-service/
 [Azure Java 开发人员中心]: https://azure.microsoft.com/develop/java/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal

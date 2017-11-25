@@ -3,25 +3,25 @@
   items:
     - name: 入门
       items:
-        - name: 将 Spring Boot 应用程序部署到 Azure 应用服务
+        - name: 将 Spring Boot 应用部署到 Azure 应用服务
           href: deploy-spring-boot-java-web-app-on-azure.md
-        - name: 如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure
+        - name: 使用用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure
           href: deploy-spring-boot-java-app-with-maven-plugin.md
     - name: 教程
       items:
-        - name: 在 Azure 容器服务中将 Spring Boot 应用部署于 Kubernetes 上
+        - name: 在 Azure 容器服务中将 Spring Boot 应用部署于 Kubernetes
           href: deploy-spring-boot-java-app-on-kubernetes.md
-        - name: 在 Azure 容器服务中将 Spring Boot Web 应用部署于 Linux 上
+        - name: 在 Azure 容器服务中将 Spring Boot Web 应用部署于 Linux
           href: deploy-spring-boot-java-app-on-linux.md
         - name: 使用 Fabric8 Maven 插件部署 Spring Boot 应用
           href: deploy-spring-boot-java-app-using-fabric8-maven-plugin.md
     - name: 操作说明
       items:
-        - name: 如何配置 Spring Boot Initializer 应用，以使用 Redis 缓存
+        - name: 为 Spring Boot Initializer 应用配置 Redis 缓存
           href: configure-spring-boot-initializer-java-app-with-redis-cache.md
-        - name: 如何将 Spring Boot Starter 与 Azure Cosmos DB DocumentDB API 配合使用
+        - name: 将 Spring Boot Starter 与 Azure Cosmos DB 配合使用
           href: configure-spring-boot-starter-java-app-with-cosmos-db.md
-        - name: 如何使用适用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure
+        - name: 使用用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure
           href: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
-        - name: 如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
+        - name: 如何使用用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
           href: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md

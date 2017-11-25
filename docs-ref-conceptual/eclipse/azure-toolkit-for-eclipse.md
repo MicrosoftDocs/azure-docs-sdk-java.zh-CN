@@ -12,20 +12,20 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 10/19/2017
+ms.date: 11/01/2017
 ms.author: robmcm;asirveda
-ms.openlocfilehash: d3f91a7b501adfd9496991e955024298b637b90d
-ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
+ms.openlocfilehash: f94900ab5fa25a5d9dac19f665705b970db7c8b7
+ms.sourcegitcommit: 062e07cbd42cda74f02c82b933ce90da646a50a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="azure-toolkit-for-eclipse"></a>用于 Eclipse 的 Azure 工具包
-借助适用于 Eclipse 的 Azure 工具包提供的模板和功能，可利用 Eclipse 集成开发环境 (IDE) 轻松地创建、开发、测试和部署 Azure 应用程序。 它是一个开放源代码项目，其源代码可从[项目站点的 MIT 许可证](https://github.com/microsoft/azure-tools-for-java)下获取。
+借助适用于 Eclipse 的 Azure 工具包提供的模板和功能，可利用 Eclipse 集成开发环境 (IDE) 轻松地创建、开发、测试和部署 Azure 应用程序。
 
 > [!NOTE]
-> 另外还有 Azure Toolkit for IntelliJ IDE。 有关详细信息，请参阅[用于 IntelliJ 的 Azure 工具包](../intellij/azure-toolkit-for-intellij.md)。
 > 
+> 另外还有 Azure Toolkit for IntelliJ IDE。 有关详细信息，请参阅[用于 IntelliJ 的 Azure 工具包](../intellij/azure-toolkit-for-intellij.md)。
 > 
 
 ## <a name="get-started-with-the-azure-toolkit-for-eclipse"></a>适用于 Eclipse 的 Azure 工具包入门
@@ -67,7 +67,12 @@ ms.lasthandoff: 10/24/2017
 
 有关将 Java 与 Azure 配合使用的详细信息，请参阅 [Azure Java 开发人员中心](https://azure.microsoft.com/develop/java/)和[用于 Visual Studio Team Services 的 Java 工具](https://java.visualstudio.com/)。
 
-<!-- [!INCLUDE [azure-toolkit-additional-resources](../includes/azure-toolkit-additional-resources.md)] -->
+<!-- [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)] -->
+
+> [!NOTE]
+> 
+> 用于 Eclipse 的 Azure 工具包是一个开源项目，其源代码可从[项目站点的 MIT 许可证](https://github.com/microsoft/azure-tools-for-java)下获取。
+> 
 
 <!-- URL List -->
 

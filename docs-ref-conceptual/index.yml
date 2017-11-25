@@ -37,15 +37,15 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
             title: 代码示例
           - href: java-azure-tools.md
-            html: <p>开发人员工具</p>
+            html: <p>IDE 插件 &amp; 工具</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
-            title: IDE 插件 &amp; 工具
+            title: IntelliJ、Maven、Eclipse 和 VS Code 插件
           - href: java-sdk-azure-install.md
-            html: <p>用于 Java 的 Azure 库</p>
+            html: <p>API 参考</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
-            title: API 参考
+            title: 用于 Java 的 Azure 库
   - title: 5 分钟快速入门
     items:
       - type: paragraph
