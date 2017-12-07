@@ -2,9 +2,7 @@
 若要完成文章中的步骤，需要安装用于 Eclipse 的 Azure 工具包，该工具包需要以下软件组件：
 
 * Eclipse IDE for Java EE Developers、Mars 或更高版本。 可以从 [Eclipse 网站](http://www.eclipse.org/downloads/)下载它。
-
 * Java 开发人员工具包 (JDK) 1.8 或更高版本。
-
 * 操作系统。 适用于 Eclipse 的 Azure 工具包已在以下操作系统上通过测试：
   
   * Windows 10、Windows 8.1、Windows 8 和 Windows 7

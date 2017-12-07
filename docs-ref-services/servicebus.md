@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: service-bus
-ms.openlocfilehash: f7c2b1fd35fbb9dbdc782577c3464b7a38977254
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 6fccbc76a3600e2bbe43e4332c6146d2be81b6c9
+ms.sourcegitcommit: fcf1189ede712ae30f8c7626bde50c9b8bb561bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="service-bus-libraries-for-java"></a>用于 Java 的服务总线库
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 10/09/2017
 
 服务总线高级版是完全托管型的产品，它采用以容量为导向的简单定价模型为每个租户保留专用容量实现可预测的性能，同时与商用本地中转站相比，总体成本极低。 对于许多客户而言，服务总线高级版可以取代眼下的专用本地消息传送群集，即使附加的工作负荷不在云中运行。 
 
-[在消息传送文档部分中](https://docs.microsoft.com/en-us/azure/service-bus-messaging/)详细了解服务总线的概念 
+[在消息传送文档部分中](https://docs.microsoft.com/azure/service-bus-messaging/)详细了解服务总线的概念 
 
 对于 Java 开发人员而言，服务总线提供 Microsoft 支持的本机 API，服务总线还能与符合 AMQP 1.0 规范的库（例如 Apache Qpid Proton 的 JMS 提供程序）配合使用。
 

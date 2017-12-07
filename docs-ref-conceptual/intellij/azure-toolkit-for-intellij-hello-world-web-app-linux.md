@@ -14,11 +14,11 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 2c0bfc581b5bb033f301d5a1e632377442821392
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: 421241b12d8bd9027d4bef8564e1c1ab5a01993a
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="run-a-hello-world-web-app-in-a-linux-container-by-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包运行 Hello World Web 应用
 
@@ -141,7 +141,7 @@ ms.lasthandoff: 11/18/2017
 
 [Azure 门户]: https://portal.azure.com/
 [使用 Azure 门户创建专用 Docker 容器注册表]: /azure/container-registry/container-registry-get-started-portal
-[Azure Java Developer Center]: https://azure.microsoft.com/develop/java/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Create Docker Registry using Azure CLI]: /azure/container-registry/container-registry-get-started-azure-cli
 
