@@ -11,37 +11,37 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: service-bus
-ms.openlocfilehash: f7c2b1fd35fbb9dbdc782577c3464b7a38977254
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 6fccbc76a3600e2bbe43e4332c6146d2be81b6c9
+ms.sourcegitcommit: fcf1189ede712ae30f8c7626bde50c9b8bb561bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 12/01/2017
 ---
-# <a name="service-bus-libraries-for-java"></a><span data-ttu-id="7aae1-104">用于 Java 的服务总线库</span><span class="sxs-lookup"><span data-stu-id="7aae1-104">Service Bus libraries for Java</span></span>
+# <a name="service-bus-libraries-for-java"></a><span data-ttu-id="16780-104">用于 Java 的服务总线库</span><span class="sxs-lookup"><span data-stu-id="16780-104">Service Bus libraries for Java</span></span>
 
-## <a name="overview"></a><span data-ttu-id="7aae1-105">概述</span><span class="sxs-lookup"><span data-stu-id="7aae1-105">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="16780-105">概述</span><span class="sxs-lookup"><span data-stu-id="16780-105">Overview</span></span>
 
-<span data-ttu-id="7aae1-106">服务总线是一个企业级的事务消息传送平台服务，提供高度可靠的队列和发布/订阅主题，并具有依序传送、会话、分区、计划、复杂订阅以及工作流和事务处理等高级功能。</span><span class="sxs-lookup"><span data-stu-id="7aae1-106">Service Bus is an enterprise-class, transactional messaging platform service that provides highly reliable queues and publish/subscribe topics with deep feature capabilities such as ordered delivery, sessions, partitioning, scheduling, complex subscriptions, as well as workflow and transaction handling.</span></span>
+<span data-ttu-id="16780-106">服务总线是一个企业级的事务消息传送平台服务，提供高度可靠的队列和发布/订阅主题，并具有依序传送、会话、分区、计划、复杂订阅以及工作流和事务处理等高级功能。</span><span class="sxs-lookup"><span data-stu-id="16780-106">Service Bus is an enterprise-class, transactional messaging platform service that provides highly reliable queues and publish/subscribe topics with deep feature capabilities such as ordered delivery, sessions, partitioning, scheduling, complex subscriptions, as well as workflow and transaction handling.</span></span>
 
-<span data-ttu-id="7aae1-107">服务总线的功能与传统的高端本地消息中转站相当，并且往往优于后者。</span><span class="sxs-lookup"><span data-stu-id="7aae1-107">The Service Bus feature capabilities are comparable and often exceed those of high-end, on-premises legacy message brokers.</span></span> <span data-ttu-id="7aae1-108">可通过 AMQP 1.0、HTTPS 等基于标准的协议来使用服务总线功能，所有协议手势均有完备的阐述，从而可以实现广泛的互操作性。</span><span class="sxs-lookup"><span data-stu-id="7aae1-108">The Service Bus features are available via standards-based protocols like AMQP 1.0 and HTTPS and all protocol gestures are fully documented, allowing for broad interoperability.</span></span> 
+<span data-ttu-id="16780-107">服务总线的功能与传统的高端本地消息中转站相当，并且往往优于后者。</span><span class="sxs-lookup"><span data-stu-id="16780-107">The Service Bus feature capabilities are comparable and often exceed those of high-end, on-premises legacy message brokers.</span></span> <span data-ttu-id="16780-108">可通过 AMQP 1.0、HTTPS 等基于标准的协议来使用服务总线功能，所有协议手势均有完备的阐述，从而可以实现广泛的互操作性。</span><span class="sxs-lookup"><span data-stu-id="16780-108">The Service Bus features are available via standards-based protocols like AMQP 1.0 and HTTPS and all protocol gestures are fully documented, allowing for broad interoperability.</span></span> 
 
-<span data-ttu-id="7aae1-109">服务总线高级版注重高度可用和可靠的持久消息传送，即使在大规模的本地数据中心部署中也能提供有竞争力的吞吐量性能，同时可以消除硬件选用和采购流程、部署规划和执行，以及漫长的性能优化会议。</span><span class="sxs-lookup"><span data-stu-id="7aae1-109">Focusing on highly available and reliable durable messaging, the Service Bus Premium provides competitive throughput performance even with substantial local datacenter deployments, but without hardware selection and acquisition processes, deployment planning and execution, and endless performance optimization sessions.</span></span> 
+<span data-ttu-id="16780-109">服务总线高级版注重高度可用和可靠的持久消息传送，即使在大规模的本地数据中心部署中也能提供有竞争力的吞吐量性能，同时可以消除硬件选用和采购流程、部署规划和执行，以及漫长的性能优化会议。</span><span class="sxs-lookup"><span data-stu-id="16780-109">Focusing on highly available and reliable durable messaging, the Service Bus Premium provides competitive throughput performance even with substantial local datacenter deployments, but without hardware selection and acquisition processes, deployment planning and execution, and endless performance optimization sessions.</span></span> 
 
-<span data-ttu-id="7aae1-110">服务总线高级版是完全托管型的产品，它采用以容量为导向的简单定价模型为每个租户保留专用容量实现可预测的性能，同时与商用本地中转站相比，总体成本极低。</span><span class="sxs-lookup"><span data-stu-id="7aae1-110">Service Bus Premium is a fully managed offering with dedicated capacity reserved for each tenant that yields predictable performance with a simple, capacity-oriented pricing model and at extremely lower overall cost than commercial on-premises brokers.</span></span> <span data-ttu-id="7aae1-111">对于许多客户而言，服务总线高级版可以取代眼下的专用本地消息传送群集，即使附加的工作负荷不在云中运行。</span><span class="sxs-lookup"><span data-stu-id="7aae1-111">For many customers, Service Bus Premium can replace dedicated on-premises messaging clusters today, even if the attached workloads do not run in the cloud.</span></span> 
+<span data-ttu-id="16780-110">服务总线高级版是完全托管型的产品，它采用以容量为导向的简单定价模型为每个租户保留专用容量实现可预测的性能，同时与商用本地中转站相比，总体成本极低。</span><span class="sxs-lookup"><span data-stu-id="16780-110">Service Bus Premium is a fully managed offering with dedicated capacity reserved for each tenant that yields predictable performance with a simple, capacity-oriented pricing model and at extremely lower overall cost than commercial on-premises brokers.</span></span> <span data-ttu-id="16780-111">对于许多客户而言，服务总线高级版可以取代眼下的专用本地消息传送群集，即使附加的工作负荷不在云中运行。</span><span class="sxs-lookup"><span data-stu-id="16780-111">For many customers, Service Bus Premium can replace dedicated on-premises messaging clusters today, even if the attached workloads do not run in the cloud.</span></span> 
 
-<span data-ttu-id="7aae1-112">[在消息传送文档部分中](https://docs.microsoft.com/en-us/azure/service-bus-messaging/)详细了解服务总线的概念</span><span class="sxs-lookup"><span data-stu-id="7aae1-112">Learn more about Service Bus concepts [in the messaging documentation section](https://docs.microsoft.com/en-us/azure/service-bus-messaging/)</span></span> 
+<span data-ttu-id="16780-112">[在消息传送文档部分中](https://docs.microsoft.com/azure/service-bus-messaging/)详细了解服务总线的概念</span><span class="sxs-lookup"><span data-stu-id="16780-112">Learn more about Service Bus concepts [in the messaging documentation section](https://docs.microsoft.com/azure/service-bus-messaging/)</span></span> 
 
-<span data-ttu-id="7aae1-113">对于 Java 开发人员而言，服务总线提供 Microsoft 支持的本机 API，服务总线还能与符合 AMQP 1.0 规范的库（例如 Apache Qpid Proton 的 JMS 提供程序）配合使用。</span><span class="sxs-lookup"><span data-stu-id="7aae1-113">For Java developers, Service Bus provides a Microsoft supported native API and Service Bus can also be used with AMQP 1.0 compliant libraries such as Apache Qpid Proton's JMS provider.</span></span>
+<span data-ttu-id="16780-113">对于 Java 开发人员而言，服务总线提供 Microsoft 支持的本机 API，服务总线还能与符合 AMQP 1.0 规范的库（例如 Apache Qpid Proton 的 JMS 提供程序）配合使用。</span><span class="sxs-lookup"><span data-stu-id="16780-113">For Java developers, Service Bus provides a Microsoft supported native API and Service Bus can also be used with AMQP 1.0 compliant libraries such as Apache Qpid Proton's JMS provider.</span></span>
 
-<span data-ttu-id="7aae1-114">[GitHub 上的源代码表单](https://github.com/azure/azure-service-bus-java)中提供了正式的服务总线客户端，[Maven Central 上提供了](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-servicebus%22)二进制文件和打包的源代码。</span><span class="sxs-lookup"><span data-stu-id="7aae1-114">The official Service Bus client is available in [source code form on GitHub](https://github.com/azure/azure-service-bus-java) and binaries and packaged sources [are available on Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-servicebus%22).</span></span> 
-
-
-## <a name="client-library"></a><span data-ttu-id="7aae1-115">客户端库</span><span class="sxs-lookup"><span data-stu-id="7aae1-115">Client library</span></span>
+<span data-ttu-id="16780-114">[GitHub 上的源代码表单](https://github.com/azure/azure-service-bus-java)中提供了正式的服务总线客户端，[Maven Central 上提供了](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-servicebus%22)二进制文件和打包的源代码。</span><span class="sxs-lookup"><span data-stu-id="16780-114">The official Service Bus client is available in [source code form on GitHub](https://github.com/azure/azure-service-bus-java) and binaries and packaged sources [are available on Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-servicebus%22).</span></span> 
 
 
-<span data-ttu-id="7aae1-116">向 Maven 项目的 `pom.xml` 文件中添加依赖项，以便在自己的项目中使用库。</span><span class="sxs-lookup"><span data-stu-id="7aae1-116">Add a dependency to your Maven project's `pom.xml` file to use the library in your own project.</span></span> <span data-ttu-id="7aae1-117">根据需要指定版本。</span><span class="sxs-lookup"><span data-stu-id="7aae1-117">Specify the version as desired.</span></span>
+## <a name="client-library"></a><span data-ttu-id="16780-115">客户端库</span><span class="sxs-lookup"><span data-stu-id="16780-115">Client library</span></span>
 
-<span data-ttu-id="7aae1-118">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。</span><span class="sxs-lookup"><span data-stu-id="7aae1-118">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>   
+
+<span data-ttu-id="16780-116">向 Maven 项目的 `pom.xml` 文件中添加依赖项，以便在自己的项目中使用库。</span><span class="sxs-lookup"><span data-stu-id="16780-116">Add a dependency to your Maven project's `pom.xml` file to use the library in your own project.</span></span> <span data-ttu-id="16780-117">根据需要指定版本。</span><span class="sxs-lookup"><span data-stu-id="16780-117">Specify the version as desired.</span></span>
+
+<span data-ttu-id="16780-118">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。</span><span class="sxs-lookup"><span data-stu-id="16780-118">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>   
 
 ```XML
 <dependency>
@@ -51,9 +51,9 @@ ms.lasthandoff: 10/09/2017
 </dependency>
 ```
 
-## <a name="examples"></a><span data-ttu-id="7aae1-119">示例</span><span class="sxs-lookup"><span data-stu-id="7aae1-119">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="16780-119">示例</span><span class="sxs-lookup"><span data-stu-id="16780-119">Examples</span></span>
 
-<span data-ttu-id="7aae1-120">[示例代码存储库](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/)包含有关如何处理来自服务总线的 [QueueClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithQueueClient.java)、[TopicClient 和 SubscriptionClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithTopicSubscriptionClient.java) 以及 [MessageSender 和MessageReceiver](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/SendReceiveWithMessageSenderReceiver.java) 消息的示例。</span><span class="sxs-lookup"><span data-stu-id="7aae1-120">The [sample code repository](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/) contains samples for how to [QueueClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithQueueClient.java) and [TopicClient and SubscriptionClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithTopicSubscriptionClient.java) and [MessageSender and MessageReceiver](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/SendReceiveWithMessageSenderReceiver.java) messages from Service Bus.</span></span>
+<span data-ttu-id="16780-120">[示例代码存储库](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/)包含有关如何处理来自服务总线的 [QueueClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithQueueClient.java)、[TopicClient 和 SubscriptionClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithTopicSubscriptionClient.java) 以及 [MessageSender 和MessageReceiver](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/SendReceiveWithMessageSenderReceiver.java) 消息的示例。</span><span class="sxs-lookup"><span data-stu-id="16780-120">The [sample code repository](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/) contains samples for how to [QueueClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithQueueClient.java) and [TopicClient and SubscriptionClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithTopicSubscriptionClient.java) and [MessageSender and MessageReceiver](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/SendReceiveWithMessageSenderReceiver.java) messages from Service Bus.</span></span>
 
 
 ```java
@@ -116,13 +116,13 @@ public class BasicSendReceiveWithQueueClient {
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="7aae1-121">了解客户端 API</span><span class="sxs-lookup"><span data-stu-id="7aae1-121">Explore the Client APIs</span></span>](/java/api/overview/azure/servicebus/clientlibrary)
+> [<span data-ttu-id="16780-121">了解客户端 API</span><span class="sxs-lookup"><span data-stu-id="16780-121">Explore the Client APIs</span></span>](/java/api/overview/azure/servicebus/clientlibrary)
 
-## <a name="management-api"></a><span data-ttu-id="7aae1-122">管理 API</span><span class="sxs-lookup"><span data-stu-id="7aae1-122">Management API</span></span>
+## <a name="management-api"></a><span data-ttu-id="16780-122">管理 API</span><span class="sxs-lookup"><span data-stu-id="16780-122">Management API</span></span>
 
-<span data-ttu-id="7aae1-123">使用管理 API 创建和管理命名空间、主题、队列与订阅。</span><span class="sxs-lookup"><span data-stu-id="7aae1-123">Create and manage namespaces, topics, queues, and subscriptions with the management API.</span></span>
+<span data-ttu-id="16780-123">使用管理 API 创建和管理命名空间、主题、队列与订阅。</span><span class="sxs-lookup"><span data-stu-id="16780-123">Create and manage namespaces, topics, queues, and subscriptions with the management API.</span></span>
 
-<span data-ttu-id="7aae1-124">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。</span><span class="sxs-lookup"><span data-stu-id="7aae1-124">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>  
+<span data-ttu-id="16780-124">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。</span><span class="sxs-lookup"><span data-stu-id="16780-124">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -133,13 +133,13 @@ public class BasicSendReceiveWithQueueClient {
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="7aae1-125">了解管理 API</span><span class="sxs-lookup"><span data-stu-id="7aae1-125">Explore the Management APIs</span></span>](/java/api/overview/azure/servicebus/managementapi)
+> [<span data-ttu-id="16780-125">了解管理 API</span><span class="sxs-lookup"><span data-stu-id="16780-125">Explore the Management APIs</span></span>](/java/api/overview/azure/servicebus/managementapi)
 
 
-## <a name="examples"></a><span data-ttu-id="7aae1-126">示例</span><span class="sxs-lookup"><span data-stu-id="7aae1-126">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="16780-126">示例</span><span class="sxs-lookup"><span data-stu-id="16780-126">Examples</span></span>
 
-<span data-ttu-id="7aae1-127">[管理服务总线队列](https://github.com/Azure-Samples/service-bus-java-manage-queue-with-basic-features)
-[创建和订阅服务总线主题](https://github.com/Azure-Samples/service-bus-java-manage-publish-subscribe-with-basic-features)</span><span class="sxs-lookup"><span data-stu-id="7aae1-127">[Manage Service Bus queues](https://github.com/Azure-Samples/service-bus-java-manage-queue-with-basic-features)
+<span data-ttu-id="16780-127">[管理服务总线队列](https://github.com/Azure-Samples/service-bus-java-manage-queue-with-basic-features)
+[创建和订阅服务总线主题](https://github.com/Azure-Samples/service-bus-java-manage-publish-subscribe-with-basic-features)</span><span class="sxs-lookup"><span data-stu-id="16780-127">[Manage Service Bus queues](https://github.com/Azure-Samples/service-bus-java-manage-queue-with-basic-features)
 [Create and subscribe to Service Bus topics](https://github.com/Azure-Samples/service-bus-java-manage-publish-subscribe-with-basic-features)</span></span>
 
-<span data-ttu-id="7aae1-128">详细了解可在应用中使用的 [Azure 服务总线示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=bus)。</span><span class="sxs-lookup"><span data-stu-id="7aae1-128">Explore more [sample Java code for Azure Service Bus](https://azure.microsoft.com/resources/samples/?platform=java&term=bus) you can use in your apps.</span></span>
+<span data-ttu-id="16780-128">详细了解可在应用中使用的 [Azure 服务总线示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=bus)。</span><span class="sxs-lookup"><span data-stu-id="16780-128">Explore more [sample Java code for Azure Service Bus](https://azure.microsoft.com/resources/samples/?platform=java&term=bus) you can use in your apps.</span></span>
