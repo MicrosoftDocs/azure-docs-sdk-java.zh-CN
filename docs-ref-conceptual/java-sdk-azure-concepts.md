@@ -1,6 +1,6 @@
 ---
-title: "用于 Java 的 Azure 管理库用法概念和模式"
-description: 
+title: "面向 Java 开发人员的 Azure 管理库指南"
+description: "有关使用用于 Java 的 Java 管理库管理 Azure 中的云资源的模式和概念。"
 keywords: "Azure, Java, SDK, API, Maven, Gradle, 身份验证, active directory, 服务主体"
 author: rloutlaw
 ms.author: routlaw
@@ -12,13 +12,15 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
-ms.openlocfilehash: 052c4de1e8f9ff0ece5f36d1c3514bad8c04cfec
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: 8b52981ddfaadb7227cea4c7df014011196339cb
+ms.sourcegitcommit: 1f6a80e067a8bdbbb4b2da2e2145fda73d5fe65a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="azure-management-library-concepts"></a>Azure 管理库的概念
+# <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>有关使用用于 Java 的 Azure 库进行开发的模式和最佳做法 
+
+本文列出有关在项目中使用用于 Java 的 Azure 库时的一系列模式和最佳做法。 使用这些模式和指导原则进行开发可减少要维护的代码量，最可以在管理库的将来更新中更轻松地添加或配置其他资源。
 
 ## <a name="build-resources-through-a-fluent-interface"></a>通过 Fluent 界面生成资源
 
@@ -33,9 +35,9 @@ StorageAccount storage = azure.storageAccounts().define(storageAccountName)
 
 在操作方法链的过程中，IDE 会在 Fluent 对话中建议下一个要调用的方法。   
 
-![通过 Fluent 链进行的 IntelliJ GIF 命令完成](media/intelliJFluent.gif)
+![Fluent 链中 IntelliJ GIF 命令完成的 GIF](media/intelliJFluent.gif)
 
-只要 IDE 建议的方法对于所定义的 Azure 资源有用，就会链接这些方法。 如果链中缺少所需的方法，IDE 会在错误消息中突出显示该方法。
+只要 IDE 建议的方法对于正在定义的 Azure 资源合理，就可以将这些方法加入链中。 如果链中缺少所需的方法，IDE 会在错误消息中突出显示该方法。
 
 ## <a name="resource-collections"></a>资源集合
 
@@ -56,7 +58,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
 
 使用 `listByResourceGroup(String groupname)` 方法可将返回列表的范围限定为特定的 [Azure 资源组](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)。  
 
-可以像执行普通的 `List<T>` 一样搜索和循环访问返回的 `PagedList<T>` 集合：
+可以像操作普通的 `List<T>` 一样搜索和循环访问返回的 `PagedList<T>` 集合：
 
 ```java
 PagedList<VirtualMachine> vms = azure.virtualMachines().list();
@@ -75,20 +77,20 @@ for (VirtualMachine vm : vms) {
 
 ## <a name="actionable-verbs"></a>可操作的谓词
 
-名称中包含谓词的方法在 Azure 中立即执行。 这些方法以同步方式工作，在完成之前会阻塞当前线程中的执行。 
+名称中包含谓词的方法在 Azure 中立即执行。 这些方法以同步方式工作，在完成之前会阻止当前线程中的执行。 
 
 | Verb   |  示例用法 |
 |--------|---------------|
 | create | `azure.virtualMachines().create(listOfVMCreatables)` |
 | apply  | `virtualMachineScaleSet.update().withCapacity(6).apply()` |
-| 删除 | `azure.disks().deleteById(id)` | 
+| delete | `azure.disks().deleteById(id)` | 
 | list   | `azure.sqlServers().list()` | 
 | get    | `VirtualMachine vm  = azure.virtualMachines().getByResourceGroup(group, vmName)` |
 
 >[!NOTE]
-> `define()` 和 `update()` 是谓词，但除非后接 `create()` 或 `apply()`，否则不会阻塞。
+> `define()` 和 `update()` 是谓词，但除非后接 `create()` 或 `apply()`，否则不会阻止执行。
  
-其中某些方法的异步版本使用[反应式扩展](https://github.com/ReactiveX/RxJava)连同 `Async` 后缀一起存在。 
+其中某些方法存在使用 [Reactive Extensions](https://github.com/ReactiveX/RxJava) 获得的异步版本，异步版本带有 `Async` 后缀。 
 
 某些对象的其他方法会更改 Azure 中资源的状态。 例如，`VirtualMachine` 上的 `restart()`。
 
@@ -96,7 +98,7 @@ for (VirtualMachine vm : vms) {
 VirtualMachine vmToRestart = azure.getVirtualMachines().getById(id);
 vmToRestart.restart();
 ```
-这些方法并一定总有异步版本，在完成之前，会阻塞其线程中的执行。
+这些方法并不一定总有异步版本，在完成之前，会阻止其线程中的执行。
 
 <a name="Creatables"></a>
 

@@ -6,38 +6,58 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework, Spring Starter, Redis Cache
 ms.assetid: 
 ms.service: cache
 ms.workload: na
 ms.tgt_pltfrm: cache-redis
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: robmcm;zhijzhao;yidon
-ms.openlocfilehash: c5e9a9214762e014e463dd3277671fc56237d4a0
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: e46a90413321845cb94d72fff893e42aa2353491
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="how-to-configure-a-spring-boot-initializer-app-to-use-redis-cache"></a>如何配置 Spring Boot Initializer 应用，以使用 Redis 缓存
 
 ## <a name="overview"></a>概述
 
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，在 <https://github.com/spring-guides/> 网站中提供了几个 Spring Boot 包。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
-
-本文提供以下分步指导：使用 Azure 门户创建 Redis 缓存，使用 Spring Initializr 创建自定义应用程序，然后创建使用 Redis 缓存存储并检索数据的 Java web 应用程序。
+本文提供以下分步指导：使用 Azure 门户创建 Redis 缓存，使用 **[Spring Initializr]** 创建自定义应用程序，然后创建使用 Redis 缓存存储并检索数据的 Java web 应用程序。
 
 ## <a name="prerequisites"></a>先决条件
 
 为遵循本文介绍的步骤，需要以下先决条件：
 
 * Azure 订阅；若尚未拥有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册获取[免费 Azure 帐户]。
-
 * [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
-
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
+
+## <a name="create-a-custom-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序
+
+1. 浏览到 https://start.spring.io/<>。
+
+1. 指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。
+
+   ![Spring Initializr 的基本选项][SI01]
+
+   > [!NOTE]
+   >
+   > Spring Initializr 会使用“组”和“Artifact”名称创建包名称，例如：com.contoso.myazuredemo。
+   >
+
+1. 向下滚动到“Web”部分，选中“Web”框，然后向下滚动到“NoSQL”，选中“Redis”框，再滚动到页面底部，单击“生成项目”按钮。
+
+   ![Spring Initializr 的完整选项][SI02]
+
+1. 出现提示时，将项目下载到本地计算机中的路径。
+
+   ![下载自定义 Spring Boot 项目][SI03]
+
+1. 提取本地系统上的文件之后，自定义 Spring Boot 应用程序便可进行编辑。
+
+   ![自定义 Spring Boot 项目文件][SI04]
 
 ## <a name="create-a-redis-cache-on-azure"></a>在 Azure 上创建 Redis 缓存
 
@@ -71,31 +91,6 @@ ms.lasthandoff: 11/18/2017
 1. 显示包含缓存属性列表的页面后，单击“访问密匙”，然后复制缓存的访问密钥。
 
    ![Azure 门户][AZ05]
-
-## <a name="create-a-custom-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序
-
-1. 浏览到 https://start.spring.io/<>。
-
-1. 指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。
-
-   ![Spring Initializr 的基本选项][SI01]
-
-   > [!NOTE]
-   >
-   > Spring Initializr 会使用“组”和“Artifact”名称创建包名称，例如：com.contoso.myazuredemo。
-   >
-
-1. 向下滚动到“Web”部分，选中“Web”框，然后向下滚动到“NoSQL”，选中“Redis”框，再滚动到页面底部，单击“生成项目”按钮。
-
-   ![Spring Initializr 的完整选项][SI02]
-
-1. 出现提示时，将项目下载到本地计算机中的路径。
-
-   ![下载自定义 Spring Boot 项目][SI03]
-
-1. 提取本地系统上的文件之后，自定义 Spring Boot 应用程序便可进行编辑。
-
-   ![自定义 Spring Boot 项目文件][SI04]
 
 ## <a name="configure-your-custom-spring-boot-to-use-your-redis-cache"></a>配置自定义 Spring Boot 以使用 Redis 缓存
 
@@ -206,13 +201,15 @@ ms.lasthandoff: 11/18/2017
 
 * [在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序](deploy-spring-boot-java-app-on-kubernetes.md)
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]和[用于 Visual Studio Team Services 的 Java 工具]。
+有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
 
 若要深入了解如何在 Azure 上开始将 Redis 缓存用于 Java，请参阅[如何将 Azure Redis 缓存用于 Java][Redis Cache with Java]。
 
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，在 <https://github.com/spring-guides/> 网站中提供了几个 Spring Boot 包。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
+
 <!-- URL List -->
 
-[Azure Java 开发人员中心]: https://azure.microsoft.com/develop/java/
+[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
 [免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

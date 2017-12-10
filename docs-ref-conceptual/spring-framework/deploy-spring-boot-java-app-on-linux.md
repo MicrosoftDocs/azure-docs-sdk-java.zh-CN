@@ -6,29 +6,24 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework
 ms.assetid: 
 ms.service: container-service
 ms.workload: web
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: asirveda;robmcm
 ms.custom: mvc
-ms.openlocfilehash: 8f7b2cbf66c9ceda6f723a9c9d423d94586fc777
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: 65e127e43c457b0ff92478f002065bb9d928f270
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="deploy-a-spring-boot-application-on-linux-in-the-azure-container-service"></a>在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上
 
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。
-
-**[Docker]** 是一种开放源代码解决方案，可帮助开发人员自动部署、扩展和管理在容器中运行的应用程序。
-
-本教程介绍如何使用 Docker 在 [Azure 容器服务 (AKS)] 中开发 Spring Boot 应用程序并将其部署到 Linux 主机。
+本教程介绍如何使用 [Docker] 在 [Azure 容器服务 (AKS)] 中开发 [Spring Boot] 应用程序并将其部署到 Linux 主机。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -272,7 +267,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 * [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-web-app-on-azure.md)
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上](deploy-spring-boot-java-app-on-kubernetes.md)
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]和[用于 Visual Studio Team Services 的 Java 工具]。
+有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
 
 有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 入门]。
 
@@ -286,7 +281,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure 容器服务 (AKS)]: https://azure.microsoft.com/services/container-service/
-[Azure Java 开发人员中心]: https://azure.microsoft.com/develop/java/
+[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
 [Azure 门户]: https://portal.azure.com/
 [使用 Azure 门户创建专用 Docker 容器注册表]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image

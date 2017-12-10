@@ -6,26 +6,23 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework
 ms.assetid: 
 ms.service: multiple
 ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: asirveda;robmcm
-ms.openlocfilehash: 7a4234aefd4eb33f80c1978fb84721f2dbcb2e4f
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: b520cc80360f8162c929bb2cc88c24311a7e20f8
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="deploy-a-spring-boot-application-to-the-azure-app-service"></a>将 Spring Boot 应用程序部署到 Azure 应用服务
 
-[Spring Framework] 是一种开源解决方案，帮助 Java 开发者创建企业级应用程序，在该平台上构建的较常见的项目之一是 [Spring Boot]，它为创建独立的 Java 应用程序提供了一种简化的方法。
-
-本教程将介绍如何创建 Spring Boot 入门 Web 应用示例，以及如何将其部署到 [Azure 应用服务]。
+本教程将介绍如何创建 [Spring Boot] 入门 Web 应用示例，以及如何将其部署到 [Azure 应用服务]。
 
 ### <a name="prerequisites"></a>先决条件
 
@@ -199,7 +196,7 @@ ms.lasthandoff: 11/18/2017
 
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上](deploy-spring-boot-java-app-on-kubernetes.md)
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]和[用于 Visual Studio Team Services 的 Java 工具]。
+有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
 
 有关使用 FTP 将 Web 应用部署到 Azure 的其他信息，请参阅[使用 FTP/S 将应用部署到 Azure 应用服务]。
 
@@ -213,7 +210,7 @@ ms.lasthandoff: 11/18/2017
 
 [Azure 应用服务]: https://azure.microsoft.com/services/app-service/
 [Azure Container Service]: https://azure.microsoft.com/services/container-service/
-[Azure Java 开发人员中心]: https://azure.microsoft.com/develop/java/
+[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
 [Azure 门户]: https://portal.azure.com/
 [在 Azure 应用服务中配置 Web 应用]: /azure/app-service/web-sites-configure
 [使用 FTP/S 将应用部署到 Azure 应用服务]: https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp

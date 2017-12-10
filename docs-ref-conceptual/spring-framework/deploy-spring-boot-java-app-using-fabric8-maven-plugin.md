@@ -6,21 +6,19 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework, Maven
 ms.assetid: 
-ms.service: container-service
+ms.service: multiple
 ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: yuwzho;robmcm
-ms.custom: 
-ms.openlocfilehash: 6c0e0e233b44b2b54e869b443edf3a255e7fbfb4
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: 6e33c43d3fb4b63cff1f1c7c04cbf9523aa97770
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>使用 Fabric8 Maven 插件部署 Spring Boot 应用
 
@@ -511,7 +509,7 @@ ms.lasthandoff: 11/18/2017
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上](deploy-spring-boot-java-app-on-linux.md)
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上](deploy-spring-boot-java-app-on-kubernetes.md)
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]和[用于 Visual Studio Team Services 的 Java 工具]。
+有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
 
 有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 启动入门]。
 
@@ -525,7 +523,7 @@ ms.lasthandoff: 11/18/2017
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure 容器服务 (AKS)]: https://azure.microsoft.com/services/container-service/
-[Azure Java 开发人员中心]: https://azure.microsoft.com/develop/java/
+[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image

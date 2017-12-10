@@ -8,6 +8,6 @@
 
 若要详细了解如何将 Java 与 Azure 配合使用，请参阅以下链接： 
 
-* [Azure Java 开发人员中心](https://azure.microsoft.com/develop/java/) 
+* [面向 Java 开发人员的 Azure](https://docs.microsoft.com/java/azure/) 
 * [用于 Visual Studio Team Services 的 Java 工具](https://java.visualstudio.com/) 
 <!-- TODO: Add URLs for Java in VSCode here --> 

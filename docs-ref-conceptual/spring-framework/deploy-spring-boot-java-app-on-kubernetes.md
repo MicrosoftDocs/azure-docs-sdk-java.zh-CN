@@ -6,25 +6,22 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework, Kubernetes
 ms.assetid: 
 ms.service: multiple
 ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: asirveda;robmcm
 ms.custom: mvc
-ms.openlocfilehash: 7f72a0eaeb932b400cd12a3ccc43706e890aebf6
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: ee8d5fecc31df427645c1552e27996592eaf27af
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-container-service"></a>在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
-
-[Spring Framework] 是一种常用的开源框架，可帮助 Java 开发人员创建 Web、移动和 API 应用程序。 本教程使用通过 [Spring Boot] 创建的示例应用，其为使用 Spring 进行快速入门的惯例方法。
 
 [Kubernetes] 和 [Docker] 是开源解决方案，可帮助开发人员自动部署、扩展和管理在容器中运行的应用程序。
 
@@ -300,7 +297,7 @@ ms.lasthandoff: 11/18/2017
 * [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-web-app-on-azure.md)
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上](deploy-spring-boot-java-app-on-linux.md)
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]和[用于 Visual Studio Team Services 的 Java 工具]。
+有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
 
 有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅[Docker 上的 Spring Boot 启动入门]。
 
@@ -327,7 +324,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure 容器服务 (AKS)]: https://azure.microsoft.com/services/container-service/
-[Azure Java 开发人员中心]: https://azure.microsoft.com/develop/java/
+[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image

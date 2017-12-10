@@ -1,39 +1,37 @@
 ---
-title: "用于 Java 的 Azure 库入门"
-description: "了解如何创建 Azure 云资源，以及如何在 Java 应用程序中连接和使用这些资源。"
+title: "通过 Eclipse 开始使用用于 Java 的 Azure"
+description: "结合自己的 Azure 订阅开始了解用于 Java 的 Azure 库的基本用法。"
 keywords: "Azure, Java, SDK, API, 身份验证, 入门"
-author: rloutlaw
-ms.author: routlaw
-manager: douge
-ms.date: 04/16/2017
+author: roygara
+ms.author: v-rogara
+manager: timlt
+ms.date: 10/30/2017
 ms.topic: get-started-article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: multiple
-ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: 69c75984f6274b5423614bd51c40957d3d509802
-ms.sourcegitcommit: 1f6a80e067a8bdbbb4b2da2e2145fda73d5fe65a
+ms.openlocfilehash: 1c1ef7b8646824c5c8bfcbbf5e0507c95ac1ee79
+ms.sourcegitcommit: fcf1189ede712ae30f8c7626bde50c9b8bb561bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 12/01/2017
 ---
-# <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>使用用于 Java 的 Azure 库开始云开发
+# <a name="get-started-with-the-azure-libraries-using-eclipse"></a>通过 Eclipse 开始使用 Azure 库
 
-本指南逐步讲解如何为 Java 中的 Azure 开发设置开发环境。 然后，创建并连接一些 Azure 资源，以执行一些基本任务，例如，上传文件或部署 Web 应用程序。 完成本指南后，便可以在自己的 Java 应用程序中开始使用 Azure 服务。
+本指南逐步讲解如何设置开发环境和使用用于 Java 的 Azure 库。 其中将会创建一个服务主体用于进行 Azure 身份验证，并运行一些示例代码在订阅中创建和使用 Azure 资源。 可以选择性地使用 Eclipse 在 Azure 中进行 Java 开发。 包含 Maven 集成的任何 IDE 都可正常工作。 或者，如果不想要使用任何 IDE，可以使用 Maven 从命令行运行代码。
 
 ## <a name="prerequisites"></a>先决条件
 
 - 一个 Azure 帐户。 如果没有帐户，可[获取一个免费试用帐户](https://azure.microsoft.com/free/)
 - [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) 或 [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)。
-- [Java 8](https://www.azul.com/downloads/zulu/)（Azure Cloud Shell 中已随附）
-- [Maven 3](http://maven.apache.org/download.cgi)（Azure Cloud Shell 中已随附）
+- [Eclipse](http://www.eclipse.org/downloads/) 的最新稳定版本
 
 ## <a name="set-up-authentication"></a>设置身份验证
 
 Java 应用程序需要 Azure 订阅中的读取和创建权限才能运行本教程中的示例代码。 创建一个服务主体，并将应用程序配置为使用该服务主体的凭据运行。 通过服务主体可以创建一个与用户标识关联的非交互式帐户，该帐户仅拥有运行应用所需的特权。
 
-[使用 Azure CLI 2.0 创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)并捕获输出。 在密码参数而非 `MY_SECURE_PASSWORD` 中提供[安全密码](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-policy)。 密码必须为 8 到 16 个字符，并且至少符合以下 4 个条件中的 3 个：
+[创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)以授予代码在订阅中创建和更新资源的权限，而无需直接使用帐户凭据。 请确保捕获输出。 在密码参数而非 `MY_SECURE_PASSWORD` 中提供[安全密码](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-policy)。 密码必须为 8 到 16 个字符，并且至少符合以下 4 个条件中的 3 个：
 
 * 包含小写字符
 * 包含大写字符
@@ -80,7 +78,7 @@ graphURL=https\://graph.windows.net/
 
 将此文件保存在系统上可供代码读取的安全位置。 在将来的代码中可以使用此文件，因此，我们建议将它存储在本文所述应用程序外部的某个位置。
 
-在 shell 中使用该验证文件的完整路径来设置环境变量 `AZURE_AUTH_LOCATION`。   
+在 shell 中使用该验证文件的完整路径来设置环境变量 `AZURE_AUTH_LOCATION`。
 
 ```bash
 export AZURE_AUTH_LOCATION=/Users/raisa/azureauth.properties
@@ -97,16 +95,13 @@ export AZURE_AUTH_LOCATION=/Users/raisa/azureauth.properties
 > [!NOTE]
 > 本指南使用 Maven 生成工具来生成和运行示例代码，但其他生成工具（例如 Gradle）也能配合用于 Java 的 Azure 库。 
 
-在系统上的新目录中通过命令行创建一个 Maven 项目：
+打开 Eclipse，选择“文件” -> “新建”。 在显示的新窗口中，打开“Maven”文件夹，然后选择“Maven 项目”。 
 
-```
-mkdir java-azure-test
-cd java-azure-test
-mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp  \ 
--DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-```
+在下一屏幕中保留默认选择，并选择“下一步”。 在此屏幕中，针对原型相关的设置执行上述相同的操作。
 
-这会在 `testAzureApp` 文件夹下创建一个基本的 Maven 项目。 将以下条目添加到项目 `pom.xml` 中，以导入本教程的示例代码中使用的库。
+出现提示输入 groupID、ArtifactID 等的屏幕时，请输入“com.fabrikam”作为 groupID，输入“AzureApp”作为 artifactID。
+
+现在打开 pom.xml 文件。 在 `dependencies` 标记中添加以下代码：
 
 ```XML
 <dependency>
@@ -126,25 +121,23 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp  \
 </dependency>
 ```
 
-在顶级 `project` 元素下添加 `build` 条目，以使用 [maven-exec-plugin](http://www.mojohaus.org/exec-maven-plugin/) 来运行示例：
-
-```XML
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <configuration>
-                <mainClass>com.fabrikam.testAzureApp.AzureApp</mainClass>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
- ```
+现在保存 pom.xml。 这会提示 Eclipse 下载所有指定的依赖项。 此过程可能需要花费片刻时间。
    
+## <a name="install-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
+
+若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](azure-toolkit-for-eclipse.md)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关详细步骤，请参阅[安装用于 Eclipse 的 Azure 工具包](azure-toolkit-for-eclipse.md)。
+
+选择“帮助”菜单，然后选择“安装新软件”。
+
+在“使用:”字段中，输入 `http://dl.microsoft.com/eclipse` 并按 Enter。
+
+然后，选中“用于 Java 的 Azure 工具包”旁边的复选框，并取消选中“在安装过程中联系所有更新站点以查找所需的软件”对应的复选框。 然后选择“下一步”。
+
 ## <a name="create-a-linux-virtual-machine"></a>创建 Linux 虚拟机
 
 在项目的 `src/main/java` 目录中创建名为 `AzureApp.java` 的新文件，并在其中粘贴以下代码块。 使用计算机的实际值更新 `userName` 和 `sshKey` 变量。 该代码会在美国东部 Azure 区域中运行的资源组 `sampleResourceGroup` 内创建名为 `testLinuxVM` 的新 Linux VM。
+
+若要创建 `sshkey`，请打开 Azure Cloud Shell 并输入 `ssh-keygen -t rsa -b 2048`。 为文件命名，访问 .public 文件以获取要在后续代码中使用的密钥，然后将整个密钥复制并粘贴到变量 `sshKey` 中。
 
 ```java
 package com.fabrikam.AzureApp;
@@ -153,6 +146,7 @@ import com.microsoft.azure.management.Azure;
 import com.microsoft.azure.management.compute.VirtualMachine;
 import com.microsoft.azure.management.compute.KnownLinuxVirtualMachineImage;
 import com.microsoft.azure.management.compute.VirtualMachineSizeTypes;
+import com.microsoft.azure.management.appservice.PricingTier;
 import com.microsoft.azure.management.appservice.WebApp;
 import com.microsoft.azure.management.storage.StorageAccount;
 import com.microsoft.azure.management.storage.SkuName;
@@ -172,6 +166,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
 public class AzureApp {
 
@@ -212,13 +207,8 @@ public class AzureApp {
 }
 ```
 
-通过命令行运行示例：
 
-```
-mvn compile exec:java
-```
-
-当 SDK 向 Azure REST API 发出基础调用来配置虚拟机及其资源时，控制台中会显示一些 REST 请求和响应。 程序完成后，使用 Azure CLI 2.0 验证订阅中的虚拟机：
+此时会在控制台中看到一些 REST 请求和响应，因为 SDK 会对 Azure REST API 进行基础调用，以便配置虚拟机及其资源。 程序完成后，使用 Azure CLI 2.0 验证订阅中的虚拟机：
 
 ```azurecli-interactive
 az vm list --resource-group sampleVmResourceGroup
@@ -266,16 +256,11 @@ az group delete --name sampleVmResourceGroup
 
 如前所述使用 Maven 运行代码：
 
-```
-mvn clean compile exec:java
-```
-
 使用 CLI 打开指向该应用程序的浏览器：
 
 ```azurecli-interactive
 az appservice web browse --resource-group sampleWebResourceGroup --name YOUR_APP_NAME
 ```
-
 验证部署后，请从订阅中删除 Web 应用和计划。
 
 ```azurecli-interactive
@@ -365,61 +350,57 @@ az group delete --name sampleSqlResourceGroup
 将 `AzureApp.java` 中的当前 main 方法替换为以下代码。 此代码会创建一个 [Azure 存储帐户](https://docs.microsoft.com/azure/storage/storage-introduction)，然后使用用于 Java 的 Azure 存储库在云中创建新的文本文件。
 
 ```java
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    try {
+        try {
 
-        // use the properties file with the service principal information to authenticate
-        // change the name of the environment variable if you used a different name in the previous step
-        final File credFile = new File(System.getenv("AZURE_AUTH_LOCATION"));
-        Azure azure = Azure.configure()
-                .withLogLevel(LogLevel.BASIC)
-                .authenticate(credFile)
-                .withDefaultSubscription();
+            // use the properties file with the service principal information to authenticate
+            // change the name of the environment variable if you used a different name in the previous step
+            final File credFile = new File(System.getenv("AZURE_AUTH_LOCATION"));
+            Azure azure = Azure.configure()
+                    .withLogLevel(LogLevel.BASIC)
+                    .authenticate(credFile)
+                    .withDefaultSubscription();
 
-        // create a new storage account
-        String storageAccountName = SdkContext.randomResourceName("st",8);
-        StorageAccount storage = azure.storageAccounts().define(storageAccountName)
-                    .withRegion(Region.US_WEST2)
-                    .withNewResourceGroup("sampleStorageResourceGroup")
-                    .create();
+            // create a new storage account
+            String storageAccountName = SdkContext.randomResourceName("st",8);
+            StorageAccount storage = azure.storageAccounts().define(storageAccountName)
+                        .withRegion(Region.US_WEST2)
+                        .withNewResourceGroup("sampleStorageResourceGroup")
+                        .create();
 
-        // create a storage container to hold the file
-        List<StorageAccountKey> keys = storage.getKeys();
-        final String storageConnection = "DefaultEndpointsProtocol=https;"
-                + "AccountName=" + storage.name()
-                + ";AccountKey=" + keys.get(0).value()
-                + ";EndpointSuffix=core.windows.net";
+            // create a storage container to hold the files
+            List<StorageAccountKey> keys = storage.getKeys();
+            final String storageConnection = "DefaultEndpointsProtocol=https;"
+                   + "AccountName=" + storage.name()
+                   + ";AccountKey=" + keys.get(0).value()
+                    + ";EndpointSuffix=core.windows.net";
 
-        CloudStorageAccount account = CloudStorageAccount.parse(storageConnection);
-        CloudBlobClient serviceClient = account.createCloudBlobClient();
+            CloudStorageAccount account = CloudStorageAccount.parse(storageConnection);
+            CloudBlobClient serviceClient = account.createCloudBlobClient();
 
-        // Container name must be lower case.
-        CloudBlobContainer container = serviceClient.getContainerReference("helloazure");
-        container.createIfNotExists();
+            // Container name must be lower case.
+            CloudBlobContainer container = serviceClient.getContainerReference("helloazure");
+            container.createIfNotExists();
 
-        // Make the container public
-        BlobContainerPermissions containerPermissions = new BlobContainerPermissions();
-        containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
-        container.uploadPermissions(containerPermissions);
+            // Make the container public
+            BlobContainerPermissions containerPermissions = new BlobContainerPermissions();
+            containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
+            container.uploadPermissions(containerPermissions);
 
-        // write a blob to the container
-        CloudBlockBlob blob = container.getBlockBlobReference("helloazure.txt");
-        blob.uploadText("hello Azure");
+            // write a blob to the container
+            CloudBlockBlob blob = container.getBlockBlobReference("helloazure.txt");
+            blob.uploadText("hello Azure");
 
-    } catch (Exception e) {
-        System.out.println(e.getMessage());
-        e.printStackTrace();
-    }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
 ```
 
 通过命令行运行示例：
-
-```
-mvn clean compile exec:java
-```
 
 可以通过 Azure 门户或使用 [Azure 存储资源管理器](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs)浏览存储帐户中的 `helloazure.txt` 文件。
 
@@ -431,7 +412,7 @@ az group delete --name sampleStorageResourceGroup
 
 ## <a name="explore-more-samples"></a>学习更多示例
 
-若要详细了解如何使用用于 Java 的 Azure 管理库来管理资源和自动执行任务，请参阅针对[虚拟机](java-sdk-azure-virtual-machine-samples.md)、[Web 应用](java-sdk-azure-web-apps-samples.md)和 [SQL 数据库](java-sdk-azure-sql-database-samples.md)的示例代码。
+若要详细了解如何使用用于 Java 的 Azure 管理库来管理资源和自动执行任务，请参阅针对[虚拟机](../java-sdk-azure-virtual-machine-samples.md)、[Web 应用](../java-sdk-azure-web-apps-samples.md)和 [SQL 数据库](../java-sdk-azure-sql-database-samples.md)的示例代码。
 
 ## <a name="reference-and-release-notes"></a>参考和发行说明
 

@@ -14,11 +14,11 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm;asirveda
-ms.openlocfilehash: f94900ab5fa25a5d9dac19f665705b970db7c8b7
-ms.sourcegitcommit: 062e07cbd42cda74f02c82b933ce90da646a50a0
+ms.openlocfilehash: 1cd0430a6649b1c979da5650b4d817bfb35b5f8c
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="azure-toolkit-for-eclipse"></a>用于 Eclipse 的 Azure 工具包
 借助适用于 Eclipse 的 Azure 工具包提供的模板和功能，可利用 Eclipse 集成开发环境 (IDE) 轻松地创建、开发、测试和部署 Azure 应用程序。
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/21/2017
 
 * [用于 Eclipse 的 Azure 工具包的登录说明](azure-toolkit-for-eclipse-sign-in-instructions.md)
 
-* [在 Eclipse 中创建适用于 Azure 的 Hello World Web 应用](/azure/app-service-web/app-service-web-eclipse-create-hello-world-web-app)
+* [在 Eclipse 中创建适用于 Azure 的 Hello World Web 应用](azure-toolkit-for-eclipse-create-hello-world-web-app.md)
 
 ## <a name="use-the-azure-toolkit-for-eclipse-with-your-java-projects"></a>将用于 Eclipse 的 Azure 工具包用于 Java 项目
 以下文章演示了如何使用 Azure Toolkit for Eclipse 将 Azure 功能添加到 Java 项目：
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/21/2017
 
 * [Eclipse Marketplace 中用于 Eclipse 的 Azure 工具包](http://marketplace.eclipse.org/content/azure-toolkit-eclipse)
 
-有关将 Java 与 Azure 配合使用的详细信息，请参阅 [Azure Java 开发人员中心](https://azure.microsoft.com/develop/java/)和[用于 Visual Studio Team Services 的 Java 工具](https://java.visualstudio.com/)。
+有关将 Java 与 Azure 配合使用的详细信息，请参阅[面向 Java 开发人员的Azure](https://docs.microsoft.com/java/azure/) 和[用于 Visual Studio Team Services 的 Java 工具](https://java.visualstudio.com/)。
 
 <!-- [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)] -->
 
@@ -76,7 +76,7 @@ ms.lasthandoff: 11/21/2017
 
 <!-- URL List -->
 
-[Azure Java Developer Center]: https://docs.microsoft.com/java/azure
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 
 <!-- Temporarily Deprecated URLs -->

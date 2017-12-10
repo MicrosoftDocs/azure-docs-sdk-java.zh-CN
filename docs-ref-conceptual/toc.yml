@@ -14,20 +14,31 @@
           href: /azure/postgresql/connect-java
         - name: Cosmos DB
           href: /azure/cosmos-db/create-documentdb-java
-    - name: Java 入门
-      href: java-sdk-azure-get-started.md
+        - name: 用于 Java 的 Azure 库
+          items:
+            - name: Maven
+              href: java-sdk-azure-get-started.md
+            - name: Eclipse
+              href: eclipse/java-sdk-azure-get-started-eclipse.md
+            - name: Intellij
+              href: intellij/java-sdk-azure-get-started-intellij.md
     - name: 工具
+      expanded: true
       href: java-azure-tools.md
       items:
+        - name: Spring
+          href: /java/azure/spring-framework/index
         - name: IntelliJ
           href: intellij/azure-toolkit-for-intellij.md
         - name: Eclipse
           href: eclipse/azure-toolkit-for-eclipse.md
-        - name: Maven 插件
+        - name: Maven
           href: 'https://github.com/Microsoft/azure-maven-plugins'
           items:
             - name: Azure Web 应用
               href: 'https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin'
+        - name: Azure 上的 Spring
+          href: spring-framework/index.yml
     - name: Java 教程
       items:
         - name: Spring Boot + MySQL

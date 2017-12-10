@@ -6,31 +6,30 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework, Maven
 ms.assetid: 
 ms.service: multiple
 ms.workload: web
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: robmcm;kevinzha
-ms.openlocfilehash: 548c294bd576b00b62994c09d82ec21ad72f4dbd
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: 7fa375ca805ddd037173f9dbd26b6631021e60a3
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
 
-[Spring Framework] 是一种常用的开源框架，可帮助 Java 开发人员创建 Web、移动和 API 应用程序。 本教程使用通过 [Spring Boot] 创建的示例应用，其为使用 Spring 进行快速入门的惯例方法。
-
-本文演示如何将示例 Spring Boot 应用程序部署到 Azure 容器注册表以及在此之后如何使用适用于 Azure Web 应用的 Maven 插件将应用程序部署到 Azure 应用服务。
+本文演示如何将示例 [Spring Boot] 应用程序部署到 Azure 容器注册表以及在此之后如何使用适用于 Azure Web 应用的 Maven 插件将应用程序部署到 Azure 应用服务。
 
 > [!NOTE]
->
+> 
+> 用于 [Apache Maven](http://maven.apache.org/) 的适用于 Azure Web 应用的 Maven 插件提供了 Azure 应用服务到 Maven 项目的无缝集成，并简化了开发人员将 Web 应用部署到 Azure 应用服务的过程。
+> 
 > 适用于 Azure Web 应用的 Maven 插件当前提供预览版。 目前，仅支持 FTP 发布，但计划在未来支持其他功能。
->
+> 
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -94,7 +93,7 @@ ms.lasthandoff: 11/18/2017
 
 > [!NOTE]
 >
-> 在本地使用 Docker 时，可能会看到一条错误，其中说明无法在端口 2375 上连接到本地主机。 如果发生这种情况，可能需要允许在不使用 TLS 的情况下在本地使用 Docker。 为此，请打开 Docker 设置，并选中选项“在不使用 TLS 情况下在 TCP://localhost:2375 上公开 Docker 守护程序”。
+> 在本地使用 Docker 时，可能会看到一条错误，其中说明无法在端口 2375 上连接到本地主机。 如果发生这种情况，可能需要允许在不使用 TLS 的情况下在本地使用 Docker。 为此，请打开 Docker 设置，并选中选项“在不使用 TLS 的情况下在 TCP://localhost:2375 上公开守护程序”。
 >
 > ![在本地 TCP 端口 2375 上公开 Docker 守护程序][TL01]
 
@@ -383,7 +382,7 @@ Web 部署完成后即可使用 [Azure 门户]进行管理。
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure Container Service (AKS)]: https://azure.microsoft.com/services/container-service/
-[Azure Java Developer Center]: https://azure.microsoft.com/develop/java/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [Azure 门户]: https://portal.azure.com/
 [适用于 Azure Web 应用的 Maven 插件]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
