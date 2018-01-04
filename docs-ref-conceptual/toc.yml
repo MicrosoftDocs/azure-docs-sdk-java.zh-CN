@@ -14,6 +14,8 @@
           href: /azure/postgresql/connect-java
         - name: Cosmos DB
           href: /azure/cosmos-db/create-documentdb-java
+        - name: Blob 存储
+          href: /azure/storage/blobs/storage-quickstart-blobs-java
         - name: 用于 Java 的 Azure 库
           items:
             - name: Maven
@@ -77,7 +79,7 @@
           href: java-sdk-azure-web-apps-samples.md
         - name: SQL 数据库
           href: java-sdk-azure-sql-database-samples.md
-        - name: 安全
+        - name: “安全”
           href: java-sdk-azure-security-samples.md
         - name: 容器
           href: java-sdk-azure-containers-samples.md
