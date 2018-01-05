@@ -1,6 +1,6 @@
 ---
-title: "如何配置 Spring Boot Initializer 应用，以使用 Redis 缓存"
-description: "了解如何配置使用 Spring Initializer 创建的 Spring Boot 应用程序，以使用 Azure Redis 缓存。"
+title: "将 Spring Boot Initializer 应用配置为使用 Azure Redis 缓存"
+description: "将使用 Spring Initializer 创建的 Spring Boot 应用程序配置为使用云中的 Redis 和 Azure Redis 缓存。"
 services: redis-cache
 documentationcenter: java
 author: rmcmurray
@@ -14,23 +14,21 @@ ms.devlang: java
 ms.topic: article
 ms.date: 12/01/2017
 ms.author: robmcm;zhijzhao;yidon
-ms.openlocfilehash: e46a90413321845cb94d72fff893e42aa2353491
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: c029a1518584a953c96870110f7ab3b79409f8ca
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="how-to-configure-a-spring-boot-initializer-app-to-use-redis-cache"></a>如何配置 Spring Boot Initializer 应用，以使用 Redis 缓存
+# <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存
 
-## <a name="overview"></a>概述
-
-本文提供以下分步指导：使用 Azure 门户创建 Redis 缓存，使用 **[Spring Initializr]** 创建自定义应用程序，然后创建使用 Redis 缓存存储并检索数据的 Java web 应用程序。
+本文提供以下分步指导：使用 Azure 门户在云中创建 Redis 缓存，使用 **[Spring Initializr]** 创建自定义应用程序，然后创建使用 Redis 缓存存储并检索数据的 Java Web 应用程序。
 
 ## <a name="prerequisites"></a>先决条件
 
 为遵循本文介绍的步骤，需要以下先决条件：
 
-* Azure 订阅；若尚未拥有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册获取[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
 * [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 

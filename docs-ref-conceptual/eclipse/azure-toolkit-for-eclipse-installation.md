@@ -1,6 +1,6 @@
 ---
 title: "安装用于 Eclipse 的 Azure 工具包"
-description: "了解如何安装用于 Eclipse 的 Azure 工具包。"
+description: "了解如何安装用于 Eclipse 的 Azure 工具包插件，以创建云应用程序并将其部署到 Azure。"
 services: 
 documentationcenter: java
 author: rmcmurray
@@ -14,15 +14,15 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 1f06b02a4c0b23d98ecd394d42f41f7148b6c8e8
-ms.sourcegitcommit: 062e07cbd42cda74f02c82b933ce90da646a50a0
+ms.openlocfilehash: 54f636f1291832702bfed2b49888b531d358cb73
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="installing-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
+# <a name="install-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
 
-使用用于 Eclipse 的 Azure 工具包提供的模板和功能，可轻松地利用 Eclipse 开发环境创建、开发、测试和部署 Azure 应用程序。
+使用用于 Eclipse 的 Azure 工具包提供的模板和功能，可以轻松地在 Eclipse 开发环境中创建、开发、测试云应用程序并将其部署到 Azure。
 
 > [!NOTE] 
 > 
@@ -61,7 +61,7 @@ ms.lasthandoff: 11/21/2017
    | **Microsoft JDBC Driver 6.1 for SQL Server** | 提供适用于 SQL Server 的 JDBC API 以及适用于 Java Platform Enterprise Edition 8 的 Microsoft Azure SQL 数据库。 | 
    | **Microsoft Azure Java 库包** | 提供用于访问 Microsoft Azure 服务（例如存储、服务总线、服务运行时等）的 API。 | 
 
-1. 单击“下一步”。 （如果在安装该工具包时遇到不正常的延迟，请确保未选中“在安装过程中访问所有更新站点以查找所需的软件”。）
+1. 单击“资源组名称” 的 Azure 数据工厂。 （如果在安装该工具包时遇到不正常的延迟，请确保未选中“在安装过程中访问所有更新站点以查找所需的软件”。）
 
 1. 在“安装详细信息”对话框中，单击“下一步”。
    

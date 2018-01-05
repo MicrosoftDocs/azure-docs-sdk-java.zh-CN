@@ -1,6 +1,6 @@
 ---
-title: "如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure"
-description: "了解如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure。"
+title: "使用 Maven 和 Azure 将 Spring Boot 应用部署到云中"
+description: "了解如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中。"
 services: app-service
 documentationcenter: java
 author: rmcmurray
@@ -14,13 +14,13 @@ ms.devlang: java
 ms.topic: article
 ms.date: 12/01/2017
 ms.author: robmcm;kevinzha
-ms.openlocfilehash: 8e5ad501f5c00ee1265878a643793f6e9754bb68
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: 656e4dcc5b2510bb14fd79ed5da8a3dfd7fc08da
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-to-azure"></a>如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure
+# <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-web-apps"></a>使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中
 
 本文演示如何使用适用于 Azure Web 应用的 Maven 插件将示例 Spring Boot 应用程序部署到 Azure 应用服务。
 

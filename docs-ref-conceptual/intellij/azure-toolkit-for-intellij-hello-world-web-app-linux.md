@@ -1,6 +1,6 @@
 ---
-title: "使用用于 IntelliJ 的 Azure 工具包运行 Hello World Web 应用"
-description: "了解如何在 Linux 容器中创建基本的 Hello World Web 应用，并使用用于 IntelliJ 的 Azure 工具包将其发布到 Azure。"
+title: "使用用于 IntelliJ 的 Azure 工具包部署在云中的 Linux 容器内运行的 Hello World Web 应用"
+description: "在 Linux 容器中运行一个基本的 Hello World Web 应用，并使用用于 IntelliJ 的 Azure 工具包将它部署到云中。"
 services: app-service\web
 documentationcenter: java
 author: rmcmurray
@@ -14,13 +14,13 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 421241b12d8bd9027d4bef8564e1c1ab5a01993a
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: fdf41d6e8b23a6b7d6217ec626480e6c72e13969
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="run-a-hello-world-web-app-in-a-linux-container-by-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包运行 Hello World Web 应用
+# <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包将 Hello World Web 应用部署到云中的 Linux 容器
 
 [Docker] 容器广泛用于部署 Web 应用程序。 开发人员可在其中将其所有项目文件和依赖项整合成单个包，以便部署到服务器。 用于 IntelliJ 的 Azure 工具包可以添加用于将容器部署到 Microsoft Azure 的功能，为 Java 开发人员简化了部署过程。
 

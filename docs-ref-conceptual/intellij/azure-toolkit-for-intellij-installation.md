@@ -1,6 +1,6 @@
 ---
 title: "安装 Azure Toolkit for IntelliJ"
-description: "了解如何安装 Azure Toolkit for IntelliJ IDEA。"
+description: "了解如何安装用于 IntelliJ 的 Azure 工具包插件，以创建云应用程序并将其部署到 Azure。"
 services: 
 documentationcenter: java
 author: rmcmurray
@@ -14,15 +14,15 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: e15a03a7d10d67217565895103e5e58e807a3976
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: 88476142dbd6fbe05d3d59d14cf71c83893e6452
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="installing-the-azure-toolkit-for-intellij"></a>安装 Azure Toolkit for IntelliJ
 
-借助 Azure Toolkit for IntelliJ 提供的模板和功能，可以轻松使用 IntelliJ IDEA 开发环境来创建、开发、测试和部署 Azure 应用程序。
+借助 Azure Toolkit for IntelliJ 提供的模板和功能，可以轻松使用 IntelliJ IDEA 开发环境来创建、开发、测试云应用程序并将其部署到 Azure。
 
 > [!NOTE] 
 > 

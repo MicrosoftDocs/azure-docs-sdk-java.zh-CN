@@ -1,6 +1,6 @@
 ---
-title: "将 Spring Boot 应用程序部署到 Azure 应用服务"
-description: "本教程会为开发者介绍将 Spring Boot 入门 Web 应用部署到 Azure 应用服务的步骤。"
+title: "使用 Azure 应用服务将 Spring Boot 应用程序部署到云中"
+description: "本教程逐步引导开发人员使用 Azure 应用服务将 Spring Boot 入门 Web 应用部署到云中。"
 services: app-service
 documentationcenter: java
 author: rmcmurray
@@ -14,13 +14,13 @@ ms.devlang: java
 ms.topic: article
 ms.date: 12/01/2017
 ms.author: asirveda;robmcm
-ms.openlocfilehash: b520cc80360f8162c929bb2cc88c24311a7e20f8
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: 4dba6a6cbce2c8f6d4956717b3358c4e5b501e71
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="deploy-a-spring-boot-application-to-the-azure-app-service"></a>将 Spring Boot 应用程序部署到 Azure 应用服务
+# <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>使用 Azure 应用服务将 Spring Boot 应用程序部署到云中
 
 本教程将介绍如何创建 [Spring Boot] 入门 Web 应用示例，以及如何将其部署到 [Azure 应用服务]。
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 12/06/2017
 
 完成本教程中的步骤需要具备以下项：
 
-* Azure 订阅；若尚未拥有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册获取[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
 * 最新的 [Java 开发人员工具包 (JDK)]。
 * Apache 的 [Maven] 生成工具（版本 3）。
 * [Git] 客户端。
@@ -117,9 +117,9 @@ ms.lasthandoff: 12/06/2017
 
    c. Java 次要版本选择“最新版”。
 
-   d. Web 容器选择“最新的 Tomcat 8.5”。 （实际上不会使用此容器；Azure 会使用 Spring Boot 应用程序中的容器。）
+   d.单击“下一步”。 Web 容器选择“最新的 Tomcat 8.5”。 （实际上不会使用此容器；Azure 会使用 Spring Boot 应用程序中的容器。）
 
-   e. 单击“保存” 。
+   e.在“新建 MySQL 数据库”边栏选项卡中，接受法律条款，并单击“确定”。 单击“ **保存**”。
 
    ![应用程序设置][AZ07]
 
@@ -129,7 +129,7 @@ ms.lasthandoff: 12/06/2017
 
    b. 指定用户名和密码。
 
-   c. 单击“保存” 。
+   c. 单击“ **保存**”。
 
    ![指定部署凭据][AZ08]
 
