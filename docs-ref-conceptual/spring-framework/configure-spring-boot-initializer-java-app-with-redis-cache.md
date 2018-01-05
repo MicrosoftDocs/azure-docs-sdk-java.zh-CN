@@ -1,6 +1,6 @@
 ---
-title: "如何配置 Spring Boot Initializer 应用，以使用 Redis 缓存"
-description: "了解如何配置使用 Spring Initializer 创建的 Spring Boot 应用程序，以使用 Azure Redis 缓存。"
+title: "将 Spring Boot Initializer 应用配置为使用 Azure Redis 缓存"
+description: "将使用 Spring Initializer 创建的 Spring Boot 应用程序配置为使用云中的 Redis 和 Azure Redis 缓存。"
 services: redis-cache
 documentationcenter: java
 author: rmcmurray
@@ -14,91 +14,89 @@ ms.devlang: java
 ms.topic: article
 ms.date: 12/01/2017
 ms.author: robmcm;zhijzhao;yidon
-ms.openlocfilehash: e46a90413321845cb94d72fff893e42aa2353491
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: c029a1518584a953c96870110f7ab3b79409f8ca
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="how-to-configure-a-spring-boot-initializer-app-to-use-redis-cache"></a><span data-ttu-id="85cbe-103">如何配置 Spring Boot Initializer 应用，以使用 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="85cbe-103">How to configure a Spring Boot Initializer app to use Redis Cache</span></span>
+# <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a><span data-ttu-id="f3312-103">将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="f3312-103">Configure a Spring Boot Initializer app to use Redis in the cloud with Azure Redis Cache</span></span>
 
-## <a name="overview"></a><span data-ttu-id="85cbe-104">概述</span><span class="sxs-lookup"><span data-stu-id="85cbe-104">Overview</span></span>
+<span data-ttu-id="f3312-104">本文提供以下分步指导：使用 Azure 门户在云中创建 Redis 缓存，使用 **[Spring Initializr]** 创建自定义应用程序，然后创建使用 Redis 缓存存储并检索数据的 Java Web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="f3312-104">This article walks you through creating a Redis cache in the cloud using the Azure portal, then using the **[Spring Initializr]** to create a custom application, and then creating a Java web application that stores and retrieves data using your Redis cache.</span></span>
 
-<span data-ttu-id="85cbe-105">本文提供以下分步指导：使用 Azure 门户创建 Redis 缓存，使用 **[Spring Initializr]** 创建自定义应用程序，然后创建使用 Redis 缓存存储并检索数据的 Java web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="85cbe-105">This article walks you through creating a Redis cache using the Azure portal, then using the **[Spring Initializr]** to create a custom application, and then creating a Java web application that stores and retrieves data using your Redis cache.</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="f3312-105">先决条件</span><span class="sxs-lookup"><span data-stu-id="f3312-105">Prerequisites</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="85cbe-106">先决条件</span><span class="sxs-lookup"><span data-stu-id="85cbe-106">Prerequisites</span></span>
+<span data-ttu-id="f3312-106">为遵循本文介绍的步骤，需要以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="f3312-106">The following prerequisites are required in order to follow the steps in this article:</span></span>
 
-<span data-ttu-id="85cbe-107">为遵循本文介绍的步骤，需要以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="85cbe-107">The following prerequisites are required in order to follow the steps in this article:</span></span>
+* <span data-ttu-id="f3312-107">Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="f3312-107">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="f3312-108">[Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。</span><span class="sxs-lookup"><span data-stu-id="f3312-108">A [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), version 1.7 or later.</span></span>
+* <span data-ttu-id="f3312-109">[Apache Maven](http://maven.apache.org/) 3.0 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="f3312-109">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
 
-* <span data-ttu-id="85cbe-108">Azure 订阅；若尚未拥有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册获取[免费 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="85cbe-108">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="85cbe-109">[Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。</span><span class="sxs-lookup"><span data-stu-id="85cbe-109">A [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), version 1.7 or later.</span></span>
-* <span data-ttu-id="85cbe-110">[Apache Maven](http://maven.apache.org/) 3.0 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="85cbe-110">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
+## <a name="create-a-custom-application-using-the-spring-initializr"></a><span data-ttu-id="f3312-110">使用 Spring Initializr 创建自定义应用程序</span><span class="sxs-lookup"><span data-stu-id="f3312-110">Create a custom application using the Spring Initializr</span></span>
 
-## <a name="create-a-custom-application-using-the-spring-initializr"></a><span data-ttu-id="85cbe-111">使用 Spring Initializr 创建自定义应用程序</span><span class="sxs-lookup"><span data-stu-id="85cbe-111">Create a custom application using the Spring Initializr</span></span>
+1. <span data-ttu-id="f3312-111">浏览到 https://start.spring.io/<>。</span><span class="sxs-lookup"><span data-stu-id="f3312-111">Browse to <https://start.spring.io/>.</span></span>
 
-1. <span data-ttu-id="85cbe-112">浏览到 https://start.spring.io/<>。</span><span class="sxs-lookup"><span data-stu-id="85cbe-112">Browse to <https://start.spring.io/>.</span></span>
-
-1. <span data-ttu-id="85cbe-113">指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。</span><span class="sxs-lookup"><span data-stu-id="85cbe-113">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Aritifact** names for your application, and then click the link to **Switch to the full version** of the Spring Initializr.</span></span>
+1. <span data-ttu-id="f3312-112">指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。</span><span class="sxs-lookup"><span data-stu-id="f3312-112">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Aritifact** names for your application, and then click the link to **Switch to the full version** of the Spring Initializr.</span></span>
 
    ![Spring Initializr 的基本选项][SI01]
 
    > [!NOTE]
    >
-   > <span data-ttu-id="85cbe-115">Spring Initializr 会使用“组”和“Artifact”名称创建包名称，例如：com.contoso.myazuredemo。</span><span class="sxs-lookup"><span data-stu-id="85cbe-115">The Spring Initializr will use the **Group** and **Aritifact** names to create the package name; for example: *com.contoso.myazuredemo*.</span></span>
+   > <span data-ttu-id="f3312-114">Spring Initializr 会使用“组”和“Artifact”名称创建包名称，例如：com.contoso.myazuredemo。</span><span class="sxs-lookup"><span data-stu-id="f3312-114">The Spring Initializr will use the **Group** and **Aritifact** names to create the package name; for example: *com.contoso.myazuredemo*.</span></span>
    >
 
-1. <span data-ttu-id="85cbe-116">向下滚动到“Web”部分，选中“Web”框，然后向下滚动到“NoSQL”，选中“Redis”框，再滚动到页面底部，单击“生成项目”按钮。</span><span class="sxs-lookup"><span data-stu-id="85cbe-116">Scroll down to the **Web** section and check the box for **Web**, then scroll down to the **NoSQL** section and check the box for **Redis**, then scroll to the bottom of the page and click the button to **Generate Project**.</span></span>
+1. <span data-ttu-id="f3312-115">向下滚动到“Web”部分，选中“Web”框，然后向下滚动到“NoSQL”，选中“Redis”框，再滚动到页面底部，单击“生成项目”按钮。</span><span class="sxs-lookup"><span data-stu-id="f3312-115">Scroll down to the **Web** section and check the box for **Web**, then scroll down to the **NoSQL** section and check the box for **Redis**, then scroll to the bottom of the page and click the button to **Generate Project**.</span></span>
 
    ![Spring Initializr 的完整选项][SI02]
 
-1. <span data-ttu-id="85cbe-118">出现提示时，将项目下载到本地计算机中的路径。</span><span class="sxs-lookup"><span data-stu-id="85cbe-118">When prompted, download the project to a path on your local computer.</span></span>
+1. <span data-ttu-id="f3312-117">出现提示时，将项目下载到本地计算机中的路径。</span><span class="sxs-lookup"><span data-stu-id="f3312-117">When prompted, download the project to a path on your local computer.</span></span>
 
    ![下载自定义 Spring Boot 项目][SI03]
 
-1. <span data-ttu-id="85cbe-120">提取本地系统上的文件之后，自定义 Spring Boot 应用程序便可进行编辑。</span><span class="sxs-lookup"><span data-stu-id="85cbe-120">After you have extracted the files on your local system, your custom Spring Boot application will be ready for editing.</span></span>
+1. <span data-ttu-id="f3312-119">提取本地系统上的文件之后，自定义 Spring Boot 应用程序便可进行编辑。</span><span class="sxs-lookup"><span data-stu-id="f3312-119">After you have extracted the files on your local system, your custom Spring Boot application will be ready for editing.</span></span>
 
    ![自定义 Spring Boot 项目文件][SI04]
 
-## <a name="create-a-redis-cache-on-azure"></a><span data-ttu-id="85cbe-122">在 Azure 上创建 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="85cbe-122">Create a Redis cache on Azure</span></span>
+## <a name="create-a-redis-cache-on-azure"></a><span data-ttu-id="f3312-121">在 Azure 上创建 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="f3312-121">Create a Redis cache on Azure</span></span>
 
-1. <span data-ttu-id="85cbe-123">浏览到 Azure 门户 <https://portal.azure.com/>，然后单击“+新建”项。</span><span class="sxs-lookup"><span data-stu-id="85cbe-123">Browse to the Azure portal at <https://portal.azure.com/> and click the item for **+New**.</span></span>
+1. <span data-ttu-id="f3312-122">浏览到 Azure 门户 <https://portal.azure.com/>，然后单击“+新建”项。</span><span class="sxs-lookup"><span data-stu-id="f3312-122">Browse to the Azure portal at <https://portal.azure.com/> and click the item for **+New**.</span></span>
 
    ![Azure 门户][AZ01]
 
-1. <span data-ttu-id="85cbe-125">单击“数据库”，然后单击“Redis 缓存”。</span><span class="sxs-lookup"><span data-stu-id="85cbe-125">Click **Database**, and then click **Redis Cache**.</span></span>
+1. <span data-ttu-id="f3312-124">单击“数据库”，然后单击“Redis 缓存”。</span><span class="sxs-lookup"><span data-stu-id="f3312-124">Click **Database**, and then click **Redis Cache**.</span></span>
 
    ![Azure 门户][AZ02]
 
-1. <span data-ttu-id="85cbe-127">在“新建 Redis 缓存”页上，指定以下信息：</span><span class="sxs-lookup"><span data-stu-id="85cbe-127">On the **New Redis Cache** page, specify the following information:</span></span>
+1. <span data-ttu-id="f3312-126">在“新建 Redis 缓存”页上，指定以下信息：</span><span class="sxs-lookup"><span data-stu-id="f3312-126">On the **New Redis Cache** page, specify the following information:</span></span>
 
-   * <span data-ttu-id="85cbe-128">输入缓存的“DNS 名称”。</span><span class="sxs-lookup"><span data-stu-id="85cbe-128">Enter the **DNS name** for your cache.</span></span>
-   * <span data-ttu-id="85cbe-129">指定“订阅”、“资源组”、“位置”和“定价层”。</span><span class="sxs-lookup"><span data-stu-id="85cbe-129">Specify your **Subscription**, **Resource group**, **Location**, and **Pricing tier**.</span></span>
-   * <span data-ttu-id="85cbe-130">对于本教程，选择“取消阻止端口 6379”。</span><span class="sxs-lookup"><span data-stu-id="85cbe-130">For this tutorial, choose **Unblock port 6379**.</span></span>
+   * <span data-ttu-id="f3312-127">输入缓存的“DNS 名称”。</span><span class="sxs-lookup"><span data-stu-id="f3312-127">Enter the **DNS name** for your cache.</span></span>
+   * <span data-ttu-id="f3312-128">指定“订阅”、“资源组”、“位置”和“定价层”。</span><span class="sxs-lookup"><span data-stu-id="f3312-128">Specify your **Subscription**, **Resource group**, **Location**, and **Pricing tier**.</span></span>
+   * <span data-ttu-id="f3312-129">对于本教程，选择“取消阻止端口 6379”。</span><span class="sxs-lookup"><span data-stu-id="f3312-129">For this tutorial, choose **Unblock port 6379**.</span></span>
 
    > [!NOTE]
    >
-   > <span data-ttu-id="85cbe-131">可以通过 Redis 缓存使用 SSL，但需要使用其他 Redis 客户端，如 Jedis。</span><span class="sxs-lookup"><span data-stu-id="85cbe-131">You can use SSL with Redis caches, but you would need to use a different Redis client like Jedis.</span></span> <span data-ttu-id="85cbe-132">有关详细信息，请参阅[如何将 Azure Redis 缓存与 Java 配合使用][Redis Cache with Java]。</span><span class="sxs-lookup"><span data-stu-id="85cbe-132">For more information, see [How to use Azure Redis Cache with Java][Redis Cache with Java].</span></span>
+   > <span data-ttu-id="f3312-130">可以通过 Redis 缓存使用 SSL，但需要使用其他 Redis 客户端，如 Jedis。</span><span class="sxs-lookup"><span data-stu-id="f3312-130">You can use SSL with Redis caches, but you would need to use a different Redis client like Jedis.</span></span> <span data-ttu-id="f3312-131">有关详细信息，请参阅[如何将 Azure Redis 缓存与 Java 配合使用][Redis Cache with Java]。</span><span class="sxs-lookup"><span data-stu-id="f3312-131">For more information, see [How to use Azure Redis Cache with Java][Redis Cache with Java].</span></span>
    >
 
-   <span data-ttu-id="85cbe-133">指定这些选项后，单击“创建”以创建缓存。</span><span class="sxs-lookup"><span data-stu-id="85cbe-133">When you have specified these options, click **Create** to create your cache.</span></span>
+   <span data-ttu-id="f3312-132">指定这些选项后，单击“创建”以创建缓存。</span><span class="sxs-lookup"><span data-stu-id="f3312-132">When you have specified these options, click **Create** to create your cache.</span></span>
 
    ![Azure 门户][AZ03]
 
-1. <span data-ttu-id="85cbe-135">创建缓存完成后，会看到其列在 Azure“仪表板”上，并显示在“所有资源”和“Redis 缓存”页下。</span><span class="sxs-lookup"><span data-stu-id="85cbe-135">Once your cache has been completed, you will see it listed on your Azure **Dashboard**, as well as under the **All Resources**, and **Redis Caches** pages.</span></span> <span data-ttu-id="85cbe-136">可在任何上述位置上单击缓存，打开缓存的属性页。</span><span class="sxs-lookup"><span data-stu-id="85cbe-136">You can click on your cache on any of those locations to open the properties page for your cache.</span></span>
+1. <span data-ttu-id="f3312-134">创建缓存完成后，会看到其列在 Azure“仪表板”上，并显示在“所有资源”和“Redis 缓存”页下。</span><span class="sxs-lookup"><span data-stu-id="f3312-134">Once your cache has been completed, you will see it listed on your Azure **Dashboard**, as well as under the **All Resources**, and **Redis Caches** pages.</span></span> <span data-ttu-id="f3312-135">可在任何上述位置上单击缓存，打开缓存的属性页。</span><span class="sxs-lookup"><span data-stu-id="f3312-135">You can click on your cache on any of those locations to open the properties page for your cache.</span></span>
 
    ![Azure 门户][AZ04]
 
-1. <span data-ttu-id="85cbe-138">显示包含缓存属性列表的页面后，单击“访问密匙”，然后复制缓存的访问密钥。</span><span class="sxs-lookup"><span data-stu-id="85cbe-138">When the page that contains the list of properties for your cache is displayed, click **Access keys** and copy your access keys for your cache.</span></span>
+1. <span data-ttu-id="f3312-137">显示包含缓存属性列表的页面后，单击“访问密匙”，然后复制缓存的访问密钥。</span><span class="sxs-lookup"><span data-stu-id="f3312-137">When the page that contains the list of properties for your cache is displayed, click **Access keys** and copy your access keys for your cache.</span></span>
 
    ![Azure 门户][AZ05]
 
-## <a name="configure-your-custom-spring-boot-to-use-your-redis-cache"></a><span data-ttu-id="85cbe-140">配置自定义 Spring Boot 以使用 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="85cbe-140">Configure your custom Spring Boot to use your Redis Cache</span></span>
+## <a name="configure-your-custom-spring-boot-to-use-your-redis-cache"></a><span data-ttu-id="f3312-139">配置自定义 Spring Boot 以使用 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="f3312-139">Configure your custom Spring Boot to use your Redis Cache</span></span>
 
-1. <span data-ttu-id="85cbe-141">在应用的“资源”目录中找到 application.properties 文件，或创建此文件（若此文件不存在）。</span><span class="sxs-lookup"><span data-stu-id="85cbe-141">Locate the *application.properties* file in the *resources* directory of your app, or create the file if it does not already exist.</span></span>
+1. <span data-ttu-id="f3312-140">在应用的“资源”目录中找到 application.properties 文件，或创建此文件（若此文件不存在）。</span><span class="sxs-lookup"><span data-stu-id="f3312-140">Locate the *application.properties* file in the *resources* directory of your app, or create the file if it does not already exist.</span></span>
 
    ![找到 application.properties 文件][RE01]
 
-1. <span data-ttu-id="85cbe-143">在文本编辑器中打开 application.properties 文件，将以下行添加到文件中，然后将示例值替换为缓存中的相应属性：</span><span class="sxs-lookup"><span data-stu-id="85cbe-143">Open the *application.properties* file in a text editor, and add the following lines to the file, and replace the sample values with the appropriate properties from your cache:</span></span>
+1. <span data-ttu-id="f3312-142">在文本编辑器中打开 application.properties 文件，将以下行添加到文件中，然后将示例值替换为缓存中的相应属性：</span><span class="sxs-lookup"><span data-stu-id="f3312-142">Open the *application.properties* file in a text editor, and add the following lines to the file, and replace the sample values with the appropriate properties from your cache:</span></span>
 
    ```yaml
    # Specify the DNS URI of your Redis cache.
@@ -115,7 +113,7 @@ ms.lasthandoff: 12/06/2017
 
    > [!NOTE] 
    > 
-   > <span data-ttu-id="85cbe-145">如果使用其他启用了 SSL 的 Redis 客户端（如 Jedis），可能需要在 application.properties 文件中指定端口 6380。</span><span class="sxs-lookup"><span data-stu-id="85cbe-145">If you were using a different Redis client like Jedis that enables SSL, you would specify port 6380 in your *application.properties* file.</span></span> <span data-ttu-id="85cbe-146">例如：</span><span class="sxs-lookup"><span data-stu-id="85cbe-146">For example:</span></span>
+   > <span data-ttu-id="f3312-144">如果使用其他启用了 SSL 的 Redis 客户端（如 Jedis），可能需要在 application.properties 文件中指定端口 6380。</span><span class="sxs-lookup"><span data-stu-id="f3312-144">If you were using a different Redis client like Jedis that enables SSL, you would specify port 6380 in your *application.properties* file.</span></span> <span data-ttu-id="f3312-145">例如：</span><span class="sxs-lookup"><span data-stu-id="f3312-145">For example:</span></span>
    > 
    > ```yaml
    > spring.redis.host=myspringbootcache.redis.cache.windows.net
@@ -124,20 +122,20 @@ ms.lasthandoff: 12/06/2017
    > spring.redis.port=6380
    > ```
    > 
-   > <span data-ttu-id="85cbe-147">有关详细信息，请参阅[如何将 Azure Redis 缓存与 Java 配合使用][Redis Cache with Java]。</span><span class="sxs-lookup"><span data-stu-id="85cbe-147">For more information, see [How to use Azure Redis Cache with Java][Redis Cache with Java].</span></span> 
+   > <span data-ttu-id="f3312-146">有关详细信息，请参阅[如何将 Azure Redis 缓存与 Java 配合使用][Redis Cache with Java]。</span><span class="sxs-lookup"><span data-stu-id="f3312-146">For more information, see [How to use Azure Redis Cache with Java][Redis Cache with Java].</span></span> 
    > 
 
-1. <span data-ttu-id="85cbe-148">保存并关闭 application.properties 文件。</span><span class="sxs-lookup"><span data-stu-id="85cbe-148">Save and close the *application.properties* file.</span></span>
+1. <span data-ttu-id="f3312-147">保存并关闭 application.properties 文件。</span><span class="sxs-lookup"><span data-stu-id="f3312-147">Save and close the *application.properties* file.</span></span>
 
-1. <span data-ttu-id="85cbe-149">在包的源文件夹中创建名为“控制器”的文件夹，例如：</span><span class="sxs-lookup"><span data-stu-id="85cbe-149">Create a folder named *controller* under the source folder for your package; for example:</span></span>
+1. <span data-ttu-id="f3312-148">在包的源文件夹中创建名为“控制器”的文件夹，例如：</span><span class="sxs-lookup"><span data-stu-id="f3312-148">Create a folder named *controller* under the source folder for your package; for example:</span></span>
 
    `C:\SpringBoot\myazuredemo\src\main\java\com\contoso\myazuredemo\controller`
 
-   <span data-ttu-id="85cbe-150">-或-</span><span class="sxs-lookup"><span data-stu-id="85cbe-150">-or-</span></span>
+   <span data-ttu-id="f3312-149">-或-</span><span class="sxs-lookup"><span data-stu-id="f3312-149">-or-</span></span>
 
    `/users/example/home/myazuredemo/src/main/java/com/contoso/myazuredemo/controller`
 
-1. <span data-ttu-id="85cbe-151">在 controller 文件夹中创建一个名为 HelloController.java 的新文件。</span><span class="sxs-lookup"><span data-stu-id="85cbe-151">Create a new file named *HelloController.java* in the *controller* folder.</span></span> <span data-ttu-id="85cbe-152">在文本编辑器中打开该文件，然后向其添加以下代码：</span><span class="sxs-lookup"><span data-stu-id="85cbe-152">Open the file in a text editor and add the following code to it:</span></span>
+1. <span data-ttu-id="f3312-150">在 controller 文件夹中创建一个名为 HelloController.java 的新文件。</span><span class="sxs-lookup"><span data-stu-id="f3312-150">Create a new file named *HelloController.java* in the *controller* folder.</span></span> <span data-ttu-id="f3312-151">在文本编辑器中打开该文件，然后向其添加以下代码：</span><span class="sxs-lookup"><span data-stu-id="f3312-151">Open the file in a text editor and add the following code to it:</span></span>
 
    ```java
    package com.contoso.myazuredemo;
@@ -174,38 +172,38 @@ ms.lasthandoff: 12/06/2017
    }
    ```
    
-   <span data-ttu-id="85cbe-153">需要将 `com.contoso.myazuredemo` 替换为项目的包名称的地方。</span><span class="sxs-lookup"><span data-stu-id="85cbe-153">Where you will need to replace `com.contoso.myazuredemo` with the package name for your project.</span></span>
+   <span data-ttu-id="f3312-152">需要将 `com.contoso.myazuredemo` 替换为项目的包名称的地方。</span><span class="sxs-lookup"><span data-stu-id="f3312-152">Where you will need to replace `com.contoso.myazuredemo` with the package name for your project.</span></span>
 
-1. <span data-ttu-id="85cbe-154">保存并关闭 HelloController.java 文件。</span><span class="sxs-lookup"><span data-stu-id="85cbe-154">Save and close the *HelloController.java* file.</span></span>
+1. <span data-ttu-id="f3312-153">保存并关闭 HelloController.java 文件。</span><span class="sxs-lookup"><span data-stu-id="f3312-153">Save and close the *HelloController.java* file.</span></span>
 
-1. <span data-ttu-id="85cbe-155">使用 Maven 生成 Spring Boot 应用程序，然后运行该程序，例如：</span><span class="sxs-lookup"><span data-stu-id="85cbe-155">Build your Spring Boot application with Maven and run it; for example:</span></span>
+1. <span data-ttu-id="f3312-154">使用 Maven 生成 Spring Boot 应用程序，然后运行该程序，例如：</span><span class="sxs-lookup"><span data-stu-id="f3312-154">Build your Spring Boot application with Maven and run it; for example:</span></span>
 
    ```shell
    mvn clean package
    mvn spring-boot:run
    ```
 
-1. <span data-ttu-id="85cbe-156">使用 Web 浏览器浏览到 http://localhost:8080 以测试 Web 应用，如果有可用的 Curl，也可使用如以下示例所示的语法：</span><span class="sxs-lookup"><span data-stu-id="85cbe-156">Test the web app by browsing to http://localhost:8080 using a web browser, or use the syntax like the following example if you have curl available:</span></span>
+1. <span data-ttu-id="f3312-155">使用 Web 浏览器浏览到 http://localhost:8080 以测试 Web 应用，如果有可用的 Curl，也可使用如以下示例所示的语法：</span><span class="sxs-lookup"><span data-stu-id="f3312-155">Test the web app by browsing to http://localhost:8080 using a web browser, or use the syntax like the following example if you have curl available:</span></span>
 
    ```shell
    curl http://localhost:8080
    ```
 
-   <span data-ttu-id="85cbe-157">应会看到“Hello World!”</span><span class="sxs-lookup"><span data-stu-id="85cbe-157">You should see the "Hello World!"</span></span> <span data-ttu-id="85cbe-158">消息在示例控制器中显示，这是从 Redis 缓存中动态检索到的。</span><span class="sxs-lookup"><span data-stu-id="85cbe-158">message from your sample controller displayed, which is being retrieved dynamically from your Redis cache.</span></span>
+   <span data-ttu-id="f3312-156">应会看到“Hello World!”</span><span class="sxs-lookup"><span data-stu-id="f3312-156">You should see the "Hello World!"</span></span> <span data-ttu-id="f3312-157">消息在示例控制器中显示，这是从 Redis 缓存中动态检索到的。</span><span class="sxs-lookup"><span data-stu-id="f3312-157">message from your sample controller displayed, which is being retrieved dynamically from your Redis cache.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="85cbe-159">后续步骤</span><span class="sxs-lookup"><span data-stu-id="85cbe-159">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="f3312-158">后续步骤</span><span class="sxs-lookup"><span data-stu-id="f3312-158">Next steps</span></span>
 
-<span data-ttu-id="85cbe-160">有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="85cbe-160">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
+<span data-ttu-id="f3312-159">有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="f3312-159">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
 
-* [<span data-ttu-id="85cbe-161">将 Spring Boot 应用程序部署到 Azure 应用服务</span><span class="sxs-lookup"><span data-stu-id="85cbe-161">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
+* [<span data-ttu-id="f3312-160">将 Spring Boot 应用程序部署到 Azure 应用服务</span><span class="sxs-lookup"><span data-stu-id="f3312-160">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
 
-* [<span data-ttu-id="85cbe-162">在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序</span><span class="sxs-lookup"><span data-stu-id="85cbe-162">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
+* [<span data-ttu-id="f3312-161">在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序</span><span class="sxs-lookup"><span data-stu-id="f3312-161">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
 
-<span data-ttu-id="85cbe-163">有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。</span><span class="sxs-lookup"><span data-stu-id="85cbe-163">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Java Tools for Visual Studio Team Services].</span></span>
+<span data-ttu-id="f3312-162">有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。</span><span class="sxs-lookup"><span data-stu-id="f3312-162">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Java Tools for Visual Studio Team Services].</span></span>
 
-<span data-ttu-id="85cbe-164">若要深入了解如何在 Azure 上开始将 Redis 缓存用于 Java，请参阅[如何将 Azure Redis 缓存用于 Java][Redis Cache with Java]。</span><span class="sxs-lookup"><span data-stu-id="85cbe-164">For more information about getting started using Redis Cache with Java on Azure, see [How to use Azure Redis Cache with Java][Redis Cache with Java].</span></span>
+<span data-ttu-id="f3312-163">若要深入了解如何在 Azure 上开始将 Redis 缓存用于 Java，请参阅[如何将 Azure Redis 缓存用于 Java][Redis Cache with Java]。</span><span class="sxs-lookup"><span data-stu-id="f3312-163">For more information about getting started using Redis Cache with Java on Azure, see [How to use Azure Redis Cache with Java][Redis Cache with Java].</span></span>
 
-<span data-ttu-id="85cbe-165">[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。</span><span class="sxs-lookup"><span data-stu-id="85cbe-165">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="85cbe-166">基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。</span><span class="sxs-lookup"><span data-stu-id="85cbe-166">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="85cbe-167">为帮助开发人员开始使用 Spring Boot，在 <https://github.com/spring-guides/> 网站中提供了几个 Spring Boot 包。</span><span class="sxs-lookup"><span data-stu-id="85cbe-167">To help developers get started with Spring Boot, several sample Spring Boot packages are available at <https://github.com/spring-guides/>.</span></span> <span data-ttu-id="85cbe-168">除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。</span><span class="sxs-lookup"><span data-stu-id="85cbe-168">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
+<span data-ttu-id="f3312-164">[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。</span><span class="sxs-lookup"><span data-stu-id="f3312-164">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="f3312-165">基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。</span><span class="sxs-lookup"><span data-stu-id="f3312-165">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="f3312-166">为帮助开发人员开始使用 Spring Boot，在 <https://github.com/spring-guides/> 网站中提供了几个 Spring Boot 包。</span><span class="sxs-lookup"><span data-stu-id="f3312-166">To help developers get started with Spring Boot, several sample Spring Boot packages are available at <https://github.com/spring-guides/>.</span></span> <span data-ttu-id="f3312-167">除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。</span><span class="sxs-lookup"><span data-stu-id="f3312-167">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
 
 <!-- URL List -->
 
