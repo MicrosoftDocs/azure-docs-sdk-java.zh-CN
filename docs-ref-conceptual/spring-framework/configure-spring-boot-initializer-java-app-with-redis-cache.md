@@ -34,7 +34,7 @@ ms.lasthandoff: 01/04/2018
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序
 
-1. 浏览到 https://start.spring.io/<>。
+1. 浏览到 <https://start.spring.io/>。
 
 1. 指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。
 
