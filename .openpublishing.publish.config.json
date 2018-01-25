@@ -44,6 +44,15 @@
       "url": "https://github.com/Microsoft/templates.docs.msft.zh-CN",
       "branch": "master",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_repo.en-us",
+      "url": "https://github.com/azure/azure-docs-sdk-java",
+      "branch": "live",
+      "branch_mapping": {
+        "live": "live",
+        "master": "master"
+      }
     }
   ],
   "dependent_packages": [
