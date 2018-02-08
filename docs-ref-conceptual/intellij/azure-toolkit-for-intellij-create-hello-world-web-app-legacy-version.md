@@ -7,18 +7,18 @@ author: selvasingh
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: app-service
-ms.workload: web
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 11/15/2017
 ms.author: robmcm;asirveda
-ms.openlocfilehash: aa0db81ffc9ff3fe44cf3d58a5b77ee447cdb1d1
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: app-service
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: web
+ms.openlocfilehash: ebe98a604b52dc9a4b5a47cbf65a4c68a5c86fe3
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>使用用于 IntelliJ 的旧工具包创建适用于 Azure 的 Hello World Web 应用
 
@@ -128,7 +128,7 @@ ms.lasthandoff: 11/18/2017
       
       当前，可以从 Tomcat 8、Tomcat 7 或 Jetty 9 中选择。 Azure 将提供所选软件的最新分发版，并且该版本将基于由 JDK 8 创建并由 Azure 提供的 JDK 最新分发版运行。
 
-   e.在“新建 MySQL 数据库”边栏选项卡中，接受法律条款，并单击“确定”。 在“订阅”下拉菜单中，选择要用于此部署的订阅。
+   e. 在“订阅”下拉菜单中，选择要用于此部署的订阅。
 
    f. 在“资源组”下拉菜单中，选择要与 Web 应用关联的资源组。 （使用 Azure 资源组可以将相关资源组织在一起，以便于将它们一起删除。）
       
@@ -141,7 +141,7 @@ ms.lasthandoff: 11/18/2017
 
       * 在“名称”文本框中，为新的资源组指定名称。
       * 在“区域”下拉菜单中，为资源组选择适当的 Azure 数据中心位置。
-      * 单击 **“确定”**。
+      * 单击“确定”。
 
    g. “应用服务计划”下拉菜单列出了与选定资源组关联的应用服务计划。 （应用服务计划指定了 Web 应用的位置、定价层以及计算实例大小等信息。 单个应用服务计划可用于多个 Web 应用，这也是从特定 Web 应用部署中单独维护它的原因。）
       
@@ -156,7 +156,7 @@ ms.lasthandoff: 11/18/2017
       * 在“位置”下拉菜单中，为计划选择适当的 Azure 数据中心位置。
       * 在“定价层”下拉菜单中，为计划选择适当的定价。 对于测试，可以选择“免费”。
       * 在“实例大小”下拉菜单中，为计划选择适当的实例大小。 对于测试，可以选择“小”。
-      * 单击 **“确定”**。
+      * 单击“确定”。
 
    h. （可选）默认情况下，Azure 自动将最新的 Java 8 分发版作为 JVM 部署到 Web 应用容器。 但是，可指定 JVM 的其他版本和分发版。 为此，请按照以下步骤操作：
       

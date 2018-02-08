@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: Java
-ms.topic: article
-ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 38185b6a53cd0b83b63f68fc672bfe12b3db6db0
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.date: 02/01/2018
+ms.devlang: Java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: aec3682cc14204ca2b395d4b851db7bb68cb8728
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>使用用于 Eclipse 的 Azure 工具包将 Web 应用发布为 Docker 容器
 
@@ -69,7 +69,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
 
    c. **区域**：输入主机所在的地理区域。
 
-   d. 在“主机 OS 和大小”选项卡上： 
+   d.单击“下一步”。 在“主机 OS 和大小”选项卡上： 
    * **主机 OS**：输入包含主机的虚拟机的操作系统。
    * **大小**：输入主机的虚拟机大小。
 
@@ -85,7 +85,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
    * **新建存储帐户**：为主机创建新的存储帐户。
    * **现有存储帐户**：输入 Azure 帐户中的现有存储帐户。
 
-1. 单击“下一步”。
+1. 单击“资源组名称” 的 Azure 数据工厂。
 
 1. 在“配置登录凭据和端口设置”窗口中，选择以下选项之一：
 
@@ -153,7 +153,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
 
 1. 完成前面的所有步骤后，单击“完成”。
 
-Azure 工具包随即开始在 Docker 容器中将 Web 应用部署到 Azure。 
+Azure 工具包随即开始在 Docker 容器中将你的 Web 应用部署到 Azure。 
 
 ## <a name="next-steps"></a>后续步骤
 

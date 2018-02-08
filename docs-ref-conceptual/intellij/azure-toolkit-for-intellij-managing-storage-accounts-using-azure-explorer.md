@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: Java
-ms.topic: article
-ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: f37ae653286af1e36d730bda713527caa7504ac0
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.date: 02/01/2018
+ms.devlang: Java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: 4edb8c1ceef508dd251db693ccc3b98d77ec452b
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
 
@@ -54,7 +54,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    * **位置**：指定将创建存储帐户的位置（例如“美国西部”）。
 
-   * **资源组**：指定虚拟机的资源组。 选择以下选项之一：
+   * **资源组**：指定你的虚拟机的资源组。 选择以下选项之一：
       * **新建**：指定要创建新的资源组。
       * **使用现有**：指定将从与你的 Azure 帐户关联的资源组列表中进行选择。
 
@@ -76,7 +76,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
 若要使用 Azure 资源管理器删除存储容器，请执行以下操作：
 
-1. 在 Azure 资源管理器视图中，右键单击存储容器，并单击“删除”。
+1. 在 Azure 资源管理器视图中，右键单击存储容器，然后单击“删除”。
 
    ![“删除存储容器”命令][DC01]
 

@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: Java
-ms.topic: article
-ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 65fbdc32824c2b6312929f4888844d1673101ac8
-ms.sourcegitcommit: 062e07cbd42cda74f02c82b933ce90da646a50a0
+ms.date: 02/01/2018
+ms.devlang: Java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: 4228352efa4354bfe4969c1a5ecd3f3b40483f85
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用适用于 IntelliJ 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
 
@@ -120,7 +120,7 @@ IntelliJ 会将 Spring Boot 应用作为项目导入，并在导入完成后显�
 
 1. 在 IntelliJ 中打开你的 Web 应用项目。
 
-1. 依次单击“文件”、“项目结构”。
+1. 依次单击“File”（文件）、“Project Structure”（项目结构）。
 
    ![“项目结构”命令][ART01]
 
@@ -138,7 +138,7 @@ IntelliJ 会将 Spring Boot 应用作为项目导入，并在导入完成后显�
 
       ![单击“创建清单”按钮][ART04a]
 
-   b.在“磁贴徽标”下面，选择“删除上传的徽标”。 选择项目的默认路径，然后单击“OK”（确定）。
+   b. 选择项目的默认路径，然后单击“OK”（确定）。
 
       ![指定项目路径][ART04b]
 
@@ -146,11 +146,11 @@ IntelliJ 会将 Spring Boot 应用作为项目导入，并在导入完成后显�
 
       ![找到主类][ART04c]
 
-   d. 选择主类，然后单击“OK”（确定）。
+   d.单击“下一步”。 选择主类，然后单击“OK”（确定）。
 
       ![指定主类][ART04d]
 
-1. 单击 **“确定”**。
+1. 单击“确定”。
 
    ![关闭“项目结构”对话框][ART05]
 
@@ -182,11 +182,11 @@ IntelliJ 应在项目工具窗口中显示 Spring Boot 应用的已完成项目�
 
 1. 当显示“在 Azure 上部署 Docker 容器”对话框时，任何现有的 Docker 主机均会显示。 如果选择部署到现有主机，可以跳到步骤 4。 否则，使用以下步骤创建主机：
 
-   a.在“横幅徽标”下面，选择“删除上传的徽标”。 单击绿色加号（“+”）符号。
+   a. 单击绿色加号（“+”）符号。
 
       ![添加新的 Docker 主机][PU02]
 
-   b.在“磁贴徽标”下面，选择“删除上传的徽标”。 当显示“创建 Docker 主机”对话框时，可以选择接受默认设置，也可以为新的 Docker 主机指定任何自定义设置。 （有关各种设置的详细说明，请参阅[使用适用于 IntelliJ 的 Azure 工具包将 Web 应用发布为 Docker 容器][Publish Container with Azure Toolkit]。）在指定了要使用的设置后，单击“下一步”。
+   b. 当显示“创建 Docker 主机”对话框时，可以选择接受默认设置，也可以为新的 Docker 主机指定任何自定义设置。 （有关各种设置的详细说明，请参阅[使用适用于 IntelliJ 的 Azure 工具包将 Web 应用发布为 Docker 容器][Publish Container with Azure Toolkit]。）在指定了要使用的设置后，单击“下一步”。
 
       ![指定 Docker 主机选项][PU03a]
 
@@ -200,9 +200,9 @@ IntelliJ 应在项目工具窗口中显示 Spring Boot 应用的已完成项目�
 
 1. 在“在 Azure 上部署 Docker 容器”对话框的最后一页上，指定以下选项：
 
-   a.在“横幅徽标”下面，选择“删除上传的徽标”。 可以选择为要托管 Docker 容器的容器指定一个自定义名称，也可以接受默认设置。
+   a. 可以选择为要托管 Docker 容器的容器指定一个自定义名称，也可以接受默认设置。
 
-   b.在“磁贴徽标”下面，选择“删除上传的徽标”。 使用以下语法输入 Docker 主机的 TCP 端口：[外部端口]:[内部端口]。 例如，“80:8080”指定外部端口为“80”，默认的内部 Spring Boot 端口为“8080”。
+   b. 使用以下语法输入 Docker 主机的 TCP 端口：[外部端口]:[内部端口]。 例如，“80:8080”指定外部端口为“80”，默认的内部 Spring Boot 端口为“8080”。
    
       如果已自定义内部端口（例如通过编辑 application.yml 文件自定义），则需要指定端口号以便能够在 Azure 中进行正确路由。
 

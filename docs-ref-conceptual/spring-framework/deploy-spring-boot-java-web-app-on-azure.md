@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: asirveda;robmcm
-ms.openlocfilehash: 4dba6a6cbce2c8f6d4956717b3358c4e5b501e71
-ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: adf779e2ba6ca73ea3a2406613f9622cc9ecbf99
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>使用 Azure 应用服务将 Spring Boot 应用程序部署到云中
 
@@ -119,7 +119,7 @@ ms.lasthandoff: 01/04/2018
 
    d.单击“下一步”。 Web 容器选择“最新的 Tomcat 8.5”。 （实际上不会使用此容器；Azure 会使用 Spring Boot 应用程序中的容器。）
 
-   e.在“新建 MySQL 数据库”边栏选项卡中，接受法律条款，并单击“确定”。 单击“ **保存**”。
+   e. 单击“ **保存**”。
 
    ![应用程序设置][AZ07]
 
@@ -177,7 +177,7 @@ ms.lasthandoff: 01/04/2018
 
 1. 将 JAR 和 "web.config" 文件部署到 Web 应用后，需要使用 Azure 门户重新启动 Web 应用：
 
-   ![][AZ10]
+   ![重新启动 Web 应用][AZ10]
 
 1. 使用 Web 浏览器浏览到 Web 应用的 URL 以测试 Web 应用，如果有可用的 Curl，也可使用如以下示例所示的语法：
    ```

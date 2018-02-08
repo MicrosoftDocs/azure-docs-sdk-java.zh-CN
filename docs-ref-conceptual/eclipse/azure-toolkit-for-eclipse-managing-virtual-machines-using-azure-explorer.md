@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: Java
-ms.topic: article
-ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 41bb9b8009c0cbae01fec42c56d6a74d84cc166b
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.date: 02/01/2018
+ms.devlang: Java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: a02f8d02f8c5c32091dd106e036b636b1d11cff0
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理虚拟机
 
@@ -58,7 +58,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    ![“选择虚拟机映像”窗口][CR03]
 
-1. 单击“下一步”。
+1. 单击“资源组名称” 的 Azure 数据工厂。
 
 1. 在“虚拟机基本设置”窗口中输入以下信息：
 
@@ -72,7 +72,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    ![“虚拟机基本设置”窗口][CR04]
 
-1. 单击“下一步”。
+1. 单击“资源组名称” 的 Azure 数据工厂。
 
 1. 在“创建新存储帐户”窗口输入以下信息：
 
