@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: cache
-ms.workload: na
-ms.tgt_pltfrm: cache-redis
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: robmcm;zhijzhao;yidon
-ms.openlocfilehash: c029a1518584a953c96870110f7ab3b79409f8ca
-ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: cache
+ms.tgt_pltfrm: cache-redis
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: 8bfe7c2ddd238e0e5a259de9078b831a97b1b1a4
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 01/04/2018
 
 ## <a name="prerequisites"></a>先决条件
 
-为遵循本文介绍的步骤，需要以下先决条件：
+为完成本文介绍的步骤，需要满足以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
 * [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
@@ -59,7 +59,7 @@ ms.lasthandoff: 01/04/2018
 
 ## <a name="create-a-redis-cache-on-azure"></a>在 Azure 上创建 Redis 缓存
 
-1. 浏览到 Azure 门户 <https://portal.azure.com/>，然后单击“+新建”项。
+1. 浏览到 Azure 门户（网址：<https://portal.azure.com/>），然后单击“+新建”。
 
    ![Azure 门户][AZ01]
 
@@ -113,12 +113,16 @@ ms.lasthandoff: 01/04/2018
 
    > [!NOTE] 
    > 
-   > 如果使用其他启用了 SSL 的 Redis 客户端（如 Jedis），可能需要在 application.properties 文件中指定端口 6380。 例如：
+   > 如果使用其他启用了 SSL 的 Redis 客户端（如 Jedis），则需要在 *application.properties* 文件中指定要使用 SSL，并使用端口 6380。 例如：
    > 
    > ```yaml
+   > # Specify the DNS URI of your Redis cache.
    > spring.redis.host=myspringbootcache.redis.cache.windows.net
+   > # Specify the access key for your Redis cache.
    > spring.redis.password=57686f6120447564652c2049495320526f636b73=
+   > # Specify that you want to use SSL.
    > spring.redis.ssl=true
+   > # Specify the SSL port for your Redis cache.
    > spring.redis.port=6380
    > ```
    > 

@@ -7,36 +7,36 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: robmcm
-ms.openlocfilehash: a999e33674ea01e776db10186e8af83ce157ef20
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: active-directory
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: identity
+ms.openlocfilehash: cf1cad0b87626058f7204a6565d09fb8901b7ce4
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>如何使用适用于 Azure Active Directory 的 Spring Boot 起动器
 
 ## <a name="overview"></a>概述
 
-本文演示如何使用 **[Spring Initializr]**（适用于 Azure Active Directory (Azure AD) 的 Spring Boot 起动器）创建应用。
+本文演示如何使用 **[Spring Initializr]** 创建一个应用，该应用使用适用于 Azure Active Directory (Azure AD) 的 Spring Boot 起动器。
 
 ## <a name="prerequisites"></a>先决条件
 
-为遵循本文介绍的步骤，需要以下先决条件：
+为完成本文介绍的步骤，需要满足以下先决条件：
 
-* Azure 订阅；若尚未拥有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册获取[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
 * [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序
 
-1. 浏览到 https://start.spring.io/<>。
+1. 浏览到 <https://start.spring.io/>。
 
 1. 指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。
 
@@ -144,11 +144,11 @@ ms.lasthandoff: 12/06/2017
    azure.activedirectory.activeDirectoryGroups=Users
    ```
    其中：
-   参数 | 说明
-   ---|---|---
-   `azure.activedirectory.clientId` | 包含前面复制的“应用程序 ID”。
-   `azure.activedirectory.clientSecret` | 包含前面完成的应用注册中的密钥值。
-   `azure.activedirectory.activeDirectoryGroups` | 包含用于身份验证的 Active Directory 组列表。
+   | 参数 | 说明 |
+   |---|---|
+   | `azure.activedirectory.clientId` | 包含前面复制的“应用程序 ID”。 |
+   | `azure.activedirectory.clientSecret` | 包含前面完成的应用注册中的密钥值。 |
+   | `azure.activedirectory.activeDirectoryGroups` | 包含用于身份验证的 Active Directory 组列表。 |
 
 
 1. 保存并关闭 *application.properties* 文件。
@@ -222,7 +222,7 @@ ms.lasthandoff: 12/06/2017
    mvn clean package
    ```
 
-   ![][build-application]
+   ![生成应用程序][build-application]
 
 1. 使用 Maven 生成 Spring Boot 应用程序，然后运行该程序，例如：
 
@@ -230,8 +230,6 @@ ms.lasthandoff: 12/06/2017
    mvn clean package
    mvn spring-boot:run
    ```
-
-
 
 1. 通过 Maven 生成并启动应用程序后，请在 Web 浏览器中打开 <http://localhost:8080>。
 

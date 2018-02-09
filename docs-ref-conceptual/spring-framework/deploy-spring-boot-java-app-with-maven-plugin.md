@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: app-service
-ms.workload: web
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: robmcm;kevinzha
-ms.openlocfilehash: 656e4dcc5b2510bb14fd79ed5da8a3dfd7fc08da
-ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: app-service
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: web
+ms.openlocfilehash: 17c358317d1b96521de87f263a92fa2d7c0ff26c
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-web-apps"></a>使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中
 
@@ -143,13 +143,13 @@ ms.lasthandoff: 01/04/2018
    </servers>
    ```
    其中：
-   元素 | 说明
-   ---|---|---
-   `<id>` | 指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。
-   `<client>` | 包含服务主体的 `appId` 值。
-   `<tenant>` | 包含服务主体的 `tenant` 值。
-   `<key>` | 包含服务主体的 `password` 值。
-   `<environment>` | 定义目标 Azure 云环境，此示例中为 `AZURE`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整的环境列表）
+   | 元素 | 说明 |
+   |---|---|
+   | `<id>` | 指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。 |
+   | `<client>` | 包含服务主体的 `appId` 值。 |
+   | `<tenant>` | 包含服务主体的 `tenant` 值。 |
+   | `<key>` | 包含服务主体的 `password` 值。 |
+   | `<environment>` | 定义目标 Azure 云环境，此示例中为 `AZURE`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整的环境列表。） |
 
 1. 保存并关闭 settings.xml 文件。
 
@@ -193,16 +193,16 @@ ms.lasthandoff: 01/04/2018
 
 可以为 Maven 插件修改几个值，[适用于 Azure Web 应用的 Maven 插件]文档中提供了这些元素各自的详细描述。 尽管如此，在本文中有仍几个值得注意的值：
 
-元素 | 说明
----|---|---
-`<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。
-`<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。
-`<resourceGroup>` | 指定目标资源组，在此示例中为 `maven-plugin`。 如果资源组不存在，则会在部署过程中进行创建。
-`<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-web-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。）
-`<region>` | 指定目标区域，在此示例中为 `westus`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。）
-`<javaVersion>` | 为 Web 应用指定 Java 运行时版本。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。）
-`<deploymentType>` | 为 Web 应用指定部署类型。 目前仅支持 `ftp`，但是正在开发其他部署类型支持。
-`<resources>` | 指定将 Web 应用部署到 Azure 时 Maven 使用的资源和目标。 此示例中，两个 `<resource>` 元素指定 Maven 部署 Web 应用的 JAR 文件和 Spring Boot 项目中的 web.config 文件。
+| 元素 | 说明 |
+|---|---|
+| `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
+| `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。 |
+| `<resourceGroup>` | 指定目标资源组，在此示例中为 `maven-plugin`。 如果资源组不存在，则会在部署过程中进行创建。 |
+| `<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-web-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。） |
+| `<region>` | 指定目标区域，在此示例中为 `westus`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。） |
+| `<javaVersion>` | 为 Web 应用指定 Java 运行时版本。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。） |
+| `<deploymentType>` | 为 Web 应用指定部署类型。 目前仅支持 `ftp`，但是正在开发其他部署类型支持。 |
+| `<resources>` | 指定将 Web 应用部署到 Azure 时 Maven 使用的资源和目标。 此示例中，两个 `<resource>` 元素指定 Maven 部署 Web 应用的 JAR 文件和 Spring Boot 项目中的 web.config 文件。 |
 
 ## <a name="build-and-deploy-your-web-app-to-azure"></a>生成 Web 应用并将其部署到 Azure
 

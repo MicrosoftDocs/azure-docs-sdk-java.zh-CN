@@ -7,28 +7,28 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: key-vault
-ms.workload: identity
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 11/29/2017
 ms.author: robmcm
-ms.openlocfilehash: 165a108147ef5ef7575820bbb6c2ee526888f722
-ms.sourcegitcommit: 558d875e9a255deb5b83b3f1646bd1dd9eee0a0d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: key-vault
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: identity
+ms.openlocfilehash: 52e7dc3f84ea96f22d8e478a597452c76ed8bf22
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>如何使用适用于 Azure Key Vault 的 Spring Boot 起动器
 
 ## <a name="overview"></a>概述
 
-本文演示如何使用 **[Spring Initializr]** 创建一个应用，该应用使用适用于 Azure Key Vault 的 Spring Boot 起动器检索 Key Vault 中以机密形式存储的连接字符串。
+本文演示如何使用 **[Spring Initializr]** 创建一个应用，该应用使用适用于 Azure Key Vault 的 Spring Boot 起动器检索密钥保管库中以机密形式存储的连接字符串。
 
 ## <a name="prerequisites"></a>先决条件
 
-为遵循本文介绍的步骤，需要以下先决条件：
+为完成本文介绍的步骤，需要满足以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
 * [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
@@ -85,9 +85,8 @@ ms.lasthandoff: 02/01/2018
        }
      }
    ]
-   ```
 
-1. 指定要用于 Azure 的帐户的 GUID；例如：
+1. Specify the GUID for the account you want to use with Azure; for example:
 
    ```azurecli
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
@@ -124,9 +123,10 @@ ms.lasthandoff: 02/01/2018
    ```shell
    az ad sp create-for-rbac --name "wingtiptoysuser"
    ```
+   其中：
    | 参数 | 说明 |
    |---|---|
-   | `id` | 指定前面创建的应用程序注册中的 GUID。 |
+   | `name` | 指定 Azure 服务主体的名称。 |
 
    Azure CLI 将返回包含 *appId* 和 *password* 的 JSON 状态消息，稍后要使用此信息分别作为客户端 ID 和客户端密码；例如：
 
@@ -170,7 +170,7 @@ ms.lasthandoff: 02/01/2018
    |---|---|
    | `name` | 指定前面创建的 Key Vault 名称。 |
    | `secret-permission` | 指定 Key Vault 的[安全策略](https://docs.microsoft.com/en-us/cli/azure/keyvault)。 |
-   | `object-id` | 指定前面创建的应用程序注册的 GUID。 |
+   | `spn` | 指定前面创建的应用程序注册的 GUID。 |
 
    Azure CLI 将显示安全策略的创建结果，例如：  
 

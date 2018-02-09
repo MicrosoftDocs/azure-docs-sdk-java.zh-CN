@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: web
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: robmcm;kevinzha
-ms.openlocfilehash: 7fa375ca805ddd037173f9dbd26b6631021e60a3
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: web
+ms.openlocfilehash: 8e8e1b5d599f77edf227d2c187225f6ac530b62b
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
 
@@ -113,7 +113,11 @@ ms.lasthandoff: 12/06/2017
    ```azurecli
    az ad sp create-for-rbac --name "uuuuuuuu" --password "pppppppp"
    ```
-   其中，`uuuuuuuu` 是服务主体的用户名，`pppppppp` 是服务主体的密码。
+   其中：
+   | 参数 | 说明 |
+   |---|---|
+   | `uuuuuuuu` | 指定服务主体的用户名。 |
+   | `pppppppp` | 指定服务主体的密码。 |
 
 1. Azure 使用与以下示例类似的 JSON 进行响应：
    ```json
@@ -184,11 +188,11 @@ ms.lasthandoff: 12/06/2017
    </servers>
    ```
    其中：
-   元素 | 说明
-   ---|---|---
-   `<id>` | 包含私有 Azure 容器注册表的名称。
-   `<username>` | 包含私有 Azure 容器注册表的名称。
-   `<password>` | 包含在本文上一部分中检索的密码。
+   | 元素 | 说明 |
+   |---|---|
+   | `<id>` | 包含私有 Azure 容器注册表的名称。 |
+   | `<username>` | 包含私有 Azure 容器注册表的名称。 |
+   | `<password>` | 包含在本文上一部分中检索的密码。 |
 
 1. 将本文先前部分中的 Azure 服务主体设置添加到 settings.xml 文件中的 `<servers>` 集合；例如：
 
@@ -206,13 +210,13 @@ ms.lasthandoff: 12/06/2017
    </servers>
    ```
    其中：
-   元素 | 说明
-   ---|---|---
-   `<id>` | 指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。
-   `<client>` | 包含服务主体的 `appId` 值。
-   `<tenant>` | 包含服务主体的 `tenant` 值。
-   `<key>` | 包含服务主体的 `password` 值。
-   `<environment>` | 定义目标 Azure 云环境，此示例中为 `AZURE`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整的环境列表）
+   | 元素 | 说明 |
+   |---|---|
+   | `<id>` | 指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。 |
+   | `<client>` | 包含服务主体的 `appId` 值。 |
+   | `<tenant>` | 包含服务主体的 `tenant` 值。 |
+   | `<key>` | 包含服务主体的 `password` 值。 |
+   | `<environment>` | 定义目标 Azure 云环境，此示例中为 `AZURE`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整的环境列表） |
 
 1. 保存并关闭 settings.xml 文件。
 
@@ -231,10 +235,10 @@ ms.lasthandoff: 12/06/2017
    </properties>
    ```
    其中：
-   元素 | 说明
-   ---|---|---
-   `<azure.containerRegistry>` | 指定私有 Azure 容器注册表的名称。
-   `<docker.image.prefix>` | 指定私有 Azure 容器注册表的 URL，将“.azurecr.io”附加到私有容器注册表名称后即可派生为此 URL。
+   | 元素 | 说明 |
+   |---|---|
+   | `<azure.containerRegistry>` | 指定私有 Azure 容器注册表的名称。 |
+   | `<docker.image.prefix>` | 指定私有 Azure 容器注册表的 URL，将“.azurecr.io”附加到私有容器注册表名称后即可派生为此 URL。 |
 
 1. 确保 pom.xml 文件中 Docker 插件的 `<plugin>` 包含正确的登录服务器地址属性和本教程上一步骤中的注册表名称。 例如：
 
@@ -259,10 +263,10 @@ ms.lasthandoff: 12/06/2017
    </plugin>
    ```
    其中：
-   元素 | 说明
-   ---|---|---
-   `<serverId>` | 指定包含私有 Azure 容器注册表名称的属性。
-   `<registryUrl>` | 指定包含私有 Azure 容器注册表 URL 的属性。
+   | 元素 | 说明 |
+   |---|---|
+   | `<serverId>` | 指定包含私有 Azure 容器注册表名称的属性。 |
+   | `<registryUrl>` | 指定包含私有 Azure 容器注册表 URL 的属性。 |
 
 1. 导航到 Spring Boot 应用程序的已完成项目目录，然后运行以下命令以重新生成应用程序，并将容器推送到 Azure 容器注册表：
 
@@ -307,15 +311,15 @@ ms.lasthandoff: 12/06/2017
 
 可以为 Maven 插件修改几个值，[适用于 Azure Web 应用的 Maven 插件]文档中提供了这些元素各自的详细描述。 尽管如此，在本文中有仍几个值得注意的值：
 
-元素 | 说明
----|---|---
-`<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。
-`<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。
-`<resourceGroup>` | 指定目标资源组，在此示例中为 `wingtiptoysresources`。 如果资源组不存在，则会在部署过程中进行创建。
-`<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-linux-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。）
-`<region>` | 指定目标区域，在此示例中为 `westus`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。）
-`<containerSettings>` | 指定包含容器名称和 URL 的属性。
-`<appSettings>` | 指定 Maven 在将 Web 应用部署到 Azure 时使用的任何唯一设置。 在此示例中，`<property>` 元素包含指定应用端口的子元素的名称/值对。
+| 元素 | 说明 |
+|---|---|
+| `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
+| `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。 |
+| `<resourceGroup>` | 指定目标资源组，在此示例中为 `wingtiptoysresources`。 如果资源组不存在，则会在部署过程中进行创建。 |
+| `<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-linux-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。） |
+| `<region>` | 指定目标区域，在此示例中为 `westus`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。） |
+| `<containerSettings>` | 指定包含容器名称和 URL 的属性。 |
+| `<appSettings>` | 指定 Maven 在将 Web 应用部署到 Azure 时使用的任何唯一设置。 在此示例中，`<property>` 元素包含指定应用端口的子元素的名称/值对。 |
 
 > [!NOTE]
 >
