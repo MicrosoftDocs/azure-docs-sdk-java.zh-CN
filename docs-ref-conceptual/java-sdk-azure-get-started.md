@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: 2f40fa22244e5ffa3be76d4de579959dcb5591d6
-ms.sourcegitcommit: 0676cbb530207544090c1fd051a2f09760873cd8
+ms.openlocfilehash: f069183c96cdc42d590d2e58a5a6a500be5ab69a
+ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>使用用于 Java 的 Azure 库开始云开发
 
@@ -86,10 +86,10 @@ graphURL=https\://graph.windows.net/
 export AZURE_AUTH_LOCATION=/Users/raisa/azureauth.properties
 ```
 
-如果在 Windows 环境中操作，请将变量添加到系统属性。 打开 PowerShell，在将第二个变量替换为文件的路径后，请输入以下命令：
+如果在 Windows 环境中操作，请将变量添加到系统属性。 使用管理员权限打开 PowerShell 窗口，在将第二个变量替换为文件的路径后，输入以下命令：
 
 ```powershell
-[Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\<fullpath>\azureauth.properties", "Machine")
+setx AZURE_AUTH_LOCATION "C:\<fullpath>\azureauth.properties" /m
 ```
 
 ## <a name="create-a-new-maven-project"></a>创建新的 Maven 项目
