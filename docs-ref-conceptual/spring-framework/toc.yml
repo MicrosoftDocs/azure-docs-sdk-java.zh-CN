@@ -1,11 +1,11 @@
-- name: Azure 上的 Spring
+- name: “Azure 上的 Spring”文档
   href: ./index.yml
   items:
     - name: 入门指南
       items:
         - name: Spring Initializr
           href: spring-boot-starters-for-azure.md
-        - name: Azure 存储空间
+        - name: Azure 存储
           href: configure-spring-boot-starter-java-app-with-azure-storage.md
         - name: Azure Active Directory
           href: configure-spring-boot-starter-java-app-with-azure-active-directory.md
