@@ -1,12 +1,12 @@
 ---
-title: "使用用于 IntelliJ 的 Azure 工具包发布 Docker 容器"
-description: "了解如何使用用于 IntelliJ 的 Azure 工具包将 Web 应用作为 Docker 容器发布到 Microsoft Azure。"
-services: 
+title: 使用用于 IntelliJ 的 Azure 工具包发布 Docker 容器
+description: 了解如何使用用于 IntelliJ 的 Azure 工具包将 Web 应用作为 Docker 容器发布到 Microsoft Azure。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,11 +14,11 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: f92040b34b9897d9feea8d2ec5e8748e75fff7f7
-ms.sourcegitcommit: 381a865f2849be8e3044d24cd4b3b54e9bbb7abc
+ms.openlocfilehash: 64cefc1ace5d0377dea25fdbdc83d8dada31ddf7
+ms.sourcegitcommit: ed130145f9e5c2d803791d96bb118023175e644a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包将 Web 应用发布为 Docker 容器
 
@@ -103,27 +103,43 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
 
       * **新建登录凭据**：创建一组新的登录凭据。 如果选择此选项，请执行以下操作：
 
-        a. 在“VM **凭据** 选项卡上，提供 Docker 主机的虚拟机登录凭据的以下信息： * **用户名** ： 输入虚拟机登录凭据的用户名。
-             * **密码**和**确认**：输入虚拟机登录凭据的密码。
-             * **SSH**：输入 Docker 主机的安全外壳 (SSH) 设置。 可选择以下选项之一： * **无** ：指定虚拟机不允许 SSH 连接。
-                * **自动生成**：自动创建用于通过 SSH 建立连接的必需设置。
-                * **从目录导入**：指定包含以前已保存的一组 SSH 设置的目录。 该目录必须包含以下两个文件：
-                
-                  * *id_rsa*: Contains the RSA identification for a user.
-                  * *id_rsa.pub*: Contains the RSA public key that is used for authentication.
-            
-        b. 在“Docker 守护程序访问”选项卡上提供以下信息：
+    a. 在“VM 凭据”选项卡上，为 Docker 主机的虚拟机登录凭据提供以下信息：
 
-          ![创建 Docker 主机][PUB06]
+    * **用户名**：输入虚拟机登录凭据的用户名。
+
+    * **密码**和**确认**：输入虚拟机登录凭据的密码。
+
+    * **SSH**：输入 Docker 主机的安全外壳 (SSH) 设置。 可选择以下选项之一：
+
+        * **无**：指定虚拟机不允许 SSH 连接。
+
+        * **自动生成**：自动创建用于通过 SSH 建立连接的必需设置。
+
+        * **从目录导入**：指定包含以前已保存的一组 SSH 设置的目录。 该目录必须包含以下两个文件：
+
+            * *id_rsa*：包含用户的 RSA 标识。
+
+            * *id_rsa.pub*：包含用于身份验证的 RSA 公钥。
+
+    b. 在“Docker 守护程序访问”选项卡上提供以下信息：
+
+    ![创建 Docker 主机][PUB06]
     
-             * **Docker Daemon port**: Enter the unique TCP port for your Docker host.
-             * **TLS Security**: Enter the Transport Layer Security settings for your Docker host. You can choose from the following options:
-                * **None**: Specifies that your virtual machine does not allow TLS connections.
-                * **Auto-generate**: Automatically creates the requisite settings for connecting via TLS.
-                * **Import from directory**: Specifies a directory that contains a set of previously saved TLS settings. The directory must contain the following six files: 
-                   * *ca.pem* and *ca-key.pem*: Contain the certificate and public key for the TLS Certificate Authority.
-                   * *cert.pem* and *key.pem*: Contain client certificate and public key which will be used for TLS authentication.
-                   * *server.pem* and *server-key.pem*: Contain the client certificate and public key that is used for TLS authentication.
+    * **Docker 守护程序端口**：输入 Docker 主机的唯一 TCP 端口。
+    
+    * **TLS 安全性**：输入 Docker 主机的传输层安全性设置。 可从以下选项中选择：
+    
+        * 无：指定虚拟机不允许 TLS 连接。
+        
+        * **自动生成**：自动创建用于通过 TLS 建立连接的必需设置。
+        
+        * **从目录导入**：指定包含以前已保存的一组 TLS 设置的目录。 该目录必须包含以下六个文件：
+        
+            * *ca.pem* 和 *ca key.pem*：包含 TLS 证书颁发机构的证书和公钥。
+            
+            * cert.pem 和 key.pem：包含用于 TLS 身份验证的客户端证书和公钥。
+            
+            * server.pem 和 server-key.pem：包含用于 TLS 身份验证的客户端证书和公钥。
 
 7. 输入所需的信息后，单击“完成”。  
     此时将再次显示“在 Azure 中部署 Docker 容器”向导。
