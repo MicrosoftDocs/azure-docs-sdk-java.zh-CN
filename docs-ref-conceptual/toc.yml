@@ -28,8 +28,8 @@
       expanded: true
       href: java-azure-tools.md
       items:
-        - name: Spring
-          href: /java/azure/spring-framework/index
+        - name: VS Code
+          href: 'https://code.visualstudio.com/docs/java/java-tutorial'
         - name: IntelliJ
           href: intellij/azure-toolkit-for-intellij.md
         - name: Eclipse
@@ -81,7 +81,7 @@
           href: java-sdk-azure-web-apps-samples.md
         - name: SQL 数据库
           href: java-sdk-azure-sql-database-samples.md
-        - name: “安全”
+        - name: 安全
           href: java-sdk-azure-security-samples.md
         - name: 容器
           href: java-sdk-azure-containers-samples.md
