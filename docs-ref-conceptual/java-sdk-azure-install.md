@@ -1,7 +1,7 @@
 ---
-title: "面向 Java 开发人员的 Azure | Microsoft Docs"
-description: "适用于 Azure 的 Java SDK 和 API 参考"
-keywords: "Azure Java, Azure Java API 参考, Azure Java 类库, Azure SDK"
+title: 面向 Java 开发人员的 Azure | Microsoft Docs
+description: 适用于 Azure 的 Java SDK 和 API 参考
+keywords: Azure Java, Azure Java API 参考, Azure Java 类库, Azure SDK
 author: routlaw
 manager: douge
 ms.assetid: 7b92e776-959b-4632-8b1d-047ce1417616
@@ -10,11 +10,11 @@ ms.devlang: java
 ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
-ms.openlocfilehash: 570f820e1349e1dfd01a6c7f323b5312c14c40c6
-ms.sourcegitcommit: 4b63ecd2c92a9115dfae018618e4e4046b061b3e
+ms.openlocfilehash: 5c8bb4b81080461285551573eefc0d76b47b2d3d
+ms.sourcegitcommit: 61030d025614b084e897809e603b2ec79900ec8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="azure-libraries-for-java"></a>用于 Java 的 Azure 库
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 10/14/2017
 
 | | | | |
 |:-------------:|:----------:|:----:|:---:|
-| [Azure 存储](#azure-storage) | [SQL 数据库](#sql-database)  | [Redis 缓存](#redis-cache)   | [DocumentDB](#documentdb) |
+| [Azure 存储](#azure-storage) | [SQL 数据库](#sql-database)  | [Redis 缓存](#redis-cache)   | [Azure Cosmos DB](#cosmos-db) |
 | [服务总线](#servicebus)  | [Azure Active Directory](#azuread) | [Key Vault](#keyvault)  | [事件中心](#eventhub)
 | [IoT 服务](#iotservice) | [IoT 设备](#iotdevice) | [Data Lake](#datalake)  | [AppInsights](#appinsights) | 
 | [批处理](#batch) | [管理 Azure 资源](#management) |
@@ -97,9 +97,9 @@ ms.lasthandoff: 10/14/2017
 
 [示例](/azure/redis-cache/cache-java-get-started) | [参考](http://xetorthio.github.io/jedis)  | [GitHub](https://github.com/xetorthio/jedis)  | [发行说明](https://github.com/xetorthio/jedis/releases)  
 
-<a name="documentdb"></a>
+<a name="cosmos-db"></a>
 
-### <a name="cosmos-dbazuredocumentdbdocumentdb-introduction"></a>[Cosmos DB](/azure/documentdb/documentdb-introduction)
+### <a name="azure-cosmos-dbazurecosmos-dbintroduction"></a>[Azure Cosmos DB](/azure/cosmos-db/introduction)
 
 包含 JSON 文档并采用 SQL 或 JavaScript 查询语法的可缩放 NoSQL 数据库。   
 
@@ -111,7 +111,7 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
 
-[示例](/azure/documentdb/documentdb-java-application) | [参考](http://azure.github.io/azure-documentdb-java/) | [GitHub](https://github.com/Azure/azure-documentdb-java)   | [发行说明](https://github.com/Azure/azure-documentdb-java/blob/master/changelog.md)
+[示例](/azure/cosmos-db/sql-api-java-application) | [参考](http://azure.github.io/azure-documentdb-java/) | [GitHub](https://github.com/Azure/azure-documentdb-java)   | [发行说明](https://github.com/Azure/azure-documentdb-java/blob/master/changelog.md)
 
 <a name="servicebus"></a>
  
