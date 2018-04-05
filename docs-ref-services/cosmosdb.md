@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure Cosmos DB 库"
-description: "用于 Azure Cosmos DB 的 Java 客户端库的参考文档"
-keywords: "Azure, Java, SDK, API, SQL, 数据库, MongoDB, Cosmos DB, NoSQL, DocumentDB"
+title: 用于 Java 的 Azure Cosmos DB 库
+description: 用于 Azure Cosmos DB 的 Java 客户端库的参考文档
+keywords: Azure, Java, SDK, API, SQL, 数据库, MongoDB, Cosmos DB, NoSQL
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,23 +11,23 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: cosmosdb
-ms.openlocfilehash: 393f57df0ea2076c6ee7045b56883ee088716fad
-ms.sourcegitcommit: 93107ca9ed76a29573a5faf8f39737c85e6bbaff
+ms.openlocfilehash: 845106b773de03aba8dd5edb9a18c6b036cf3215
+ms.sourcegitcommit: 61030d025614b084e897809e603b2ec79900ec8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="azure-cosmos-db-libraries-for-java"></a>用于 Java 的 Azure Cosmos DB 库
 
 ## <a name="overview"></a>概述
 
-使用 [Cosmos DB](/azure/cosmos-db/introduction) 在全局分布式数据库中存储和查询键值、JSON 文档、图形和列数据。
+使用 [Azure Cosmos DB](/azure/cosmos-db/introduction) 在全球分布式数据库中存储和查询键值、JSON 文档、图形和列数据。
 
-若要开始使用 Cosmos DB，请参阅 [Azure Cosmos DB：使用 Java 和 Azure 门户构建 API 应用](/azure/cosmos-db/create-documentdb-java)。
+若要开始使用 Azure Cosmos DB，请参阅 [Azure Cosmos DB：使用 Java 和 Azure 门户构建 API 应用](/azure/cosmos-db/create-sql-api-java)。
 
 ## <a name="client-library"></a>客户端库
 
-使用 [DocumentDB](/azure/cosmos-db/documentdb-introduction) 客户端库连接到 Cosmos DB，以使用 [SQL 查询语法](/azure/cosmos-db/documentdb-sql-query)处理 JSON 数据。
+使用 [SQL API](/azure/cosmos-db/sql-api-introduction) 客户端库连接到 Azure Cosmos DB，以使用 [SQL 查询语法](/azure/cosmos-db/sql-api-sql-query)处理 JSON 数据。
 
 向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用 Cosmos DB 客户端库。
 
@@ -65,7 +65,7 @@ List<Document> results = client.queryDocuments("dbs/" + DATABASE_ID + "/colls/" 
 
 [使用 Azure Cosmos DB MongoDB API 开发 Java 应用][2]   
 [使用 Azure Cosmos DB 图形 API 开发 Java 应用][3]   
-[使用 Azure Cosmos DB DocumentDB API 开发 Java 应用][4]        
+[使用 Azure Cosmos DB SQL API 开发 Java 应用][4]        
 
 详细了解可在应用中使用的 [Azure Cosmos DB 示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=cosmos)。
 
