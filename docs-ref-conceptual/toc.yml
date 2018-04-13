@@ -4,6 +4,12 @@
     - name: Java 快速入门
       expanded: true
       items:
+        - name: Service Fabric
+          items:
+            - name: Spring Boot
+              href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot
+            - name: Reliable Services
+              href: /azure/service-fabric/service-fabric-quickstart-java-reliable-services
         - name: Web 应用
           href: /azure/app-service-web/app-service-web-get-started-java
         - name: SQL 数据库
@@ -45,6 +51,8 @@
       href: /java/azure/spring-framework/index
     - name: Java 教程
       items:
+        - name: 在 Service Fabric 上部署微服务
+          href: /azure/service-fabric/service-fabric-tutorial-create-java-app
         - name: Spring Boot + MySQL
           href: /azure/app-service-web/app-service-web-tutorial-java-mysql
         - name: 使用 Jenkins 持续集成/持续交付到应用服务
@@ -65,6 +73,8 @@
               href: java-sdk-azure-concepts.md
         - name: Spring Boot
           items:
+            - name: 在 Service Fabric 上部署
+              href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot
             - name: 使用 Docker 和 Kubernetes 部署
               href: /azure/container-service/container-service-deploy-spring-boot-app-on-kubernetes
               maintainContext: true
@@ -75,6 +85,8 @@
           href: /azure/app-service-web/app-service-web-deploy-spring-boot-app-with-maven-plugin
     - name: Java 代码示例
       items:
+        - name: Service Fabric
+          href: 'https://azure.microsoft.com/resources/samples/service-fabric-java-getting-started/'
         - name: 虚拟机
           href: java-sdk-azure-virtual-machine-samples.md
         - name: Web 应用

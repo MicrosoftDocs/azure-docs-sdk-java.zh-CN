@@ -1,12 +1,12 @@
 ---
-title: "如何将 Spring Boot Starter 与 Azure Cosmos DB DocumentDB API 配合使用"
-description: "了解如何配置使用 Spring Boot Initializer 和 Azure Cosmos DB DocumentDB API 创建的应用程序。"
+title: 如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用
+description: 了解如何为使用 Spring Boot Initializer 创建的应用程序配置 Azure Cosmos DB SQL API。
 services: cosmos-db
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm;yungez;kevinzha
 ms.date: 02/01/2018
 ms.devlang: java
@@ -14,19 +14,19 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 8190a7c45443ead9855d5a62194e02d7e9a919ee
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 85494fc310e2bb31cfe8636b5e866bb3f4856cd4
+ms.sourcegitcommit: 3a746e8ae9ef0e6e82fccf9aca54eae8c9c1cdca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 04/08/2018
 ---
-# <a name="how-to-use-the-spring-boot-starter-with-azure-cosmos-db-documentdb-api"></a>如何将 Spring Boot Starter 与 Azure Cosmos DB DocumentDB API 配合使用
+# <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用
 
 ## <a name="overview"></a>概述
 
-Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员使用各种标准 API（如 DocumentDB、MongoDB、Graph 和表 API）处理数据。 Microsoft 的 Spring Boot Starter 允许开发人员使用 Spring Boot 应用程序，利用 DocumentDB API 可轻松地将 Spring Boot 应用程序与 Azure Cosmos DB 集成。
+Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员使用各种标准 API（如 SQL、MongoDB、Graph 和表 API）处理数据。 Microsoft 的 Spring Boot Starter 使开发人员可以使用 Spring Boot 应用程序，这些应用程序通过使用 SQL API 与 Azure Cosmos DB 轻松集成。
 
-本文演示如何使用 Azure 门户创建 Azure Cosmos DB，如何使用 **[Spring Initializr]** 创建自定义 Java 应用程序，以及如何将 Spring Boot Starter 功能添加到自定义应用程序中以使用 DocumentDB API 在 Azure Cosmos DB 中执行数据的存储和检索操作。
+本文演示如何使用 Azure 门户创建 Azure Cosmos DB，如何使用 **[Spring Initializr]** 创建自定义 Java 应用程序，以及如何将 Spring Boot Starter 功能添加到自定义应用程序，以使用 SQL API 在 Azure Cosmos DB 中执行数据的存储和检索操作。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -38,7 +38,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 ## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a>使用 Azure 门户创建 Azure Cosmos DB
 
-1. 浏览到 Azure 门户（网址：<https://portal.azure.com/>），然后单击“+新建”。
+1. 浏览到位于 <https://portal.azure.com/> 的 Azure 门户，然后单击“+ 新建”。
 
    ![Azure 门户][AZ01]
 
@@ -68,7 +68,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
 
-1. 浏览到 https://start.spring.io/<>。
+1. 浏览到 <https://start.spring.io/>。
 
 1. 指定希望使用 Java 生成 Maven 项目，输入应用程序的“组”名称和“项目”名称，然后单击“生成项目”按钮。
 
@@ -295,7 +295,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 * [Azure Cosmos DB 文档]。
 
-* [Azure Cosmos DB：使用 Java 和 Azure 门户生成 DocumentDB API 应用][Build a DocumentDB API app with Java]
+* [Azure Cosmos DB：使用 Java 和 Azure 门户创建文档数据库][Build a SQL API app with Java]
 
 有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：
 
@@ -307,13 +307,13 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
 
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，在 <https://github.com/spring-guides/> 网站中提供了几个 Spring Boot 包。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
 
 <!-- URL List -->
 
 [Azure Cosmos DB 文档]: /azure/cosmos-db/
 [面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
-[Build a DocumentDB API app with Java]: https://docs.microsoft.com/azure/cosmos-db/create-documentdb-java
+[Build a SQL API app with Java]: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-java 
 [免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
