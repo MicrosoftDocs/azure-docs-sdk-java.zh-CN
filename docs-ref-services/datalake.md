@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure Data Lake Store 库"
-description: "Azure Data Lake Store 库的参考文档"
-keywords: "Azure, Java, SDK, API, 大数据, data lake"
+title: 用于 Java 的 Azure Data Lake Store 库
+description: Azure Data Lake Store 库的参考文档
+keywords: Azure, Java, SDK, API, 大数据, data lake
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: data-lake-store
-ms.openlocfilehash: 66ff566e74203d3b5a8e9bcc170f4c21cf310645
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: bcd1fd17759f7d171006d7b2126019d00d06d1db
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-data-lake-store-libraries-for-java"></a>用于 Java 的 Azure Data Lake Store 库
 
@@ -63,7 +63,7 @@ out.close();
 ```
 
 > [!div class="nextstepaction"]
-> [了解客户端 API](/java/api/overview/azure/datalakestore/clientlibrary)
+> [了解客户端 API](/java/api/overview/azure/datalakestore/client)
 
 
 ## <a name="management-api"></a>管理 API
@@ -82,7 +82,7 @@ out.close();
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/datalakestore/managementapi)
+> [了解管理 API](/java/api/overview/azure/datalakestore/management)
 
 ## <a name="samples"></a>示例
 

@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure DNS 库"
-description: "Azure DNS Java 管理库的参考文档"
-keywords: "Azure, Java, SDK, API, 域, DNS, 名称, 服务, 域名服务"
+title: 用于 Java 的 Azure DNS 库
+description: Azure DNS Java 管理库的参考文档
+keywords: Azure, Java, SDK, API, 域, DNS, 名称, 服务, 域名服务
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: dns
-ms.openlocfilehash: adac8e21a401bc91490b92fc5ccf90443eea569f
-ms.sourcegitcommit: f6bf497d9b98f0608aefacf1e914d8be52964234
+ms.openlocfilehash: 2cd8fe7ee4d6a87da32a349fe8f1d2815d3fd36d
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-traffic-manager-libraries-for-java"></a>用于 Java 的 Azure 流量管理器库
 
@@ -53,7 +53,7 @@ rootDnsZone = rootDnsZone.update()
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/dns/managementapi)
+> [了解管理 API](/java/api/overview/azure/dns/management)
 
 ## <a name="samples"></a>示例
 

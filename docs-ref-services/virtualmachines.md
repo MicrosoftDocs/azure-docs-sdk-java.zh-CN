@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure 虚拟机库"
-description: 
-keywords: "Azure, Java, SDK, API, 计算, 虚拟机"
+title: 用于 Java 的 Azure 虚拟机库
+description: ''
+keywords: Azure, Java, SDK, API, 计算, 虚拟机
 author: douge
 ms.author: douge
 manager: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: compute
-ms.openlocfilehash: f9a816d5787e41a4ee4643b1bc66bf21192ea298
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: a54bc40e1d28ba6ee1d8b0638cb259adbb69d78d
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-virtual-machine-libraries"></a>Azure 虚拟机库
 
@@ -59,7 +59,7 @@ VirtualMachine newLinuxVm = azure.virtualMachines().define(linuxVmName)
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/virtualmachines/managementapi)
+> [了解管理 API](/java/api/overview/azure/virtualmachines/management)
 
 
 ## <a name="samples"></a>示例

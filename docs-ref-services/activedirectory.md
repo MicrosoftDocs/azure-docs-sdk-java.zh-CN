@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure Active Directory 库"
-description: "Azure Active Directory Java 客户端和管理库的参考文档"
-keywords: "Azure, Java, SDK, API, SQL, 身份验证, AAD, Active Directory, Graph, OAuth 2.0"
+title: 用于 Java 的 Azure Active Directory 库
+description: Azure Active Directory Java 客户端和管理库的参考文档
+keywords: Azure, Java, SDK, API, SQL, 身份验证, AAD, Active Directory, Graph, OAuth 2.0
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: active-directory
-ms.openlocfilehash: 081b8455a6cd8f26ce714328d10ce25ea6a07e3b
-ms.sourcegitcommit: 4b63ecd2c92a9115dfae018618e4e4046b061b3e
+ms.openlocfilehash: 28063a1a4299fd78ba76533d0ffdc0346434eea2
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-active-directory-libraries-for-java"></a>用于 Java 的 Azure Active Directory 库
 
@@ -86,7 +86,7 @@ RoleAssignment roleAssignment2 = authenticated.roleAssignments()
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/activedirectory/managementapi)
+> [了解管理 API](/java/api/overview/azure/activedirectory/management)
 
 
 ## <a name="samples"></a>示例

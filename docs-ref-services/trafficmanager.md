@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure 流量管理器库"
-description: "Java 流量管理器管理库的参考文档"
-keywords: "Azure, Java, SDK, API, 负载均衡, 负载分配, 网络, 流量管理器"
+title: 用于 Java 的 Azure 流量管理器库
+description: Java 流量管理器管理库的参考文档
+keywords: Azure, Java, SDK, API, 负载均衡, 负载分配, 网络, 流量管理器
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: traffic-manager
-ms.openlocfilehash: 9e13f97c6ddb763fb162b3de0c8d09c77eae1ccb
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: fd78402f50df16ad7d57c0ca67815bfad5b18d51
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-traffic-manager-libraries-for-java"></a>用于 Java 的 Azure 流量管理器库
 
@@ -56,7 +56,7 @@ TrafficManagerProfile tmProfile = azure.trafficManagerProfiles().define("testTMP
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/trafficmanager/managementapi)
+> [了解管理 API](/java/api/overview/azure/trafficmanager/management)
 
 ## <a name="samples"></a>示例
 

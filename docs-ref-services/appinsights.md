@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure Application Insights 库"
-description: "适用于 Azure Appplication Insights 的 Java 管理 API 的参考文档"
-keywords: "Azure, Java, SDK, API, AppInsights, 遥测, 诊断, 跟踪, 日志, 性能"
+title: 用于 Java 的 Azure Application Insights 库
+description: 适用于 Azure Appplication Insights 的 Java 管理 API 的参考文档
+keywords: Azure, Java, SDK, API, AppInsights, 遥测, 诊断, 跟踪, 日志, 性能
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: appinsights
-ms.openlocfilehash: 9f943dc87d9e9b3e015407eea4dfd2900040da37
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: d881ff66ad806e13f7d2cbafff6ce85c23240304
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-application-insights-libraries-for-java"></a>用于 Java 的 Azure Application Insights 库
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 08/28/2017
 ```
 
 > [!div class="nextstepaction"]
-> [了解客户端 API](/java/api/overview/azure/appinsights/clientlibrary)
+> [了解客户端 API](/java/api/overview/azure/appinsights/client)
 
 ## <a name="samples"></a>示例
 

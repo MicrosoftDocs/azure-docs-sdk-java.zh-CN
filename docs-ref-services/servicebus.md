@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的服务总线库"
-description: "用于服务总线的 Java 客户端和管理库的参考文档"
-keywords: "Azure, Java, SDK, API, 消息传送, amqp, qpid, JMS, pubsub, 发布-订阅, 消息中转站"
+title: 用于 Java 的服务总线库
+description: 用于服务总线的 Java 客户端和管理库的参考文档
+keywords: Azure, Java, SDK, API, 消息传送, amqp, qpid, JMS, pubsub, 发布-订阅, 消息中转站
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: service-bus
-ms.openlocfilehash: 6fccbc76a3600e2bbe43e4332c6146d2be81b6c9
-ms.sourcegitcommit: fcf1189ede712ae30f8c7626bde50c9b8bb561bc
+ms.openlocfilehash: 7468d9b920debc778e7e3d298fbcb913add6afdd
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="service-bus-libraries-for-java"></a>用于 Java 的服务总线库
 
@@ -116,7 +116,7 @@ public class BasicSendReceiveWithQueueClient {
 ```
 
 > [!div class="nextstepaction"]
-> [了解客户端 API](/java/api/overview/azure/servicebus/clientlibrary)
+> [了解客户端 API](/java/api/overview/azure/servicebus/client)
 
 ## <a name="management-api"></a>管理 API
 
@@ -133,7 +133,7 @@ public class BasicSendReceiveWithQueueClient {
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/servicebus/managementapi)
+> [了解管理 API](/java/api/overview/azure/servicebus/management)
 
 
 ## <a name="examples"></a>示例
