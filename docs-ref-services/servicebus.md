@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: service-bus
-ms.openlocfilehash: 7468d9b920debc778e7e3d298fbcb913add6afdd
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: ed830b4f7ffa104174205f75ea2923235029ea80
+ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="service-bus-libraries-for-java"></a>用于 Java 的服务总线库
 
@@ -33,15 +33,18 @@ ms.lasthandoff: 04/26/2018
 
 对于 Java 开发人员而言，服务总线提供 Microsoft 支持的本机 API，服务总线还能与符合 AMQP 1.0 规范的库（例如 Apache Qpid Proton 的 JMS 提供程序）配合使用。
 
-[GitHub 上的源代码表单](https://github.com/azure/azure-service-bus-java)中提供了正式的服务总线客户端，[Maven Central 上提供了](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-servicebus%22)二进制文件和打包的源代码。 
-
-
 ## <a name="client-library"></a>客户端库
 
+[GitHub 上的源代码表单](https://github.com/azure/azure-service-bus-java)中提供了正式的服务总线客户端，[Maven Central 上提供了](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-servicebus%22)二进制文件和打包的源代码。
+
+**[示例代码存储库](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/)包含的示例用于演示：**
+* 如何使用 [QueueClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithQueueClient.java)
+* 如何使用 [TopicClient 和 SubscriptionClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithTopicSubscriptionClient.java)
+* 如何使用来自服务总线的 [MessageSender 和 MessageReceiver](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/SendReceiveWithMessageSenderReceiver.java) 消息。
 
 向 Maven 项目的 `pom.xml` 文件中添加依赖项，以便在自己的项目中使用库。 根据需要指定版本。
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。   
+向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。
 
 ```XML
 <dependency>
@@ -50,11 +53,6 @@ ms.lasthandoff: 04/26/2018
     <version>1.0.0</version>
 </dependency>
 ```
-
-## <a name="examples"></a>示例
-
-[示例代码存储库](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/)包含有关如何处理来自服务总线的 [QueueClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithQueueClient.java)、[TopicClient 和 SubscriptionClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithTopicSubscriptionClient.java) 以及 [MessageSender 和MessageReceiver](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/SendReceiveWithMessageSenderReceiver.java) 消息的示例。
-
 
 ```java
 public class BasicSendReceiveWithQueueClient {
@@ -116,12 +114,19 @@ public class BasicSendReceiveWithQueueClient {
 ```
 
 > [!div class="nextstepaction"]
-> [了解客户端 API](/java/api/overview/azure/servicebus/client)
+> [浏览客户端 API](/java/api/overview/azure/servicebus/client)
+> [在此处查找更多示例（也可查看上面的内容以获取更多详细信息）](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/)
 
 ## <a name="management-api"></a>管理 API
 
 使用管理 API 创建和管理命名空间、主题、队列与订阅。
 
+**请查看下面的一些示例：**
+* [管理服务总线队列](https://github.com/Azure-Samples/service-bus-java-manage-queue-with-basic-features)
+* [创建和订阅服务总线主题](https://github.com/Azure-Samples/service-bus-java-manage-publish-subscribe-with-basic-features)
+
+**在项目中使用管理 API：**
+\
 向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。  
 
 ```XML
@@ -134,11 +139,5 @@ public class BasicSendReceiveWithQueueClient {
 
 > [!div class="nextstepaction"]
 > [了解管理 API](/java/api/overview/azure/servicebus/management)
-
-
-## <a name="examples"></a>示例
-
-[管理服务总线队列](https://github.com/Azure-Samples/service-bus-java-manage-queue-with-basic-features)
-[创建和订阅服务总线主题](https://github.com/Azure-Samples/service-bus-java-manage-publish-subscribe-with-basic-features)
 
 详细了解可在应用中使用的 [Azure 服务总线示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=bus)。
