@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
-ms.openlocfilehash: 3808c6d56b04f28c84a89a25219e4ec523f87964
-ms.sourcegitcommit: 61030d025614b084e897809e603b2ec79900ec8d
+ms.openlocfilehash: 1d556955fcc5b73f1ba099a0b846b571ba64ccff
+ms.sourcegitcommit: 107c3c5ed8c6991c751f95bcaf3757220940df9e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>使用用于 Java 的 Azure 库进行身份验证 
 
@@ -90,7 +90,7 @@ Azure azure = Azure
 
 `client`、`tenant` 和 `key` 是配合[基于文件的身份验证](#mgmt-file)使用的相同服务主体值。 `AzureEnvironment.AZURE` 值针对 Azure 公有云创建凭据。 如需访问其他云（例如 `AzureEnvironment.AZURE_GERMANY`），请将此值更改为其他值。  
 
- 从环境变量或机密管理存储（例如 [Key Vault](/azure/key-vault/key-vault-whatis.md)）中读取服务主体值。 避免在代码中以明文字符串形式设置这些值，防止在版本控制历史记录中意外公开凭据。   
+ 从环境变量或机密管理存储（例如 [Key Vault](/azure/key-vault/key-vault-whatis)）中读取服务主体值。 避免在代码中以明文字符串形式设置这些值，防止在版本控制历史记录中意外公开凭据。   
 
 <a name="mgmt-file"></a>
 

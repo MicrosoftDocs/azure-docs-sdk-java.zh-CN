@@ -1,11 +1,11 @@
 ---
-title: "使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用"
-description: "本教程说明如何使用 Azure Toolkit for Eclipse 创建适用于 Azure 的 Hello World Web 应用。"
+title: 使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用
+description: 本教程说明如何使用 Azure Toolkit for Eclipse 创建适用于 Azure 的 Hello World Web 应用。
 services: app-service
 documentationcenter: java
 author: selvasingh
 manager: routlaw
-editor: 
+editor: ''
 ms.assetid: 20d41e88-9eab-462e-8ee3-89da71e7a33f
 ms.author: robmcm;asirveda
 ms.date: 02/01/2018
@@ -14,11 +14,11 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: bec94e65951330c933e0173fd580c3578e759c18
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 5e025c90c2619ec72ffddf5815fd49c3ac59c00f
+ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-eclipse"></a>使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用
 
@@ -98,7 +98,7 @@ ms.lasthandoff: 02/03/2018
 
    ![部署应用服务][deploy-app-service]
 
-1. 工具包在成功部署 Web 应用后会显示“已发布”状态的 **Azure 活动日志**，这是已部署 Web 应用的 URL 超链接。
+1. 工具包在成功部署 Web 应用后会在“Azure 活动日志”选项卡下显示“已发布”状态，这是已部署 Web 应用的 URL 超链接。
 
    ![发布状态][publish-status]
 
