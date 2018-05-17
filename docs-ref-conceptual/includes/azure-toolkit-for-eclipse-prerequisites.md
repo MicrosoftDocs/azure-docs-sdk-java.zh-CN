@@ -1,16 +1,16 @@
-## <a name="prerequisites"></a>先决条件
-若要完成文章中的步骤，需要安装用于 Eclipse 的 Azure 工具包，该工具包需要以下软件组件：
+## <a name="prerequisites"></a><span data-ttu-id="0d03c-101">先决条件</span><span class="sxs-lookup"><span data-stu-id="0d03c-101">Prerequisites</span></span>
+<span data-ttu-id="0d03c-102">若要完成文章中的步骤，需要安装用于 Eclipse 的 Azure 工具包，该工具包需要以下软件组件：</span><span class="sxs-lookup"><span data-stu-id="0d03c-102">To complete the steps in his article, you will need to install the Azure Toolkit for Eclipse, which requires the following software components:</span></span>
 
-* Eclipse IDE for Java EE Developers、Mars 或更高版本。 可以从 [Eclipse 网站](http://www.eclipse.org/downloads/)下载它。
-* Java 开发人员工具包 (JDK) 1.8 或更高版本。
-* 操作系统。 适用于 Eclipse 的 Azure 工具包已在以下操作系统上通过测试：
+* <span data-ttu-id="0d03c-103">Eclipse IDE for Java EE Developers、Mars 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="0d03c-103">Eclipse IDE for Java EE Developers, Mars, or later.</span></span> <span data-ttu-id="0d03c-104">可以从 [Eclipse 网站](http://www.eclipse.org/downloads/)下载它。</span><span class="sxs-lookup"><span data-stu-id="0d03c-104">You can download it from the [Eclipse website](http://www.eclipse.org/downloads/).</span></span>
+* <span data-ttu-id="0d03c-105">Java 开发人员工具包 (JDK) 1.8 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="0d03c-105">A Java Developer Kit (JDK), version 1.8 or later.</span></span>
+* <span data-ttu-id="0d03c-106">操作系统。</span><span class="sxs-lookup"><span data-stu-id="0d03c-106">An operating system.</span></span> <span data-ttu-id="0d03c-107">适用于 Eclipse 的 Azure 工具包已在以下操作系统上通过测试：</span><span class="sxs-lookup"><span data-stu-id="0d03c-107">The Azure Toolkit for Eclipse has been tested on the following operating systems:</span></span>
   
-  * Windows 10、Windows 8.1、Windows 8 和 Windows 7
-  * Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 和 Windows Server 2008
-  * [Mac OS X](http://www.apple.com/osx) 版本“Yosemite”及更高版本
-  * [Ubuntu Linux](http://www.ubuntu.com) 版本 14、15 和 16
+  * <span data-ttu-id="0d03c-108">Windows 10、Windows 8.1、Windows 8 和 Windows 7</span><span class="sxs-lookup"><span data-stu-id="0d03c-108">Windows 10, Windows 8.1, Windows 8, and Windows 7</span></span>
+  * <span data-ttu-id="0d03c-109">Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 和 Windows Server 2008</span><span class="sxs-lookup"><span data-stu-id="0d03c-109">Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, and Windows Server 2008</span></span>
+  * <span data-ttu-id="0d03c-110">[Mac OS X](http://www.apple.com/osx) 版本“Yosemite”及更高版本</span><span class="sxs-lookup"><span data-stu-id="0d03c-110">[Mac OS X](http://www.apple.com/osx) version "Yosemite" and later</span></span>
+  * <span data-ttu-id="0d03c-111">[Ubuntu Linux](http://www.ubuntu.com) 版本 14、15 和 16</span><span class="sxs-lookup"><span data-stu-id="0d03c-111">[Ubuntu Linux](http://www.ubuntu.com) version 14, 15, and 16</span></span>
 
-有关详细信息，请参阅 Eclipse Marketplace 的 [Azure Toolkit for Eclipse](http://marketplace.eclipse.org/content/azure-toolkit-eclipse)（适用于 Eclipse 的 Azure 工具包）页。
+<span data-ttu-id="0d03c-112">有关详细信息，请参阅 Eclipse Marketplace 的 [Azure Toolkit for Eclipse](http://marketplace.eclipse.org/content/azure-toolkit-eclipse)（适用于 Eclipse 的 Azure 工具包）页。</span><span class="sxs-lookup"><span data-stu-id="0d03c-112">For more information, see the [Azure Toolkit for Eclipse](http://marketplace.eclipse.org/content/azure-toolkit-eclipse) page at the Eclipse Marketplace.</span></span>
 
 <!--
 > [!IMPORTANT]
