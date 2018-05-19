@@ -1,12 +1,12 @@
 ---
-title: "用于 Eclipse 的 Azure 工具包的登录说明"
-description: "了解如何使用用于 Eclipse 的 Azure 工具包登录到 Microsoft Azure。"
-services: 
+title: 用于 Eclipse 的 Azure 工具包的登录说明
+description: 了解如何使用用于 Eclipse 的 Azure 工具包登录到 Microsoft Azure。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,11 +14,11 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 498a22c455e54b8038169cf4e9f6ac7d7287c0bb
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: eb6099ab0c19bf3588cb7fd668f070771e58fe74
+ms.sourcegitcommit: 8230cf6b15ac51a9f8a209e9b76411a0385029aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="azure-sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>用于 Eclipse 的 Azure 工具包的 Azure 登录说明
 
@@ -91,7 +91,7 @@ ms.lasthandoff: 02/03/2018
 
    ![“登录”对话框][A02]
 
-1. 显示“选择已验证的文件”对话框时，选择先前创建的凭据文件，然后单击“选择”。
+1. 显示“选择已验证的文件”对话框时，选择先前创建的凭据文件，然后单击“打开”。
 
    ![“登录”对话框][A08]
 
