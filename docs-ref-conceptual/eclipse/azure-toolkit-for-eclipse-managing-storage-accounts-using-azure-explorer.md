@@ -1,12 +1,12 @@
 ---
-title: "使用用于 Eclipse 的 Azure 资源管理器管理存储帐户"
-description: "了解如何使用用于 Eclipse 的 Azure 资源管理器管理 Azure 存储帐户。"
-services: 
+title: 使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
+description: 了解如何使用用于 Eclipse 的 Azure 资源管理器管理 Azure 存储帐户。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,11 +14,11 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 7b493097e94580df42efcfb8c56736e1f179b280
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 310d95436189af09f794154f4c9f0e71c47d88c8
+ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
 
@@ -32,9 +32,9 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 若要使用 Azure 资源管理器创建存储帐户，请执行以下操作：
 
-1. 按照 [用于 Eclipse 的 Azure 工具包的登录说明] 中的步骤登录到 Azure 帐户。
+1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](https://docs.microsoft.com/java/azure/eclipse/azure-toolkit-for-eclipse-sign-in-instructions)中的步骤登录到 Azure 帐户。
 
-1. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“存储帐户”，并单击“创建存储帐户”。
+1. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“存储帐户”，然后单击“创建存储帐户”。
 
    ![“创建存储帐户”命令][CS01]
 
