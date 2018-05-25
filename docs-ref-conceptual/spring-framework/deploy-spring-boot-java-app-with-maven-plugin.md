@@ -1,12 +1,12 @@
 ---
-title: "使用 Maven 和 Azure 将 Spring Boot 应用部署到云中"
-description: "了解如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中。"
+title: 使用 Maven 和 Azure 将 Spring Boot 应用部署到云中
+description: 了解如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中。
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm;kevinzha
 ms.date: 02/01/2018
 ms.devlang: java
@@ -14,11 +14,11 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 17c358317d1b96521de87f263a92fa2d7c0ff26c
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 82cb0da3ce49fa77f888808af14455bf226d5cb0
+ms.sourcegitcommit: 024b3127daf396a17bd43d57642e3534ae87f120
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-web-apps"></a>使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 02/03/2018
 
 ## <a name="create-an-azure-service-principal"></a>创建 Azure 服务主体
 
-本部分将创建 Maven 插件在将 Web 应用部署到 Azure 时使用的 Azure 服务主体。
+本部分要创建 Maven 插件在将 Web 应用部署到 Azure 时使用的 Azure 服务主体。
 
 1. 打开命令提示符。
 
@@ -120,9 +120,9 @@ ms.lasthandoff: 02/03/2018
 
 ## <a name="configure-maven-to-use-your-azure-service-principal"></a>配置 Maven 以使用 Azure 服务主体
 
-本部分将使用 Azure 服务主体中的值配置 Maven 在将 Web 应用部署到 Azure 时要使用的身份验证。
+本部分要使用 Azure 服务主体中的值配置 Maven 在将 Web 应用部署到 Azure 时要使用的身份验证。
 
-1. 在文本编辑器中打开 Maven `settings.xml` 文件；此文件可能位于如以下示例所示的路径中：
+1. 在文本编辑器中打开你的 Maven `settings.xml` 文件。 此文件可能位于类似于以下示例的路径中：
    * `/etc/maven/settings.xml`
    * `%ProgramFiles%\apache-maven\3.5.0\conf\settings.xml`
    * `$HOME/.m2/settings.xml`
@@ -195,7 +195,7 @@ ms.lasthandoff: 02/03/2018
 
 | 元素 | 说明 |
 |---|---|
-| `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
+| `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 验证 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
 | `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。 |
 | `<resourceGroup>` | 指定目标资源组，在此示例中为 `maven-plugin`。 如果资源组不存在，则会在部署过程中进行创建。 |
 | `<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-web-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。） |

@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: event-hub
-ms.openlocfilehash: 076906ff3cafcb4eba97b0a022e5214d7834517c
-ms.sourcegitcommit: 02b70b9f5d34415c337601f0b818f7e0985fd884
+ms.openlocfilehash: b6646ef27edace4247090e749c9a52cd6a33a82c
+ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="azure-event-hub-libraries-for-java"></a>用于 Java 的 Azure 事件中心库
 
@@ -30,40 +30,44 @@ ms.lasthandoff: 03/22/2018
 
 使用事件中心客户端库将事件发送到 Azure 事件中心，并从事件中心使用和处理事件。
 
-向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。  
-
-```XML
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure-eventhubs</artifactId>
-    <version>0.14.3</version>
-</dependency>
-```   
+向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用[客户端库](https://mvnrepository.com/artifact/com.microsoft.azure/azure-eventhubs)。
+ 
 
 ## <a name="example"></a>示例
 
 将事件发送到事件中心。
 
 ```java
-ConnectionStringBuilder connStr = new ConnectionStringBuilder(namespaceName, eventHubName,sasKeyName, sasKey);
+final ConnectionStringBuilder connStr = new ConnectionStringBuilder()
+                                            .setNamespaceName(namespaceName)
+                                            .setEventHubName(eventHubName)
+                                            .setSasKeyName(sasKeyName)
+                                            .setSasKey(sasKey);
+final EventHubClient ehClient = EventHubClient.createSync(connStr.toString());
 
-byte[] payloadBytes = "Test AMQP message from JMS".getBytes("UTF-8");
-EventData sendEvent = new EventData(payloadBytes);
-EventHubClient ehClient = EventHubClient.createFromConnectionStringSync(connStr.toString());
+final byte[] payloadBytes = "Test AMQP message".getBytes("UTF-8");
+final EventData sendEvent = new EventData(payloadBytes);
+
 ehClient.sendSync(sendEvent);
 ```
 
+
 > [!div class="nextstepaction"]
-> [了解客户端 API](/java/api/overview/azure/eventhub/client)
+> [了解客户端 API](/java/api/overview/azure/eventhubs/client)
+
 
 
 ## <a name="samples"></a>示例
 
-[通过 JMS 向事件中心写入数据以及从 Apache Storm 读取数据][1]
-[使用混合 .NET/Java 拓扑来读取和写入事件中心][2] 
+[使用示例探究事件中心数据平面 API][1]
 
-[1]: https://github.com/Azure-Samples/event-hubs-java-storm-sender-jms-receiver
-[2]: https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub
+[通过 JMS 写入事件中心以及从 Apache Storm 读取][2]
+
+[使用混合 .NET/Java 拓扑从事件中心读取和写入][3] 
+
+[1]: https://github.com/Azure/azure-event-hubs/tree/master/samples/Java
+[2]: https://github.com/Azure-Samples/event-hubs-java-storm-sender-jms-receiver
+[3]: https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub
 
 详细了解可在应用中使用的 [Azure 事件中心示例 Java 代码](https://azure.microsoft.com/resources/samples/?platform=java&term=event)。
 
