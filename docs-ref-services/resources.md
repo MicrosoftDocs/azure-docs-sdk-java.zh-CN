@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823678"
 ---
 # <a name="azure-resource-manager-libraries-for-java"></a>用于 Java 的 Azure 资源管理器库
 

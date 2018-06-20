@@ -1,6 +1,6 @@
 ---
-title: "用于 Java 的 Azure 库"
-description: "用于 Java 的 Azure 管理和服务库概述"
+title: 用于 Java 的 Azure 库
+description: 用于 Java 的 Azure 管理和服务库概述
 keywords: Azure, Java, SDK, API
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930873"
 ---
 # <a name="azure-libraries-for-java"></a>用于 Java 的 Azure 库
 

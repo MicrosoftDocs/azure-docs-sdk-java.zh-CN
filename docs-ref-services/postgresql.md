@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure Database for PostgreSQL 库"
-description: "用于 Azure Database for PostgreSQL 的 Java 客户端库的参考文档"
-keywords: "Azure, Java, SDK, API, SQL, 数据库, PostGres, PostgreSQL"
+title: 用于 Java 的 Azure Database for PostgreSQL 库
+description: 用于 Azure Database for PostgreSQL 的 Java 客户端库的参考文档
+keywords: Azure, Java, SDK, API, SQL, 数据库, PostGres, PostgreSQL
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -16,6 +16,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930973"
 ---
 # <a name="azure-database-for-postgresql-libraries-for-java"></a>用于 Java 的 Azure Database for PostgreSQL 库
 

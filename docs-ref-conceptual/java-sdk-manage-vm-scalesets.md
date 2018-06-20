@@ -1,6 +1,6 @@
 ---
-title: "使用 Java 管理虚拟机规模集 | Microsoft Docs"
-description: "使用用于 Java 的 Azure SDK 管理 Azure 虚拟机规模集的示例代码"
+title: 使用 Java 管理虚拟机规模集 | Microsoft Docs
+description: 使用用于 Java 的 Azure SDK 管理 Azure 虚拟机规模集的示例代码
 author: rloutlaw
 manager: douge
 ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931153"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>从 Java 应用程序管理 Azure 虚拟机规模集
 

@@ -1,6 +1,6 @@
 ---
-title: "使用 Java 配置 Web 应用部署 | Microsoft Docs"
-description: "通过用于 Java 的 Azure SDK 配置 Git 或 FTP Azure 应用服务部署的 Java 示例代码"
+title: 使用 Java 配置 Web 应用部署 | Microsoft Docs
+description: 通过用于 Java 的 Azure SDK 配置 Git 或 FTP Azure 应用服务部署的 Java 示例代码
 author: rloutlaw
 manager: douge
 ms.assetid: 833e9c78-1e50-4c23-a611-f73a2f0c2983
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931183"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>从 Java 应用程序配置 Azure 应用服务部署源
 

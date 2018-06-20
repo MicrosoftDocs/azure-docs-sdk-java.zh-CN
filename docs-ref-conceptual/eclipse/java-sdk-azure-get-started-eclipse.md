@@ -1,12 +1,12 @@
 ---
-title: "通过 Eclipse 开始使用用于 Java 的 Azure"
-description: "结合自己的 Azure 订阅开始了解用于 Java 的 Azure 库的基本用法。"
-keywords: "Azure, Java, SDK, API, 身份验证, 入门"
-services: 
+title: 通过 Eclipse 开始使用用于 Java 的 Azure
+description: 结合自己的 Azure 订阅开始了解用于 Java 的 Azure 库的基本用法。
+keywords: Azure, Java, SDK, API, 身份验证, 入门
+services: ''
 documentationcenter: java
 author: roygara
 manager: timlt
-editor: 
+editor: ''
 ms.author: v-rogara
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/09/2018
+ms.locfileid: "29065514"
 ---
 # <a name="get-started-with-the-azure-libraries-using-eclipse"></a>通过 Eclipse 开始使用 Azure 库
 

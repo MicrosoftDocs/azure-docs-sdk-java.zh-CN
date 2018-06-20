@@ -1,7 +1,7 @@
 ---
-title: "面向 Java 开发人员的 Azure 管理库指南"
-description: "有关使用用于 Java 的 Java 管理库管理 Azure 中的云资源的模式和概念。"
-keywords: "Azure, Java, SDK, API, Maven, Gradle, 身份验证, active directory, 服务主体"
+title: 面向 Java 开发人员的 Azure 管理库指南
+description: 有关使用用于 Java 的 Java 管理库管理 Azure 中的云资源的模式和概念。
+keywords: Azure, Java, SDK, API, Maven, Gradle, 身份验证, active directory, 服务主体
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1f6a80e067a8bdbbb4b2da2e2145fda73d5fe65a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2017
+ms.locfileid: "26184641"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>有关使用用于 Java 的 Azure 库进行开发的模式和最佳做法 
 

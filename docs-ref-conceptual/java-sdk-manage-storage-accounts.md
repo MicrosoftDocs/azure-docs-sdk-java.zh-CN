@@ -1,6 +1,6 @@
 ---
-title: "使用 Java 管理 Azure 存储帐户 | Microsoft Docs"
-description: "使用用于 Java 的 Azure SDK 管理 Azure 存储帐户的示例代码"
+title: 使用 Java 管理 Azure 存储帐户 | Microsoft Docs
+description: 使用用于 Java 的 Azure SDK 管理 Azure 存储帐户的示例代码
 author: rloutlaw
 manager: douge
 ms.assetid: 49be8b66-3b56-4c10-8f14-9d326d815cb4
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931053"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>从 Java 应用程序管理 Azure 存储帐户
 

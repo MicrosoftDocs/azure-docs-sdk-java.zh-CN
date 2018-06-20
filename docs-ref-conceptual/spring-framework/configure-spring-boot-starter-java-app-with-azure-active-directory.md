@@ -1,12 +1,12 @@
 ---
-title: "如何使用适用于 Azure Active Directory 的 Spring Boot 起动器"
-description: "了解如何使用 Azure Active Directory 起动器配置 Spring Boot Initializer 应用。"
+title: 如何使用适用于 Azure Active Directory 的 Spring Boot 起动器
+description: 了解如何使用 Azure Active Directory 起动器配置 Spring Boot Initializer 应用。
 services: active-directory
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954678"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>如何使用适用于 Azure Active Directory 的 Spring Boot 起动器
 

@@ -1,11 +1,11 @@
 ---
-title: "Azure Toolkit for Eclipse 的新增功能"
-description: "了解 Azure Toolkit for Eclipse 中的最新功能。"
-services: 
+title: Azure Toolkit for Eclipse 的新增功能
+description: 了解 Azure Toolkit for Eclipse 中的最新功能。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
+editor: ''
 ms.assetid: 16b066ea-aae7-4c30-9a12-fa0c3711b93e
 ms.author: robmcm;asirveda;martinsawicki
 ms.date: 02/01/2018
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954668"
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-eclipse"></a>用于 Eclipse 的 Azure 工具包的新增功能
 

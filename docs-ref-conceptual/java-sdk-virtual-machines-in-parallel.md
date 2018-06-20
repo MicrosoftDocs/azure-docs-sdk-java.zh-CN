@@ -1,6 +1,6 @@
 ---
-title: "跨区域并行创建 VM | Microsoft Docs"
-description: "使用用于 Java 的 Azure SDK 跨不同的 Azure 区域并行创建虚拟机的示例代码"
+title: 跨区域并行创建 VM | Microsoft Docs
+description: 使用用于 Java 的 Azure SDK 跨不同的 Azure 区域并行创建虚拟机的示例代码
 author: rloutlaw
 manager: douge
 ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931193"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>通过 Java 应用程序跨多个地区创建虚拟机
 
