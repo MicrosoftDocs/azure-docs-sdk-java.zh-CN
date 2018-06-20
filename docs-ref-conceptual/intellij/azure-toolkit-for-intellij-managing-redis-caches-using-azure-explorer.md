@@ -1,12 +1,12 @@
 ---
-title: "使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存"
-description: "了解如何使用用于 IntelliJ 的 Azure 资源管理器管理 Azure redis 缓存。"
-services: 
+title: 使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存
+description: 了解如何使用用于 IntelliJ 的 Azure 资源管理器管理 Azure redis 缓存。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954178"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="9c413-103">使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="9c413-103">Managing Redis Caches using the Azure Explorer for IntelliJ</span></span>
 
@@ -101,10 +102,15 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [Redis 缓存定价]: https://azure.microsoft.com/pricing/details/cache/
+[Redis Cache Pricing]: https://azure.microsoft.com/pricing/details/cache/
 [Azure Redis 缓存]: https://azure.microsoft.com/services/cache/
+[Azure Redis Cache]: https://azure.microsoft.com/services/cache/
 [Redis 缓存文档]: /azure/redis-cache
+[Redis Cache Documentation]: /azure/redis-cache
 [如何配置 Azure Redis 缓存]: /azure/redis-cache/cache-configure
+[How to configure Azure Redis Cache]: /azure/redis-cache/cache-configure
 [用于 IntelliJ 的 Azure 工具包的登录说明]: ./azure-toolkit-for-intellij-sign-in-instructions.md
+[Sign In Instructions for the Azure Toolkit for IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
 
 <!-- IMG List -->
 

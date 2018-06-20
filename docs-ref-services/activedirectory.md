@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823780"
 ---
 # <a name="azure-active-directory-libraries-for-java"></a><span data-ttu-id="403e6-104">用于 Java 的 Azure Active Directory 库</span><span class="sxs-lookup"><span data-stu-id="403e6-104">Azure Active Directory libraries for Java</span></span>
 

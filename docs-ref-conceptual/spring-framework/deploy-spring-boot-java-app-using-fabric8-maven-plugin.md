@@ -1,12 +1,12 @@
 ---
-title: "使用 Fabric8 Maven 插件部署 Spring Boot 应用"
-description: "本教程介绍使用适用于 Apache Maven 的 Fabric8 插件在 Microsoft Azure 中部署 Spring Boot 应用程序的步骤。"
+title: 使用 Fabric8 Maven 插件部署 Spring Boot 应用
+description: 本教程介绍使用适用于 Apache Maven 的 Fabric8 插件在 Microsoft Azure 中部署 Spring Boot 应用程序的步骤。
 services: container-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: yuwzho;robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954888"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a><span data-ttu-id="e1fd3-103">使用 Fabric8 Maven 插件部署 Spring Boot 应用</span><span class="sxs-lookup"><span data-stu-id="e1fd3-103">Deploy a Spring Boot app using the Fabric8 Maven Plugin</span></span>
 
@@ -524,22 +525,31 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
+[Azure Command-Line Interface (CLI)]: /cli/azure/overview
 [Azure 容器服务 (AKS)]: https://azure.microsoft.com/services/container-service/
+[Azure Container Service (AKS)]: https://azure.microsoft.com/services/container-service/
 [面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image
+[Using a custom Docker image for Azure Web App on Linux]: /azure/app-service-web/app-service-linux-using-custom-docker-image
 [Docker]: https://www.docker.com/
 [Fabric8]: https://fabric8.io/
 [免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java 开发人员工具包 (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
+[Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Kubernetes]: https://kubernetes.io/
 [Maven]: http://maven.apache.org/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Docker 上的 Spring Boot 启动入门]: https://github.com/spring-guides/gs-spring-boot-docker
+[Spring Boot on Docker Getting Started]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
 
 <!-- IMG List -->

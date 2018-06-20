@@ -1,13 +1,13 @@
 ---
-title: "通过 Intellij 开始使用用于 Java 的 Azure"
-description: "结合自己的 Azure 订阅开始了解用于 Java 的 Azure 库的基本用法。"
-keywords: "Azure, Java, SDK, API, 身份验证, 入门"
-services: 
+title: 通过 Intellij 开始使用用于 Java 的 Azure
+description: 结合自己的 Azure 订阅开始了解用于 Java 的 Azure 库的基本用法。
+keywords: Azure, Java, SDK, API, 身份验证, 入门
+services: ''
 documentationcenter: java
 author: roygara
 manager: timlt
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: v-rogara
 ms.date: 02/01/2018
 ms.devlang: java
@@ -20,6 +20,7 @@ ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/09/2018
+ms.locfileid: "29065494"
 ---
 # <a name="get-started-with-the-azure-libraries-using-intellij"></a><span data-ttu-id="2f7b1-104">通过 Intellij 开始使用 Azure 库</span><span class="sxs-lookup"><span data-stu-id="2f7b1-104">Get started with the Azure libraries using Intellij</span></span>
 

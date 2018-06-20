@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34283045"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a><span data-ttu-id="a035e-103">使用用于 Eclipse 的 Azure 资源管理器管理虚拟机</span><span class="sxs-lookup"><span data-stu-id="a035e-103">Manage virtual machines by using the Azure Explorer for Eclipse</span></span>
 

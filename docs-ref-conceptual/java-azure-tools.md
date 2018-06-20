@@ -1,6 +1,6 @@
 ---
-title: "面向 Azure Java 开发人员的工具 | Microsoft Docs"
-description: "面向使用 Azure 的 Java 开发人员的 IDE 集成、仿真器、资源浏览器和命令行接口。"
+title: 面向 Azure Java 开发人员的工具 | Microsoft Docs
+description: 面向使用 Azure 的 Java 开发人员的 IDE 集成、仿真器、资源浏览器和命令行接口。
 author: rloutlaw
 manager: douge
 ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
@@ -15,6 +15,7 @@ ms.sourcegitcommit: f0dadb22efb191182c3b79dcaa97a76cfcdcc324
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2017
+ms.locfileid: "26288302"
 ---
 # <a name="azure-tools-for-java-developers"></a><span data-ttu-id="974c9-103">面向 Java 开发人员的 Azure 工具</span><span class="sxs-lookup"><span data-stu-id="974c9-103">Azure tools for Java developers</span></span>
 

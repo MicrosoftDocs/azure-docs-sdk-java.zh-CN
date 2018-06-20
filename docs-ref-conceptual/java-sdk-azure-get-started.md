@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure 库入门"
-description: "了解如何创建 Azure 云资源，以及如何在 Java 应用程序中连接和使用这些资源。"
-keywords: "Azure, Java, SDK, API, 身份验证, 入门"
+title: 用于 Java 的 Azure 库入门
+description: 了解如何创建 Azure 云资源，以及如何在 Java 应用程序中连接和使用这些资源。
+keywords: Azure, Java, SDK, API, 身份验证, 入门
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/09/2018
+ms.locfileid: "29065524"
 ---
 # <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a><span data-ttu-id="de248-104">使用用于 Java 的 Azure 库开始云开发</span><span class="sxs-lookup"><span data-stu-id="de248-104">Get started with cloud development using the Azure libraries for Java</span></span>
 

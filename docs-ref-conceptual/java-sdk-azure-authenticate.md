@@ -17,6 +17,7 @@ ms.sourcegitcommit: 107c3c5ed8c6991c751f95bcaf3757220940df9e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34050724"
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a><span data-ttu-id="97d5d-104">使用用于 Java 的 Azure 库进行身份验证</span><span class="sxs-lookup"><span data-stu-id="97d5d-104">Authenticate with the Azure libraries for Java</span></span> 
 

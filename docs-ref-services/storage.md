@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823650"
 ---
 # <a name="azure-storage-libraries-for-java"></a><span data-ttu-id="c2f0c-103">用于 Java 的 Azure 存储库</span><span class="sxs-lookup"><span data-stu-id="c2f0c-103">Azure Storage libraries for Java</span></span>
 

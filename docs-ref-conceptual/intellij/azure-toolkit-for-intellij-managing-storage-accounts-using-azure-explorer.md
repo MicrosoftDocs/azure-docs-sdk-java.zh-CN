@@ -1,12 +1,12 @@
 ---
-title: "使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户"
-description: "了解如何使用用于 IntelliJ 的 Azure 资源管理器管理 Azure 存储帐户。"
-services: 
+title: 使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
+description: 了解如何使用用于 IntelliJ 的 Azure 资源管理器管理 Azure 存储帐户。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954838"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="6b470-103">使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户</span><span class="sxs-lookup"><span data-stu-id="6b470-103">Manage storage accounts by using the Azure Explorer for IntelliJ</span></span>
 
@@ -114,16 +115,26 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [用于 IntelliJ 的 Azure 工具包的登录说明]: ./azure-toolkit-for-intellij-sign-in-instructions.md
+[Sign-in instructions for the Azure Toolkit for IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
 [Microsoft Azure 存储简介]: /azure/storage/storage-introduction
+[Introduction to Microsoft Azure Storage]: /azure/storage/storage-introduction
 [关于 Azure 存储帐户]: /azure/storage/storage-create-storage-account
+[About Azure storage accounts]: /azure/storage/storage-create-storage-account
 [Azure 存储复制]: /azure/storage/storage-redundancy
+[Azure storage replication]: /azure/storage/storage-redundancy
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets
+[Azure storage scalability and Performance Targets]: /azure/storage/storage-scalability-targets
 [命名和引用容器、Blob 和元数据]: http://go.microsoft.com/fwlink/?LinkId=255555
+[Naming and referencing containers, blobs, and metadata]: http://go.microsoft.com/fwlink/?LinkId=255555
 
 [Azure 中的 Windows 存储帐户的大小]: /azure/virtual-machines/virtual-machines-windows-sizes
+[Sizes for Windows storage accounts in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Azure 中的 Linux 存储帐户的大小]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Sizes for Linux storage accounts in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
 [Windows 存储帐户定价]: /pricing/details/virtual-machines/windows/
+[Windows storage-account pricing]: /pricing/details/virtual-machines/windows/
 [Linux 存储帐户定价]: /pricing/details/virtual-machines/linux/
+[Linux storage-account pricing]: /pricing/details/virtual-machines/linux/
 
 <!-- IMG List -->
 

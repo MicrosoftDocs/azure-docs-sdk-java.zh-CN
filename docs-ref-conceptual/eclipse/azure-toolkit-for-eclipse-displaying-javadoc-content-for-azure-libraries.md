@@ -1,11 +1,11 @@
 ---
-title: "在 Eclipse 中显示 Azure Libraries Package for Java 的 Javadoc 内容"
-description: "如何在 Eclipse 中显示 Azure Libraries 的 Javadoc 内容。"
-services: 
+title: 在 Eclipse 中显示 Azure Libraries Package for Java 的 Javadoc 内容
+description: 如何在 Eclipse 中显示 Azure Libraries 的 Javadoc 内容。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
+editor: ''
 ms.assetid: 30f8b6a1-1d76-4d1c-861b-1db478c46e6b
 ms.author: robmcm
 ms.date: 02/01/2018
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954498"
 ---
 # <a name="displaying-javadoc-content-in-eclipse-for-the-azure-libraries-package-for-java"></a><span data-ttu-id="e7fb6-103">在 Eclipse 中显示 Azure Libraries Package for Java 的 Javadoc 内容</span><span class="sxs-lookup"><span data-stu-id="e7fb6-103">Displaying Javadoc Content in Eclipse for the Azure Libraries Package for Java</span></span>
 

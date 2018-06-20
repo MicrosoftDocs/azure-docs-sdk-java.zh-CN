@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823630"
 ---
 # <a name="azure-traffic-manager-libraries-for-java"></a><span data-ttu-id="2b76c-104">用于 Java 的 Azure 流量管理器库</span><span class="sxs-lookup"><span data-stu-id="2b76c-104">Azure Traffic Manager libraries for Java</span></span>
 

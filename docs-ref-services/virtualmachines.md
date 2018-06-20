@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823750"
 ---
 # <a name="azure-virtual-machine-libraries"></a><span data-ttu-id="ccfda-103">Azure 虚拟机库</span><span class="sxs-lookup"><span data-stu-id="ccfda-103">Azure virtual machine libraries</span></span>
 

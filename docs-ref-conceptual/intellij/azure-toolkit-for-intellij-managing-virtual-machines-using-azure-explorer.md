@@ -1,12 +1,12 @@
 ---
-title: "使用用于 IntelliJ 的 Azure 资源管理器管理虚拟机"
-description: "了解如何使用用于 IntelliJ 的 Azure 资源管理器管理 Azure 虚拟机。"
-services: 
+title: 使用用于 IntelliJ 的 Azure 资源管理器管理虚拟机
+description: 了解如何使用用于 IntelliJ 的 Azure 资源管理器管理 Azure 虚拟机。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954868"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="2f118-103">使用用于 IntelliJ 的 Azure 资源管理器管理虚拟机</span><span class="sxs-lookup"><span data-stu-id="2f118-103">Manage virtual machines by using the Azure Explorer for IntelliJ</span></span>
 
@@ -156,10 +157,15 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [用于 IntelliJ 的 Azure 工具包的登录说明]: ./azure-toolkit-for-intellij-sign-in-instructions.md
+[Sign-in instructions for the Azure Toolkit for IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
 [Azure 中 Windows 虚拟机的大小]: /azure/virtual-machines/virtual-machines-windows-sizes
+[Sizes for Windows virtual machines in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Azure 中 Linux 虚拟机的大小]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Sizes for Linux virtual machines in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
 [Windows 虚拟机定价]: /pricing/details/virtual-machines/windows/
+[Windows virtual-machine pricing]: /pricing/details/virtual-machines/windows/
 [Linux 虚拟机定价]: /pricing/details/virtual-machines/linux/
+[Linux virtual-machine pricing]: /pricing/details/virtual-machines/linux/
 
 <!-- IMG List -->
 

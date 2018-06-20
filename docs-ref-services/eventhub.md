@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34283021"
 ---
 # <a name="azure-event-hub-libraries-for-java"></a><span data-ttu-id="81d96-104">用于 Java 的 Azure 事件中心库</span><span class="sxs-lookup"><span data-stu-id="81d96-104">Azure Event Hub libraries for Java</span></span>
 

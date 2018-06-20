@@ -1,7 +1,7 @@
 ---
-title: "用于 Java 的 Azure 管理库 Web 应用示例"
-description: "获取有关使用用于 Java 的 Azure 管理库创建和更新应用服务中托管的 Azure Web 应用的示例代码"
-keywords: "Azure, Java, SDK, API, Maven, Gradle, web 应用, 应用服务"
+title: 用于 Java 的 Azure 管理库 Web 应用示例
+description: 获取有关使用用于 Java 的 Azure 管理库创建和更新应用服务中托管的 Azure Web 应用的示例代码
+keywords: Azure, Java, SDK, API, Maven, Gradle, web 应用, 应用服务
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930893"
 ---
 # <a name="azure-management-libraries-for-java-samples-for-web-apps"></a><span data-ttu-id="03a7e-104">用于 Java 的 Azure 管理库的 Web 应用示例</span><span class="sxs-lookup"><span data-stu-id="03a7e-104">Azure management libraries for Java samples for web apps</span></span>
 

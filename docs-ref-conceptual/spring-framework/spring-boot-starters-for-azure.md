@@ -1,12 +1,12 @@
 ---
-title: "适用于 Azure 的 Spring Boot 起动器"
-description: "本文介绍适用于 Azure 的各种 Spring Boot 起动器。"
-services: 
+title: 适用于 Azure 的 Spring Boot 起动器
+description: 本文介绍适用于 Azure 的各种 Spring Boot 起动器。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954438"
 ---
 # <a name="spring-boot-starters-for-azure"></a><span data-ttu-id="7e155-103">适用于 Azure 的 Spring Boot 起动器</span><span class="sxs-lookup"><span data-stu-id="7e155-103">Spring Boot Starters for Azure</span></span>
 
@@ -237,9 +238,12 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Azure 上的 Spring]: https://docs.microsoft.com/java/azure/spring-framework/
+[Spring on Azure]: https://docs.microsoft.com/java/azure/spring-framework/
 [Spring Framework]: https://spring.io/
 [Spring Initializr]: https://start.spring.io/
 
