@@ -14,12 +14,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 1dda697cac80a6cad3ebbbbf8a5a4f18b515dfd8
-ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
+ms.openlocfilehash: a2734fc08f2f59f64ba6c6c20ff18d75070b68d5
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33883680"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090710"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>如何使用适用于 Azure Key Vault 的 Spring Boot 起动器
 
@@ -101,6 +101,7 @@ ms.locfileid: "33883680"
    az group create --name wingtiptoysresources --location westus
    ```
    其中：
+
    | 参数 | 说明 |
    |---|---|
    | `name` | 指定资源组的唯一名称。 |
@@ -121,11 +122,12 @@ ms.locfileid: "33883680"
    }
    ```
 
-1. 从应用程序注册创建 Azure 服务主体，例如：
+2. 从应用程序注册创建 Azure 服务主体，例如：
    ```shell
    az ad sp create-for-rbac --name "wingtiptoysuser"
    ```
    其中：
+
    | 参数 | 说明 |
    |---|---|
    | `name` | 指定 Azure 服务主体的名称。 |
@@ -142,11 +144,12 @@ ms.locfileid: "33883680"
    }
    ```
 
-1. 在资源组中创建新的 Key Vault，例如：
+3. 在资源组中创建新的 Key Vault，例如：
    ```azurecli
    az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
    ```
    其中：
+
    | 参数 | 说明 |
    |---|---|
    | `name` | 指定 Key Vault 的唯一名称。 |
@@ -163,11 +166,12 @@ ms.locfileid: "33883680"
    "https://wingtiptoyskeyvault.vault.azure.net"
    ```
 
-1. 针对前面创建的 Azure 服务主体设置访问策略，例如：
+4. 针对前面创建的 Azure 服务主体设置访问策略，例如：
    ```azurecli
    az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
    ```
    其中：
+
    | 参数 | 说明 |
    |---|---|
    | `name` | 指定前面创建的 Key Vault 名称。 |
@@ -192,11 +196,12 @@ ms.locfileid: "33883680"
    }
    ```
 
-1. 在新的 Key Vault 中存储一个机密，例如：
+5. 在新的 Key Vault 中存储一个机密，例如：
    ```azurecli
    az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
    其中：
+
    | 参数 | 说明 |
    |---|---|
    | `vault-name` | 指定前面创建的 Key Vault 名称。 |
@@ -230,24 +235,26 @@ ms.locfileid: "33883680"
 
 1. 将前面下载的 Spring Boot 项目存档中的文件提取到某个目录中。
 
-1. 导航到项目中的 *src/main/resources* 文件夹，并在文本编辑器中打开 *application.properties* 文件。
+2. 导航到项目中的 *src/main/resources* 文件夹，并在文本编辑器中打开 *application.properties* 文件。
 
-1. 使用前面在完成本教程的步骤时创建的值添加 Key Vault 的值，例如：
+3. 使用前面在完成本教程的步骤时创建的值添加 Key Vault 的值，例如：
    ```yaml
    azure.keyvault.uri=https://wingtiptoyskeyvault.vault.azure.net/
    azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
    azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
    ```
    其中：
-   | 参数 | 说明 |
-   |---|---|
-   | `azure.keyvault.uri` | 指定创建 Key Vault 时使用的 URI。 |
-   | `azure.keyvault.client-id` | 指定创建服务主体时使用的 *appId* GUID。 |
+
+   |          参数          |                                 说明                                 |
+   |-----------------------------|-----------------------------------------------------------------------------|
+   |    `azure.keyvault.uri`     |           指定创建 Key Vault 时使用的 URI。           |
+   | `azure.keyvault.client-id`  |  指定创建服务主体时使用的 *appId* GUID。   |
    | `azure.keyvault.client-key` | 指定创建服务主体时使用的 *password* GUID。 |
 
-1. 导航到项目的主源代码文件，例如：*/src/main/java/com/wingtiptoys/secrets*。
 
-1. 在文本编辑器中的某个文件内打开应用程序的主 Java 文件，例如：*SecretsApplication.java*，并将以下行添加到该文件：
+4. 导航到项目的主源代码文件，例如：*/src/main/java/com/wingtiptoys/secrets*。
+
+5. 在文本编辑器中的某个文件内打开应用程序的主 Java 文件，例如：*SecretsApplication.java*，并将以下行添加到该文件：
 
    ```java
    package com.wingtiptoys.secrets;
@@ -274,7 +281,7 @@ ms.locfileid: "33883680"
    ```
    此代码示例从 Key Vault 中检索连接字符串，并将其显示到命令行。
 
-1. 保存并关闭该 Java 文件。
+6. 保存并关闭该 Java 文件。
 
 ## <a name="build-and-test-your-app"></a>生成并测试应用
 

@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: ebe98a604b52dc9a4b5a47cbf65a4c68a5c86fe3
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: efc1dffa248987772827bbe7bc0caa9f10a0b4ef
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954778"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090780"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>使用用于 IntelliJ 的旧工具包创建适用于 Azure 的 Hello World Web 应用
 
@@ -27,7 +27,7 @@ ms.locfileid: "28954778"
 
 > [!NOTE]
 >
-> 如需使用[用于 Eclipse 的 Azure 工具包]的本文版本，请参阅[使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用][eclipse-hello-world]。
+> 如需使用[用于 Eclipse 的 Azure 工具]的本文版本，请参阅[使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用][eclipse-hello-world]。
 >
 
 > [!IMPORTANT]
@@ -91,7 +91,7 @@ ms.locfileid: "28954778"
 
    c. 将“类型”更改为“Web 应用程序: 存档”。
 
-   d.单击“下一步”。 单击“确定”关闭“项目结构”对话框。
+   d. 单击“确定”关闭“项目结构”对话框。
 
    ![打开模块设置][05b]
 
@@ -125,7 +125,7 @@ ms.locfileid: "28954778"
    
    c. 为 Web 应用容器输入“DNS 标签”；这是在 Azure 中的 Web 应用程序构成主机 URL 的叶 DNS 标签。 请注意该名称必须是可用的，且符合 Azure Web 应用命名要求。
 
-   d.单击“下一步”。 在“Web 容器”下拉菜单中，为应用程序选择适当的软件。
+   d. 在“Web 容器”下拉菜单中，为应用程序选择适当的软件。
       
       当前，可以从 Tomcat 8、Tomcat 7 或 Jetty 9 中选择。 Azure 将提供所选软件的最新分发版，并且该版本将基于由 JDK 8 创建并由 Azure 提供的 JDK 最新分发版运行。
 
@@ -161,14 +161,14 @@ ms.locfileid: "28954778"
 
    h. （可选）默认情况下，Azure 自动将最新的 Java 8 分发版作为 JVM 部署到 Web 应用容器。 但是，可指定 JVM 的其他版本和分发版。 为此，请按照以下步骤操作：
       
-      * 在“新建 Web 应用容器”对话框中单击“JDK”。
-      * 可以选择以下选项之一：
+   * 在“新建 Web 应用容器”对话框中单击“JDK”。
+   * 可以选择以下选项之一：
         
-         * 部署 Azure 提供的默认 JDK
-         * 可从 Azure 上提供的其他 JDK 下拉列表中部署第三方 JDK
-         * 部署自定义 JDK，必须将其打包为 ZIP 文件，且该 JDK 公开可用或位于 Azure 存储帐户中
+      * 部署 Azure 提供的默认 JDK
+      * 可从 Azure 上提供的其他 JDK 下拉列表中部署第三方 JDK
+      * 部署自定义 JDK，必须将其打包为 ZIP 文件，且该 JDK 公开可用或位于 Azure 存储帐户中
         
-      ![“新建应用容器 JDK”选项卡][11b]
+     ![“新建应用容器 JDK”选项卡][11b]
 
    i. 完成所有上述步骤之后，“新建 Web 应用容器”对话框看起来应如下图所示：
       
@@ -242,7 +242,7 @@ ms.locfileid: "28954778"
 <!-- URL List -->
 
 [用于 IntelliJ 的 Azure 工具包]: azure-toolkit-for-intellij.md
-[用于 Eclipse 的 Azure 工具包]: ../eclipse/azure-toolkit-for-eclipse.md
+[用于 Eclipse 的 Azure 工具]: ../eclipse/azure-toolkit-for-eclipse.md
 [eclipse-hello-world]: ../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md
 [Web 应用概述]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/

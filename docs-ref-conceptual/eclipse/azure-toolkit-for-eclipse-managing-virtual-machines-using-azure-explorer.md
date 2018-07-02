@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: ec67ed44ec570da7b826c12a9f8a24a5b0170e99
-ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
+ms.openlocfilehash: c04f5225f0bb99898f69b26a4782aa57d75c4f22
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34283045"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090655"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理虚拟机
 
@@ -35,23 +35,25 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](https://docs.microsoft.com/java/azure/eclipse/azure-toolkit-for-eclipse-sign-in-instructions)中的步骤登录到 Azure 帐户。
 
-1. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“虚拟机”，并单击“创建 VM”。
+2. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“虚拟机”，并单击“创建 VM”。
 
    ![“创建 VM”命令][CR01]  
 
    此时会打开“新建虚拟机”向导。
 
-1. 在“选择订阅”窗口中选择订阅，并单击“下一步”。
+3. 在“选择订阅”窗口中选择订阅，并单击“下一步”。
 
    ![“选择订阅”窗口][CR02]
 
-1. 在“选择虚拟机映像”窗口中输入以下信息：
+4. 在“选择虚拟机映像”窗口中输入以下信息：
 
    * **位置**：指定将创建虚拟机的位置（例如“美国西部”）。
 
    * 发布者：指定创建了用于创建虚拟机的映像的发布者（例如“Microsoft”）。
 
-   * 产品/服务：指定要使用哪一个从所选发布者提供的虚拟机（例如“JDK”）。
+   * 
+  **
+  **产品/服务：指定所选发布者提供的可以使用的虚拟机产品/服务（例如“JDK”）。**
 
    * Sku：从所选产品/服务中指定要使用的库存单位 (SKU)（例如“JDK_8”）。
 
@@ -59,9 +61,9 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    ![“选择虚拟机映像”窗口][CR03]
 
-1. 单击“资源组名称” 的 Azure 数据工厂。
+5. 单击“下一步”。
 
-1. 在“虚拟机基本设置”窗口中输入以下信息：
+6. 在“虚拟机基本设置”窗口中输入以下信息：
 
    * **虚拟机名称**：指定新虚拟机的名称，该名称必须以字母开头并仅包含字母、数字和连字符。
 
@@ -73,15 +75,15 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    ![“虚拟机基本设置”窗口][CR04]
 
-1. 单击“资源组名称” 的 Azure 数据工厂。
+7. 单击“下一步”。
 
-1. 在“创建新存储帐户”窗口输入以下信息：
+8. 在“创建新存储帐户”窗口输入以下信息：
 
    * 资源组：指定虚拟机的资源组。 选择以下选项之一：
-      * 新建：指定要创建新的资源组。
-      * 使用现有资源：指定选择已与 Azure 帐户关联的资源组。
+     * 新建：指定要创建新的资源组。
+     * 使用现有资源：指定选择已与 Azure 帐户关联的资源组。
 
-      ![“创建新存储帐户”对话框][CR05]
+       ![“创建新存储帐户”对话框][CR05]
 
    * 存储帐户：指定用于存储虚拟机的存储帐户。 可使用现有存储帐户，也可以创建新帐户。
 
@@ -89,7 +91,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
       ![“新建虚拟网络”对话框][CR06]
 
-1. 在“关联的资源”窗口输入以下信息：
+9. 在“关联的资源”窗口输入以下信息：
 
    * 公共 IP 地址：为虚拟机指定面向外部的 IP 地址。 可选择创建新 IP 地址，也可以选择“(无)”（如果虚拟机将不具有公共 IP 地址）。
 
@@ -99,11 +101,11 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    ![“关联的资源”窗口][CR07]
 
-1. 单击“完成” 。  
+10. 单击“完成”。  
 
-   新虚拟机显示在“Azure 资源管理器”工具窗口中。
+    新虚拟机显示在“Azure 资源管理器”工具窗口中。
 
-   ![新建虚拟机][CR08]
+    ![新建虚拟机][CR08]
 
 ## <a name="restart-a-virtual-machine-in-eclipse"></a>在 Eclipse 中重启虚拟机
 

@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 64cefc1ace5d0377dea25fdbdc83d8dada31ddf7
-ms.sourcegitcommit: ed130145f9e5c2d803791d96bb118023175e644a
+ms.openlocfilehash: 05fb81466202547cb1bad34caae0f94f16a9d21b
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30223374"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090657"
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包将 Web 应用发布为 Docker 容器
 
@@ -60,11 +60,11 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
    a. 在“Docker 映像名称”框中输入 Docker 主机的唯一名称。 （向导会自动创建名称，但你可以修改该名称。） 
 
    b. “主机”区域将显示已创建的所有 Docker 主机。 执行下列操作之一： 
-      * 如果有现有的 Docker 主机，可以在其中部署 Web 应用。
-      * 若要创建 Docker 主机，请单击绿色加号 (**+**)。  
-       此时将打开“创建 Docker 主机”对话框。 
+   * 如果有现有的 Docker 主机，可以在其中部署 Web 应用。
+   * 若要创建 Docker 主机，请单击绿色加号 (**+**)。  
+     此时将打开“创建 Docker 主机”对话框。 
 
-      ![“在 Azure 中部署 Docker 容器”向导][PUB04a]
+     ![“在 Azure 中部署 Docker 容器”向导][PUB04a]
 
 4. 在“配置新虚拟机”窗口中提供有关 Docker 主机的以下信息。 （向导会自动生成大多数信息，但你可以修改其中的任何信息。） 
 
@@ -74,7 +74,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
       
    c. 在“区域”框中，输入主机所在的地理区域。
       
-   d.单击“下一步”。 在“OS 和大小”选项卡上执行以下操作：      
+   d. 在“OS 和大小”选项卡上执行以下操作：      
       * **主机 OS**：输入包含主机的虚拟机的操作系统。 
       * **大小**：输入主机的虚拟机大小。   
        
@@ -90,64 +90,64 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
       * **新建存储帐户**：为主机创建存储帐户。
       * **现有存储帐户**：指定 Azure 帐户中的现有存储帐户。
        
-5. 单击“资源组名称” 的 Azure 数据工厂。  
+5. 单击“下一步”。  
      此时将打开“配置登录凭据和端口设置”窗口。
 
       ![“配置登录凭据和端口设置”窗口][PUB05]
 
 6. 选择以下选项之一：
 
-      * **从 Azure Key Vault 导入凭据**：指定以前存储在 Azure 订阅中的凭据集。
+   * **从 Azure Key Vault 导入凭据**：指定以前存储在 Azure 订阅中的凭据集。
 
-          > [!NOTE]
-          > 共享订阅的另一帐户或服务主体不会自动访问使用特定帐户或服务主体创建的 Azure Key Vault。 若要允许另一帐户或服务主体使用 Key Vault，必须使用 Azure 门户添加该帐户或服务主体。
+       > [!NOTE]
+       > 共享订阅的另一帐户或服务主体不会自动访问使用特定帐户或服务主体创建的 Azure Key Vault。 若要允许另一帐户或服务主体使用 Key Vault，必须使用 Azure 门户添加该帐户或服务主体。
 
-      * **新建登录凭据**：创建一组新的登录凭据。 如果选择此选项，请执行以下操作：
+   * **新建登录凭据**：创建一组新的登录凭据。 如果选择此选项，请执行以下操作：
 
-    a. 在“VM 凭据”选项卡上，为 Docker 主机的虚拟机登录凭据提供以下信息：
+     a. 在“VM 凭据”选项卡上，为 Docker 主机的虚拟机登录凭据提供以下信息：
 
-    * **用户名**：输入虚拟机登录凭据的用户名。
+     * **用户名**：输入虚拟机登录凭据的用户名。
 
-    * **密码**和**确认**：输入虚拟机登录凭据的密码。
+     * **密码**和**确认**：输入虚拟机登录凭据的密码。
 
-    * **SSH**：输入 Docker 主机的安全外壳 (SSH) 设置。 可选择以下选项之一：
+     * **SSH**：输入 Docker 主机的安全外壳 (SSH) 设置。 可选择以下选项之一：
 
-        * **无**：指定虚拟机不允许 SSH 连接。
+     * **无**：指定虚拟机不允许 SSH 连接。
 
-        * **自动生成**：自动创建用于通过 SSH 建立连接的必需设置。
+     * **自动生成**：自动创建用于通过 SSH 建立连接的必需设置。
 
-        * **从目录导入**：指定包含以前已保存的一组 SSH 设置的目录。 该目录必须包含以下两个文件：
+     * **从目录导入**：指定包含以前已保存的一组 SSH 设置的目录。 该目录必须包含以下两个文件：
 
-            * *id_rsa*：包含用户的 RSA 标识。
+         * *id_rsa*：包含用户的 RSA 标识。
 
-            * *id_rsa.pub*：包含用于身份验证的 RSA 公钥。
+         * *id_rsa.pub*：包含用于身份验证的 RSA 公钥。
 
-    b. 在“Docker 守护程序访问”选项卡上提供以下信息：
+     b. 在“Docker 守护程序访问”选项卡上提供以下信息：
 
-    ![创建 Docker 主机][PUB06]
+     ![创建 Docker 主机][PUB06]
     
-    * **Docker 守护程序端口**：输入 Docker 主机的唯一 TCP 端口。
+     * **Docker 守护程序端口**：输入 Docker 主机的唯一 TCP 端口。
     
-    * **TLS 安全性**：输入 Docker 主机的传输层安全性设置。 可从以下选项中选择：
+     * **TLS 安全性**：输入 Docker 主机的传输层安全性设置。 可从以下选项中选择：
     
-        * 无：指定虚拟机不允许 TLS 连接。
+     * 无：指定虚拟机不允许 TLS 连接。
         
-        * **自动生成**：自动创建用于通过 TLS 建立连接的必需设置。
+     * **自动生成**：自动创建用于通过 TLS 建立连接的必需设置。
         
-        * **从目录导入**：指定包含以前已保存的一组 TLS 设置的目录。 该目录必须包含以下六个文件：
+     * **从目录导入**：指定包含以前已保存的一组 TLS 设置的目录。 该目录必须包含以下六个文件：
         
-            * *ca.pem* 和 *ca key.pem*：包含 TLS 证书颁发机构的证书和公钥。
+         * *ca.pem* 和 *ca key.pem*：包含 TLS 证书颁发机构的证书和公钥。
             
-            * cert.pem 和 key.pem：包含用于 TLS 身份验证的客户端证书和公钥。
+         * cert.pem 和 key.pem：包含用于 TLS 身份验证的客户端证书和公钥。
             
-            * server.pem 和 server-key.pem：包含用于 TLS 身份验证的客户端证书和公钥。
+         * server.pem 和 server-key.pem：包含用于 TLS 身份验证的客户端证书和公钥。
 
 7. 输入所需的信息后，单击“完成”。  
     此时将再次显示“在 Azure 中部署 Docker 容器”向导。
 
    ![“在 Azure 中部署 Docker 容器”向导][PUB07]
 
-8. 单击“资源组名称” 的 Azure 数据工厂。  
+8. 单击“下一步”。  
     此时将打开“配置要创建的 Docker 容器”窗口。
 
    ![“配置要创建的 Docker 容器”窗口][PUB08]

@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
-ms.openlocfilehash: 924ccf9bdaad4bc635f133adbcfcc8f797d06644
-ms.sourcegitcommit: acc83bb537d77568b2a5427479d6354d6ae30885
+ms.openlocfilehash: 0aaa83ceb42192441decb5972baae56fed337fb2
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2017
-ms.locfileid: "23982159"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090680"
 ---
 # <a name="release-notes"></a>发行说明 
 
@@ -35,14 +35,14 @@ ms.locfileid: "23982159"
 - CDN 中以前处于 Beta 版状态的所有方法
 - 应用程序网关中以前处于 Beta 版状态的所有方法和接口
 
- 库的某些部件仍处于预览版状态。 请参阅下表了解库的当前状态：
+  库的某些部件仍处于预览版状态。 请参阅下表了解库的当前状态：
 
 服务或功能 | 以正式版提供 | 以预览版提供 
 ---------|---------|---------|-
 计算  | 虚拟机和 VM 扩展、虚拟机规模集、托管磁盘   | Azure 容器服务、Azure 容器注册表 
 存储   |  存储帐户       |    加密     
 SQL 数据库  | 数据库、防火墙、弹性池              
-联网    |  虚拟网络、网络接口、IP 地址、路由表、网络安全组、DNS、流量管理器、应用程序网关  |    负载均衡器、网络对等互连、虚拟网络网关、网络观察程序 
+网络    |  虚拟网络、网络接口、IP 地址、路由表、网络安全组、DNS、流量管理器、应用程序网关  |    负载均衡器、网络对等互连、虚拟网络网关、网络观察程序 
 其他服务    |  资源管理器、Key Vault、Redis、CDN、Batch       |  Web 应用、函数应用、服务总线、Graph RBAC、Cosmos DB、搜索  
 基本     |   身份验证 - 核心、异步方法、托管服务标识      |      |
 

@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: data-lake-store
 ms.openlocfilehash: c14c89f961951d114362adee4fec6239e78cffb3
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.sourcegitcommit: 33c70f921f1524c8bdb69ad5a1a3c1b4b1de97ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823770"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37026769"
 ---
 # <a name="azure-data-lake-analytics-libraries-for-java"></a>用于 Java 的 Azure Data Lake Analytics 库
 

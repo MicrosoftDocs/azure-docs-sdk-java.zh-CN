@@ -1,12 +1,12 @@
 ---
-title: "如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure App Service"
-description: "本教程介绍使用 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用程序部署到 Azure App Service 的步骤。"
+title: 如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure App Service
+description: 本教程介绍使用 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用程序部署到 Azure App Service 的步骤。
 services: container-registry
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm;kevinzha
 ms.date: 02/01/2018
 ms.devlang: java
@@ -14,11 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 8e8e1b5d599f77edf227d2c187225f6ac530b62b
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 88eb64c07ad4f480dc2d2c2869e710c0ae910c4d
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090790"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
 
@@ -64,7 +65,7 @@ ms.lasthandoff: 02/03/2018
 
 1. 将 [Docker 上的 Spring Boot 入门]示例项目克隆到创建的目录中；例如：
    ```shell
-   git clone -b private-registry https://github.com/Microsoft/gs-spring-boot-docker
+   git clone -b private-registry https://github.com/spring-guides/gs-spring-boot-docker
    ```
 
 1. 将目录更改为已完成项目；例如：
@@ -103,23 +104,25 @@ ms.lasthandoff: 02/03/2018
 
 1. 打开命令提示符。
 
-1. 通过使用 Azure CLI 登录到 Azure 帐户：
+2. 通过使用 Azure CLI 登录到 Azure 帐户：
    ```azurecli
    az login
    ```
    按照说明完成登录过程。
 
-1. 创建 Azure 服务主体：
+3. 创建 Azure 服务主体：
    ```azurecli
    az ad sp create-for-rbac --name "uuuuuuuu" --password "pppppppp"
    ```
    其中：
-   | 参数 | 说明 |
-   |---|---|
-   | `uuuuuuuu` | 指定服务主体的用户名。 |
-   | `pppppppp` | 指定服务主体的密码。 |
 
-1. Azure 使用与以下示例类似的 JSON 进行响应：
+   | 参数  |                    说明                     |
+   |------------|----------------------------------------------------|
+   | `uuuuuuuu` | 指定服务主体的用户名。 |
+   | `pppppppp` | 指定服务主体的密码。  |
+
+
+4. Azure 使用与以下示例类似的 JSON 进行响应：
    ```json
    {
       "appId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
@@ -176,7 +179,7 @@ ms.lasthandoff: 02/03/2018
    * `%ProgramFiles%\apache-maven\3.5.0\conf\settings.xml`
    * `$HOME/.m2/settings.xml`
 
-1. 将本文上一部分中的 Azure 容器注册表访问设置添加到 settings.xml 文件中的 `<servers>` 集合；例如：
+2. 将本文上一部分中的 Azure 容器注册表访问设置添加到 settings.xml 文件中的 `<servers>` 集合；例如：
 
    ```xml
    <servers>
@@ -188,13 +191,15 @@ ms.lasthandoff: 02/03/2018
    </servers>
    ```
    其中：
-   | 元素 | 说明 |
-   |---|---|
-   | `<id>` | 包含私有 Azure 容器注册表的名称。 |
-   | `<username>` | 包含私有 Azure 容器注册表的名称。 |
+
+   |   元素    |                                 说明                                  |
+   |--------------|------------------------------------------------------------------------------|
+   |    `<id>`    |         包含私有 Azure 容器注册表的名称。          |
+   | `<username>` |         包含私有 Azure 容器注册表的名称。          |
    | `<password>` | 包含在本文上一部分中检索的密码。 |
 
-1. 将本文先前部分中的 Azure 服务主体设置添加到 settings.xml 文件中的 `<servers>` 集合；例如：
+
+3. 将本文先前部分中的 Azure 服务主体设置添加到 settings.xml 文件中的 `<servers>` 集合；例如：
 
    ```xml
    <servers>
@@ -210,21 +215,23 @@ ms.lasthandoff: 02/03/2018
    </servers>
    ```
    其中：
-   | 元素 | 说明 |
-   |---|---|
-   | `<id>` | 指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。 |
-   | `<client>` | 包含服务主体的 `appId` 值。 |
-   | `<tenant>` | 包含服务主体的 `tenant` 值。 |
-   | `<key>` | 包含服务主体的 `password` 值。 |
+
+   |     元素     |                                                                                   说明                                                                                   |
+   |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   |     `<id>`      |                                指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。                                |
+   |   `<client>`    |                                                             包含服务主体的 `appId` 值。                                                             |
+   |   `<tenant>`    |                                                            包含服务主体的 `tenant` 值。                                                             |
+   |     `<key>`     |                                                           包含服务主体的 `password` 值。                                                            |
    | `<environment>` | 定义目标 Azure 云环境，此示例中为 `AZURE`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整的环境列表） |
 
-1. 保存并关闭 settings.xml 文件。
+
+4. 保存并关闭 settings.xml 文件。
 
 ## <a name="build-your-docker-container-image-and-push-it-to-your-azure-container-registry"></a>生成 Docker 容器映像并将其推送到 Azure 容器注册表
 
 1. 导航到 Spring Boot 应用程序的已完成项目目录（例如，“C:\SpringBoot\gs-spring-boot-docker\complete”或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”），并使用文本编辑器打开 pom.xml 文件。
 
-1. 使用本教程上一部分中的 Azure 容器注册表的登录服务器值更新 pom.xml 文件中的 `<properties>` 集合，例如：
+2. 使用本教程上一部分中的 Azure 容器注册表的登录服务器值更新 pom.xml 文件中的 `<properties>` 集合，例如：
 
    ```xml
    <properties>
@@ -235,12 +242,14 @@ ms.lasthandoff: 02/03/2018
    </properties>
    ```
    其中：
-   | 元素 | 说明 |
-   |---|---|
-   | `<azure.containerRegistry>` | 指定私有 Azure 容器注册表的名称。 |
-   | `<docker.image.prefix>` | 指定私有 Azure 容器注册表的 URL，将“.azurecr.io”附加到私有容器注册表名称后即可派生为此 URL。 |
 
-1. 确保 pom.xml 文件中 Docker 插件的 `<plugin>` 包含正确的登录服务器地址属性和本教程上一步骤中的注册表名称。 例如：
+   |           元素           |                                                                       说明                                                                       |
+   |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | `<azure.containerRegistry>` |                                              指定私有 Azure 容器注册表的名称。                                               |
+   |   `<docker.image.prefix>`   | 指定私有 Azure 容器注册表的 URL，将“.azurecr.io”附加到私有容器注册表名称后即可派生为此 URL。 |
+
+
+3. 确保 pom.xml 文件中 Docker 插件的 `<plugin>` 包含正确的登录服务器地址属性和本教程上一步骤中的注册表名称。 例如：
 
    ```xml
    <plugin>
@@ -263,18 +272,20 @@ ms.lasthandoff: 02/03/2018
    </plugin>
    ```
    其中：
-   | 元素 | 说明 |
-   |---|---|
-   | `<serverId>` | 指定包含私有 Azure 容器注册表名称的属性。 |
+
+   |     元素     |                                       说明                                       |
+   |-----------------|-----------------------------------------------------------------------------------------|
+   |  `<serverId>`   |  指定包含私有 Azure 容器注册表名称的属性。   |
    | `<registryUrl>` | 指定包含私有 Azure 容器注册表 URL 的属性。 |
 
-1. 导航到 Spring Boot 应用程序的已完成项目目录，然后运行以下命令以重新生成应用程序，并将容器推送到 Azure 容器注册表：
+
+4. 导航到 Spring Boot 应用程序的已完成项目目录，然后运行以下命令以重新生成应用程序，并将容器推送到 Azure 容器注册表：
 
    ```
    mvn package docker:build -DpushImage 
    ```
 
-1. 可选：浏览至 [Azure 门户]，验证容器注册表中是否具有名为 gs-spring-boot-docker 的 Docker 容器映像。
+5. 可选：浏览至 [Azure 门户]，验证容器注册表中是否具有名为 gs-spring-boot-docker 的 Docker 容器映像。
 
    ![验证 Azure 门户中的容器][CR01]
 

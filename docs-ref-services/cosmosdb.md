@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: cosmosdb
 ms.openlocfilehash: 6fc9f90cb3c8130aa82b20554a94a8b5ab78c083
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.sourcegitcommit: 33c70f921f1524c8bdb69ad5a1a3c1b4b1de97ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823840"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37026789"
 ---
 # <a name="azure-cosmos-db-libraries-for-java"></a>用于 Java 的 Azure Cosmos DB 库
 

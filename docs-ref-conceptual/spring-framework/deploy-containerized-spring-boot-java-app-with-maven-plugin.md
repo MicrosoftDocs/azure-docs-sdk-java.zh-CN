@@ -1,12 +1,12 @@
 ---
-title: "如何使用适用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure"
-description: "了解如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure。"
+title: 如何使用适用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure
+description: 了解如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure。
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm;kevinzha
 ms.date: 02/01/2018
 ms.devlang: java
@@ -14,11 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 515cf350f32fc8252644e7022846cc2c9d264ed0
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: d9f2cf5c15bb8f990c8e82fddd6455ecbf8cc02c
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090760"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>如何使用适用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure
 
@@ -64,7 +65,7 @@ ms.lasthandoff: 02/03/2018
 
 1. 将 [Docker 上的 Spring Boot 入门]示例项目克隆到创建的目录中；例如：
    ```shell
-   git clone https://github.com/microsoft/gs-spring-boot-docker
+   git clone https://github.com/spring-guides/gs-spring-boot-docker
    ```
 
 1. 将目录更改为已完成项目；例如：
@@ -95,23 +96,25 @@ ms.lasthandoff: 02/03/2018
 
 1. 打开命令提示符。
 
-1. 通过使用 Azure CLI 登录到 Azure 帐户：
+2. 通过使用 Azure CLI 登录到 Azure 帐户：
    ```shell
    az login
    ```
    按照说明完成登录过程。
 
-1. 创建 Azure 服务主体：
+3. 创建 Azure 服务主体：
    ```shell
    az ad sp create-for-rbac --name "uuuuuuuu" --password "pppppppp"
    ```
    其中：
-   | 参数 | 说明 |
-   |---|---|
-   | `uuuuuuuu` | 指定服务主体的用户名。 |
-   | `pppppppp` | 指定服务主体的密码。 |
 
-1. Azure 使用与以下示例类似的 JSON 进行响应：
+   | 参数  |                    说明                     |
+   |------------|----------------------------------------------------|
+   | `uuuuuuuu` | 指定服务主体的用户名。 |
+   | `pppppppp` | 指定服务主体的密码。  |
+
+
+4. Azure 使用与以下示例类似的 JSON 进行响应：
    ```json
    {
       "appId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
@@ -137,7 +140,7 @@ ms.lasthandoff: 02/03/2018
    * `%ProgramFiles%\apache-maven\3.5.0\conf\settings.xml`
    * `$HOME/.m2/settings.xml`
 
-1. 将本教程上一部分中的 Azure 服务主体设置添加到 settings.xml 文件中的 `<servers>` 集合；例如：
+2. 将本教程上一部分中的 Azure 服务主体设置添加到 settings.xml 文件中的 `<servers>` 集合；例如：
 
    ```xml
    <servers>
@@ -153,15 +156,17 @@ ms.lasthandoff: 02/03/2018
    </servers>
    ```
    其中：
-   | 元素 | 说明 |
-   |---|---|
-   | `<id>` | 指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。 |
-   | `<client>` | 包含服务主体的 `appId` 值。 |
-   | `<tenant>` | 包含服务主体的 `tenant` 值。 |
-   | `<key>` | 包含服务主体的 `password` 值。 |
+
+   |     元素     |                                                                                   说明                                                                                   |
+   |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   |     `<id>`      |                                指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。                                |
+   |   `<client>`    |                                                             包含服务主体的 `appId` 值。                                                             |
+   |   `<tenant>`    |                                                            包含服务主体的 `tenant` 值。                                                             |
+   |     `<key>`     |                                                           包含服务主体的 `password` 值。                                                            |
    | `<environment>` | 定义目标 Azure 云环境，此示例中为 `AZURE`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整的环境列表） |
 
-1. 保存并关闭 settings.xml 文件。
+
+3. 保存并关闭 settings.xml 文件。
 
 ## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>可选：将本地 Docker 文件部署到 Docker 中心
 
@@ -185,7 +190,7 @@ ms.lasthandoff: 02/03/2018
       mvn clean package docker:build
       docker push
       ```
-   
+
    * 如果安装了[适用于 Maven 的 Docker 插件]，则可以使用 `-DpushImage` 参数自动将容器映像构建到 Docker 中心：
       ```shell
       mvn clean package docker:build -DpushImage
