@@ -1,5 +1,6 @@
 {
   "build": {
+    "markdownEngineName": "markdig",
     "content": [
       {
         "files": [
@@ -20,7 +21,7 @@
           "**/*.md",
           "**/*.yml"
         ],
-        "src": "docs-ref-autogen",{
+        "src": "docs-ref-autogen"
   "build": {
     "content": [
       {
