@@ -83,6 +83,8 @@
               maintainContext: true
         - name: 使用 Maven 部署
           href: /azure/app-service-web/app-service-web-deploy-spring-boot-app-with-maven-plugin
+        - name: 添加根证书
+          href: java-sdk-add-certificate-ca-store.md
     - name: Java 代码示例
       items:
         - name: Service Fabric
@@ -93,7 +95,7 @@
           href: java-sdk-azure-web-apps-samples.md
         - name: SQL 数据库
           href: java-sdk-azure-sql-database-samples.md
-        - name: 安全
+        - name: “安全”
           href: java-sdk-azure-security-samples.md
         - name: 容器
           href: java-sdk-azure-containers-samples.md
