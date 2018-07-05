@@ -11,12 +11,12 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: active-directory
-ms.openlocfilehash: 28063a1a4299fd78ba76533d0ffdc0346434eea2
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: 4a610e2f0d9fb2e219c42155e2b0cb76fc78b09a
+ms.sourcegitcommit: 5bfb3af5778167500a061157cbd0ad1cede8f90e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823780"
+ms.lasthandoff: 07/04/2018
+ms.locfileid: "37799695"
 ---
 # <a name="azure-active-directory-libraries-for-java"></a>用于 Java 的 Azure Active Directory 库
 
@@ -87,14 +87,14 @@ RoleAssignment roleAssignment2 = authenticated.roleAssignments()
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/overview/azure/activedirectory/management)
+> [了解管理 API](/java/api/activedirectory/management)
 
 
 ## <a name="samples"></a>示例
 
-[管理组、用户和角色](https://github.com/Azure-Samples/aad-java-browse-graph-and-manage-roles)    
+[管理组、用户和角色](https://github.com/Azure-Samples/aad-java-manage-users-groups-and-roles)    
 [在 Java Web 应用中登录和注销用户](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect)    
 [在 Azure AD 中使用命令行应用访问 API](https://github.com/Azure-Samples/active-directory-java-native-headless)   
-[从 Java Web 应用调用 Active AD 图形 API](https://github.com/Azure-Samples/active-directory-java-graphapi-web/)  
+[从 Java Web 应用调用 Active AD 图形 API](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect)  
 
 详细了解可在应用中使用的 [Azure AD 示例 Java 代码](https://azure.microsoft.com/en-us/resources/samples/?term=active+directory&platform=java)。
