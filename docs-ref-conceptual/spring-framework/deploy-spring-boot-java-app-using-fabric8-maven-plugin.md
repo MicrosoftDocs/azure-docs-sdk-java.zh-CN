@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 396d0ecfb051109924f09ae8b5d9b8074e49c404
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: f05dca50f84b27f157892d63cda02286c6755795
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954888"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090810"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>使用 Fabric8 Maven 插件部署 Spring Boot 应用
 
@@ -58,7 +58,7 @@ ms.locfileid: "28954888"
    cd C:\SpringBoot
    ```
 
-1. 将 [Docker 上的 Spring Boot 启动入门]示例项目克隆到目录。
+1. 将 [Docker 上的 Spring Boot 入门]示例项目克隆到目录。
    ```shell
    git clone https://github.com/spring-guides/gs-spring-boot-docker.git
    ```
@@ -96,7 +96,7 @@ ms.locfileid: "28954888"
    az login
    ```
    按照说明完成登录过程
-   
+
    Azure CLI 将显示帐户列表；例如：
 
    ```json
@@ -255,6 +255,7 @@ ms.locfileid: "28954888"
    az acr create --admin-enabled --resource-group wingtiptoys-kubernetes --location westeurope --name wingtiptoysregistry --sku Basic
    ```
    其中：
+
    | 参数 | 说明 |
    |---|---|
    | `wingtiptoys-kubernetes` | 指定本文前面的资源组的名称。 |
@@ -285,7 +286,7 @@ ms.locfileid: "28954888"
    }
    ```
 
-1. 从 Azure CLI 检索容器注册表的密码。
+2. 从 Azure CLI 检索容器注册表的密码。
    ```azurecli
    az acr credential show --name wingtiptoysregistry --query passwords[0]
    ```
@@ -299,10 +300,10 @@ ms.locfileid: "28954888"
    }
    ```
 
-1. 导航到 Maven 安装的配置目录 (default ~/.m2/ or C:\Users\username\.m2)，并使用文本编辑器打开 settings.xml 文件。
+3. 导航到 Maven 安装的配置目录 (default ~/.m2/ or C:\Users\username\.m2)，并使用文本编辑器打开 settings.xml 文件。
 
-1. 将 Azure 容器注册表 URL、用户名和密码添加到 *settings.xml* 文件中新的 `<server>` 集合。
-`id` 和 `username` 是注册表的名称。 使用上一个命令中的 `password` 值（不带引号）。
+4. 将 Azure 容器注册表 URL、用户名和密码添加到 *settings.xml* 文件中新的 `<server>` 集合。
+   `id` 和 `username` 是注册表的名称。 使用上一个命令中的 `password` 值（不带引号）。
 
    ```xml
    <servers>
@@ -314,9 +315,9 @@ ms.locfileid: "28954888"
    </servers>
    ```
 
-1. 导航到 Spring Boot 应用程序的已完成项目目录（例如，“*C:\SpringBoot\gs-spring-boot-docker\complete*”或“*/home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete*”），并使用文本编辑器打开 *pom.xml* 文件。
+5. 导航到 Spring Boot 应用程序的已完成项目目录（例如，“*C:\SpringBoot\gs-spring-boot-docker\complete*”或“*/home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete*”），并使用文本编辑器打开 *pom.xml* 文件。
 
-1. 使用 Azure 容器注册表的登录服务器值更新 pom.xml 文件中的 `<properties>` 集合。
+6. 使用 Azure 容器注册表的登录服务器值更新 pom.xml 文件中的 `<properties>` 集合。
 
    ```xml
    <properties>
@@ -325,7 +326,7 @@ ms.locfileid: "28954888"
    </properties>
    ```
 
-1. 更新 pom.xml 文件中的 `<plugins>` 集合，使 `<plugin>` 包含 Azure 容器注册表的登录服务器地址和注册表名称。
+7. 更新 pom.xml 文件中的 `<plugins>` 集合，使 `<plugin>` 包含 Azure 容器注册表的登录服务器地址和注册表名称。
 
    ```xml
    <plugin>
@@ -340,7 +341,7 @@ ms.locfileid: "28954888"
    </plugin>
    ```
 
-1. 导航到 Spring Boot 应用程序的已完成项目目录，然后运行以下 Maven 命令生成 Docker 容器并将映像推送到注册表：
+8. 导航到 Spring Boot 应用程序的已完成项目目录，然后运行以下 Maven 命令生成 Docker 容器并将映像推送到注册表：
 
    ```shell
    mvn package dockerfile:build -DpushImage
@@ -485,13 +486,13 @@ ms.locfileid: "28954888"
    ```
 
    `kubectl` 将显示内部和外部 IP 地址；例如：
-   
+
    ```shell
    NAME                    CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
    kubernetes              10.0.0.1     <none>        443/TCP        19h
    gs-spring-boot-docker   10.0.242.8   13.65.196.3   80:31215/TCP   3m
    ```
-   
+
    外部 IP 地址可用于在 Web 浏览器中打开应用程序。
 
    ![从外部浏览示例应用程序][SB02]
@@ -514,11 +515,11 @@ ms.locfileid: "28954888"
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
 
-有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 启动入门]。
+有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 入门]。
 
-若要获取 Spring Boot 应用程序入门的相关帮助，请参阅 <https://start.spring.io/> 中的 **Spring Initializr**。
+如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 <https://start.spring.io/> 上的 **Spring Initializr**。
 
-有关创建简单 Spring Boot 应用程序入门的详细信息，请参阅 <https://start.spring.io/> 中的 Spring Initializr。
+有关开始创建简单 Spring Boot 应用程序的详细信息，请参阅 <https://start.spring.io/> 上的“Spring Initializr”。
 
 有关如何使用 Azure 的自定义 Docker 映像的其他示例，请参阅[使用 Linux 上 Azure Web 应用的自定义 Docker 映像]。
 
@@ -540,7 +541,7 @@ ms.locfileid: "28954888"
 [Maven]: http://maven.apache.org/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Docker 上的 Spring Boot 启动入门]: https://github.com/spring-guides/gs-spring-boot-docker
+[Docker 上的 Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
 
 <!-- IMG List -->

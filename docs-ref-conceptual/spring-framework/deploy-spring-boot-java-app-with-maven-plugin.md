@@ -5,37 +5,37 @@ services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: ''
+editor: brborges
 ms.assetid: ''
-ms.author: robmcm;kevinzha
-ms.date: 02/01/2018
+ms.author: robmcm;kevinzha;brborges
+ms.date: 06/01/2018
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 82cb0da3ce49fa77f888808af14455bf226d5cb0
-ms.sourcegitcommit: 024b3127daf396a17bd43d57642e3534ae87f120
+ms.openlocfilehash: 3610312ed17301131967bd2c047c86656de070e7
+ms.sourcegitcommit: f313c14e92f38c54a3a583270ee85cc928cd39d7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34689420"
 ---
-# <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-web-apps"></a>使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中
+# <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a>使用适用于 Azure 应用服务的 Maven 插件将 Spring Boot 应用部署到云中
 
-本文演示如何使用适用于 Azure Web 应用的 Maven 插件将示例 Spring Boot 应用程序部署到 Azure 应用服务。
+本文演示如何使用适用于 Azure 应用服务 Web 应用的 Maven 插件来部署一个示例 Spring Boot 应用程序。
 
 > [!NOTE]
 > 
-> 用于 [Apache Maven](http://maven.apache.org/) 的[适用于 Azure Web 应用的 Maven 插件](https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin)将 Azure 应用服务无缝集成到 Maven 项目，简化了开发人员将 Web 应用部署到 Azure 应用服务的过程。
-> 
-> 适用于 Azure Web 应用的 Maven 插件当前提供预览版。 目前，仅支持 FTP 发布，但计划在未来支持其他功能。
-> 
+> 用于 [Apache Maven](http://maven.apache.org/) 的[适用于 Azure 应用服务 Web 应用的 Maven 插件](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)将 Azure 应用服务无缝集成到 Maven 项目，简化了开发人员将 Web 应用部署到 Azure 应用服务的过程。
+
+在使用 Maven 插件之前，请在 Maven Central 中检查该插件的最新可用版本：[![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22) 
 
 ## <a name="prerequisites"></a>先决条件
 
 完成本教程中的步骤需要具备以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
+* 一个 Azure 订阅；如果没有 Azure 订阅，可以注册[免费 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
 * 最新 [Java 开发工具包 (JDK)] 1.7 版或更高版本。
 * Apache 的 [Maven] 生成工具（版本 3）。
@@ -52,13 +52,13 @@ ms.lasthandoff: 05/23/2018
    ```
    - 或 -
    ```shell
-   md /users/robert/SpringBoot
-   cd /users/robert/SpringBoot
+   md ~/SpringBoot
+   cd ~/SpringBoot
    ```
 
 1. 将 [Spring Boot 入门]示例项目克隆到已创建的目录；例如：
    ```shell
-   git clone https://github.com/microsoft/gs-spring-boot
+   git clone https://github.com/spring-guides/gs-spring-boot
    ```
 
 1. 将目录更改为已完成项目；例如：
@@ -83,11 +83,84 @@ ms.lasthandoff: 05/23/2018
 
 1. 应会显示以下消息：“来自 Spring Boot 的问候！”
 
-## <a name="create-an-azure-service-principal"></a>创建 Azure 服务主体
+## <a name="adjust-project-for-war-based-deployment-on-azure-app-service"></a>根据 Azure 应用服务中基于 WAR 的部署调整项目
 
-本部分要创建 Maven 插件在将 Web 应用部署到 Azure 时使用的 Azure 服务主体。
+在本部分，我们将快速调整要在 Azure 应用服务中作为 WAR 文件部署的 Spring Boot 项目，该项目默认提供 Tomcat 作为运行时。 为此，需要修改两个文件：
 
-1. 打开命令提示符。
+- Maven `pom.xml` 文件
+- `Application` Java 类
+
+让我们从 Maven 设置开始：
+
+1. 打开 `pom.xml`
+
+1. 紧接在顶部的 `<artifactId>` 定义后面添加 `<packaging>war</packaging>`：
+   ```xml
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.springframework</groupId>
+    <artifactId>gs-spring-boot</artifactId>
+
+    <packaging>war</packaging>
+   ```
+
+1. 添加以下依赖项：
+   ```xml
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+   ```
+
+现在请打开类 `Application`（但愿此时 IDE 已拾取新的依赖项），然后继续进行以下修改：
+
+1. 将 Application 类设为 `SpringBootServletInitializer` 的子类：
+   ```java
+   @SpringBootApplication
+   public class Application extends SpringBootServletInitializer {
+     // ...
+   }
+   ```
+
+1. 将以下方法添加到 Application 类：
+   ```java
+       @Override
+       protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+           return application.sources(Application.class);
+       }
+   ```
+
+现在，可将应用程序部署到 Tomcat 和其他任何 Servlet 运行时（例如 Jetty）。
+
+## <a name="add-the-maven-plugin-for-azure-app-service-web-apps"></a>添加适用于 Azure 应用服务 Web 应用的 Maven 插件
+
+在本部分，我们将添加一个 Maven 插件，用于自动完成将此应用程序部署到 Azure 应用服务 Web 应用的整个过程。
+
+1. 再次打开 `pom.xml`。
+
+1. 在 `<properties>` 中，使用属性 `maven.build.timestamp.format` 设置自定义时间戳格式。 由于 Azure 应用服务将为应用程序创建公共 URL，因此，此设置将用于生成部署名称，并避免与其他用户的实时部署发生冲突。
+   ```xml
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.build.timestamp.format>yyyyMMddHHmmssSSS</maven.build.timestamp.format>
+    </properties>
+   ```
+
+1. 在 `<plugins>` 元素中添加以下内容：
+   ```xml
+    <plugin>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>azure-webapp-maven-plugin</artifactId>
+      <!-- Check latest version on Maven Central -->
+      <version>1.1.0</version>
+    </plugin>
+   ```
+
+现在，可以使用这些设置将 Maven 项目实时部署到 Azure 应用服务 Web 应用。
+
+## <a name="install-and-log-in-to-azure-cli"></a>安装并登录到 Azure CLI
+
+获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](https://docs.microsoft.com/cli/azure/)。 确保已安装 Azure CLI。
 
 1. 通过使用 Azure CLI 登录到 Azure 帐户：
    ```shell
@@ -95,100 +168,26 @@ ms.lasthandoff: 05/23/2018
    ```
    按照说明完成登录过程。
 
-1. 创建 Azure 服务主体：
-   ```shell
-   az ad sp create-for-rbac --name "uuuuuuuu" --password "pppppppp"
-   ```
-   其中，`uuuuuuuu` 是服务主体的用户名，`pppppppp` 是服务主体的密码。
-
-1. Azure 使用与以下示例类似的 JSON 进行响应：
-   ```json
-   {
-      "appId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
-      "displayName": "uuuuuuuu",
-      "name": "http://uuuuuuuu",
-      "password": "pppppppp",
-      "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
-   }
-   ```
-
-   > [!NOTE]
-   >
-   > 当配置 Maven 插件以将 Web 应用部署到 Azure 时，会使用此 JSON 响应中的值。 `aaaaaaaa`、`uuuuuuuu`、`pppppppp` 和 `tttttttt` 是占位符值，在本示例中用于在下一部分中配置 Maven `settings.xml` 文件时，能够更加方便地将这些值映射到其各自的元素。
-   >
-   >
-
-## <a name="configure-maven-to-use-your-azure-service-principal"></a>配置 Maven 以使用 Azure 服务主体
-
-本部分要使用 Azure 服务主体中的值配置 Maven 在将 Web 应用部署到 Azure 时要使用的身份验证。
-
-1. 在文本编辑器中打开你的 Maven `settings.xml` 文件。 此文件可能位于类似于以下示例的路径中：
-   * `/etc/maven/settings.xml`
-   * `%ProgramFiles%\apache-maven\3.5.0\conf\settings.xml`
-   * `$HOME/.m2/settings.xml`
-
-1. 将本教程上一部分中的 Azure 服务主体设置添加到 settings.xml 文件中的 `<servers>` 集合；例如：
-
-   ```xml
-   <servers>
-      <server>
-        <id>azure-auth</id>
-         <configuration>
-            <client>aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa</client>
-            <tenant>tttttttt-tttt-tttt-tttt-tttttttttttt</tenant>
-            <key>pppppppp</key>
-            <environment>AZURE</environment>
-         </configuration>
-      </server>
-   </servers>
-   ```
-   其中：
-   | 元素 | 说明 |
-   |---|---|
-   | `<id>` | 指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。 |
-   | `<client>` | 包含服务主体的 `appId` 值。 |
-   | `<tenant>` | 包含服务主体的 `tenant` 值。 |
-   | `<key>` | 包含服务主体的 `password` 值。 |
-   | `<environment>` | 定义目标 Azure 云环境，此示例中为 `AZURE`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整的环境列表。） |
-
-1. 保存并关闭 settings.xml 文件。
-
-## <a name="optional-customize-your-pomxml-before-deploying-your-web-app-to-azure"></a>可选：在将 Web 应用部署到 Azure 之前自定义 pom.xml
+## <a name="optionally-customize-pomxml-before-deploying"></a>（可选）在部署之前自定义 pom.xml
 
 在文本编辑器中打开 Spring Boot 应用程序的 `pom.xml` 文件，然后找到 `azure-webapp-maven-plugin` 的 `<plugin>` 元素。 该元素应类似于以下示例：
 
    ```xml
-   <plugin>
+  <plugins>
+    <plugin>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>azure-webapp-maven-plugin</artifactId>
-      <version>0.1.3</version>
+      <!-- Check latest version on Maven Central -->
+      <version>1.1.0</version>
       <configuration>
-         <authentication>
-            <serverId>azure-auth</serverId>
-         </authentication>
-         <resourceGroup>maven-plugin</resourceGroup>
-         <appName>maven-web-app-${maven.build.timestamp}</appName>
+         <resourceGroup>maven-projects</resourceGroup>
+         <appName>${project.artifactId}-${maven.build.timestamp}</appName>
          <region>westus</region>
          <javaVersion>1.8</javaVersion>
-         <deploymentType>ftp</deploymentType>
-         <resources>
-            <resource>
-               <directory>${project.basedir}/target</directory>
-               <targetPath>/</targetPath>
-               <includes>
-                  <include>*.jar</include>
-               </includes>
-            </resource>
-            <resource>
-               <directory>${project.basedir}</directory>
-               <targetPath>/</targetPath>
-               <includes>
-                  <include>web.config</include>
-               </includes>
-            </resource>
-         </resources>
+         <deploymentType>war</deploymentType>
       </configuration>
-   </plugin>
+    </plugin>
+  </plugins>
    ```
 
 可以为 Maven 插件修改几个值，[适用于 Azure Web 应用的 Maven 插件]文档中提供了这些元素各自的详细描述。 尽管如此，在本文中有仍几个值得注意的值：
@@ -196,13 +195,11 @@ ms.lasthandoff: 05/23/2018
 | 元素 | 说明 |
 |---|---|
 | `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 验证 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
-| `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。 |
 | `<resourceGroup>` | 指定目标资源组，在此示例中为 `maven-plugin`。 如果资源组不存在，则会在部署过程中进行创建。 |
 | `<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-web-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。） |
 | `<region>` | 指定目标区域，在此示例中为 `westus`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。） |
 | `<javaVersion>` | 为 Web 应用指定 Java 运行时版本。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。） |
-| `<deploymentType>` | 为 Web 应用指定部署类型。 目前仅支持 `ftp`，但是正在开发其他部署类型支持。 |
-| `<resources>` | 指定将 Web 应用部署到 Azure 时 Maven 使用的资源和目标。 此示例中，两个 `<resource>` 元素指定 Maven 部署 Web 应用的 JAR 文件和 Spring Boot 项目中的 web.config 文件。 |
+| `<deploymentType>` | 为 Web 应用指定部署类型。 默认为 `war`。 |
 
 ## <a name="build-and-deploy-your-web-app-to-azure"></a>生成 Web 应用并将其部署到 Azure
 
@@ -275,11 +272,11 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
-[MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring Boot 入门]: https://github.com/microsoft/gs-spring-boot
+[Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/
-[适用于 Azure Web 应用的 Maven 插件]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
+[适用于 Azure Web 应用的 Maven 插件]: https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
 
 <!-- IMG List -->
 
