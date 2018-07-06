@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: c3a10a0d6029ba31b13f82907311d9182f98acb6
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 49d94d11ad6a4e103ded849e477d99f01955c693
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954748"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090860"
 ---
 # <a name="deploy-a-spring-boot-application-on-linux-in-the-azure-container-service"></a>在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上
 
@@ -193,11 +193,11 @@ ms.locfileid: "28954748"
 
 1. 浏览到 [Azure 门户]并登录。
 
-1. 单击“+ 新建”菜单图标，然后依次单击“Web + 移动”、“Linux 上的 Web 应用”。
+2. 单击“+ 新建”菜单图标，然后依次单击“Web + 移动”、“Linux 上的 Web 应用”。
    
    ![在 Azure 门户中创建新的 Web 应用][LX01]
 
-1. 当显示“Linux 上的 Web 应用”页时，输入以下信息：
+3. 当显示“Linux 上的 Web 应用”页时，输入以下信息：
 
    a. 为“应用名称”输入唯一名称；例如：“wingtiptoyslinux”。
 
@@ -205,21 +205,21 @@ ms.locfileid: "28954748"
 
    c. 选择现有资源组，或指定名称以创建新资源组。
 
-   d.单击“下一步”。 单击“配置容器”边栏选项卡，然后输入以下信息：
+   d. 单击“配置容器”边栏选项卡，然后输入以下信息：
 
-      * 选择“专用注册表”。
+   * 选择“专用注册表”。
 
-      * “映像和可选标记”：根据上文指定容器名称；例如：“wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest”
+   * “映像和可选标记”：根据上文指定容器名称；例如：“wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest”
 
-      * “服务器 URL”：根据上文指定注册表 URL；例如：“https://wingtiptoysregistry.azurecr.io”
+   * **服务器 URL**：指定前面记下的注册表 URL，例如“*<https://wingtiptoysregistry.azurecr.io>*”。
 
-      * “登录用户名”和“密码”：根据先前步骤中使用的“访问密钥”指定登录凭据。
+   * “登录用户名”和“密码”：根据先前步骤中使用的“访问密钥”指定登录凭据。
    
    e. 输入上述所有信息后，请单击“确定”。
 
    ![配置 Web 应用设置][LX02]
 
-1. 单击“创建”。
+4. 单击“创建”。
 
 > [!NOTE]
 >
@@ -272,9 +272,9 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 入门]。
 
-若要获取 Spring Boot 应用程序入门的相关帮助，请参阅 https://start.spring.io/ 中的“Spring Initializr”。
+如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr**。
 
-有关创建简单 Spring Boot 应用程序入门的详细信息，请参阅 https://start.spring.io/ 中的 Spring Initializr。
+有关开始创建简单 Spring Boot 应用程序入门的详细信息，请参阅 https://start.spring.io/ 上的“Spring Initializr”。
 
 有关如何使用 Azure 的自定义 Docker 映像的其他示例，请参阅[使用 Linux 上 Azure Web 应用的自定义 Docker 映像]。
 
