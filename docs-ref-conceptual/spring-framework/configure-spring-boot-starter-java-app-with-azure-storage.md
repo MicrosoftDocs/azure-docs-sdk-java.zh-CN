@@ -14,11 +14,12 @@ ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: e10ecfb7f6d705aa3ccffc49d354d1019f7f1a0b
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: 2f9381fce2fee207360287c57443b56eb5128e42
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090690"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>如何使用适用于 Azure 存储的 Spring Boot 起动器
 
@@ -39,13 +40,13 @@ ms.lasthandoff: 04/26/2018
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。
+1. 指定要使用 **Java** 生成 **Maven** 项目，输入应用程序的“组”名称和“项目”名称，然后单击 Spring Initializr 的“切换到完整版”链接。
 
    ![Spring Initializr 的基本选项](media/configure-spring-boot-starter-java-app-with-azure-storage/spring-initializr-basic.png)
 
    > [!NOTE]
    >
-   > Spring Initializr 使用**组**和**项目**名称创建包名称，例如：*com.contoso.wingtiptoysdemo*。
+   > Spring Initializr 将使用“组”和“项目”名称创建包名称，例如：*com.contoso.wingtiptoysdemo*。
    >
 
 1. 向下滚动到“Azure”部分，并选中“Azure 存储”对应的框。
@@ -108,6 +109,7 @@ ms.lasthandoff: 04/26/2018
    az group create --name wingtiptoysresources --location westus
    ```
    其中：
+
    | 参数 | 说明 |
    |---|---|
    | `name` | 指定资源组的唯一名称。 |
@@ -128,11 +130,12 @@ ms.lasthandoff: 04/26/2018
    }
    ```
 
-1. 在 Spring Boot 应用的资源组中创建 Azure 存储帐户，例如：
+2. 在 Spring Boot 应用的资源组中创建 Azure 存储帐户，例如：
    ```azurecli
    az storage account create --name wingtiptoysstorage --resource-group wingtiptoysresources --location westus --sku Standard_LRS
    ```
    其中：
+
    | 参数 | 说明 |
    |---|---|
    | `name` | 指定存储帐户的唯一名称。 |
@@ -141,7 +144,7 @@ ms.lasthandoff: 04/26/2018
    | `sku` | 指定以下值之一：`Premium_LRS`、`Standard_GRS`、`Standard_LRS`、`Standard_RAGRS`、`Standard_ZRS`。 |
 
    Azure 将返回包含预配状态的长 JSON 字符串，例如：|
-   
+
    ```json
    {
      "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
@@ -157,11 +160,12 @@ ms.lasthandoff: 04/26/2018
    }
    ```
 
-1. 检索存储帐户的连接字符串，例如：
+3. 检索存储帐户的连接字符串，例如：
    ```azurecli
    az storage account show-connection-string --name wingtiptoysstorage --resource-group wingtiptoysresources
    ```
    其中：
+
    | 参数 | 说明 |
    | ---|---|
    | `name` | 指定在前面步骤中创建的存储帐户的唯一名称。 |
@@ -270,7 +274,7 @@ ms.lasthandoff: 04/26/2018
    ```shell
    mvn clean package spring-boot:run
    ```
-   
+
    该应用程序将创建一个容器并将一个文本文件作为 Blob 上传到该容器，该文件将列在 [Azure 门户](https://portal.azure.com)中存储帐户的下面。
 
    ![在 Azure 门户中列出 Blob](media/configure-spring-boot-starter-java-app-with-azure-storage/list-blobs-in-portal.png)
