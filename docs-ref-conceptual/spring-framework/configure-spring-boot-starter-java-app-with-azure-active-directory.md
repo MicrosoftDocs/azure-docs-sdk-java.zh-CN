@@ -4,251 +4,319 @@ description: 了解如何使用 Azure Active Directory 起动器配置 Spring Bo
 services: active-directory
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 06/20/2018
 ms.devlang: java
 ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: cf1cad0b87626058f7204a6565d09fb8901b7ce4
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: adcbc78cc129daf589bf070741308e4024432e5d
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954678"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090830"
 ---
-# <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a><span data-ttu-id="c28ff-103">如何使用适用于 Azure Active Directory 的 Spring Boot 起动器</span><span class="sxs-lookup"><span data-stu-id="c28ff-103">How to use the Spring Boot Starter for Azure Active Directory</span></span>
+# <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a><span data-ttu-id="34a6a-103">如何使用适用于 Azure Active Directory 的 Spring Boot 起动器</span><span class="sxs-lookup"><span data-stu-id="34a6a-103">How to use the Spring Boot Starter for Azure Active Directory</span></span>
 
-## <a name="overview"></a><span data-ttu-id="c28ff-104">概述</span><span class="sxs-lookup"><span data-stu-id="c28ff-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="34a6a-104">概述</span><span class="sxs-lookup"><span data-stu-id="34a6a-104">Overview</span></span>
 
-<span data-ttu-id="c28ff-105">本文演示如何使用 **[Spring Initializr]** 创建一个应用，该应用使用适用于 Azure Active Directory (Azure AD) 的 Spring Boot 起动器。</span><span class="sxs-lookup"><span data-stu-id="c28ff-105">This article demonstrates creating an app with the **[Spring Initializr]** that uses the Spring Boot Starter for Azure Active Directory (Azure AD).</span></span>
+<span data-ttu-id="34a6a-105">本文演示如何使用 **[Spring Initializr]** 创建一个应用，该应用使用适用于 Azure Active Directory (Azure AD) 的 Spring Boot 起动器。</span><span class="sxs-lookup"><span data-stu-id="34a6a-105">This article demonstrates creating an app with the **[Spring Initializr]** that uses the Spring Boot Starter for Azure Active Directory (Azure AD).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="c28ff-106">先决条件</span><span class="sxs-lookup"><span data-stu-id="c28ff-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="34a6a-106">先决条件</span><span class="sxs-lookup"><span data-stu-id="34a6a-106">Prerequisites</span></span>
 
-<span data-ttu-id="c28ff-107">为完成本文介绍的步骤，需要满足以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="c28ff-107">The following prerequisites are required in order to complete the steps in this article:</span></span>
+<span data-ttu-id="34a6a-107">为完成本文介绍的步骤，需要满足以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="34a6a-107">The following prerequisites are required in order to complete the steps in this article:</span></span>
 
-* <span data-ttu-id="c28ff-108">Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="c28ff-108">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="c28ff-109">[Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。</span><span class="sxs-lookup"><span data-stu-id="c28ff-109">A [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), version 1.7 or later.</span></span>
-* <span data-ttu-id="c28ff-110">[Apache Maven](http://maven.apache.org/) 3.0 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="c28ff-110">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
+* <span data-ttu-id="34a6a-108">Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="34a6a-108">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="34a6a-109">[Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。</span><span class="sxs-lookup"><span data-stu-id="34a6a-109">A [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), version 1.7 or later.</span></span>
+* <span data-ttu-id="34a6a-110">[Apache Maven](http://maven.apache.org/) 3.0 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="34a6a-110">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
 
-## <a name="create-a-custom-application-using-the-spring-initializr"></a><span data-ttu-id="c28ff-111">使用 Spring Initializr 创建自定义应用程序</span><span class="sxs-lookup"><span data-stu-id="c28ff-111">Create a custom application using the Spring Initializr</span></span>
+## <a name="create-a-custom-application-using-the-spring-initializr"></a><span data-ttu-id="34a6a-111">使用 Spring Initializr 创建自定义应用程序</span><span class="sxs-lookup"><span data-stu-id="34a6a-111">Create a custom application using the Spring Initializr</span></span>
 
-1. <span data-ttu-id="c28ff-112">浏览到 <https://start.spring.io/>。</span><span class="sxs-lookup"><span data-stu-id="c28ff-112">Browse to <https://start.spring.io/>.</span></span>
+1. <span data-ttu-id="34a6a-112">浏览到 <https://start.spring.io/>。</span><span class="sxs-lookup"><span data-stu-id="34a6a-112">Browse to <https://start.spring.io/>.</span></span>
 
-1. <span data-ttu-id="c28ff-113">指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。</span><span class="sxs-lookup"><span data-stu-id="c28ff-113">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Aritifact** names for your application, and then click the link to **Switch to the full version** of the Spring Initializr.</span></span>
+1. <span data-ttu-id="34a6a-113">指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。</span><span class="sxs-lookup"><span data-stu-id="34a6a-113">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Aritifact** names for your application, and then click the link to **Switch to the full version** of the Spring Initializr.</span></span>
 
    ![指定组和项目名称][security-01]
 
-1. <span data-ttu-id="c28ff-115">向下滚动到“核心”部分并选中“安全”对应的框，然后在“Web”部分选中“Web”对应的框。</span><span class="sxs-lookup"><span data-stu-id="c28ff-115">Scroll down to the **Core** section and check the box for **Security**, and in the **Web** section check the box for **Web**.</span></span>
+1. <span data-ttu-id="34a6a-115">向下滚动到“核心”部分并选中“安全”对应的框，然后在“Web”部分选中“Web”对应的框。</span><span class="sxs-lookup"><span data-stu-id="34a6a-115">Scroll down to the **Core** section and check the box for **Security**, and in the **Web** section check the box for **Web**.</span></span>
 
    ![选择“安全”和“Web”起动器][security-02]
 
-1. <span data-ttu-id="c28ff-117">向下滚动到“Azure”部分，并选中“Azure Active Directory”对应的框。</span><span class="sxs-lookup"><span data-stu-id="c28ff-117">Scroll down to the **Azure** section and check the box for **Azure Active Directory**.</span></span>
+1. <span data-ttu-id="34a6a-117">向下滚动到“Azure”部分，并选中“Azure Active Directory”对应的框。</span><span class="sxs-lookup"><span data-stu-id="34a6a-117">Scroll down to the **Azure** section and check the box for **Azure Active Directory**.</span></span>
 
    ![选择 Azure Active Directory 起动器][security-03]
 
-1. <span data-ttu-id="c28ff-119">滚动到页面底部，单击“生成项目”对应的按钮。</span><span class="sxs-lookup"><span data-stu-id="c28ff-119">Scroll to the bottom of the page and click the button to **Generate Project**.</span></span>
+1. <span data-ttu-id="34a6a-119">滚动到页面底部，单击“生成项目”对应的按钮。</span><span class="sxs-lookup"><span data-stu-id="34a6a-119">Scroll to the bottom of the page and click the button to **Generate Project**.</span></span>
 
    ![生成 Spring Boot 项目][security-04]
 
-1. <span data-ttu-id="c28ff-121">出现提示时，将项目下载到本地计算机中的路径。</span><span class="sxs-lookup"><span data-stu-id="c28ff-121">When prompted, download the project to a path on your local computer.</span></span>
+1. <span data-ttu-id="34a6a-121">出现提示时，将项目下载到本地计算机中的路径。</span><span class="sxs-lookup"><span data-stu-id="34a6a-121">When prompted, download the project to a path on your local computer.</span></span>
 
-## <a name="create-and-configure-a-new-azure-active-directory-instance"></a><span data-ttu-id="c28ff-122">创建并配置新的 Azure Active Directory 实例</span><span class="sxs-lookup"><span data-stu-id="c28ff-122">Create and configure a new Azure Active Directory instance</span></span>
+## <a name="create-and-configure-a-new-azure-active-directory-instance"></a><span data-ttu-id="34a6a-122">创建并配置新的 Azure Active Directory 实例</span><span class="sxs-lookup"><span data-stu-id="34a6a-122">Create and configure a new Azure Active Directory instance</span></span>
 
-### <a name="create-the-active-directory-instance"></a><span data-ttu-id="c28ff-123">创建 Active Directory 实例</span><span class="sxs-lookup"><span data-stu-id="c28ff-123">Create the Active Directory instance</span></span>
+### <a name="create-the-active-directory-instance"></a><span data-ttu-id="34a6a-123">创建 Active Directory 实例</span><span class="sxs-lookup"><span data-stu-id="34a6a-123">Create the Active Directory instance</span></span>
 
-1. <span data-ttu-id="c28ff-124">登录到 <https://portal.azure.com>。</span><span class="sxs-lookup"><span data-stu-id="c28ff-124">Log into <https://portal.azure.com>.</span></span>
+1. <span data-ttu-id="34a6a-124">登录到 <https://portal.azure.com>。</span><span class="sxs-lookup"><span data-stu-id="34a6a-124">Log into <https://portal.azure.com>.</span></span>
 
-1. <span data-ttu-id="c28ff-125">依次单击“+新建”、“安全 + 标识”、“Azure Active Directory”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-125">Click **+New**, then **Security + Identity**, and then **Azure Active Directory**.</span></span>
+1. <span data-ttu-id="34a6a-125">依次单击“+新建”、“安全 + 标识”、“Azure Active Directory”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-125">Click **+New**, then **Security + Identity**, and then **Azure Active Directory**.</span></span>
 
    ![创建新的 Azure Active Directory 实例][directory-01]
 
-1. <span data-ttu-id="c28ff-127">输入“组织名称”和“初始域名”，单击“创建”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-127">Enter your **Organization name** and your **Initial domain name**, and then click **Create**.</span></span>
+1. <span data-ttu-id="34a6a-127">输入“组织名称”和“初始域名”，单击“创建”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-127">Enter your **Organization name** and your **Initial domain name**, and then click **Create**.</span></span>
 
    ![指定 Azure Active Directory 名称][directory-02]
 
-1. <span data-ttu-id="c28ff-129">从 Azure 门户顶部的下拉菜单中选择新的 Azure Active Directory。</span><span class="sxs-lookup"><span data-stu-id="c28ff-129">Select your new Azure Active Directory from the drop-down menu on the top toolbar of the Azure portal.</span></span>
+1. <span data-ttu-id="34a6a-129">从 Azure 门户顶部的下拉菜单中选择新的 Azure Active Directory。</span><span class="sxs-lookup"><span data-stu-id="34a6a-129">Select your new Azure Active Directory from the drop-down menu on the top toolbar of the Azure portal.</span></span>
 
    ![选择 Azure Active Directory][directory-03]
 
-### <a name="add-an-application-registration-for-your-spring-boot-app"></a><span data-ttu-id="c28ff-131">添加 Spring Boot 应用的应用程序注册</span><span class="sxs-lookup"><span data-stu-id="c28ff-131">Add an application registration for your Spring Boot app</span></span>
+1. <span data-ttu-id="34a6a-131">从门户菜单中选择“Azure Active Directory”，单击“属性”，并复制“目录 ID”- 本文稍后将会用到此 ID。</span><span class="sxs-lookup"><span data-stu-id="34a6a-131">Select **Azure Active Directory** from the portal menu, click **Properties**, and copy the **Directory ID** - you will use that later in this article.</span></span>
 
-1. <span data-ttu-id="c28ff-132">从门户菜单中选择“Azure Active Directory”，依次单击“概述”、“应用注册”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-132">Select **Azure Active Directory** from the portal menu, click **Overview**, and then click **App registrations**.</span></span>
+   ![复制 Azure Active Directory ID][directory-13]
+
+### <a name="add-an-application-registration-for-your-spring-boot-app"></a><span data-ttu-id="34a6a-133">添加 Spring Boot 应用的应用程序注册</span><span class="sxs-lookup"><span data-stu-id="34a6a-133">Add an application registration for your Spring Boot app</span></span>
+
+1. <span data-ttu-id="34a6a-134">从门户菜单中选择“Azure Active Directory”，依次单击“概述”、“应用注册”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-134">Select **Azure Active Directory** from the portal menu, click **Overview**, and then click **App registrations**.</span></span>
 
    ![添加新的应用注册][directory-04]
 
-1. <span data-ttu-id="c28ff-134">单击“新建应用程序注册”，指定应用程序的“名称”，使用 http://localhost:8080 作为“登录 URL”，并单击“创建”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-134">Click **New application registration**, specify your application **Name**, use http://localhost:8080 for the **Sign-on URL**, and then click **Create**.</span></span>
+1. <span data-ttu-id="34a6a-136">单击“新建应用程序注册”，指定应用程序的“名称”，使用 http://localhost:8080 作为“登录 URL”，并单击“创建”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-136">Click **New application registration**, specify your application **Name**, use http://localhost:8080 for the **Sign-on URL**, and then click **Create**.</span></span>
 
    ![新建应用注册][directory-05]
 
-1. <span data-ttu-id="c28ff-136">创建应用程序注册后，请单击它。</span><span class="sxs-lookup"><span data-stu-id="c28ff-136">Click your application registration after it has been created.</span></span>
+1. <span data-ttu-id="34a6a-138">创建应用程序注册后，请单击它。</span><span class="sxs-lookup"><span data-stu-id="34a6a-138">Click your application registration after it has been created.</span></span>
 
    ![选择应用注册][directory-06]
 
-1. <span data-ttu-id="c28ff-138">显示应用注册的页面后，请复制“应用程序 ID”供稍后使用，并单击“密钥”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-138">When the page for your app registration, copy your **Application ID** for later, then click **Keys**.</span></span>
+1. <span data-ttu-id="34a6a-140">显示应用注册的页面后，请复制“应用程序 ID”供稍后使用，然后依次单击“设置”、“密钥”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-140">When the page for your app registration, copy your **Application ID** for later use, then click **Settings**, and then click **Keys**.</span></span>
 
    ![创建应用注册密钥][directory-07]
 
-1. <span data-ttu-id="c28ff-140">添加“说明”并指定新密钥的“持续时间”，单击“保存”；单击“保存”图标时，会自动填充密钥的值，需要复制该密钥值供稍后使用。</span><span class="sxs-lookup"><span data-stu-id="c28ff-140">Add a **Description** and specify the **Duration** for a new key and click **Save**; the value for the key will be automatically filled in when you click the **Save** icon, and you need to copy down the value of the key for later.</span></span> <span data-ttu-id="c28ff-141">（以后无法检索此值。）</span><span class="sxs-lookup"><span data-stu-id="c28ff-141">(You will not be able to retrieve this value later.)</span></span>
+1. <span data-ttu-id="34a6a-142">添加“说明”并指定新密钥的“持续时间”，单击“保存”；单击“保存”图标时，会自动填充密钥的值，需要复制该密钥值供稍后使用。</span><span class="sxs-lookup"><span data-stu-id="34a6a-142">Add a **Description** and specify the **Duration** for a new key and click **Save**; the value for the key will be automatically filled in when you click the **Save** icon, and you need to copy down the value of the key for later.</span></span> <span data-ttu-id="34a6a-143">（以后无法检索此值。）</span><span class="sxs-lookup"><span data-stu-id="34a6a-143">(You will not be able to retrieve this value later.)</span></span>
 
    ![指定应用注册密钥参数][directory-08]
 
-1. <span data-ttu-id="c28ff-143">在应用注册的主页上，单击“所需的权限”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-143">From the main page for your app registration, click **Required permissions**.</span></span>
+1. <span data-ttu-id="34a6a-145">在应用注册的主页上，依次单击“设置”、“所需的权限”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-145">From the main page for your app registration, click **Settings**, and then click **Required permissions**.</span></span>
 
    ![应用注册 - 所需的权限][directory-09]
 
-1. <span data-ttu-id="c28ff-145">单击“Windows Azure Active Directory”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-145">Click **Windows Azure Active Directory**.</span></span>
+1. <span data-ttu-id="34a6a-147">单击“Windows Azure Active Directory”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-147">Click **Windows Azure Active Directory**.</span></span>
 
    ![选择“Windows Azure Active Directory”][directory-10]
 
-1. <span data-ttu-id="c28ff-147">选中“以登录用户身份访问该目录”和“登录并读取用户个人资料”对应的框，单击“保存”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-147">Check the boxes for **Access the directory as the signed-in user** and **Sign in and read user profile**, and then click **Save**.</span></span>
+1. <span data-ttu-id="34a6a-149">选中“以登录用户身份访问该目录”和“登录并读取用户个人资料”对应的框，单击“保存”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-149">Check the boxes for **Access the directory as the signed-in user** and **Sign in and read user profile**, and then click **Save**.</span></span>
 
    ![启用访问权限][directory-11]
 
-1. <span data-ttu-id="c28ff-149">在“所需的权限”页上，单击“授予权限”，并在出现提示时单击“是”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-149">On the **Required permissions** page, click **Grant Permissions**, and click **Yes** when prompted.</span></span>
+1. <span data-ttu-id="34a6a-151">在“所需的权限”页上，单击“授予权限”，并在出现提示时单击“是”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-151">On the **Required permissions** page, click **Grant Permissions**, and click **Yes** when prompted.</span></span>
 
    ![授予访问权限][directory-12]
 
-## <a name="configure-and-compile-your-spring-boot-application"></a><span data-ttu-id="c28ff-151">配置并编译 Spring Boot 应用程序</span><span class="sxs-lookup"><span data-stu-id="c28ff-151">Configure and compile your Spring Boot application</span></span>
+1. <span data-ttu-id="34a6a-153">在应用注册的主页上，依次单击“设置”、“回复 URL”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-153">From the main page for your app registration, click **Settings**, and then click **Reply URLs**.</span></span>
 
-1. <span data-ttu-id="c28ff-152">将下载的项目存档中的文件提取到某个目录。</span><span class="sxs-lookup"><span data-stu-id="c28ff-152">Extract the files from the downloaded project archive into a directory.</span></span>
+   ![编辑回复 URL][directory-14]
 
-1. <span data-ttu-id="c28ff-153">导航到项目中的父文件夹，并在文本编辑器中打开 *pom.xml* 文件。</span><span class="sxs-lookup"><span data-stu-id="c28ff-153">Navigate to the parent folder in your project and open the *pom.xml* file in a text editor.</span></span>
+1. <span data-ttu-id="34a6a-155">输入“http://localhost:8080/login/oauth2/code/azure”作为新的回复 URL，并单击“保存”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-155">Enter "http://localhost:8080/login/oauth2/code/azure" as a new reply URL, and then click **Save**.</span></span>
 
-1. <span data-ttu-id="c28ff-154">添加 Spring OAuth2 安全性的依赖项，例如：</span><span class="sxs-lookup"><span data-stu-id="c28ff-154">Add the dependency for Spring OAuth2 security; for example:</span></span>
+   ![添加新的回复 URL][directory-15]
+
+## <a name="configure-and-compile-your-spring-boot-application"></a><span data-ttu-id="34a6a-157">配置并编译 Spring Boot 应用程序</span><span class="sxs-lookup"><span data-stu-id="34a6a-157">Configure and compile your Spring Boot application</span></span>
+
+1. <span data-ttu-id="34a6a-158">将下载的项目存档中的文件提取到某个目录。</span><span class="sxs-lookup"><span data-stu-id="34a6a-158">Extract the files from the downloaded project archive into a directory.</span></span>
+
+2. <span data-ttu-id="34a6a-159">导航到项目中的父文件夹，并在文本编辑器中打开 *pom.xml* 文件。</span><span class="sxs-lookup"><span data-stu-id="34a6a-159">Navigate to the parent folder in your project and open the *pom.xml* file in a text editor.</span></span>
+
+3. <span data-ttu-id="34a6a-160">添加 Spring OAuth2 安全性的依赖项，例如：</span><span class="sxs-lookup"><span data-stu-id="34a6a-160">Add the dependencies for Spring OAuth2 security; for example:</span></span>
 
    ```xml
    <dependency>
-      <groupId>org.springframework.security.oauth</groupId>
-      <artifactId>spring-security-oauth2</artifactId>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-oauth2-client</artifactId>
+   </dependency>
+   <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-oauth2-jose</artifactId>
    </dependency>
    ```
 
-1. <span data-ttu-id="c28ff-155">保存并关闭 *pom.xml* 文件。</span><span class="sxs-lookup"><span data-stu-id="c28ff-155">Save and close the  the *pom.xml* file.</span></span>
+4. <span data-ttu-id="34a6a-161">保存并关闭 pom.xml 文件。</span><span class="sxs-lookup"><span data-stu-id="34a6a-161">Save and close the *pom.xml* file.</span></span>
 
-1. <span data-ttu-id="c28ff-156">导航到项目中的 *src/main/resources* 文件夹，并在文本编辑器中打开 *application.properties* 文件。</span><span class="sxs-lookup"><span data-stu-id="c28ff-156">Navigate to the *src/main/resources* folder in your project and open the *application.properties* file in a text editor.</span></span>
+5. <span data-ttu-id="34a6a-162">导航到项目中的 *src/main/resources* 文件夹，并在文本编辑器中打开 *application.properties* 文件。</span><span class="sxs-lookup"><span data-stu-id="34a6a-162">Navigate to the *src/main/resources* folder in your project and open the *application.properties* file in a text editor.</span></span>
 
-1. <span data-ttu-id="c28ff-157">使用前面复制的值添加存储帐户的密钥，例如：</span><span class="sxs-lookup"><span data-stu-id="c28ff-157">Add the key for your storage account using the values from earlier; for example:</span></span>
+6. <span data-ttu-id="34a6a-163">使用前面复制的值添加存储帐户的密钥，例如：</span><span class="sxs-lookup"><span data-stu-id="34a6a-163">Add the key for your storage account using the values from earlier; for example:</span></span>
 
    ```yaml
-   # Specifies your Active Directory Application ID:
-   azure.activedirectory.clientId=11111111-1111-1111-1111-1111111111111111
+   # Specifies your Active Directory ID:
+   azure.activedirectory.tenant-id=22222222-2222-2222-2222-222222222222
 
-   # Specifies your secret key:
-   azure.activedirectory.clientSecret=AbCdEfGhIjKlMnOpQrStUvWxYz==
+   # Specifies your App Registration's Application ID:
+   spring.security.oauth2.client.registration.azure.client-id=11111111-1111-1111-1111-1111111111111111
+
+   # Specifies your App Registration's secret key:
+   spring.security.oauth2.client.registration.azure.client-secret=AbCdEfGhIjKlMnOpQrStUvWxYz==
 
    # Specifies the list of Active Directory groups to use for authentication:
-   azure.activedirectory.activeDirectoryGroups=Users
+   azure.activedirectory.active-directory-groups=Users
    ```
-   <span data-ttu-id="c28ff-158">其中：</span><span class="sxs-lookup"><span data-stu-id="c28ff-158">Where:</span></span>
-   | <span data-ttu-id="c28ff-159">参数</span><span class="sxs-lookup"><span data-stu-id="c28ff-159">Parameter</span></span> | <span data-ttu-id="c28ff-160">说明</span><span class="sxs-lookup"><span data-stu-id="c28ff-160">Description</span></span> |
+   <span data-ttu-id="34a6a-164">其中：</span><span class="sxs-lookup"><span data-stu-id="34a6a-164">Where:</span></span>
+
+   | <span data-ttu-id="34a6a-165">参数</span><span class="sxs-lookup"><span data-stu-id="34a6a-165">Parameter</span></span> | <span data-ttu-id="34a6a-166">说明</span><span class="sxs-lookup"><span data-stu-id="34a6a-166">Description</span></span> |
    |---|---|
-   | `azure.activedirectory.clientId` | <span data-ttu-id="c28ff-161">包含前面复制的“应用程序 ID”。</span><span class="sxs-lookup"><span data-stu-id="c28ff-161">Contains your **Application ID** from earlier.</span></span> |
-   | `azure.activedirectory.clientSecret` | <span data-ttu-id="c28ff-162">包含前面完成的应用注册中的密钥值。</span><span class="sxs-lookup"><span data-stu-id="c28ff-162">Contains the key value from your app registration which you completed earlier.</span></span> |
-   | `azure.activedirectory.activeDirectoryGroups` | <span data-ttu-id="c28ff-163">包含用于身份验证的 Active Directory 组列表。</span><span class="sxs-lookup"><span data-stu-id="c28ff-163">Contains a list of Active Directory groups to use for authentication.</span></span> |
+   | `azure.activedirectory.tenant-id` | <span data-ttu-id="34a6a-167">包含前面复制的 Active Directory“目录 ID”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-167">Contains your Active Directory's **Directory ID** from earlier.</span></span> |
+   | `spring.security.oauth2.client.registration.azure.client-id` | <span data-ttu-id="34a6a-168">包含前面填写的、应用注册的“应用程序 ID”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-168">Contains the **Application ID** from your app registration that you completed earlier.</span></span> |
+   | `spring.security.oauth2.client.registration.azure.client-secret` | <span data-ttu-id="34a6a-169">包含前面填写的、应用注册密钥中的“值”。</span><span class="sxs-lookup"><span data-stu-id="34a6a-169">Contains the **Value** from your app registration key that you completed earlier.</span></span> |
+   | `azure.activedirectory.active-directory-groups` | <span data-ttu-id="34a6a-170">包含用于身份验证的 Active Directory 组列表。</span><span class="sxs-lookup"><span data-stu-id="34a6a-170">Contains a list of Active Directory groups to use for authentication.</span></span> |
 
+   > [!NOTE]
+   > 
+   > <span data-ttu-id="34a6a-171">有关可在 *application.properties* 文件中使用的值的完整列表，请参阅 GitHub 上的 [Azure Active Directory Spring Boot 示例][AAD Spring Boot Sample]。</span><span class="sxs-lookup"><span data-stu-id="34a6a-171">For a full list of values that are available in your *application.properties* file, see  the [Azure Active Directory Spring Boot Sample][AAD Spring Boot Sample] on GitHub.</span></span>
+   >
 
-1. <span data-ttu-id="c28ff-164">保存并关闭 *application.properties* 文件。</span><span class="sxs-lookup"><span data-stu-id="c28ff-164">Save and close the  the *application.properties* file.</span></span>
+7. <span data-ttu-id="34a6a-172">保存并关闭 application.properties 文件。</span><span class="sxs-lookup"><span data-stu-id="34a6a-172">Save and close the *application.properties* file.</span></span>
 
-1. <span data-ttu-id="c28ff-165">在应用程序的 Java 源文件夹中创建名为 *controller* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/controller*。</span><span class="sxs-lookup"><span data-stu-id="c28ff-165">Create a folder named *controller* in the Java source folder for your application; for example: *src/main/java/com/wingtiptoys/security/controller*.</span></span>
+8. <span data-ttu-id="34a6a-173">在应用程序的 Java 源文件夹中创建名为 *controller* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/controller*。</span><span class="sxs-lookup"><span data-stu-id="34a6a-173">Create a folder named *controller* in the Java source folder for your application; for example: *src/main/java/com/wingtiptoys/security/controller*.</span></span>
 
-1. <span data-ttu-id="c28ff-166">在 *controller* 文件夹中创建名为 *HelloController.java* 的新 Java 文件，并在文本编辑器中打开该文件。</span><span class="sxs-lookup"><span data-stu-id="c28ff-166">Create a new Java file named *HelloController.java* in the *controller* folder and open it in a text editor.</span></span>
+9. <span data-ttu-id="34a6a-174">在 *controller* 文件夹中创建名为 *HelloController.java* 的新 Java 文件，并在文本编辑器中打开该文件。</span><span class="sxs-lookup"><span data-stu-id="34a6a-174">Create a new Java file named *HelloController.java* in the *controller* folder and open it in a text editor.</span></span>
 
-1. <span data-ttu-id="c28ff-167">输入以下代码，然后保存并关闭该文件：</span><span class="sxs-lookup"><span data-stu-id="c28ff-167">Enter the following code, then save and close the file:</span></span>
+10. <span data-ttu-id="34a6a-175">输入以下代码，然后保存并关闭该文件：</span><span class="sxs-lookup"><span data-stu-id="34a6a-175">Enter the following code, then save and close the file:</span></span>
 
    ```java
    package com.wingtiptoys.security;
-   
+
    import org.springframework.web.bind.annotation.RequestMapping;
    import org.springframework.web.bind.annotation.RestController;
-   import org.springframework.boot.SpringApplication;
-   import org.springframework.boot.autoconfigure.SpringBootApplication;
-   
+   import org.springframework.beans.factory.annotation.Autowired;
    import org.springframework.security.access.prepost.PreAuthorize;
-   import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken;
-   
+   import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
+   import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+   import org.springframework.ui.Model;
+
    @RestController
    public class HelloController {
+      @Autowired
       @PreAuthorize("hasRole('Users')")
       @RequestMapping("/")
-      public String hello() {
+      public String helloWorld() {
          return "Hello World!";
       }
    }
    ```
+   > [!NOTE]
+   > 
+   > <span data-ttu-id="34a6a-176">为 `@PreAuthorize("hasRole('')")` 方法指定的组名称必须包含 *application.properties* 文件的 `azure.activedirectory.active-directory-groups` 字段中指定的某个组。</span><span class="sxs-lookup"><span data-stu-id="34a6a-176">The group name that you specify for the `@PreAuthorize("hasRole('')")` method must contain one of the groups that you specified in the `azure.activedirectory.active-directory-groups` field of your *application.properties* file.</span></span>
+   >
 
-1. <span data-ttu-id="c28ff-168">在应用程序的 Java 源文件夹中创建名为 *security* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/security*。</span><span class="sxs-lookup"><span data-stu-id="c28ff-168">Create a folder named *security* in the Java source folder for your application; for example: *src/main/java/com/wingtiptoys/security/security*.</span></span>
+   > [!NOTE]
+   > 
+   > <span data-ttu-id="34a6a-177">可为不同的请求映射指定不同的授权设置，例如：</span><span class="sxs-lookup"><span data-stu-id="34a6a-177">You can specify different authorization settings for different request mappings; for example:</span></span>
+   >
+   > ``` java
+   > public class HelloController {
+   >    @Autowired
+   >    @PreAuthorize("hasRole('Users')")
+   >    @RequestMapping("/")
+   >    public String helloWorld() {
+   >       return "Hello Users!";
+   >    }
+   >    @PreAuthorize("hasRole('Group1')")
+   >    @RequestMapping("/Group1")
+   >    public String groupOne() {
+   >       return "Hello Group 1 Users!";
+   >    }
+   >    @PreAuthorize("hasRole('Group2')")
+   >    @RequestMapping("/Group2")
+   >    public String groupTwo() {
+   >       return "Hello Group 2 Users!";
+   >    }
+   > }
+   > ```
+   >    
 
-1. <span data-ttu-id="c28ff-169">在 *security* 文件夹中创建名为 *WebSecurityConfig.java* 的新 Java 文件，并在文本编辑器中打开该文件。</span><span class="sxs-lookup"><span data-stu-id="c28ff-169">Create a new Java file named *WebSecurityConfig.java* in the *security* folder and open it in a text editor.</span></span>
+11. <span data-ttu-id="34a6a-178">在应用程序的 Java 源文件夹中创建名为 *security* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/security*。</span><span class="sxs-lookup"><span data-stu-id="34a6a-178">Create a folder named *security* in the Java source folder for your application; for example: *src/main/java/com/wingtiptoys/security/security*.</span></span>
 
-1. <span data-ttu-id="c28ff-170">输入以下代码，然后保存并关闭该文件：</span><span class="sxs-lookup"><span data-stu-id="c28ff-170">Enter the following code, then save and close the file:</span></span>
+12. <span data-ttu-id="34a6a-179">在 *security* 文件夹中创建名为 *WebSecurityConfig.java* 的新 Java 文件，并在文本编辑器中打开该文件。</span><span class="sxs-lookup"><span data-stu-id="34a6a-179">Create a new Java file named *WebSecurityConfig.java* in the *security* folder and open it in a text editor.</span></span>
 
-   ```java
-   package com.wingtiptoys.security;
+13. <span data-ttu-id="34a6a-180">输入以下代码，然后保存并关闭该文件：</span><span class="sxs-lookup"><span data-stu-id="34a6a-180">Enter the following code, then save and close the file:</span></span>
 
-   import com.microsoft.azure.spring.autoconfigure.aad.AADAuthenticationFilter;
-   import org.springframework.beans.factory.annotation.Autowired;
-   import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
-   import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-   import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-   import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-   import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-   import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-   
-   @EnableOAuth2Sso
-   @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
-   
-   public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-      @Autowired
-      private AADAuthenticationFilter aadAuthFilter;
-      @Override
-      protected void configure(HttpSecurity http) throws Exception {
-         http.authorizeRequests().anyRequest().permitAll();
-         http.addFilterBefore(aadAuthFilter, UsernamePasswordAuthenticationFilter.class);
-      }
-   }
-   ```
+    ```java
+    package com.wingtiptoys.security;
 
-## <a name="build-and-test-your-app"></a><span data-ttu-id="c28ff-171">生成并测试应用</span><span class="sxs-lookup"><span data-stu-id="c28ff-171">Build and test your app</span></span>
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+    import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+    import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+    import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+    import org.springframework.security.oauth2.client.oidc.userinfo.OidcUserRequest;
+    import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
+    import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 
-1. <span data-ttu-id="c28ff-172">打开命令提示符并将目录切换到应用的 *pom.xml* 文件所在的文件夹。</span><span class="sxs-lookup"><span data-stu-id="c28ff-172">Open a command prompt and change directory to the folder where your app's *pom.xml* file is located.</span></span>
+    @EnableWebSecurity
+    @EnableGlobalMethodSecurity(prePostEnabled = true)
+    public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+        @Autowired
+        private OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService;
 
-1. <span data-ttu-id="c28ff-173">使用 Maven 生成 Spring Boot 应用程序，然后运行该程序，例如：</span><span class="sxs-lookup"><span data-stu-id="c28ff-173">Build your Spring Boot application with Maven and run it; for example:</span></span>
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                .authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .oauth2Login()
+                .userInfoEndpoint()
+                .oidcUserService(oidcUserService);
+        }
+    }
+    ```
 
-   ```shell
-   mvn clean package
-   ```
+## <a name="build-and-test-your-app"></a><span data-ttu-id="34a6a-181">生成并测试应用</span><span class="sxs-lookup"><span data-stu-id="34a6a-181">Build and test your app</span></span>
 
-   ![生成应用程序][build-application]
+1. <span data-ttu-id="34a6a-182">打开命令提示符并将目录切换到应用的 *pom.xml* 文件所在的文件夹。</span><span class="sxs-lookup"><span data-stu-id="34a6a-182">Open a command prompt and change directory to the folder where your app's *pom.xml* file is located.</span></span>
 
-1. <span data-ttu-id="c28ff-175">使用 Maven 生成 Spring Boot 应用程序，然后运行该程序，例如：</span><span class="sxs-lookup"><span data-stu-id="c28ff-175">Build your Spring Boot application with Maven and run it; for example:</span></span>
+1. <span data-ttu-id="34a6a-183">使用 Maven 生成 Spring Boot 应用程序，然后运行该程序，例如：</span><span class="sxs-lookup"><span data-stu-id="34a6a-183">Build your Spring Boot application with Maven and run it; for example:</span></span>
 
    ```shell
    mvn clean package
    mvn spring-boot:run
    ```
 
-1. <span data-ttu-id="c28ff-176">通过 Maven 生成并启动应用程序后，请在 Web 浏览器中打开 <http://localhost:8080>。</span><span class="sxs-lookup"><span data-stu-id="c28ff-176">After your application is built and started by Maven, open <http://localhost:8080> in a web browser.</span></span>
+   ![生成应用程序][build-application]
 
-## <a name="next-steps"></a><span data-ttu-id="c28ff-177">后续步骤</span><span class="sxs-lookup"><span data-stu-id="c28ff-177">Next steps</span></span>
+1. <span data-ttu-id="34a6a-185">在 Maven 生成并启动该应用程序之后，请在 Web 浏览器中打开 <http://localhost:8080>；系统应会提示输入用户名和密码。</span><span class="sxs-lookup"><span data-stu-id="34a6a-185">After your application is built and started by Maven, open <http://localhost:8080> in a web browser; you should be prompted for a user name and password.</span></span>
 
-<span data-ttu-id="c28ff-178">有关使用 Azure Active Directory 的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="c28ff-178">For more information about using Azure Active Directory, see the following articles:</span></span>
+   ![登录到应用程序][application-login]
 
-* <span data-ttu-id="c28ff-179">[Azure Active Directory 文档]。</span><span class="sxs-lookup"><span data-stu-id="c28ff-179">[Azure Active Directory Documentation].</span></span>
+1. <span data-ttu-id="34a6a-187">成功登录后，控制器中应会显示“Hello World”示例文本。</span><span class="sxs-lookup"><span data-stu-id="34a6a-187">After you have logged in successfully, you should see the sample "Hello World" text from the controller.</span></span>
 
-<span data-ttu-id="c28ff-180">有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="c28ff-180">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
+   ![成功登录][hello-world]
 
-* [<span data-ttu-id="c28ff-181">将 Spring Boot 应用程序部署到 Azure 应用服务</span><span class="sxs-lookup"><span data-stu-id="c28ff-181">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
+   > [!NOTE]
+   > 
+   > <span data-ttu-id="34a6a-189">未授权的用户帐户会收到“HTTP 403 未授权”消息。</span><span class="sxs-lookup"><span data-stu-id="34a6a-189">User accounts which are not authorized will receive an **HTTP 403 Unauthorized** message.</span></span>
+   >
 
-* [<span data-ttu-id="c28ff-182">在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序</span><span class="sxs-lookup"><span data-stu-id="c28ff-182">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
+## <a name="next-steps"></a><span data-ttu-id="34a6a-190">后续步骤</span><span class="sxs-lookup"><span data-stu-id="34a6a-190">Next steps</span></span>
 
-<span data-ttu-id="c28ff-183">有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。</span><span class="sxs-lookup"><span data-stu-id="c28ff-183">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Java Tools for Visual Studio Team Services].</span></span>
+<span data-ttu-id="34a6a-191">有关使用 Azure Active Directory 的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="34a6a-191">For more information about using Azure Active Directory, see the following articles:</span></span>
 
-<span data-ttu-id="c28ff-184">[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。</span><span class="sxs-lookup"><span data-stu-id="c28ff-184">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="c28ff-185">基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。</span><span class="sxs-lookup"><span data-stu-id="c28ff-185">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="c28ff-186">为帮助开发人员开始使用 Spring Boot，在 <https://github.com/spring-guides/> 网站中提供了几个 Spring Boot 包。</span><span class="sxs-lookup"><span data-stu-id="c28ff-186">To help developers get started with Spring Boot, several sample Spring Boot packages are available at <https://github.com/spring-guides/>.</span></span> <span data-ttu-id="c28ff-187">除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。</span><span class="sxs-lookup"><span data-stu-id="c28ff-187">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
+* <span data-ttu-id="34a6a-192">[Azure Active Directory 文档]。</span><span class="sxs-lookup"><span data-stu-id="34a6a-192">[Azure Active Directory Documentation].</span></span>
+
+<span data-ttu-id="34a6a-193">有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="34a6a-193">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
+
+* [<span data-ttu-id="34a6a-194">将 Spring Boot 应用程序部署到 Azure 应用服务</span><span class="sxs-lookup"><span data-stu-id="34a6a-194">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
+
+* [<span data-ttu-id="34a6a-195">在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序</span><span class="sxs-lookup"><span data-stu-id="34a6a-195">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
+
+<span data-ttu-id="34a6a-196">有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。</span><span class="sxs-lookup"><span data-stu-id="34a6a-196">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Java Tools for Visual Studio Team Services].</span></span>
+
+<span data-ttu-id="34a6a-197">[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。</span><span class="sxs-lookup"><span data-stu-id="34a6a-197">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="34a6a-198">基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。</span><span class="sxs-lookup"><span data-stu-id="34a6a-198">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="34a6a-199">为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。</span><span class="sxs-lookup"><span data-stu-id="34a6a-199">To help developers get started with Spring Boot, several sample Spring Boot packages are available at <https://github.com/spring-guides/>.</span></span> <span data-ttu-id="34a6a-200">除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。</span><span class="sxs-lookup"><span data-stu-id="34a6a-200">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
+
+<span data-ttu-id="34a6a-201">有关更详细示例，请参阅 GitHub 上的 [Azure Active Directory Spring Boot 示例][AAD Spring Boot Sample]。</span><span class="sxs-lookup"><span data-stu-id="34a6a-201">For a more-detailed sample, see the [Azure Active Directory Spring Boot Sample][AAD Spring Boot Sample] on GitHub.</span></span>
 
 <!-- URL List -->
 
@@ -266,6 +334,7 @@ ms.locfileid: "28954678"
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
+[AAD Spring Boot Sample]: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-spring-boot-backend-sample
 
 <!-- IMG List -->
 
@@ -286,5 +355,10 @@ ms.locfileid: "28954678"
 [directory-10]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-10.png
 [directory-11]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-11.png
 [directory-12]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-12.png
+[directory-13]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-13.png
+[directory-14]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-14.png
+[directory-15]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-15.png
 
 [build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
+[application-login]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/application-login.png
+[hello-world]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/hello-world.png
