@@ -1,12 +1,12 @@
 ---
-title: "使用适用于 Eclipse 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布"
-description: "了解如何使用用于 Eclipse 的 Azure 工具包将 Web 应用作为 Docker 容器发布到 Microsoft Azure。"
-services: 
+title: 使用适用于 Eclipse 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
+description: 了解如何使用用于 Eclipse 的 Azure 工具包将 Web 应用作为 Docker 容器发布到 Microsoft Azure。
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,11 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: b54c10dc33324d902a0e778770df8ec4d71dc9a1
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: c116e0712afd8e48983f946f43eddfd0c79c0ba8
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38075467"
 ---
 # <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>使用适用于 Eclipse 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
 
@@ -48,7 +49,7 @@ ms.lasthandoff: 02/03/2018
 
    b. 选择“来自 Git 的项目”。
    
-   c. 单击“资源组名称” 的 Azure 数据工厂。
+   c. 单击“下一步”。
 
    ![“导入”对话框][CL02]
 
@@ -56,7 +57,7 @@ ms.lasthandoff: 02/03/2018
 
    a. 选择“克隆 URI”。
    
-   b. 单击“资源组名称” 的 Azure 数据工厂。
+   b. 单击“下一步”。
 
    ![选择"存储库源"页][CL03]
 
@@ -66,7 +67,7 @@ ms.lasthandoff: 02/03/2018
    
    b. Spring Boot 存储库是公开的，因此，你不必输入 Git 用户名和密码。
    
-   c. 单击“资源组名称” 的 Azure 数据工厂。
+   c. 单击“下一步”。
 
    ![“源 Git 存储库”页][CL04]
 
@@ -78,7 +79,7 @@ ms.lasthandoff: 02/03/2018
 
    a. 指定放置本地存储库的本地文件夹。
    
-   b. 单击“资源组名称” 的 Azure 数据工厂。
+   b. 单击“下一步”。
 
    ![“本地目标”页][CL06]
 
@@ -86,7 +87,7 @@ ms.lasthandoff: 02/03/2018
 
    a. 选择“作为常规项目导入”。
    
-   b. 单击“资源组名称” 的 Azure 数据工厂。
+   b. 单击“下一步”。
 
    ![“选择用于导入项目的向导”页][CL07]
 
@@ -94,7 +95,7 @@ ms.lasthandoff: 02/03/2018
 
    a. 指定项目名称。
    
-   b.在“磁贴徽标”下面，选择“删除上传的徽标”。 单击“完成” 。
+   b.在“磁贴徽标”下面，选择“删除上传的徽标”。 单击“完成”。
 
    ![“导入项目”页][CL08]
 
@@ -116,7 +117,7 @@ Spring Boot Docker 存储库包含一个已完成的 Maven 项目，可用于本
    
    b. 选择“现有 Maven 项目”。
    
-   c. 单击“资源组名称” 的 Azure 数据工厂。
+   c. 单击“下一步”。
 
    ![“导入”对话框][MV01]
 
@@ -128,7 +129,7 @@ Spring Boot Docker 存储库包含一个已完成的 Maven 项目，可用于本
    
    c. 选择项目中 pom.xml 文件对应的框。
    
-   d.单击“下一步”。 单击“完成” 。
+   d. 单击“完成”。
 
    ![“Maven 项目”页][MV02]
 
@@ -202,7 +203,7 @@ Spring Boot Docker 存储库包含一个已完成的 Maven 项目，可用于本
 
 ## <a name="next-steps"></a>后续步骤
 
-有关 Docker 的其他资源，请参阅官方 [Docker 网站]。
+有关 Docker 的其他资源，请参阅官方 [Docker 网站](https://www.docker.com/)。
 
 [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 

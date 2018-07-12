@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 213efa7fc31705b0ffcba6f2fe40e7186a365fae
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954868"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38074527"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理虚拟机
 
@@ -54,7 +54,9 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
       * **发布者**：指定创建了用于创建虚拟机的映像的发布者（例如“Microsoft”）。
 
-      * **产品/服务**：指定要使用哪一个从所选发布者提供的虚拟机（例如“JDK”）。
+      * 
+  **
+  **产品/服务：指定所选发布者提供的可以使用的虚拟机产品/服务（例如“JDK”）。**
 
       * Sku：从所选产品/服务中指定要使用的库存单位 (SKU)（例如“JDK_8”）。
 
@@ -62,7 +64,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    ![“选择虚拟机映像”窗口][CR03]
 
-5. 单击“资源组名称” 的 Azure 数据工厂。 
+5. 单击“下一步”。 
 
 6. 在“虚拟机基本设置”窗口中输入以下信息：
 
@@ -76,7 +78,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    ![“虚拟机基本设置”窗口][CR04]
 
-7. 单击“资源组名称” 的 Azure 数据工厂。 
+7. 单击“下一步”。 
 
 8. 在“关联的资源”窗口中，输入以下信息：
 
@@ -100,7 +102,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    * **可用性集**：指定虚拟机可能属于的可选可用性集。 可以选择现有的可用性集，也可以创建新的可用性集，或选择“(无)”（如果虚拟机将不属于可用性集）。
 
-9. 单击“完成” 。  
+9. 单击“完成”。  
     新虚拟机随即显示在“Azure 资源管理器”工具窗口中。 
 
    ![Azure 资源管理器视图中的新虚拟机][CR08]

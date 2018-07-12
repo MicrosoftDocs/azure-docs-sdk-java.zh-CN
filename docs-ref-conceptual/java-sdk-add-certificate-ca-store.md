@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: article
-ms.date: 05/23/2018
+ms.date: 07/02/2018
 ms.author: robmcm
-ms.openlocfilehash: 29b2b598968c9a3a896fffee3ce56f9b0cb4b1ee
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: 3f2de63f7eb1422ff1dd6db45d68e02f4af188b8
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090730"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37864037"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>将根证书添加到 Java CA 证书存储
 
@@ -70,10 +70,10 @@ Baltimore 证书可能已安装在你的 cacerts 存储中，因此你需要使�
 
    |  参数   |                              说明                               |
    |--------------|------------------------------------------------------------------------|
-   |  `keystore`  |                    指定证书存储。                    |
-   | `importcert` |            指定要导入证书。             |
-   |   `alias`    |                指定证书的别名。                 |
-   |    `file`    | 指定要导入的根证书的文件名。 |
+   | `keystore`   | 指定证书存储。                                       |
+   | `importcert` | 指定要导入证书。                        |
+   | `alias`      | 指定证书的别名。                                |
+   | `file`       | 指定要导入的根证书的文件名。 |
 
 
 3. 如果系统提示是否信任该证书，请确认指纹是否为 `d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74`，如果指纹正确，则键入 **y**。
@@ -90,6 +90,6 @@ Baltimore 证书可能已安装在你的 cacerts 存储中，因此你需要使�
 
 有关 keytool 实用工具的详细信息，请参阅 <http://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html>。
 
-有关 Azure 使用的根证书的详细信息，请参阅 [Azure 根证书迁移](http://blogs.msdn.com/b/windowsazure/archive/2013/03/15/windows-azure-root-certificate-migration.aspx)。
-
 有关 Java 的详细信息，请参阅[面向 Java 开发人员的 Azure](/java/azure)。
+
+<!-- For more information about the root certificates used by Azure, see [Azure Root Certificate Migration](http://blogs.msdn.com/b/windowsazure/archive/2013/03/15/windows-azure-root-certificate-migration.aspx). -->

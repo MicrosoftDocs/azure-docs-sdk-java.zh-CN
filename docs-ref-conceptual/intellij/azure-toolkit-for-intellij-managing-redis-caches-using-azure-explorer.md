@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 046ae0428d50a7f173f5ad15be53ffd8e66c11c5
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954178"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38075366"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存
 
@@ -51,7 +51,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
       * **新建**：指定要创建新的资源组。 
       * 使用现有资源组：指定将从与 Azure 帐户关联的资源组列表中选择。 
 
-   d.单击“下一步”。 位置：指定创建 redis 缓存的位置，例如：美国西部。
+   d. 位置：指定创建 redis 缓存的位置，例如：美国西部。
 
    e. 定价层： 指定 redis 缓存使用的定价层；此设置将确定客户端连接数。 （有关详细信息，请参阅 [Redis 缓存定价]。）
 
