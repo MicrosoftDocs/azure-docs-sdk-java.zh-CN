@@ -15,87 +15,87 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 046ae0428d50a7f173f5ad15be53ffd8e66c11c5
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954178"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38075366"
 ---
-# <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="9c413-103">使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="9c413-103">Managing Redis Caches using the Azure Explorer for IntelliJ</span></span>
+# <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="60254-103">使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="60254-103">Managing Redis Caches using the Azure Explorer for IntelliJ</span></span>
 
-<span data-ttu-id="9c413-104">Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为 Java 开发人员提供易于使用的解决方案，用于从 IntelliJ IDE 内部管理其 Azure 帐户中的 redis 缓存。</span><span class="sxs-lookup"><span data-stu-id="9c413-104">The Azure Explorer, which is part of the Azure Toolkit for IntelliJ, provides Java developers with an easy-to-use solution for managing redis caches in their Azure account from inside the IntelliJ IDE.</span></span>
+<span data-ttu-id="60254-104">Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为 Java 开发人员提供易于使用的解决方案，用于从 IntelliJ IDE 内部管理其 Azure 帐户中的 redis 缓存。</span><span class="sxs-lookup"><span data-stu-id="60254-104">The Azure Explorer, which is part of the Azure Toolkit for IntelliJ, provides Java developers with an easy-to-use solution for managing redis caches in their Azure account from inside the IntelliJ IDE.</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-prerequisites](../includes/azure-toolkit-for-intellij-prerequisites.md)]
 
 [!INCLUDE [azure-toolkit-for-intellij-show-azure-explorer](../includes/azure-toolkit-for-intellij-show-azure-explorer.md)]
 
-## <a name="create-a-redis-cache-by-using-intellij"></a><span data-ttu-id="9c413-105">使用 IntelliJ 创建 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="9c413-105">Create a Redis Cache by using IntelliJ</span></span>
+## <a name="create-a-redis-cache-by-using-intellij"></a><span data-ttu-id="60254-105">使用 IntelliJ 创建 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="60254-105">Create a Redis Cache by using IntelliJ</span></span>
 
-<span data-ttu-id="9c413-106">以下步骤将引导完成使用 Azure 资源管理器创建 redis 缓存的步骤。</span><span class="sxs-lookup"><span data-stu-id="9c413-106">The following steps walk you through the steps to create a redis cache using the Azure Explorer.</span></span>
+<span data-ttu-id="60254-106">以下步骤将引导完成使用 Azure 资源管理器创建 redis 缓存的步骤。</span><span class="sxs-lookup"><span data-stu-id="60254-106">The following steps walk you through the steps to create a redis cache using the Azure Explorer.</span></span>
 
-1. <span data-ttu-id="9c413-107">按照[用于 IntelliJ 的 Azure 工具包的登录说明]一文中的步骤登录到 Azure 帐户。</span><span class="sxs-lookup"><span data-stu-id="9c413-107">Sign in to your Azure account using the steps in the [Sign In Instructions for the Azure Toolkit for IntelliJ] article.</span></span>
+1. <span data-ttu-id="60254-107">按照[用于 IntelliJ 的 Azure 工具包的登录说明]一文中的步骤登录到 Azure 帐户。</span><span class="sxs-lookup"><span data-stu-id="60254-107">Sign in to your Azure account using the steps in the [Sign In Instructions for the Azure Toolkit for IntelliJ] article.</span></span>
 
-1. <span data-ttu-id="9c413-108">在“Azure 资源管理器”工具窗口中，展开“Azure”节点，右键单击“Redis 缓存”，然后单击“创建 Redis 缓存”。</span><span class="sxs-lookup"><span data-stu-id="9c413-108">In the **Azure Explorer** tool window, expand the **Azure** node, right-click **Redis Caches**, and then click **Create Redis Cache**.</span></span>
+1. <span data-ttu-id="60254-108">在“Azure 资源管理器”工具窗口中，展开“Azure”节点，右键单击“Redis 缓存”，然后单击“创建 Redis 缓存”。</span><span class="sxs-lookup"><span data-stu-id="60254-108">In the **Azure Explorer** tool window, expand the **Azure** node, right-click **Redis Caches**, and then click **Create Redis Cache**.</span></span>
 
    ![创建 Redis 缓存菜单][CR01]
 
-1. <span data-ttu-id="9c413-110">当“新建 Redis 缓存”对话框出现时，请指定以下选项：</span><span class="sxs-lookup"><span data-stu-id="9c413-110">When the **New Redis Cache** dialog box appears, specify the following options:</span></span>
+1. <span data-ttu-id="60254-110">当“新建 Redis 缓存”对话框出现时，请指定以下选项：</span><span class="sxs-lookup"><span data-stu-id="60254-110">When the **New Redis Cache** dialog box appears, specify the following options:</span></span>
 
    ![“新建 Redis 缓存”对话框][CR02]
 
-   <span data-ttu-id="9c413-112">a.</span><span class="sxs-lookup"><span data-stu-id="9c413-112">a.</span></span> <span data-ttu-id="9c413-113">DNS 名称：为新的 redis 缓存指定 DNS 子域，预设为“redis.cache.windows.net”，例如：wingtiptoys.redis.cache.windows.net。</span><span class="sxs-lookup"><span data-stu-id="9c413-113">**DNS Name**: Specifies the DNS subdomain for the new redis cache, which are prepended to ".redis.cache.windows.net"; for example: *wingtiptoys.redis.cache.windows.net*.</span></span>
+   <span data-ttu-id="60254-112">a.</span><span class="sxs-lookup"><span data-stu-id="60254-112">a.</span></span> <span data-ttu-id="60254-113">DNS 名称：为新的 redis 缓存指定 DNS 子域，预设为“redis.cache.windows.net”，例如：wingtiptoys.redis.cache.windows.net。</span><span class="sxs-lookup"><span data-stu-id="60254-113">**DNS Name**: Specifies the DNS subdomain for the new redis cache, which are prepended to ".redis.cache.windows.net"; for example: *wingtiptoys.redis.cache.windows.net*.</span></span>
 
-   <span data-ttu-id="9c413-114">b.</span><span class="sxs-lookup"><span data-stu-id="9c413-114">b.</span></span> <span data-ttu-id="9c413-115">订阅：指定要用于新的 redis 缓存的 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="9c413-115">**Subscription**: Specifies the Azure subscription you want to use for the new redis cache.</span></span>
+   <span data-ttu-id="60254-114">b.</span><span class="sxs-lookup"><span data-stu-id="60254-114">b.</span></span> <span data-ttu-id="60254-115">订阅：指定要用于新的 redis 缓存的 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="60254-115">**Subscription**: Specifies the Azure subscription you want to use for the new redis cache.</span></span>
 
-   <span data-ttu-id="9c413-116">c.</span><span class="sxs-lookup"><span data-stu-id="9c413-116">c.</span></span> <span data-ttu-id="9c413-117">资源组：为 redis 缓存指定资源组；需要选择以下一种选项：</span><span class="sxs-lookup"><span data-stu-id="9c413-117">**Resource Group**: Specifies the resource group for your redis cache; you need to choose one of the following options:</span></span> 
-      * <span data-ttu-id="9c413-118">**新建**：指定要创建新的资源组。</span><span class="sxs-lookup"><span data-stu-id="9c413-118">**Create New**: Specifies that you want to create a new resource group.</span></span> 
-      * <span data-ttu-id="9c413-119">使用现有资源组：指定将从与 Azure 帐户关联的资源组列表中选择。</span><span class="sxs-lookup"><span data-stu-id="9c413-119">**Use Existing**: Specifies that you will choose from a list of resource groups associated with your Azure account.</span></span> 
+   <span data-ttu-id="60254-116">c.</span><span class="sxs-lookup"><span data-stu-id="60254-116">c.</span></span> <span data-ttu-id="60254-117">资源组：为 redis 缓存指定资源组；需要选择以下一种选项：</span><span class="sxs-lookup"><span data-stu-id="60254-117">**Resource Group**: Specifies the resource group for your redis cache; you need to choose one of the following options:</span></span> 
+      * <span data-ttu-id="60254-118">**新建**：指定要创建新的资源组。</span><span class="sxs-lookup"><span data-stu-id="60254-118">**Create New**: Specifies that you want to create a new resource group.</span></span> 
+      * <span data-ttu-id="60254-119">使用现有资源组：指定将从与 Azure 帐户关联的资源组列表中选择。</span><span class="sxs-lookup"><span data-stu-id="60254-119">**Use Existing**: Specifies that you will choose from a list of resource groups associated with your Azure account.</span></span> 
 
-   <span data-ttu-id="9c413-120">d.单击“下一步”。</span><span class="sxs-lookup"><span data-stu-id="9c413-120">d.</span></span> <span data-ttu-id="9c413-121">位置：指定创建 redis 缓存的位置，例如：美国西部。</span><span class="sxs-lookup"><span data-stu-id="9c413-121">**Location**: Specifies the location where your redis cache is created; for example, *West US*.</span></span>
+   <span data-ttu-id="60254-120">d.</span><span class="sxs-lookup"><span data-stu-id="60254-120">d.</span></span> <span data-ttu-id="60254-121">位置：指定创建 redis 缓存的位置，例如：美国西部。</span><span class="sxs-lookup"><span data-stu-id="60254-121">**Location**: Specifies the location where your redis cache is created; for example, *West US*.</span></span>
 
-   <span data-ttu-id="9c413-122">e.</span><span class="sxs-lookup"><span data-stu-id="9c413-122">e.</span></span> <span data-ttu-id="9c413-123">定价层： 指定 redis 缓存使用的定价层；此设置将确定客户端连接数。</span><span class="sxs-lookup"><span data-stu-id="9c413-123">**Pricing Tier**: Specifies which pricing tier your redis cache uses; this setting determines the number of client connections.</span></span> <span data-ttu-id="9c413-124">（有关详细信息，请参阅 [Redis 缓存定价]。）</span><span class="sxs-lookup"><span data-stu-id="9c413-124">(For more information, see [Redis Cache Pricing].)</span></span>
+   <span data-ttu-id="60254-122">e.</span><span class="sxs-lookup"><span data-stu-id="60254-122">e.</span></span> <span data-ttu-id="60254-123">定价层： 指定 redis 缓存使用的定价层；此设置将确定客户端连接数。</span><span class="sxs-lookup"><span data-stu-id="60254-123">**Pricing Tier**: Specifies which pricing tier your redis cache uses; this setting determines the number of client connections.</span></span> <span data-ttu-id="60254-124">（有关详细信息，请参阅 [Redis 缓存定价]。）</span><span class="sxs-lookup"><span data-stu-id="60254-124">(For more information, see [Redis Cache Pricing].)</span></span>
 
-   <span data-ttu-id="9c413-125">f.</span><span class="sxs-lookup"><span data-stu-id="9c413-125">f.</span></span> <span data-ttu-id="9c413-126">非 SSL 端口：指定 redis 缓存是否允许非 SSL 连接；默认情况下，仅允许 SSL 连接。</span><span class="sxs-lookup"><span data-stu-id="9c413-126">**Non-SSL port**: Specifies whether your redis cache allows non-SSL connections; by default, only SSL connections are allowed.</span></span>
+   <span data-ttu-id="60254-125">f.</span><span class="sxs-lookup"><span data-stu-id="60254-125">f.</span></span> <span data-ttu-id="60254-126">非 SSL 端口：指定 redis 缓存是否允许非 SSL 连接；默认情况下，仅允许 SSL 连接。</span><span class="sxs-lookup"><span data-stu-id="60254-126">**Non-SSL port**: Specifies whether your redis cache allows non-SSL connections; by default, only SSL connections are allowed.</span></span>
 
-1. <span data-ttu-id="9c413-127">指定 redis 缓存的所有设置后，单击“确定”。</span><span class="sxs-lookup"><span data-stu-id="9c413-127">When you have specified all your redis cache settings, click **OK**.</span></span>
+1. <span data-ttu-id="60254-127">指定 redis 缓存的所有设置后，单击“确定”。</span><span class="sxs-lookup"><span data-stu-id="60254-127">When you have specified all your redis cache settings, click **OK**.</span></span>
 
-<span data-ttu-id="9c413-128">redis 缓存创建完成后，将显示在 Azure 资源管理器中。</span><span class="sxs-lookup"><span data-stu-id="9c413-128">After your redis cache has been created, it will be displayed in the Azure Explorer.</span></span>
+<span data-ttu-id="60254-128">redis 缓存创建完成后，将显示在 Azure 资源管理器中。</span><span class="sxs-lookup"><span data-stu-id="60254-128">After your redis cache has been created, it will be displayed in the Azure Explorer.</span></span>
 
    ![Azure 资源管理器中的 Redis 缓存][CR03]
 
 > [!NOTE]
 >
-> <span data-ttu-id="9c413-130">有关配置 Azure redis 缓存设置的详细信息，请参阅[如何配置 Azure Redis 缓存]。</span><span class="sxs-lookup"><span data-stu-id="9c413-130">For more information about configuring your Azure redis cache settings, see [How to configure Azure Redis Cache].</span></span>
+> <span data-ttu-id="60254-130">有关配置 Azure redis 缓存设置的详细信息，请参阅[如何配置 Azure Redis 缓存]。</span><span class="sxs-lookup"><span data-stu-id="60254-130">For more information about configuring your Azure redis cache settings, see [How to configure Azure Redis Cache].</span></span>
 >
 
-## <a name="display-the-properties-for-your-redis-cache-in-intellij"></a><span data-ttu-id="9c413-131">在 IntelliJ 中显示 Redis 缓存属性</span><span class="sxs-lookup"><span data-stu-id="9c413-131">Display the properties for your Redis Cache in IntelliJ</span></span>
+## <a name="display-the-properties-for-your-redis-cache-in-intellij"></a><span data-ttu-id="60254-131">在 IntelliJ 中显示 Redis 缓存属性</span><span class="sxs-lookup"><span data-stu-id="60254-131">Display the properties for your Redis Cache in IntelliJ</span></span>
 
-1. <span data-ttu-id="9c413-132">在 Azure 资源管理器中，右键单击 redis 缓存，然后单击“显示属性”。</span><span class="sxs-lookup"><span data-stu-id="9c413-132">In the Azure Explorer, right-click your redis cache and click **Show properties**.</span></span>
+1. <span data-ttu-id="60254-132">在 Azure 资源管理器中，右键单击 redis 缓存，然后单击“显示属性”。</span><span class="sxs-lookup"><span data-stu-id="60254-132">In the Azure Explorer, right-click your redis cache and click **Show properties**.</span></span>
 
    ![用于显示 redis 缓存属性的 Azure 资源管理器上下文菜单][SP01]
 
-1. <span data-ttu-id="9c413-134">Azure 资源管理器会显示 redis 缓存的属性。</span><span class="sxs-lookup"><span data-stu-id="9c413-134">The Azure Explorer displays the properties for your redis cache.</span></span>
+1. <span data-ttu-id="60254-134">Azure 资源管理器会显示 redis 缓存的属性。</span><span class="sxs-lookup"><span data-stu-id="60254-134">The Azure Explorer displays the properties for your redis cache.</span></span>
 
    ![Redis 缓存属性][SP02]
 
-## <a name="delete-your-redis-cache-by-using-intellij"></a><span data-ttu-id="9c413-136">使用 IntelliJ 删除 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="9c413-136">Delete your Redis Cache by using IntelliJ</span></span>
+## <a name="delete-your-redis-cache-by-using-intellij"></a><span data-ttu-id="60254-136">使用 IntelliJ 删除 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="60254-136">Delete your Redis Cache by using IntelliJ</span></span>
 
-1. <span data-ttu-id="9c413-137">在 Azure 资源管理器中，右键单击 redis 缓存，然后单击“删除”。</span><span class="sxs-lookup"><span data-stu-id="9c413-137">In the Azure Explorer, right-click your redis cache and click **Delete**.</span></span>
+1. <span data-ttu-id="60254-137">在 Azure 资源管理器中，右键单击 redis 缓存，然后单击“删除”。</span><span class="sxs-lookup"><span data-stu-id="60254-137">In the Azure Explorer, right-click your redis cache and click **Delete**.</span></span>
 
    ![使用 Azure 资源管理器上下文菜单删除 redis 缓存][DE01]
 
-1. <span data-ttu-id="9c413-139">系统提示删除 redis 缓存时，单击“是”。</span><span class="sxs-lookup"><span data-stu-id="9c413-139">Click **Yes** when prompted to delete your redis cache.</span></span>
+1. <span data-ttu-id="60254-139">系统提示删除 redis 缓存时，单击“是”。</span><span class="sxs-lookup"><span data-stu-id="60254-139">Click **Yes** when prompted to delete your redis cache.</span></span>
 
    ![删除 redis 缓存提示][DE02]
 
-## <a name="next-steps"></a><span data-ttu-id="9c413-141">后续步骤</span><span class="sxs-lookup"><span data-stu-id="9c413-141">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="60254-141">后续步骤</span><span class="sxs-lookup"><span data-stu-id="60254-141">Next steps</span></span>
 
-<span data-ttu-id="9c413-142">有关 Azure redis 缓存、配置设置和定价的详细信息，请参阅以下链接：</span><span class="sxs-lookup"><span data-stu-id="9c413-142">For more information about Azure redis caches, configuration settings and pricing, see the following links:</span></span>
+<span data-ttu-id="60254-142">有关 Azure redis 缓存、配置设置和定价的详细信息，请参阅以下链接：</span><span class="sxs-lookup"><span data-stu-id="60254-142">For more information about Azure redis caches, configuration settings and pricing, see the following links:</span></span>
 
-* <span data-ttu-id="9c413-143">[Azure Redis 缓存]</span><span class="sxs-lookup"><span data-stu-id="9c413-143">[Azure Redis Cache]</span></span>
-* <span data-ttu-id="9c413-144">[Redis 缓存文档]</span><span class="sxs-lookup"><span data-stu-id="9c413-144">[Redis Cache Documentation]</span></span>
-* <span data-ttu-id="9c413-145">[Redis 缓存定价]</span><span class="sxs-lookup"><span data-stu-id="9c413-145">[Redis Cache Pricing]</span></span>
-* <span data-ttu-id="9c413-146">[如何配置 Azure Redis 缓存]</span><span class="sxs-lookup"><span data-stu-id="9c413-146">[How to configure Azure Redis Cache]</span></span>
+* <span data-ttu-id="60254-143">[Azure Redis 缓存]</span><span class="sxs-lookup"><span data-stu-id="60254-143">[Azure Redis Cache]</span></span>
+* <span data-ttu-id="60254-144">[Redis 缓存文档]</span><span class="sxs-lookup"><span data-stu-id="60254-144">[Redis Cache Documentation]</span></span>
+* <span data-ttu-id="60254-145">[Redis 缓存定价]</span><span class="sxs-lookup"><span data-stu-id="60254-145">[Redis Cache Pricing]</span></span>
+* <span data-ttu-id="60254-146">[如何配置 Azure Redis 缓存]</span><span class="sxs-lookup"><span data-stu-id="60254-146">[How to configure Azure Redis Cache]</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
