@@ -1,6 +1,6 @@
 有关用于 Eclipse 的 Azure 工具包的详细信息，请参阅以下链接： 
 
-* [用于 Eclipse 的 Azure 工具包](../eclipse/azure-toolkit-for-eclipse.md) 
+* [用于 Eclipse 的 Azure 工具](../eclipse/azure-toolkit-for-eclipse.md) 
 * [发行说明](https://github.com/Microsoft/azure-tools-for-java/releases) 
 * [安装用于 Eclipse 的 Azure 工具包](../eclipse/azure-toolkit-for-eclipse-installation.md) 
 * [在 Eclipse 中创建适用于 Azure 的 Hello World Web 应用](../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md) 

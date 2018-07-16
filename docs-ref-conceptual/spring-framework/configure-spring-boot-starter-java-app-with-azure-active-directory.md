@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 06/20/2018
+ms.date: 07/02/2018
 ms.devlang: java
 ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: adcbc78cc129daf589bf070741308e4024432e5d
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: 6d20593620c7fb73f8481be8705bdc42d4e9ce32
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090830"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37864047"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>如何使用适用于 Azure Active Directory 的 Spring Boot 起动器
 
@@ -67,7 +67,7 @@ ms.locfileid: "37090830"
 
    ![创建新的 Azure Active Directory 实例][directory-01]
 
-1. 输入“组织名称”和“初始域名”，单击“创建”。
+1. 输入“组织名称”和“初始域名”。 复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：`wingtiptoysdirectory.onmicrosoft.com`。）完成后，单击“创建”。
 
    ![指定 Azure Active Directory 名称][directory-02]
 
@@ -75,7 +75,7 @@ ms.locfileid: "37090830"
 
    ![选择 Azure Active Directory][directory-03]
 
-1. 从门户菜单中选择“Azure Active Directory”，单击“属性”，并复制“目录 ID”- 本文稍后将会用到此 ID。
+1. 从门户菜单中选择“Azure Active Directory”，单击“属性”，并复制“目录 ID”；在本教程中，稍后将使用该值来配置 *application.properties* 文件。
 
    ![复制 Azure Active Directory ID][directory-13]
 
@@ -93,11 +93,11 @@ ms.locfileid: "37090830"
 
    ![选择应用注册][directory-06]
 
-1. 显示应用注册的页面后，请复制“应用程序 ID”供稍后使用，然后依次单击“设置”、“密钥”。
+1. 当应用注册页出现时，复制你的**应用 ID**；在本教程中，稍后你将使用此值来配置 *application.properties* 文件。 单击“设置”，然后单击“密钥”。
 
    ![创建应用注册密钥][directory-07]
 
-1. 添加“说明”并指定新密钥的“持续时间”，单击“保存”；单击“保存”图标时，会自动填充密钥的值，需要复制该密钥值供稍后使用。 （以后无法检索此值。）
+1. 添加“说明”并指定新密钥的“持续时间”，单击“保存”；单击“保存”图标时，会自动填充密钥的值，你需要复制该密钥的值，本教程中稍后将使用该值来配置 *application.properties* 文件。 （以后无法检索此值。）
 
    ![指定应用注册密钥参数][directory-08]
 
@@ -125,13 +125,55 @@ ms.locfileid: "37090830"
 
    ![添加新的回复 URL][directory-15]
 
+1. 从应用注册主页面上，单击“清单”，将 `oauth2AllowImplicitFlow` 参数的值设置为 `true`，然后单击“保存”。
+
+   ![配置应用清单][directory-16]
+
+   > [!NOTE]
+   > 
+   > 有关 `oauth2AllowImplicitFlow` 参数和其他应用程序设置的详细信息，请参阅 [Azure Active Directory 应用程序清单][AAD app manifest]。 
+   >
+
+### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>将用户帐户添加到你的目录，并将该帐户添加到某个组
+
+1. 从 Active Directory 的“概述”页面上，单击“用户”。
+
+   ![打开“用户”面板][directory-17]
+
+1. 当“用户”面板显示时，单击“新建用户”。
+
+   ![添加新用户帐户][directory-18]
+
+1. 当“用户”面板显示时，输入**名称**和**用户名**。
+
+   ![输入用户帐户信息][directory-19]
+
+   > [!NOTE]
+   > 
+   > 在输入用户名时，需要指定本教程前文中的目录 URL，例如：
+   >
+   > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
+   > 
+
+1. 单击“组”，选择要用于在应用程序中进行身份验证的组，然后单击“选择”。 （针对在本教程中的用途，请将帐户添加到 _Users_ 组。）
+
+   ![选择用户的组][directory-20]
+
+1. 单击“显示密码”，然后复制密码；在本教程中，登录到应用程序时将使用此密码。
+
+   ![显示密码][directory-21]
+
+1. 单击“创建”将新的用户帐户添加到目录。
+
+   ![创建新的用户帐户][directory-22]
+
 ## <a name="configure-and-compile-your-spring-boot-application"></a>配置并编译 Spring Boot 应用程序
 
-1. 将下载的项目存档中的文件提取到某个目录。
+1. 将本教程中之前创建并下载的项目存档中的文件提取到某个目录中。
 
-2. 导航到项目中的父文件夹，并在文本编辑器中打开 *pom.xml* 文件。
+1. 导航到项目的父文件夹，并在文本编辑器中打开 *pom.xml* 文件。
 
-3. 添加 Spring OAuth2 安全性的依赖项，例如：
+1. 添加 Spring OAuth2 安全性的依赖项，例如：
 
    ```xml
    <dependency>
@@ -144,11 +186,11 @@ ms.locfileid: "37090830"
    </dependency>
    ```
 
-4. 保存并关闭 pom.xml 文件。
+1. 保存并关闭 pom.xml 文件。
 
-5. 导航到项目中的 *src/main/resources* 文件夹，并在文本编辑器中打开 *application.properties* 文件。
+1. 导航到项目中的 *src/main/resources* 文件夹，并在文本编辑器中打开 *application.properties* 文件。
 
-6. 使用前面复制的值添加存储帐户的密钥，例如：
+1. 使用之前创建的值指定用于应用注册的设置，例如：
 
    ```yaml
    # Specifies your Active Directory ID:
@@ -160,7 +202,7 @@ ms.locfileid: "37090830"
    # Specifies your App Registration's secret key:
    spring.security.oauth2.client.registration.azure.client-secret=AbCdEfGhIjKlMnOpQrStUvWxYz==
 
-   # Specifies the list of Active Directory groups to use for authentication:
+   # Specifies the list of Active Directory groups to use for authorization:
    azure.activedirectory.active-directory-groups=Users
    ```
    其中：
@@ -170,20 +212,20 @@ ms.locfileid: "37090830"
    | `azure.activedirectory.tenant-id` | 包含前面复制的 Active Directory“目录 ID”。 |
    | `spring.security.oauth2.client.registration.azure.client-id` | 包含前面填写的、应用注册的“应用程序 ID”。 |
    | `spring.security.oauth2.client.registration.azure.client-secret` | 包含前面填写的、应用注册密钥中的“值”。 |
-   | `azure.activedirectory.active-directory-groups` | 包含用于身份验证的 Active Directory 组列表。 |
+   | `azure.activedirectory.active-directory-groups` | 包含用于授权的 Active Directory 组列表。 |
 
    > [!NOTE]
    > 
    > 有关可在 *application.properties* 文件中使用的值的完整列表，请参阅 GitHub 上的 [Azure Active Directory Spring Boot 示例][AAD Spring Boot Sample]。
    >
 
-7. 保存并关闭 application.properties 文件。
+1. 保存并关闭 application.properties 文件。
 
-8. 在应用程序的 Java 源文件夹中创建名为 *controller* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/controller*。
+1. 在应用程序的 Java 源文件夹中创建名为 *controller* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/controller*。
 
-9. 在 *controller* 文件夹中创建名为 *HelloController.java* 的新 Java 文件，并在文本编辑器中打开该文件。
+1. 在 *controller* 文件夹中创建名为 *HelloController.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 
-10. 输入以下代码，然后保存并关闭该文件：
+1. 输入以下代码，然后保存并关闭该文件：
 
    ```java
    package com.wingtiptoys.security;
@@ -237,11 +279,11 @@ ms.locfileid: "37090830"
    > ```
    >    
 
-11. 在应用程序的 Java 源文件夹中创建名为 *security* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/security*。
+1. 在应用程序的 Java 源文件夹中创建名为 *security* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/security*。
 
-12. 在 *security* 文件夹中创建名为 *WebSecurityConfig.java* 的新 Java 文件，并在文本编辑器中打开该文件。
+1. 在 *security* 文件夹中创建名为 *WebSecurityConfig.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 
-13. 输入以下代码，然后保存并关闭该文件：
+1. 输入以下代码，然后保存并关闭该文件：
 
     ```java
     package com.wingtiptoys.security;
@@ -291,6 +333,13 @@ ms.locfileid: "37090830"
 
    ![登录到应用程序][application-login]
 
+   > [!NOTE]
+   > 
+   > 如果这是新用户帐户的首次登录，可能会提示你更改密码。
+   > 
+   > ![更改密码][update-password]
+   > 
+
 1. 成功登录后，控制器中应会显示“Hello World”示例文本。
 
    ![成功登录][hello-world]
@@ -321,8 +370,9 @@ ms.locfileid: "37090830"
 <!-- URL List -->
 
 [Azure Active Directory 文档]: /azure/active-directory/
+[AAD app manifest]: /azure/active-directory/develop/active-directory-application-manifest
 [Get started with Azure AD]: /azure/active-directory/get-started-azure-ad
-[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
+[面向 Java 开发人员的 Azure]: /java/azure/
 [免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
@@ -353,7 +403,15 @@ ms.locfileid: "37090830"
 [directory-13]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-13.png
 [directory-14]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-14.png
 [directory-15]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-15.png
+[directory-16]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-16.png
+[directory-17]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-17.png
+[directory-18]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-18.png
+[directory-19]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-19.png
+[directory-20]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-20.png
+[directory-21]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-21.png
+[directory-22]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-22.png
 
-[build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
 [application-login]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/application-login.png
+[build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
 [hello-world]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/hello-world.png
+[update-password]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/update-password.png
