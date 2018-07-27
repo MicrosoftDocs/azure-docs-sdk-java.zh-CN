@@ -1,5 +1,5 @@
 ---
-title: 在 Azure 容器服务中将 Spring Boot 应用部署于 Kubernetes 上
+title: 在 Azure Kubernetes 服务中将 Spring Boot 应用部署于 Kubernetes
 description: 本教程将指导用户完成在 Microsoft Azure 的 Kubernetes 群集中部署 Spring Boot 应用程序的步骤。
 services: container-service
 documentationcenter: java
@@ -8,25 +8,25 @@ manager: routlaw
 editor: ''
 ms.assetid: ''
 ms.author: asirveda;robmcm
-ms.date: 02/01/2018
+ms.date: 07/05/2018
 ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: 9eb37f302835ea40e92b5212d5bbc305d1311bc4
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: cb83a7d6ec3a9a83fbfd3b2e34e5a4e498aa36d3
+ms.sourcegitcommit: 51dc05a96a8cbc8a6c9b45e094d8f3cfec16a607
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954638"
+ms.lasthandoff: 07/21/2018
+ms.locfileid: "39189667"
 ---
-# <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-container-service"></a>在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
+# <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
 
-[Kubernetes] 和 [Docker] 是开源解决方案，可帮助开发人员自动部署、扩展和管理在容器中运行的应用程序。
+[Kubernetes] 和 [Docker] 是开源解决方案，可帮助开发人员自动部署、缩放和管理在容器中运行的应用程序。
 
-本教程将指导用户将这两种常用的开源技术进行结合，从而将 Spring Boot 应用程序开发和部署到 Microsoft Azure。 具体而言，将使用 [Spring Boot] 进行应用程序开发，使用 [Kubernetes] 进行容器部署，使用 [Azure 容器服务 (AKS)] 来托管应用程序。
+本教程将指导用户将这两种常用的开源技术进行结合，从而将 Spring Boot 应用程序开发和部署到 Microsoft Azure。 具体而言，将使用 [Spring Boot] 进行应用程序开发，使用 [Kubernetes] 进行容器部署，使用 [Azure Kubernetes 服务 (AKS)] 来托管应用程序。
 
 ### <a name="prerequisites"></a>先决条件
 
@@ -57,7 +57,7 @@ ms.locfileid: "28954638"
    cd /users/robert/SpringBoot
    ```
 
-1. 将 [Docker 上的 Spring Boot 启动入门]示例项目克隆到目录。
+1. 将 [Docker 上的 Spring Boot 入门]示例项目克隆到目录。
    ```
    git clone https://github.com/spring-guides/gs-spring-boot-docker.git
    ```
@@ -89,6 +89,11 @@ ms.locfileid: "28954638"
 1. 登录到 Azure 帐户：
    ```azurecli
    az login
+   ```
+
+1. 选择自己的 Azure 订阅：
+   ```azurecli
+   az account set -s <YourSubscriptionID>
    ```
 
 1. 为本教程中使用的 Azure 资源创建资源组。
@@ -151,7 +156,11 @@ ms.locfileid: "28954638"
       <version>0.4.11</version>
       <configuration>
          <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         <dockerDirectory>src/main/docker</dockerDirectory>
+         <buildArgs>
+            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+         </buildArgs>
+         <baseImage>java</baseImage>
+         <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
          <resources>
             <resource>
                <targetPath>/</targetPath>
@@ -189,22 +198,24 @@ ms.locfileid: "28954638"
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>使用 Azure CLI 在 AKS 上创建 Kubernetes 群集
 
-1. 在 Azure 容器服务中创建 Kubernetes 群集。 以下命令在 wingtiptoys-kubernetes 资源组中创建 kubernetes 群集，将 wingtiptoys-containerservice 作为群集名称，wingtiptoys-kubernetes 作为 DNS 前缀：
+1. 在 Azure Kubernetes 服务中创建 Kubernetes 群集。 以下命令在 wingtiptoys-kubernetes 资源组中创建 kubernetes 群集，将 wingtiptoys-akscluster 作为群集名称，wingtiptoys-kubernetes 作为 DNS 前缀：
    ```azurecli
-   az acs create --orchestrator-type=kubernetes --resource-group=wingtiptoys-kubernetes \ 
-    --name=wingtiptoys-containerservice --dns-prefix=wingtiptoys-kubernetes
+   az aks create --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster \ 
+    --dns-name-prefix=wingtiptoys-kubernetes --generate-ssh-keys
    ```
    此命令可能需要一段时间才能完成。
 
+1. 结合使用 Azure 容器注册表 (ACR) 和 Azure Kubernetes 服务 (AKS) 时，需要建立身份验证机制。 按照[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]中的步骤授予 AKS 对 ACR 的访问权限。
+
+
 1. 使用 Azure CLI 安装 `kubectl`。 Linux 用户可能必须将 `sudo` 作为此命令的前缀，因为它将 Kubernetes CLI 部署到 `/usr/local/bin`。
    ```azurecli
-   az acs kubernetes install-cli
+   az aks install-cli
    ```
 
 1. 下载群集配置信息，以便从 Kubernetes Web 界面和 `kubectl` 管理群集。 
    ```azurecli
-   az acs kubernetes get-credentials --resource-group=wingtiptoys-kubernetes  \ 
-    --name=wingtiptoys-containerservice
+   az aks get-credentials --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
 
 ## <a name="deploy-the-image-to-your-kubernetes-cluster"></a>将映像部署到 Kubernetes 群集
@@ -217,22 +228,22 @@ ms.locfileid: "28954638"
 
 1. 在默认浏览器中打开 Kubernetes 群集的配置网站：
    ```
-   az acs kubernetes browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-containerservice
+   az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
 
 1. 在浏览器中打开 Kubernetes 配置网站后，单击“部署容器化应用”的链接：
 
    ![Kubernetes 配置网站][KB01]
 
-1. 显示“部署容器化应用”页面后，请指定以下选项：
+1. 显示“资源创建”页时，请指定以下选项：
 
-   a. 选择“指定以下应用详细信息”。
+   a. 选择“创建应用”。
 
    b. 在“应用名称”中输入 Spring Boot 应用程序名称；例如：gs-spring-boot-docker。
 
    c. 在容器映像中输入之前的登录服务器和容器映像；例如：“wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest”。
 
-   d.单击“下一步”。 选择“外部”服务。
+   d. 选择“外部”服务。
 
    e. 在“端口”和“目标端口”文本框中指定外部和内部端口。
 
@@ -241,7 +252,7 @@ ms.locfileid: "28954638"
 
 1. 单击“部署”对容器进行部署。
 
-   ![部署容器][KB05]
+   ![Kubernetes 部署][KB05]
 
 1. 部署应用程序后，Spring Boot 应用程序将列在“服务”下方。
 
@@ -300,18 +311,19 @@ ms.locfileid: "28954638"
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
 
-有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅[Docker 上的 Spring Boot 启动入门]。
+<!-- Newly added --> 有关使用 Visual Studio Code 将 Java 应用程序部署到 Kubernetes 的详细信息，请参阅 [Visual Studio Code Java 教程]。
+
+有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅[Docker 上的 Spring Boot 入门]。
 
 以下链接提供了创建 Spring Boot 应用程序的详细信息：
 
-* 有关创建简单 Spring Boot 应用程序的详细信息，请参阅 Spring Initializr at https://start.spring.io/。
+* 有关创建简单 Spring Boot 应用程序的详细信息，请参阅 https://start.spring.io/ 中的 Spring Initializr。
 
 以下链接提供了将 Kubernetes 与 Azure 配合使用的详细信息：
 
-* [容器服务中的 Kubernetes 群集入门](https://docs.microsoft.com/azure/container-service/container-service-kubernetes-walkthrough)
-* [在 Azure 容器服务中使用 Kubernetes Web UI](https://docs.microsoft.com/azure/container-service/container-service-kubernetes-ui)
+* [Azure Kubernetes 服务中的 Kubernetes 群集入门](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes)
 
-有关使用 Kubernetes 命令行接口的详细信息，请在 < https://kubernetes.io/docs/user-guide/kubectl/ > 处参阅 **kubectl** 用户指南。
+有关使用 Kubernetes 命令行接口的详细信息，请在 <https://kubernetes.io/docs/user-guide/kubectl/> 处参阅 **kubectl** 用户指南。
 
 Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像的信息：
 
@@ -324,7 +336,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 <!-- URL List -->
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
-[Azure 容器服务 (AKS)]: https://azure.microsoft.com/services/container-service/
+[Azure Kubernetes 服务 (AKS)]: https://azure.microsoft.com/services/kubernetes-service/
 [面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
@@ -339,11 +351,15 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 [Maven]: http://maven.apache.org/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Docker 上的 Spring Boot 启动入门]: https://github.com/spring-guides/gs-spring-boot-docker
+[Docker 上的 Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
 [为 Pod 配置服务帐户]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
 [命名空间]: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 [从私有注册表拉取映像]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+
+<!-- Newly added -->
+[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]: https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-aks/
+[Visual Studio Code Java 教程]: https://code.visualstudio.com/docs/java/java-kubernetes/
 
 <!-- IMG List -->
 
