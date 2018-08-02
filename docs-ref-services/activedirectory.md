@@ -11,12 +11,12 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: active-directory
-ms.openlocfilehash: 4a610e2f0d9fb2e219c42155e2b0cb76fc78b09a
-ms.sourcegitcommit: 5bfb3af5778167500a061157cbd0ad1cede8f90e
+ms.openlocfilehash: e51334b4f13ffc457d4dec1785257dcff1b56b08
+ms.sourcegitcommit: c4238cffdf6c6f7ac8725673260a34a38c566f58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "37799695"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39418972"
 ---
 # <a name="azure-active-directory-libraries-for-java"></a>用于 Java 的 Azure Active Directory 库
 
@@ -87,7 +87,7 @@ RoleAssignment roleAssignment2 = authenticated.roleAssignments()
 ```
 
 > [!div class="nextstepaction"]
-> [了解管理 API](/java/api/activedirectory/management)
+> [了解管理 API](/java/api/overview/azure/activedirectory/management)
 
 
 ## <a name="samples"></a>示例
