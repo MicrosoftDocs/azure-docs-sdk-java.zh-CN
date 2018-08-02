@@ -47,9 +47,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    * **帐户类型**：指定要创建的存储帐户的类型（例如“Blob 存储”）。 有关详细信息，请参阅[有关 Azure 存储帐户]。 
 
-   * 
-  **
-  **性能：指定要使用哪一个从所选发布者提供的存储帐户（例如，“高级”）。 有关详细信息，请参阅 [Azure 存储可伸缩性和性能目标]。 
+   * **性能**：指定要使用哪一个从所选发布者提供的存储帐户（例如，“高级”）。 有关详细信息，请参阅 [Azure 存储可伸缩性和性能目标]。 
 
    * **复制**：指定存储帐户的复制（例如“区域冗余”）。 有关详细信息，请参阅 [Azure 存储复制]。 
 
@@ -71,7 +69,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    ![“创建 blob 容器”命令][CC01]
 
-2. 在“创建 Blob 容器”对话框中，指定容器的名称，并单击“确定”。 有关命名存储容器的详细信息，请参阅[命名和引用容器、Blob 与元数据]。
+2. 在“创建 Blob 容器”对话框中，指定容器的名称，并单击“确定”。 有关命名存储容器的详细信息，请参阅[命名和引用容器、Blob 和元数据]。
 
    ![“创建存储容器”对话框][CC02]
 
@@ -121,7 +119,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 [有关 Azure 存储帐户]: /azure/storage/storage-create-storage-account
 [Azure 存储复制]: /azure/storage/storage-redundancy
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets
-[命名和引用容器、Blob 与元数据]: http://go.microsoft.com/fwlink/?LinkId=255555
+[命名和引用容器、Blob 和元数据]: http://go.microsoft.com/fwlink/?LinkId=255555
 
 [Azure 中的 Windows 存储帐户的大小]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Azure 中的 Linux 存储帐户的大小]: /azure/virtual-machines/virtual-machines-linux-sizes
