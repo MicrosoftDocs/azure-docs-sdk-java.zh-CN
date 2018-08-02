@@ -11,26 +11,26 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: active-directory
-ms.openlocfilehash: 4a610e2f0d9fb2e219c42155e2b0cb76fc78b09a
-ms.sourcegitcommit: 5bfb3af5778167500a061157cbd0ad1cede8f90e
+ms.openlocfilehash: e51334b4f13ffc457d4dec1785257dcff1b56b08
+ms.sourcegitcommit: c4238cffdf6c6f7ac8725673260a34a38c566f58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "37799695"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39418972"
 ---
-# <a name="azure-active-directory-libraries-for-java"></a><span data-ttu-id="b9a75-104">用于 Java 的 Azure Active Directory 库</span><span class="sxs-lookup"><span data-stu-id="b9a75-104">Azure Active Directory libraries for Java</span></span>
+# <a name="azure-active-directory-libraries-for-java"></a><span data-ttu-id="c02b9-104">用于 Java 的 Azure Active Directory 库</span><span class="sxs-lookup"><span data-stu-id="c02b9-104">Azure Active Directory libraries for Java</span></span>
 
-## <a name="overview"></a><span data-ttu-id="b9a75-105">概述</span><span class="sxs-lookup"><span data-stu-id="b9a75-105">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="c02b9-105">概述</span><span class="sxs-lookup"><span data-stu-id="c02b9-105">Overview</span></span>
 
-<span data-ttu-id="b9a75-106">使用 [Azure Active Directory](/azure/active-directory/active-directory-whatis) 将用户登录并控制对应用程序和 API 的访问。</span><span class="sxs-lookup"><span data-stu-id="b9a75-106">Sign-on users and control access to applications and APIs with [Azure Active Directory](/azure/active-directory/active-directory-whatis).</span></span>
+<span data-ttu-id="c02b9-106">使用 [Azure Active Directory](/azure/active-directory/active-directory-whatis) 将用户登录并控制对应用程序和 API 的访问。</span><span class="sxs-lookup"><span data-stu-id="c02b9-106">Sign-on users and control access to applications and APIs with [Azure Active Directory](/azure/active-directory/active-directory-whatis).</span></span>
 
-<span data-ttu-id="b9a75-107">若要开始使用 Azure AD，请参阅[使用 Azure AD 进行 Java Web 应用登录和注销](/azure/active-directory/develop/active-directory-devquickstarts-webapp-java)。</span><span class="sxs-lookup"><span data-stu-id="b9a75-107">To get started with Azure AD, see [Java web app sign-in and sign-out with Azure AD](/azure/active-directory/develop/active-directory-devquickstarts-webapp-java).</span></span>
+<span data-ttu-id="c02b9-107">若要开始使用 Azure AD，请参阅[使用 Azure AD 进行 Java Web 应用登录和注销](/azure/active-directory/develop/active-directory-devquickstarts-webapp-java)。</span><span class="sxs-lookup"><span data-stu-id="c02b9-107">To get started with Azure AD, see [Java web app sign-in and sign-out with Azure AD](/azure/active-directory/develop/active-directory-devquickstarts-webapp-java).</span></span>
 
-## <a name="client-library"></a><span data-ttu-id="b9a75-108">客户端库</span><span class="sxs-lookup"><span data-stu-id="b9a75-108">Client library</span></span>
+## <a name="client-library"></a><span data-ttu-id="c02b9-108">客户端库</span><span class="sxs-lookup"><span data-stu-id="c02b9-108">Client library</span></span>
 
-<span data-ttu-id="b9a75-109">使用[用于 Java 的 Azure Active Directory 身份验证库 (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) 配置 OAuth2、OpenID Connect 或 Active Directory Graph 身份验证和 [SAML 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-protocol-reference) 单一登录。</span><span class="sxs-lookup"><span data-stu-id="b9a75-109">Configure OAuth2, OpenID Connect, or Active Directory Graph authentication and [SAML 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-protocol-reference) single-sign on with the [Azure Active Directory authentication library (ADAL) for Java](https://github.com/AzureAD/azure-activedirectory-library-for-java).</span></span>
+<span data-ttu-id="c02b9-109">使用[用于 Java 的 Azure Active Directory 身份验证库 (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) 配置 OAuth2、OpenID Connect 或 Active Directory Graph 身份验证和 [SAML 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-protocol-reference) 单一登录。</span><span class="sxs-lookup"><span data-stu-id="c02b9-109">Configure OAuth2, OpenID Connect, or Active Directory Graph authentication and [SAML 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-protocol-reference) single-sign on with the [Azure Active Directory authentication library (ADAL) for Java](https://github.com/AzureAD/azure-activedirectory-library-for-java).</span></span>
 
-<span data-ttu-id="b9a75-110">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。</span><span class="sxs-lookup"><span data-stu-id="b9a75-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>
+<span data-ttu-id="c02b9-110">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用客户端库。</span><span class="sxs-lookup"><span data-stu-id="c02b9-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>
 
 ```XML
 <dependency>
@@ -40,9 +40,9 @@ ms.locfileid: "37799695"
 </dependency>
 ```   
 
-### <a name="example"></a><span data-ttu-id="b9a75-111">示例</span><span class="sxs-lookup"><span data-stu-id="b9a75-111">Example</span></span>
+### <a name="example"></a><span data-ttu-id="c02b9-111">示例</span><span class="sxs-lookup"><span data-stu-id="c02b9-111">Example</span></span>
 
-<span data-ttu-id="b9a75-112">使用 Azure Active Directory 的[图形 API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api) 检索 Active Directory 租户中某个用户的 JSON Web 令牌 (JWT)。</span><span class="sxs-lookup"><span data-stu-id="b9a75-112">Retrieve a JSON Web Token (JWT) for a user in your an Active Directory tenant using Azure Active Directory's [Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api).</span></span> <span data-ttu-id="b9a75-113">然后，可以使用此令牌在应用程序或 API 中对用户进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="b9a75-113">This token can then be used to authenticate the user with an application or API.</span></span>
+<span data-ttu-id="c02b9-112">使用 Azure Active Directory 的[图形 API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api) 检索 Active Directory 租户中某个用户的 JSON Web 令牌 (JWT)。</span><span class="sxs-lookup"><span data-stu-id="c02b9-112">Retrieve a JSON Web Token (JWT) for a user in your an Active Directory tenant using Azure Active Directory's [Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api).</span></span> <span data-ttu-id="c02b9-113">然后，可以使用此令牌在应用程序或 API 中对用户进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="c02b9-113">This token can then be used to authenticate the user with an application or API.</span></span>
 
 ```java
 ExecutorService service = Executors.newFixedThreadPool(1);
@@ -56,11 +56,11 @@ System.out.println("Refresh Token - " + result.getRefreshToken());
 System.out.println("ID Token - " + result.getIdToken());
 ```
 
-## <a name="management-api"></a><span data-ttu-id="b9a75-114">管理 API</span><span class="sxs-lookup"><span data-stu-id="b9a75-114">Management API</span></span>
+## <a name="management-api"></a><span data-ttu-id="c02b9-114">管理 API</span><span class="sxs-lookup"><span data-stu-id="c02b9-114">Management API</span></span>
 
-<span data-ttu-id="b9a75-115">配置[基于角色的访问控制](/azure/active-directory/role-based-access-control-what-is)，并使用管理 API 将标识（例如用户和[服务主体](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-objects)）分配到这些角色。</span><span class="sxs-lookup"><span data-stu-id="b9a75-115">Configure [role based access control](/azure/active-directory/role-based-access-control-what-is) and assign identities (such as users and [service principals](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-objects)) to those roles with the management API.</span></span> 
+<span data-ttu-id="c02b9-115">配置[基于角色的访问控制](/azure/active-directory/role-based-access-control-what-is)，并使用管理 API 将标识（例如用户和[服务主体](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-objects)）分配到这些角色。</span><span class="sxs-lookup"><span data-stu-id="c02b9-115">Configure [role based access control](/azure/active-directory/role-based-access-control-what-is) and assign identities (such as users and [service principals](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-objects)) to those roles with the management API.</span></span> 
 
-<span data-ttu-id="b9a75-116">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。</span><span class="sxs-lookup"><span data-stu-id="b9a75-116">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
+<span data-ttu-id="c02b9-116">向 Maven `pom.xml` 文件中[添加依赖项](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies)，以便在项目中使用管理 API。</span><span class="sxs-lookup"><span data-stu-id="c02b9-116">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
 
 ```XML
 <dependency>
@@ -70,9 +70,9 @@ System.out.println("ID Token - " + result.getIdToken());
 </dependency>
 ```
 
-### <a name="example"></a><span data-ttu-id="b9a75-117">示例</span><span class="sxs-lookup"><span data-stu-id="b9a75-117">Example</span></span> 
+### <a name="example"></a><span data-ttu-id="c02b9-117">示例</span><span class="sxs-lookup"><span data-stu-id="c02b9-117">Example</span></span> 
 
-<span data-ttu-id="b9a75-118">创建新的服务主体并为其分配参与者角色。</span><span class="sxs-lookup"><span data-stu-id="b9a75-118">Create a new service principal and assign it the Contributor role.</span></span>
+<span data-ttu-id="c02b9-118">创建新的服务主体并为其分配参与者角色。</span><span class="sxs-lookup"><span data-stu-id="c02b9-118">Create a new service principal and assign it the Contributor role.</span></span>
 
 ```java
 ServicePrincipal sp = Azure.servicePrincipals().define(spName)
@@ -87,14 +87,14 @@ RoleAssignment roleAssignment2 = authenticated.roleAssignments()
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="b9a75-119">了解管理 API</span><span class="sxs-lookup"><span data-stu-id="b9a75-119">Explore the Management APIs</span></span>](/java/api/activedirectory/management)
+> [<span data-ttu-id="c02b9-119">了解管理 API</span><span class="sxs-lookup"><span data-stu-id="c02b9-119">Explore the Management APIs</span></span>](/java/api/overview/azure/activedirectory/management)
 
 
-## <a name="samples"></a><span data-ttu-id="b9a75-120">示例</span><span class="sxs-lookup"><span data-stu-id="b9a75-120">Samples</span></span>
+## <a name="samples"></a><span data-ttu-id="c02b9-120">示例</span><span class="sxs-lookup"><span data-stu-id="c02b9-120">Samples</span></span>
 
-<span data-ttu-id="b9a75-121">[管理组、用户和角色](https://github.com/Azure-Samples/aad-java-manage-users-groups-and-roles)  </span><span class="sxs-lookup"><span data-stu-id="b9a75-121">[Manage groups, users, and roles](https://github.com/Azure-Samples/aad-java-manage-users-groups-and-roles)  </span></span>  
-<span data-ttu-id="b9a75-122">[在 Java Web 应用中登录和注销用户](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect)  </span><span class="sxs-lookup"><span data-stu-id="b9a75-122">[Sign-in and sign-out users in a Java web app](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect)  </span></span>  
-<span data-ttu-id="b9a75-123">[在 Azure AD 中使用命令行应用访问 API](https://github.com/Azure-Samples/active-directory-java-native-headless) </span><span class="sxs-lookup"><span data-stu-id="b9a75-123">[Access an API with Azure AD using a command line app](https://github.com/Azure-Samples/active-directory-java-native-headless) </span></span>  
-[<span data-ttu-id="b9a75-124">从 Java Web 应用调用 Active AD 图形 API</span><span class="sxs-lookup"><span data-stu-id="b9a75-124">Call the Active AD Graph API from your Java web app</span></span>](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect)  
+<span data-ttu-id="c02b9-121">[管理组、用户和角色](https://github.com/Azure-Samples/aad-java-manage-users-groups-and-roles)  </span><span class="sxs-lookup"><span data-stu-id="c02b9-121">[Manage groups, users, and roles](https://github.com/Azure-Samples/aad-java-manage-users-groups-and-roles)  </span></span>  
+<span data-ttu-id="c02b9-122">[在 Java Web 应用中登录和注销用户](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect)  </span><span class="sxs-lookup"><span data-stu-id="c02b9-122">[Sign-in and sign-out users in a Java web app](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect)  </span></span>  
+<span data-ttu-id="c02b9-123">[在 Azure AD 中使用命令行应用访问 API](https://github.com/Azure-Samples/active-directory-java-native-headless) </span><span class="sxs-lookup"><span data-stu-id="c02b9-123">[Access an API with Azure AD using a command line app](https://github.com/Azure-Samples/active-directory-java-native-headless) </span></span>  
+[<span data-ttu-id="c02b9-124">从 Java Web 应用调用 Active AD 图形 API</span><span class="sxs-lookup"><span data-stu-id="c02b9-124">Call the Active AD Graph API from your Java web app</span></span>](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect)  
 
-<span data-ttu-id="b9a75-125">详细了解可在应用中使用的 [Azure AD 示例 Java 代码](https://azure.microsoft.com/en-us/resources/samples/?term=active+directory&platform=java)。</span><span class="sxs-lookup"><span data-stu-id="b9a75-125">Explore more [sample Java code for Azure AD](https://azure.microsoft.com/en-us/resources/samples/?term=active+directory&platform=java) you can use in your apps.</span></span>
+<span data-ttu-id="c02b9-125">详细了解可在应用中使用的 [Azure AD 示例 Java 代码](https://azure.microsoft.com/en-us/resources/samples/?term=active+directory&platform=java)。</span><span class="sxs-lookup"><span data-stu-id="c02b9-125">Explore more [sample Java code for Azure AD](https://azure.microsoft.com/en-us/resources/samples/?term=active+directory&platform=java) you can use in your apps.</span></span>
