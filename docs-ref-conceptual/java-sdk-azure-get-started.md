@@ -12,12 +12,12 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: f069183c96cdc42d590d2e58a5a6a500be5ab69a
-ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
+ms.openlocfilehash: dee41f08dc303fc95fcfa6a585a5d1a06726f2ef
+ms.sourcegitcommit: dad28b332346dfa9af249b5a64e042cbb1eb90d7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "29065524"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39625033"
 ---
 # <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>使用用于 Java 的 Azure 库开始云开发
 
@@ -93,7 +93,9 @@ export AZURE_AUTH_LOCATION=/Users/raisa/azureauth.properties
 setx AZURE_AUTH_LOCATION "C:\<fullpath>\azureauth.properties" /m
 ```
 
-## <a name="create-a-new-maven-project"></a>创建新的 Maven 项目
+## <a name="tooling"></a>工具
+
+### <a name="create-a-new-maven-project"></a>创建新的 Maven 项目
 
 > [!NOTE]
 > 本指南使用 Maven 生成工具来生成和运行示例代码，但其他生成工具（例如 Gradle）也能配合用于 Java 的 Azure 库。 
@@ -142,7 +144,27 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp  \
     </plugins>
 </build>
  ```
-   
+
+### <a name="install-the-azure-toolkit-for-intellij"></a>安装用于 IntelliJ 的 Azure 工具包
+
+若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](intellij/azure-toolkit-for-intellij-installation.md)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关详细步骤，请访问[安装用于 IntelliJ 的 Azure 工具包](intellij/azure-toolkit-for-intellij-installation.md)。
+
+选择“文件”菜单，然后选择“设置...”。 
+
+选择“浏览存储库...”，搜索“Azure”，然后安装“用于 Intellij 于 Azure 工具包”。
+
+重启 IntelliJ。
+
+### <a name="install-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
+
+若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](eclipse/azure-toolkit-for-eclipse.md)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关详细步骤，请参阅[安装用于 Eclipse 的 Azure 工具包](eclipse/azure-toolkit-for-eclipse.md)。
+
+选择“帮助”菜单，然后选择“安装新软件”。
+
+在“使用:”字段中，输入 `http://dl.microsoft.com/eclipse` 并按 Enter。
+
+然后，选中“用于 Java 的 Azure 工具包”旁边的复选框，并取消选中“在安装过程中联系所有更新站点以查找所需的软件”对应的复选框。 然后选择“下一步”。
+
 ## <a name="create-a-linux-virtual-machine"></a>创建 Linux 虚拟机
 
 在项目的 `src/main/java/com/fabirkam` 目录中创建名为 `AzureApp.java` 的新文件，并在其中粘贴以下代码块。 使用计算机的实际值更新 `userName` 和 `sshKey` 变量。 该代码会在美国东部 Azure 区域中运行的资源组 `sampleResourceGroup` 内创建名为 `testLinuxVM` 的新 Linux VM。
