@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 3610312ed17301131967bd2c047c86656de070e7
-ms.sourcegitcommit: f313c14e92f38c54a3a583270ee85cc928cd39d7
+ms.openlocfilehash: d58cafe3456150069ec8572c101c62d1b2c29c5d
+ms.sourcegitcommit: e1a5d9687e006e8bf12d11747d45cf130a2c82af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689420"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "42703327"
 ---
 # <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a>使用适用于 Azure 应用服务的 Maven 插件将 Spring Boot 应用部署到云中
 
@@ -163,9 +163,11 @@ ms.locfileid: "34689420"
 获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](https://docs.microsoft.com/cli/azure/)。 确保已安装 Azure CLI。
 
 1. 通过使用 Azure CLI 登录到 Azure 帐户：
+   
    ```shell
    az login
    ```
+   
    按照说明完成登录过程。
 
 ## <a name="optionally-customize-pomxml-before-deploying"></a>（可选）在部署之前自定义 pom.xml
@@ -192,7 +194,7 @@ ms.locfileid: "34689420"
 
 可以为 Maven 插件修改几个值，[适用于 Azure Web 应用的 Maven 插件]文档中提供了这些元素各自的详细描述。 尽管如此，在本文中有仍几个值得注意的值：
 
-| 元素 | 说明 |
+| 元素 | Description |
 |---|---|
 | `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 验证 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
 | `<resourceGroup>` | 指定目标资源组，在此示例中为 `maven-plugin`。 如果资源组不存在，则会在部署过程中进行创建。 |
