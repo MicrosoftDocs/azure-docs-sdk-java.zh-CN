@@ -14,87 +14,87 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 3610312ed17301131967bd2c047c86656de070e7
-ms.sourcegitcommit: f313c14e92f38c54a3a583270ee85cc928cd39d7
+ms.openlocfilehash: d58cafe3456150069ec8572c101c62d1b2c29c5d
+ms.sourcegitcommit: e1a5d9687e006e8bf12d11747d45cf130a2c82af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689420"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "42703327"
 ---
-# <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a><span data-ttu-id="90566-103">使用适用于 Azure 应用服务的 Maven 插件将 Spring Boot 应用部署到云中</span><span class="sxs-lookup"><span data-stu-id="90566-103">Deploy a Spring Boot app to the cloud using the Maven Plugin for Azure App Service</span></span>
+# <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a><span data-ttu-id="40680-103">使用适用于 Azure 应用服务的 Maven 插件将 Spring Boot 应用部署到云中</span><span class="sxs-lookup"><span data-stu-id="40680-103">Deploy a Spring Boot app to the cloud using the Maven Plugin for Azure App Service</span></span>
 
-<span data-ttu-id="90566-104">本文演示如何使用适用于 Azure 应用服务 Web 应用的 Maven 插件来部署一个示例 Spring Boot 应用程序。</span><span class="sxs-lookup"><span data-stu-id="90566-104">This article demonstrates using the Maven Plugin for Azure App Service Web Apps to deploy a sample Spring Boot application.</span></span>
+<span data-ttu-id="40680-104">本文演示如何使用适用于 Azure 应用服务 Web 应用的 Maven 插件来部署一个示例 Spring Boot 应用程序。</span><span class="sxs-lookup"><span data-stu-id="40680-104">This article demonstrates using the Maven Plugin for Azure App Service Web Apps to deploy a sample Spring Boot application.</span></span>
 
 > [!NOTE]
 > 
-> <span data-ttu-id="90566-105">用于 [Apache Maven](http://maven.apache.org/) 的[适用于 Azure 应用服务 Web 应用的 Maven 插件](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)将 Azure 应用服务无缝集成到 Maven 项目，简化了开发人员将 Web 应用部署到 Azure 应用服务的过程。</span><span class="sxs-lookup"><span data-stu-id="90566-105">The [Maven Plugin for Azure App Service Web Apps](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) for [Apache Maven](http://maven.apache.org/) provides seamless integration of Azure App Service into Maven projects, and streamlines the process for developers to deploy web apps to Azure App Service.</span></span>
+> <span data-ttu-id="40680-105">用于 [Apache Maven](http://maven.apache.org/) 的[适用于 Azure 应用服务 Web 应用的 Maven 插件](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)将 Azure 应用服务无缝集成到 Maven 项目，简化了开发人员将 Web 应用部署到 Azure 应用服务的过程。</span><span class="sxs-lookup"><span data-stu-id="40680-105">The [Maven Plugin for Azure App Service Web Apps](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) for [Apache Maven](http://maven.apache.org/) provides seamless integration of Azure App Service into Maven projects, and streamlines the process for developers to deploy web apps to Azure App Service.</span></span>
 
-<span data-ttu-id="90566-106">在使用 Maven 插件之前，请在 Maven Central 中检查该插件的最新可用版本：[![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22)</span><span class="sxs-lookup"><span data-stu-id="90566-106">Before using the Maven plugin, check on Maven Central for the latest available version of the plugin: [![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22)</span></span> 
+<span data-ttu-id="40680-106">在使用 Maven 插件之前，请在 Maven Central 中检查该插件的最新可用版本：[![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22)</span><span class="sxs-lookup"><span data-stu-id="40680-106">Before using the Maven plugin, check on Maven Central for the latest available version of the plugin: [![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22)</span></span> 
 
-## <a name="prerequisites"></a><span data-ttu-id="90566-107">先决条件</span><span class="sxs-lookup"><span data-stu-id="90566-107">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="40680-107">先决条件</span><span class="sxs-lookup"><span data-stu-id="40680-107">Prerequisites</span></span>
 
-<span data-ttu-id="90566-108">完成本教程中的步骤需要具备以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="90566-108">In order to complete the steps in this tutorial, you will need to have the following prerequisites:</span></span>
+<span data-ttu-id="40680-108">完成本教程中的步骤需要具备以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="40680-108">In order to complete the steps in this tutorial, you will need to have the following prerequisites:</span></span>
 
-* <span data-ttu-id="90566-109">一个 Azure 订阅；如果没有 Azure 订阅，可以注册[免费 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="90566-109">An Azure subscription; if you don't already have an Azure subscription, you can sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="90566-110">[Azure 命令行接口 (CLI)]。</span><span class="sxs-lookup"><span data-stu-id="90566-110">The [Azure Command-Line Interface (CLI)].</span></span>
-* <span data-ttu-id="90566-111">最新 [Java 开发工具包 (JDK)] 1.7 版或更高版本。</span><span class="sxs-lookup"><span data-stu-id="90566-111">An up-to-date [Java Development Kit (JDK)], version 1.7 or later.</span></span>
-* <span data-ttu-id="90566-112">Apache 的 [Maven] 生成工具（版本 3）。</span><span class="sxs-lookup"><span data-stu-id="90566-112">Apache's [Maven] build tool (Version 3).</span></span>
-* <span data-ttu-id="90566-113">[Git] 客户端。</span><span class="sxs-lookup"><span data-stu-id="90566-113">A [Git] client.</span></span>
+* <span data-ttu-id="40680-109">一个 Azure 订阅；如果没有 Azure 订阅，可以注册[免费 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="40680-109">An Azure subscription; if you don't already have an Azure subscription, you can sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="40680-110">[Azure 命令行接口 (CLI)]。</span><span class="sxs-lookup"><span data-stu-id="40680-110">The [Azure Command-Line Interface (CLI)].</span></span>
+* <span data-ttu-id="40680-111">最新 [Java 开发工具包 (JDK)] 1.7 版或更高版本。</span><span class="sxs-lookup"><span data-stu-id="40680-111">An up-to-date [Java Development Kit (JDK)], version 1.7 or later.</span></span>
+* <span data-ttu-id="40680-112">Apache 的 [Maven] 生成工具（版本 3）。</span><span class="sxs-lookup"><span data-stu-id="40680-112">Apache's [Maven] build tool (Version 3).</span></span>
+* <span data-ttu-id="40680-113">[Git] 客户端。</span><span class="sxs-lookup"><span data-stu-id="40680-113">A [Git] client.</span></span>
 
-## <a name="clone-the-sample-spring-boot-web-app"></a><span data-ttu-id="90566-114">克隆示例 Spring Boot Web 应用</span><span class="sxs-lookup"><span data-stu-id="90566-114">Clone the sample Spring Boot web app</span></span>
+## <a name="clone-the-sample-spring-boot-web-app"></a><span data-ttu-id="40680-114">克隆示例 Spring Boot Web 应用</span><span class="sxs-lookup"><span data-stu-id="40680-114">Clone the sample Spring Boot web app</span></span>
 
-<span data-ttu-id="90566-115">本部分将克隆完整的 Spring Boot 应用程序并进行本地测试。</span><span class="sxs-lookup"><span data-stu-id="90566-115">In this section, you will clone a completed Spring Boot application and test it locally.</span></span>
+<span data-ttu-id="40680-115">本部分将克隆完整的 Spring Boot 应用程序并进行本地测试。</span><span class="sxs-lookup"><span data-stu-id="40680-115">In this section, you will clone a completed Spring Boot application and test it locally.</span></span>
 
-1. <span data-ttu-id="90566-116">打开命令提示符或终端窗口，创建本地目录以存放 Spring Boot 应用程序，并更改为以下目录；例如：</span><span class="sxs-lookup"><span data-stu-id="90566-116">Open a command prompt or terminal window and create a local directory to hold your Spring Boot application, and change to that directory; for example:</span></span>
+1. <span data-ttu-id="40680-116">打开命令提示符或终端窗口，创建本地目录以存放 Spring Boot 应用程序，并更改为以下目录；例如：</span><span class="sxs-lookup"><span data-stu-id="40680-116">Open a command prompt or terminal window and create a local directory to hold your Spring Boot application, and change to that directory; for example:</span></span>
    ```shell
    md C:\SpringBoot
    cd C:\SpringBoot
    ```
-   <span data-ttu-id="90566-117">- 或 -</span><span class="sxs-lookup"><span data-stu-id="90566-117">-- or --</span></span>
+   <span data-ttu-id="40680-117">- 或 -</span><span class="sxs-lookup"><span data-stu-id="40680-117">-- or --</span></span>
    ```shell
    md ~/SpringBoot
    cd ~/SpringBoot
    ```
 
-1. <span data-ttu-id="90566-118">将 [Spring Boot 入门]示例项目克隆到已创建的目录；例如：</span><span class="sxs-lookup"><span data-stu-id="90566-118">Clone the [Spring Boot Getting Started] sample project into the directory you created; for example:</span></span>
+1. <span data-ttu-id="40680-118">将 [Spring Boot 入门]示例项目克隆到已创建的目录；例如：</span><span class="sxs-lookup"><span data-stu-id="40680-118">Clone the [Spring Boot Getting Started] sample project into the directory you created; for example:</span></span>
    ```shell
    git clone https://github.com/spring-guides/gs-spring-boot
    ```
 
-1. <span data-ttu-id="90566-119">将目录更改为已完成项目；例如：</span><span class="sxs-lookup"><span data-stu-id="90566-119">Change directory to the completed project; for example:</span></span>
+1. <span data-ttu-id="40680-119">将目录更改为已完成项目；例如：</span><span class="sxs-lookup"><span data-stu-id="40680-119">Change directory to the completed project; for example:</span></span>
    ```shell
    cd gs-spring-boot/complete
    ```
 
-1. <span data-ttu-id="90566-120">使用 Maven 生成 JAR 文件；例如：</span><span class="sxs-lookup"><span data-stu-id="90566-120">Build the JAR file using Maven; for example:</span></span>
+1. <span data-ttu-id="40680-120">使用 Maven 生成 JAR 文件；例如：</span><span class="sxs-lookup"><span data-stu-id="40680-120">Build the JAR file using Maven; for example:</span></span>
    ```shell
    mvn clean package
    ```
 
-1. <span data-ttu-id="90566-121">创建 Web 应用后，使用 Maven 启动 Web 应用；例如：</span><span class="sxs-lookup"><span data-stu-id="90566-121">When the web app has been created, start the web app using Maven; for example:</span></span>
+1. <span data-ttu-id="40680-121">创建 Web 应用后，使用 Maven 启动 Web 应用；例如：</span><span class="sxs-lookup"><span data-stu-id="40680-121">When the web app has been created, start the web app using Maven; for example:</span></span>
    ```shell
    mvn spring-boot:run
    ```
 
-1. <span data-ttu-id="90566-122">使用 Web 浏览器在本地浏览到 Web 应用并对其进行测试。</span><span class="sxs-lookup"><span data-stu-id="90566-122">Test the web app by browsing to it locally using a web browser.</span></span> <span data-ttu-id="90566-123">例如，如果有可用的 Curl，可以使用以下命令：</span><span class="sxs-lookup"><span data-stu-id="90566-123">For example, you could use the following command if you have curl available:</span></span>
+1. <span data-ttu-id="40680-122">使用 Web 浏览器在本地浏览到 Web 应用并对其进行测试。</span><span class="sxs-lookup"><span data-stu-id="40680-122">Test the web app by browsing to it locally using a web browser.</span></span> <span data-ttu-id="40680-123">例如，如果有可用的 Curl，可以使用以下命令：</span><span class="sxs-lookup"><span data-stu-id="40680-123">For example, you could use the following command if you have curl available:</span></span>
    ```shell
    curl http://localhost:8080
    ```
 
-1. <span data-ttu-id="90566-124">应会显示以下消息：“来自 Spring Boot 的问候！”</span><span class="sxs-lookup"><span data-stu-id="90566-124">You should see the following message displayed: **Greetings from Spring Boot!**</span></span>
+1. <span data-ttu-id="40680-124">应会显示以下消息：“来自 Spring Boot 的问候！”</span><span class="sxs-lookup"><span data-stu-id="40680-124">You should see the following message displayed: **Greetings from Spring Boot!**</span></span>
 
-## <a name="adjust-project-for-war-based-deployment-on-azure-app-service"></a><span data-ttu-id="90566-125">根据 Azure 应用服务中基于 WAR 的部署调整项目</span><span class="sxs-lookup"><span data-stu-id="90566-125">Adjust project for WAR-based deployment on Azure App Service</span></span>
+## <a name="adjust-project-for-war-based-deployment-on-azure-app-service"></a><span data-ttu-id="40680-125">根据 Azure 应用服务中基于 WAR 的部署调整项目</span><span class="sxs-lookup"><span data-stu-id="40680-125">Adjust project for WAR-based deployment on Azure App Service</span></span>
 
-<span data-ttu-id="90566-126">在本部分，我们将快速调整要在 Azure 应用服务中作为 WAR 文件部署的 Spring Boot 项目，该项目默认提供 Tomcat 作为运行时。</span><span class="sxs-lookup"><span data-stu-id="90566-126">In this section we will quickly adjust the Spring Boot project to be deployed as a WAR file on Azure App Service, which provides Tomcat as the runtime by default.</span></span> <span data-ttu-id="90566-127">为此，需要修改两个文件：</span><span class="sxs-lookup"><span data-stu-id="90566-127">For this to work, there are two files to be modified:</span></span>
+<span data-ttu-id="40680-126">在本部分，我们将快速调整要在 Azure 应用服务中作为 WAR 文件部署的 Spring Boot 项目，该项目默认提供 Tomcat 作为运行时。</span><span class="sxs-lookup"><span data-stu-id="40680-126">In this section we will quickly adjust the Spring Boot project to be deployed as a WAR file on Azure App Service, which provides Tomcat as the runtime by default.</span></span> <span data-ttu-id="40680-127">为此，需要修改两个文件：</span><span class="sxs-lookup"><span data-stu-id="40680-127">For this to work, there are two files to be modified:</span></span>
 
-- <span data-ttu-id="90566-128">Maven `pom.xml` 文件</span><span class="sxs-lookup"><span data-stu-id="90566-128">The Maven `pom.xml` file</span></span>
-- <span data-ttu-id="90566-129">`Application` Java 类</span><span class="sxs-lookup"><span data-stu-id="90566-129">The `Application` Java class</span></span>
+- <span data-ttu-id="40680-128">Maven `pom.xml` 文件</span><span class="sxs-lookup"><span data-stu-id="40680-128">The Maven `pom.xml` file</span></span>
+- <span data-ttu-id="40680-129">`Application` Java 类</span><span class="sxs-lookup"><span data-stu-id="40680-129">The `Application` Java class</span></span>
 
-<span data-ttu-id="90566-130">让我们从 Maven 设置开始：</span><span class="sxs-lookup"><span data-stu-id="90566-130">Let's start with the Maven settings:</span></span>
+<span data-ttu-id="40680-130">让我们从 Maven 设置开始：</span><span class="sxs-lookup"><span data-stu-id="40680-130">Let's start with the Maven settings:</span></span>
 
-1. <span data-ttu-id="90566-131">打开 `pom.xml`</span><span class="sxs-lookup"><span data-stu-id="90566-131">Open `pom.xml`</span></span>
+1. <span data-ttu-id="40680-131">打开 `pom.xml`</span><span class="sxs-lookup"><span data-stu-id="40680-131">Open `pom.xml`</span></span>
 
-1. <span data-ttu-id="90566-132">紧接在顶部的 `<artifactId>` 定义后面添加 `<packaging>war</packaging>`：</span><span class="sxs-lookup"><span data-stu-id="90566-132">Add `<packaging>war</packaging>` right after the `<artifactId>` definition at the top:</span></span>
+1. <span data-ttu-id="40680-132">紧接在顶部的 `<artifactId>` 定义后面添加 `<packaging>war</packaging>`：</span><span class="sxs-lookup"><span data-stu-id="40680-132">Add `<packaging>war</packaging>` right after the `<artifactId>` definition at the top:</span></span>
    ```xml
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.springframework</groupId>
@@ -103,7 +103,7 @@ ms.locfileid: "34689420"
     <packaging>war</packaging>
    ```
 
-1. <span data-ttu-id="90566-133">添加以下依赖项：</span><span class="sxs-lookup"><span data-stu-id="90566-133">Add the following dependency:</span></span>
+1. <span data-ttu-id="40680-133">添加以下依赖项：</span><span class="sxs-lookup"><span data-stu-id="40680-133">Add the following dependency:</span></span>
    ```xml
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -112,9 +112,9 @@ ms.locfileid: "34689420"
         </dependency>
    ```
 
-<span data-ttu-id="90566-134">现在请打开类 `Application`（但愿此时 IDE 已拾取新的依赖项），然后继续进行以下修改：</span><span class="sxs-lookup"><span data-stu-id="90566-134">Now open the class `Application`, hopefully after your IDE has already picked up the new dependencies, and proceed with the following modifications:</span></span>
+<span data-ttu-id="40680-134">现在请打开类 `Application`（但愿此时 IDE 已拾取新的依赖项），然后继续进行以下修改：</span><span class="sxs-lookup"><span data-stu-id="40680-134">Now open the class `Application`, hopefully after your IDE has already picked up the new dependencies, and proceed with the following modifications:</span></span>
 
-1. <span data-ttu-id="90566-135">将 Application 类设为 `SpringBootServletInitializer` 的子类：</span><span class="sxs-lookup"><span data-stu-id="90566-135">Make class Application a subclass of `SpringBootServletInitializer`:</span></span>
+1. <span data-ttu-id="40680-135">将 Application 类设为 `SpringBootServletInitializer` 的子类：</span><span class="sxs-lookup"><span data-stu-id="40680-135">Make class Application a subclass of `SpringBootServletInitializer`:</span></span>
    ```java
    @SpringBootApplication
    public class Application extends SpringBootServletInitializer {
@@ -122,7 +122,7 @@ ms.locfileid: "34689420"
    }
    ```
 
-1. <span data-ttu-id="90566-136">将以下方法添加到 Application 类：</span><span class="sxs-lookup"><span data-stu-id="90566-136">Add the following method to the Application class:</span></span>
+1. <span data-ttu-id="40680-136">将以下方法添加到 Application 类：</span><span class="sxs-lookup"><span data-stu-id="40680-136">Add the following method to the Application class:</span></span>
    ```java
        @Override
        protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -130,15 +130,15 @@ ms.locfileid: "34689420"
        }
    ```
 
-<span data-ttu-id="90566-137">现在，可将应用程序部署到 Tomcat 和其他任何 Servlet 运行时（例如 Jetty）。</span><span class="sxs-lookup"><span data-stu-id="90566-137">Your application is now ready to be deployed to Tomcat and any other Servlet runtime (e.g. Jetty).</span></span>
+<span data-ttu-id="40680-137">现在，可将应用程序部署到 Tomcat 和其他任何 Servlet 运行时（例如 Jetty）。</span><span class="sxs-lookup"><span data-stu-id="40680-137">Your application is now ready to be deployed to Tomcat and any other Servlet runtime (e.g. Jetty).</span></span>
 
-## <a name="add-the-maven-plugin-for-azure-app-service-web-apps"></a><span data-ttu-id="90566-138">添加适用于 Azure 应用服务 Web 应用的 Maven 插件</span><span class="sxs-lookup"><span data-stu-id="90566-138">Add the Maven Plugin for Azure App Service Web Apps</span></span>
+## <a name="add-the-maven-plugin-for-azure-app-service-web-apps"></a><span data-ttu-id="40680-138">添加适用于 Azure 应用服务 Web 应用的 Maven 插件</span><span class="sxs-lookup"><span data-stu-id="40680-138">Add the Maven Plugin for Azure App Service Web Apps</span></span>
 
-<span data-ttu-id="90566-139">在本部分，我们将添加一个 Maven 插件，用于自动完成将此应用程序部署到 Azure 应用服务 Web 应用的整个过程。</span><span class="sxs-lookup"><span data-stu-id="90566-139">In this section, we will add a Maven plugin that will automate the entire deployment of this application into Azure App Service Web Apps.</span></span>
+<span data-ttu-id="40680-139">在本部分，我们将添加一个 Maven 插件，用于自动完成将此应用程序部署到 Azure 应用服务 Web 应用的整个过程。</span><span class="sxs-lookup"><span data-stu-id="40680-139">In this section, we will add a Maven plugin that will automate the entire deployment of this application into Azure App Service Web Apps.</span></span>
 
-1. <span data-ttu-id="90566-140">再次打开 `pom.xml`。</span><span class="sxs-lookup"><span data-stu-id="90566-140">Open `pom.xml` once again.</span></span>
+1. <span data-ttu-id="40680-140">再次打开 `pom.xml`。</span><span class="sxs-lookup"><span data-stu-id="40680-140">Open `pom.xml` once again.</span></span>
 
-1. <span data-ttu-id="90566-141">在 `<properties>` 中，使用属性 `maven.build.timestamp.format` 设置自定义时间戳格式。</span><span class="sxs-lookup"><span data-stu-id="90566-141">Inside `<properties>`, set a custom timestamp format with the property `maven.build.timestamp.format`.</span></span> <span data-ttu-id="90566-142">由于 Azure 应用服务将为应用程序创建公共 URL，因此，此设置将用于生成部署名称，并避免与其他用户的实时部署发生冲突。</span><span class="sxs-lookup"><span data-stu-id="90566-142">Because Azure App Service creates a public URL for your application, this setting will be used to generate the name of your deployment, and avoid conflict with other users' live deployments.</span></span>
+1. <span data-ttu-id="40680-141">在 `<properties>` 中，使用属性 `maven.build.timestamp.format` 设置自定义时间戳格式。</span><span class="sxs-lookup"><span data-stu-id="40680-141">Inside `<properties>`, set a custom timestamp format with the property `maven.build.timestamp.format`.</span></span> <span data-ttu-id="40680-142">由于 Azure 应用服务将为应用程序创建公共 URL，因此，此设置将用于生成部署名称，并避免与其他用户的实时部署发生冲突。</span><span class="sxs-lookup"><span data-stu-id="40680-142">Because Azure App Service creates a public URL for your application, this setting will be used to generate the name of your deployment, and avoid conflict with other users' live deployments.</span></span>
    ```xml
     <properties>
         <java.version>1.8</java.version>
@@ -146,7 +146,7 @@ ms.locfileid: "34689420"
     </properties>
    ```
 
-1. <span data-ttu-id="90566-143">在 `<plugins>` 元素中添加以下内容：</span><span class="sxs-lookup"><span data-stu-id="90566-143">In the `<plugins>` element, add the following:</span></span>
+1. <span data-ttu-id="40680-143">在 `<plugins>` 元素中添加以下内容：</span><span class="sxs-lookup"><span data-stu-id="40680-143">In the `<plugins>` element, add the following:</span></span>
    ```xml
     <plugin>
       <groupId>com.microsoft.azure</groupId>
@@ -156,21 +156,23 @@ ms.locfileid: "34689420"
     </plugin>
    ```
 
-<span data-ttu-id="90566-144">现在，可以使用这些设置将 Maven 项目实时部署到 Azure 应用服务 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="90566-144">With these settings, your Maven project is now ready for live deployment to Azure App Service Web App.</span></span>
+<span data-ttu-id="40680-144">现在，可以使用这些设置将 Maven 项目实时部署到 Azure 应用服务 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="40680-144">With these settings, your Maven project is now ready for live deployment to Azure App Service Web App.</span></span>
 
-## <a name="install-and-log-in-to-azure-cli"></a><span data-ttu-id="90566-145">安装并登录到 Azure CLI</span><span class="sxs-lookup"><span data-stu-id="90566-145">Install and log in to Azure CLI</span></span>
+## <a name="install-and-log-in-to-azure-cli"></a><span data-ttu-id="40680-145">安装并登录到 Azure CLI</span><span class="sxs-lookup"><span data-stu-id="40680-145">Install and log in to Azure CLI</span></span>
 
-<span data-ttu-id="90566-146">获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](https://docs.microsoft.com/cli/azure/)。</span><span class="sxs-lookup"><span data-stu-id="90566-146">The simplest and easiest way to get the Maven Plugin deploying your Spring Boot application is by using [Azure CLI](https://docs.microsoft.com/cli/azure/).</span></span> <span data-ttu-id="90566-147">确保已安装 Azure CLI。</span><span class="sxs-lookup"><span data-stu-id="90566-147">Make sure you have it installed.</span></span>
+<span data-ttu-id="40680-146">获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](https://docs.microsoft.com/cli/azure/)。</span><span class="sxs-lookup"><span data-stu-id="40680-146">The simplest and easiest way to get the Maven Plugin deploying your Spring Boot application is by using [Azure CLI](https://docs.microsoft.com/cli/azure/).</span></span> <span data-ttu-id="40680-147">确保已安装 Azure CLI。</span><span class="sxs-lookup"><span data-stu-id="40680-147">Make sure you have it installed.</span></span>
 
-1. <span data-ttu-id="90566-148">通过使用 Azure CLI 登录到 Azure 帐户：</span><span class="sxs-lookup"><span data-stu-id="90566-148">Sign into your Azure account by using the Azure CLI:</span></span>
+1. <span data-ttu-id="40680-148">通过使用 Azure CLI 登录到 Azure 帐户：</span><span class="sxs-lookup"><span data-stu-id="40680-148">Sign into your Azure account by using the Azure CLI:</span></span>
+   
    ```shell
    az login
    ```
-   <span data-ttu-id="90566-149">按照说明完成登录过程。</span><span class="sxs-lookup"><span data-stu-id="90566-149">Follow the instructions to complete the sign-in process.</span></span>
+   
+   <span data-ttu-id="40680-149">按照说明完成登录过程。</span><span class="sxs-lookup"><span data-stu-id="40680-149">Follow the instructions to complete the sign-in process.</span></span>
 
-## <a name="optionally-customize-pomxml-before-deploying"></a><span data-ttu-id="90566-150">（可选）在部署之前自定义 pom.xml</span><span class="sxs-lookup"><span data-stu-id="90566-150">Optionally, customize pom.xml before deploying</span></span>
+## <a name="optionally-customize-pomxml-before-deploying"></a><span data-ttu-id="40680-150">（可选）在部署之前自定义 pom.xml</span><span class="sxs-lookup"><span data-stu-id="40680-150">Optionally, customize pom.xml before deploying</span></span>
 
-<span data-ttu-id="90566-151">在文本编辑器中打开 Spring Boot 应用程序的 `pom.xml` 文件，然后找到 `azure-webapp-maven-plugin` 的 `<plugin>` 元素。</span><span class="sxs-lookup"><span data-stu-id="90566-151">Open the `pom.xml` file for your Spring Boot application in a text editor, and then locate the `<plugin>` element for `azure-webapp-maven-plugin`.</span></span> <span data-ttu-id="90566-152">该元素应类似于以下示例：</span><span class="sxs-lookup"><span data-stu-id="90566-152">This element should resemble the following example:</span></span>
+<span data-ttu-id="40680-151">在文本编辑器中打开 Spring Boot 应用程序的 `pom.xml` 文件，然后找到 `azure-webapp-maven-plugin` 的 `<plugin>` 元素。</span><span class="sxs-lookup"><span data-stu-id="40680-151">Open the `pom.xml` file for your Spring Boot application in a text editor, and then locate the `<plugin>` element for `azure-webapp-maven-plugin`.</span></span> <span data-ttu-id="40680-152">该元素应类似于以下示例：</span><span class="sxs-lookup"><span data-stu-id="40680-152">This element should resemble the following example:</span></span>
 
    ```xml
   <plugins>
@@ -190,40 +192,40 @@ ms.locfileid: "34689420"
   </plugins>
    ```
 
-<span data-ttu-id="90566-153">可以为 Maven 插件修改几个值，[适用于 Azure Web 应用的 Maven 插件]文档中提供了这些元素各自的详细描述。</span><span class="sxs-lookup"><span data-stu-id="90566-153">There are several values that you can modify for the Maven plugin, and a detailed description for each of these elements is available in the [Maven Plugin for Azure Web Apps] documentation.</span></span> <span data-ttu-id="90566-154">尽管如此，在本文中有仍几个值得注意的值：</span><span class="sxs-lookup"><span data-stu-id="90566-154">That being said, there are several values that are worth highlighting in this article:</span></span>
+<span data-ttu-id="40680-153">可以为 Maven 插件修改几个值，[适用于 Azure Web 应用的 Maven 插件]文档中提供了这些元素各自的详细描述。</span><span class="sxs-lookup"><span data-stu-id="40680-153">There are several values that you can modify for the Maven plugin, and a detailed description for each of these elements is available in the [Maven Plugin for Azure Web Apps] documentation.</span></span> <span data-ttu-id="40680-154">尽管如此，在本文中有仍几个值得注意的值：</span><span class="sxs-lookup"><span data-stu-id="40680-154">That being said, there are several values that are worth highlighting in this article:</span></span>
 
-| <span data-ttu-id="90566-155">元素</span><span class="sxs-lookup"><span data-stu-id="90566-155">Element</span></span> | <span data-ttu-id="90566-156">说明</span><span class="sxs-lookup"><span data-stu-id="90566-156">Description</span></span> |
+| <span data-ttu-id="40680-155">元素</span><span class="sxs-lookup"><span data-stu-id="40680-155">Element</span></span> | <span data-ttu-id="40680-156">Description</span><span class="sxs-lookup"><span data-stu-id="40680-156">Description</span></span> |
 |---|---|
-| `<version>` | <span data-ttu-id="90566-157">指定[适用于 Azure Web 应用的 Maven 插件]的版本。</span><span class="sxs-lookup"><span data-stu-id="90566-157">Specifies the version of the [Maven Plugin for Azure Web Apps].</span></span> <span data-ttu-id="90566-158">验证 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。</span><span class="sxs-lookup"><span data-stu-id="90566-158">Verify the version listed in the [Maven Central Respository](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) to ensure that you are using the latest version.</span></span> |
-| `<resourceGroup>` | <span data-ttu-id="90566-159">指定目标资源组，在此示例中为 `maven-plugin`。</span><span class="sxs-lookup"><span data-stu-id="90566-159">Specifies the target resource group, which is `maven-plugin` in this example.</span></span> <span data-ttu-id="90566-160">如果资源组不存在，则会在部署过程中进行创建。</span><span class="sxs-lookup"><span data-stu-id="90566-160">The resource group is created during deployment if it does not already exist.</span></span> |
-| `<appName>` | <span data-ttu-id="90566-161">指定 Web 应用的目标名称。</span><span class="sxs-lookup"><span data-stu-id="90566-161">Specifies the target name for your web app.</span></span> <span data-ttu-id="90566-162">在此示例中，目标名称为 `maven-web-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。</span><span class="sxs-lookup"><span data-stu-id="90566-162">In this example, the target name is `maven-web-app-${maven.build.timestamp}`, where the `${maven.build.timestamp}` suffix is appended in this example to avoid conflict.</span></span> <span data-ttu-id="90566-163">（时间戳是可选项；可为应用名称指定任何唯一的字符串。）</span><span class="sxs-lookup"><span data-stu-id="90566-163">(The timestamp is optional; you can specify any unique string for the app name.)</span></span> |
-| `<region>` | <span data-ttu-id="90566-164">指定目标区域，在此示例中为 `westus`。</span><span class="sxs-lookup"><span data-stu-id="90566-164">Specifies the target region, which in this example is `westus`.</span></span> <span data-ttu-id="90566-165">（[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。）</span><span class="sxs-lookup"><span data-stu-id="90566-165">(A full list is in the [Maven Plugin for Azure Web Apps] documentation.)</span></span> |
-| `<javaVersion>` | <span data-ttu-id="90566-166">为 Web 应用指定 Java 运行时版本。</span><span class="sxs-lookup"><span data-stu-id="90566-166">Specifies the Java runtime version for your web app.</span></span> <span data-ttu-id="90566-167">（[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。）</span><span class="sxs-lookup"><span data-stu-id="90566-167">(A full list is in the [Maven Plugin for Azure Web Apps] documentation.)</span></span> |
-| `<deploymentType>` | <span data-ttu-id="90566-168">为 Web 应用指定部署类型。</span><span class="sxs-lookup"><span data-stu-id="90566-168">Specifies deployment type for your web app.</span></span> <span data-ttu-id="90566-169">默认为 `war`。</span><span class="sxs-lookup"><span data-stu-id="90566-169">Default is `war`.</span></span> |
+| `<version>` | <span data-ttu-id="40680-157">指定[适用于 Azure Web 应用的 Maven 插件]的版本。</span><span class="sxs-lookup"><span data-stu-id="40680-157">Specifies the version of the [Maven Plugin for Azure Web Apps].</span></span> <span data-ttu-id="40680-158">验证 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。</span><span class="sxs-lookup"><span data-stu-id="40680-158">Verify the version listed in the [Maven Central Respository](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) to ensure that you are using the latest version.</span></span> |
+| `<resourceGroup>` | <span data-ttu-id="40680-159">指定目标资源组，在此示例中为 `maven-plugin`。</span><span class="sxs-lookup"><span data-stu-id="40680-159">Specifies the target resource group, which is `maven-plugin` in this example.</span></span> <span data-ttu-id="40680-160">如果资源组不存在，则会在部署过程中进行创建。</span><span class="sxs-lookup"><span data-stu-id="40680-160">The resource group is created during deployment if it does not already exist.</span></span> |
+| `<appName>` | <span data-ttu-id="40680-161">指定 Web 应用的目标名称。</span><span class="sxs-lookup"><span data-stu-id="40680-161">Specifies the target name for your web app.</span></span> <span data-ttu-id="40680-162">在此示例中，目标名称为 `maven-web-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。</span><span class="sxs-lookup"><span data-stu-id="40680-162">In this example, the target name is `maven-web-app-${maven.build.timestamp}`, where the `${maven.build.timestamp}` suffix is appended in this example to avoid conflict.</span></span> <span data-ttu-id="40680-163">（时间戳是可选项；可为应用名称指定任何唯一的字符串。）</span><span class="sxs-lookup"><span data-stu-id="40680-163">(The timestamp is optional; you can specify any unique string for the app name.)</span></span> |
+| `<region>` | <span data-ttu-id="40680-164">指定目标区域，在此示例中为 `westus`。</span><span class="sxs-lookup"><span data-stu-id="40680-164">Specifies the target region, which in this example is `westus`.</span></span> <span data-ttu-id="40680-165">（[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。）</span><span class="sxs-lookup"><span data-stu-id="40680-165">(A full list is in the [Maven Plugin for Azure Web Apps] documentation.)</span></span> |
+| `<javaVersion>` | <span data-ttu-id="40680-166">为 Web 应用指定 Java 运行时版本。</span><span class="sxs-lookup"><span data-stu-id="40680-166">Specifies the Java runtime version for your web app.</span></span> <span data-ttu-id="40680-167">（[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。）</span><span class="sxs-lookup"><span data-stu-id="40680-167">(A full list is in the [Maven Plugin for Azure Web Apps] documentation.)</span></span> |
+| `<deploymentType>` | <span data-ttu-id="40680-168">为 Web 应用指定部署类型。</span><span class="sxs-lookup"><span data-stu-id="40680-168">Specifies deployment type for your web app.</span></span> <span data-ttu-id="40680-169">默认为 `war`。</span><span class="sxs-lookup"><span data-stu-id="40680-169">Default is `war`.</span></span> |
 
-## <a name="build-and-deploy-your-web-app-to-azure"></a><span data-ttu-id="90566-170">生成 Web 应用并将其部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="90566-170">Build and deploy your web app to Azure</span></span>
+## <a name="build-and-deploy-your-web-app-to-azure"></a><span data-ttu-id="40680-170">生成 Web 应用并将其部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="40680-170">Build and deploy your web app to Azure</span></span>
 
-<span data-ttu-id="90566-171">配置了本文前面部分中的所有设置后，就可以将 Web 应用部署到 Azure。</span><span class="sxs-lookup"><span data-stu-id="90566-171">Once you have configured all of the settings in the preceding sections of this article, you are ready to deploy your web app to Azure.</span></span> <span data-ttu-id="90566-172">为此，请按照以下步骤操作：</span><span class="sxs-lookup"><span data-stu-id="90566-172">To do so, use the following steps:</span></span>
+<span data-ttu-id="40680-171">配置了本文前面部分中的所有设置后，就可以将 Web 应用部署到 Azure。</span><span class="sxs-lookup"><span data-stu-id="40680-171">Once you have configured all of the settings in the preceding sections of this article, you are ready to deploy your web app to Azure.</span></span> <span data-ttu-id="40680-172">为此，请按照以下步骤操作：</span><span class="sxs-lookup"><span data-stu-id="40680-172">To do so, use the following steps:</span></span>
 
-1. <span data-ttu-id="90566-173">在之前使用的命令提示符或终端窗口中，如果对 pom.xml 文件进行了任何更改，请使用 Maven 重新生成 JAR 文件；例如：</span><span class="sxs-lookup"><span data-stu-id="90566-173">From the command prompt or terminal window that you were using earlier, rebuild the JAR file using Maven if you made any changes to the *pom.xml* file; for example:</span></span>
+1. <span data-ttu-id="40680-173">在之前使用的命令提示符或终端窗口中，如果对 pom.xml 文件进行了任何更改，请使用 Maven 重新生成 JAR 文件；例如：</span><span class="sxs-lookup"><span data-stu-id="40680-173">From the command prompt or terminal window that you were using earlier, rebuild the JAR file using Maven if you made any changes to the *pom.xml* file; for example:</span></span>
    ```shell
    mvn clean package
    ```
 
-1. <span data-ttu-id="90566-174">使用 Maven 将 Web 应用部署到 Azure；例如：</span><span class="sxs-lookup"><span data-stu-id="90566-174">Deploy your web app to Azure by using Maven; for example:</span></span>
+1. <span data-ttu-id="40680-174">使用 Maven 将 Web 应用部署到 Azure；例如：</span><span class="sxs-lookup"><span data-stu-id="40680-174">Deploy your web app to Azure by using Maven; for example:</span></span>
    ```shell
    mvn azure-webapp:deploy
    ```
 
-<span data-ttu-id="90566-175">Maven 会将 Web 应用部署到 Azure；如果 Web 应用不存在，则将创建一个。</span><span class="sxs-lookup"><span data-stu-id="90566-175">Maven will deploy your web app to Azure; if the web app does not already exist, it will be created.</span></span>
+<span data-ttu-id="40680-175">Maven 会将 Web 应用部署到 Azure；如果 Web 应用不存在，则将创建一个。</span><span class="sxs-lookup"><span data-stu-id="40680-175">Maven will deploy your web app to Azure; if the web app does not already exist, it will be created.</span></span>
 
-<span data-ttu-id="90566-176">Web 部署完成后即可使用 [Azure 门户]进行管理。</span><span class="sxs-lookup"><span data-stu-id="90566-176">When your web has been deployed, you will be able to manage it by using the [Azure portal].</span></span>
+<span data-ttu-id="40680-176">Web 部署完成后即可使用 [Azure 门户]进行管理。</span><span class="sxs-lookup"><span data-stu-id="40680-176">When your web has been deployed, you will be able to manage it by using the [Azure portal].</span></span>
 
-* <span data-ttu-id="90566-177">Web 应用将会在“应用服务”中列出：</span><span class="sxs-lookup"><span data-stu-id="90566-177">Your web app will be listed in **App Services**:</span></span>
+* <span data-ttu-id="40680-177">Web 应用将会在“应用服务”中列出：</span><span class="sxs-lookup"><span data-stu-id="40680-177">Your web app will be listed in **App Services**:</span></span>
 
    ![Azure 门户应用服务中列出的 Web 应用][AP01]
 
-* <span data-ttu-id="90566-179">Web 应用的 URL 会在 Web 应用的“概述”中列出：</span><span class="sxs-lookup"><span data-stu-id="90566-179">And the URL for your web app will be listed in the **Overview** for your web app:</span></span>
+* <span data-ttu-id="40680-179">Web 应用的 URL 会在 Web 应用的“概述”中列出：</span><span class="sxs-lookup"><span data-stu-id="40680-179">And the URL for your web app will be listed in the **Overview** for your web app:</span></span>
 
    ![确定 Web 应用的 URL][AP02]
 
@@ -248,19 +250,19 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 1. Save and close the *application.yml* file.
 -->
 
-## <a name="next-steps"></a><span data-ttu-id="90566-181">后续步骤</span><span class="sxs-lookup"><span data-stu-id="90566-181">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="40680-181">后续步骤</span><span class="sxs-lookup"><span data-stu-id="40680-181">Next steps</span></span>
 
-<span data-ttu-id="90566-182">有关本文中讨论的各项技术的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="90566-182">For more information about the various technologies discussed in this article, see the following articles:</span></span>
+<span data-ttu-id="40680-182">有关本文中讨论的各项技术的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="40680-182">For more information about the various technologies discussed in this article, see the following articles:</span></span>
 
-* <span data-ttu-id="90566-183">[适用于 Azure Web 应用的 Maven 插件]</span><span class="sxs-lookup"><span data-stu-id="90566-183">[Maven Plugin for Azure Web Apps]</span></span>
+* <span data-ttu-id="40680-183">[适用于 Azure Web 应用的 Maven 插件]</span><span class="sxs-lookup"><span data-stu-id="40680-183">[Maven Plugin for Azure Web Apps]</span></span>
 
-* [<span data-ttu-id="90566-184">通过 Azure CLI 登录到 Azure</span><span class="sxs-lookup"><span data-stu-id="90566-184">Log in to Azure from the Azure CLI</span></span>](/azure/xplat-cli-connect)
+* [<span data-ttu-id="40680-184">通过 Azure CLI 登录到 Azure</span><span class="sxs-lookup"><span data-stu-id="40680-184">Log in to Azure from the Azure CLI</span></span>](/azure/xplat-cli-connect)
 
-* [<span data-ttu-id="90566-185">如何使用适用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="90566-185">How to use the Maven Plugin for Azure Web Apps to deploy a containerized Spring Boot app to Azure</span></span>](deploy-containerized-spring-boot-java-app-with-maven-plugin.md)
+* [<span data-ttu-id="40680-185">如何使用适用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="40680-185">How to use the Maven Plugin for Azure Web Apps to deploy a containerized Spring Boot app to Azure</span></span>](deploy-containerized-spring-boot-java-app-with-maven-plugin.md)
 
-* [<span data-ttu-id="90566-186">使用 Azure CLI 2.0 创建 Azure 服务主体</span><span class="sxs-lookup"><span data-stu-id="90566-186">Create an Azure service principal with Azure CLI 2.0</span></span>](/cli/azure/create-an-azure-service-principal-azure-cli)
+* [<span data-ttu-id="40680-186">使用 Azure CLI 2.0 创建 Azure 服务主体</span><span class="sxs-lookup"><span data-stu-id="40680-186">Create an Azure service principal with Azure CLI 2.0</span></span>](/cli/azure/create-an-azure-service-principal-azure-cli)
 
-* [<span data-ttu-id="90566-187">Maven 设置参考</span><span class="sxs-lookup"><span data-stu-id="90566-187">Maven Settings Reference</span></span>](https://maven.apache.org/settings.html)
+* [<span data-ttu-id="40680-187">Maven 设置参考</span><span class="sxs-lookup"><span data-stu-id="40680-187">Maven Settings Reference</span></span>](https://maven.apache.org/settings.html)
 
 <!-- URL List -->
 
