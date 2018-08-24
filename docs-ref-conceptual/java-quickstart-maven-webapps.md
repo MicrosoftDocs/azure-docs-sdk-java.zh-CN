@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 03/17/2017
 ms.author: routlaw
-ms.openlocfilehash: 1adc0a104ba22bcd353664e68323165890e46c64
-ms.sourcegitcommit: 30d502b3150fa14bcc1251f5f88c7c0dd83e531e
+ms.openlocfilehash: 70b508118c50b75693e2d746dc1e2919c827cb29
+ms.sourcegitcommit: 0f38ef9ad64cffdb7b2e9e966224dfd0af251b0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2017
-ms.locfileid: "22033629"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42703540"
 ---
 # <a name="create-and-deploy-a-java-app-to-azure-with-maven"></a>使用 Maven 创建 Java 应用并将其部署到 Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "22033629"
 - [Maven 3](http://maven.apache.org/download.cgi)
 - [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)
 
-如果还没有 Azure 订阅，可以在开始前创建一个 [免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
+如果没有 Azure 订阅，请在开始之前创建一个[免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -53,7 +53,7 @@ mvn package
 mvn tomcat7:run-war
 ```
 
-打开 Web 浏览器并导航到 http://localhost:8080 以预览该应用：
+打开 Web 浏览器并导航到 http://localhost:8080 以预览应用：
 
   ![示例 Java 应用的 Hello World 输出](media/maven-quickstart/java-app-hello-world-output.png)
 

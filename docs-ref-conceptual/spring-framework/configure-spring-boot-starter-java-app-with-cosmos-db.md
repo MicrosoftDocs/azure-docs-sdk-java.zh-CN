@@ -7,19 +7,19 @@ author: rmcmurray
 manager: routlaw
 editor: ''
 ms.assetid: ''
-ms.author: robmcm;yungez;kevinzha
-ms.date: 07/05/2018
+ms.author: robmcm
+ms.date: 08/10/2018
 ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 3306f3ef66ec1b53ab004765b8fb7aef04de9077
-ms.sourcegitcommit: 1ff4654193404415841252a130b87a8b53b7c6d8
+ms.openlocfilehash: dcb5ef5f12cc1682175da147268eb4a6a89f820b
+ms.sourcegitcommit: 0f38ef9ad64cffdb7b2e9e966224dfd0af251b0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39235971"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42703520"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -75,7 +75,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
    > [!IMPORTANT]
    >
-   > Spring Boot 版本 2.0.n 中的 API 有几处重大更改，因此，需要使用 Spring Boot 1.5.n 版本之一来完成本教程中的步骤。
+   > Spring Boot 2.0.n 版本中的 API 有几个重大更改，这些更改将用于完成本文中的步骤。 仍可以使用 Spring Boot 1.5.n 版本之一来完成本教程中的步骤，差异将在必要时突出显示。
    >
 
    ![Spring Initializr 的基本选项][SI01]
@@ -111,22 +111,39 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>azure-documentdb-spring-boot-starter</artifactId>
-      <version>0.1.4</version>
+      <version>2.0.4</version>
    </dependency>
    ```
 
    ![编辑 pom.xml 文件][PM02]
 
-1. 验证 Spring Boot 版本是否是 1.5.n 版本之一，例如：
+   > [!IMPORTANT]
+   >
+   > 如果使用 Spring Boot 1.5.n 版本之一来完成本教程，你将需要指定较旧的 Azure Cosmos DB 入门版；例如：
+   >
+   > ```xml
+   > <dependency>
+   >   <groupId>com.microsoft.azure</groupId>
+   >   <artifactId>azure-documentdb-spring-boot-starter</artifactId>
+   >   <version>0.1.4</version>
+   > </dependency>
+   > ```
+
+1. 验证 Spring Boot 版本是否是使用 Spring Initializr 创建应用程序时选择的版本；例如：
 
    ```xml
    <parent>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-parent</artifactId>
-      <version>1.5.14.RELEASE</version>
+      <version>2.0.1.RELEASE</version>
       <relativePath/>
    </parent>
    ```
+
+   > [!NOTE]
+   >
+   > 如果使用 Spring Boot 1.5.n 版本之一来完成本教程，你将需要验证版本是否正确；例如：`<version>1.5.14.RELEASE</version>`。
+   >
 
 1. 保存并关闭 pom.xml 文件。
 
@@ -177,6 +194,9 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
       private String id;
       private String firstName;
       private String lastName;
+   
+      public User() {
+      }
    
       public User(String id, String firstName, String lastName) {
          this.id = id;
@@ -251,50 +271,57 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
    ```java
    package com.example.wingtiptoysdata;
-   
+
    // These imports are required for the application.
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
    import org.springframework.beans.factory.annotation.Autowired;
    import org.springframework.boot.CommandLineRunner;
-   
+
    // These imports are only used to create an ID for this example.
    import java.util.Date;
    import java.text.SimpleDateFormat;
-   
+
    @SpringBootApplication
    public class wingtiptoysdataApplication implements CommandLineRunner {
-   
+
       @Autowired
       private UserRepository repository;
-   
+
       public static void main(String[] args) {
          // Execute the command line runner.
          SpringApplication.run(wingtiptoysdataApplication.class, args);
+         System.exit(0);
       }
-   
+
       public void run(String... args) throws Exception {
          // Create a simple date/time ID.
          SimpleDateFormat userId = new SimpleDateFormat("yyyyMMddHHmmssSSS");
          Date currentDate = new Date();
-   
+
          // Create a new User class.
          final User testUser = new User(userId.format(currentDate), "Gena", "Soto");
-   
+
          // For this example, remove all of the existing records.
          repository.deleteAll();
-   
+
          // Save the User class to the Azure database.
          repository.save(testUser);
-         
+      
          // Retrieve the database record for the User class you just saved by ID.
-         final User result = repository.findOne(testUser.getId());
-   
+         // final User result = repository.findOne(testUser.getId());
+         final User result = repository.findById(testUser.getId()).get();
+
          // Display the results of the database record retrieval.
          System.out.printf("\n\n%s\n\n",result.toString());
       }
    }
    ```
+
+   > [!IMPORTANT]
+   >
+   > 如果使用 Spring Boot 1.5.n 版本之一来完成本教程，你将需要将 `final User result = repository.findById(testUser.getId()).get();` 语法替换为 `final User result = repository.findOne(testUser.getId());`。
+   >
 
 1. 保存并关闭主应用程序 Java 文件。
 
@@ -315,7 +342,11 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
    mvn spring-boot:run
    ```
 
-1. 你的应用程序将显示多个运行时消息，当显示 `User: testFirstName testLastName` 消息时，表示已成功在数据库中存储和检索值。
+1. 应用程序将显示多个运行时消息，并显示一条类似于以下示例的消息，指示已成功在数据库中存储和检索值。
+
+   ```
+   User: 20170724025215132 Gena Soto
+   ```
 
    ![成功地从应用程序输出][JV02]
 
