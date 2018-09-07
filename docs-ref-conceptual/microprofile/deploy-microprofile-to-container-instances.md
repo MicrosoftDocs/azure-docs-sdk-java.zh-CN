@@ -3,9 +3,9 @@ title: 使用 Docker 和 Azure 将 MicroProfile 应用部署到云中
 description: 了解如何使用 Docker 和 Azure 容器实例将 MicroProfile 应用部署到云中。
 services: container-instances;container-retistry
 documentationcenter: java
-author: brborges
+author: brunoborges
 manager: routlaw
-editor: brborges
+editor: brunoborges
 ms.assetid: ''
 ms.author: brborges
 ms.date: 07/30/2018
@@ -14,12 +14,12 @@ ms.service: container-instances
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: c6254d11ee1596a23076931c9a2a2370b5f52409
-ms.sourcegitcommit: 3d0896f821907278547c283c54b53fbd7f4f30f0
+ms.openlocfilehash: 336af51bbdf5d2f843c3868ebc2358e128daaeaa
+ms.sourcegitcommit: 280d13b43cef94177d95e03879a5919da234a23c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43153817"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43324323"
 ---
 # <a name="deploy-a-microprofile-application-to-the-cloud-with-docker-and-azure"></a>使用 Docker 和 Azure 将 MicroProfile 应用程序部署到云中
 
@@ -35,7 +35,7 @@ ms.locfileid: "43153817"
 
 * 一个 Azure 订阅；如果没有 Azure 订阅，可以注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
-* 最新的 [Java 开发工具包 (JDK)] 1.8 或更高版本。
+* 最新的 [Java 开发工具包 (JDK)]（1.8 或更高版本）。
 * Apache 的 [Maven] 生成工具（版本 3 以上）。
 * [Git] 客户端。
 
@@ -66,7 +66,7 @@ Hello, Azure!
 
 ## <a name="deploy-to-azure"></a>“部署到 Azure”
 
-现在，让我们使用 [Azure 容器实例] 和 [Azure 容器注册表] 服务将此应用程序部署到云中。
+现在，让我们使用 [Azure 容器实例]和 [Azure 容器注册表]服务将此应用程序部署到云中。
 
 ### <a name="build-a-docker-image"></a>生成 Docker 映像
 
@@ -157,7 +157,7 @@ curl http://$ACI_INSTANCE.$ADCL.azurecontainer.io:8080/api/hello
 
 <!-- URL List -->
 
-[Azure 容器注册表生成]: https://docs.microsoft.com/en-us/azure/container-registry/container-registry-build-overview
+[Azure 容器注册表生成]: https://docs.microsoft.com/azure/container-registry/container-registry-build-overview
 [MicroProfile.io]: https://microprofile.io
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
@@ -165,3 +165,6 @@ curl http://$ACI_INSTANCE.$ADCL.azurecontainer.io:8080/api/hello
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Maven]: http://maven.apache.org/
+[Java 开发工具包 (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+[Azure 容器实例]: https://docs.microsoft.com/azure/container-instances/
+[Azure 容器注册表]:  https://docs.microsoft.com/azure/container-registry
