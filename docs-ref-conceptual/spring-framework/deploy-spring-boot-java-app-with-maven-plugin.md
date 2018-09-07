@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: d58cafe3456150069ec8572c101c62d1b2c29c5d
-ms.sourcegitcommit: e1a5d9687e006e8bf12d11747d45cf130a2c82af
+ms.openlocfilehash: ca788354d26964bd9f1e21a0d3a8005ff65ce4bc
+ms.sourcegitcommit: 280d13b43cef94177d95e03879a5919da234a23c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42703327"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43324343"
 ---
 # <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a>使用适用于 Azure 应用服务的 Maven 插件将 Spring Boot 应用部署到云中
 
@@ -35,7 +35,7 @@ ms.locfileid: "42703327"
 
 完成本教程中的步骤需要具备以下先决条件：
 
-* 一个 Azure 订阅；如果没有 Azure 订阅，可以注册[免费 Azure 帐户]。
+* 一个 Azure 订阅；如果没有 Azure 订阅，可以注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
 * 最新 [Java 开发工具包 (JDK)] 1.7 版或更高版本。
 * Apache 的 [Maven] 生成工具（版本 3）。
@@ -129,6 +129,7 @@ ms.locfileid: "42703327"
            return application.sources(Application.class);
        }
    ```
+1. 组织导入以确保 `SpringApplicationBuilder` 和 `SpringBootServletInitializer` 正确导入。
 
 现在，可将应用程序部署到 Tomcat 和其他任何 Servlet 运行时（例如 Jetty）。
 
@@ -269,7 +270,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [Azure 门户]: https://portal.azure.com/
-[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
