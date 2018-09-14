@@ -14,12 +14,12 @@ ms.service: container-registry;app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 323ae247c3df8c7d7b180d9d60b9014e4e2d7382
-ms.sourcegitcommit: 77dc6c03a2e6264df688d91a04fc6b40950779ef
+ms.openlocfilehash: 1eb0e7d7a718a1c106adebbf89011f6e3fa1504e
+ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43240957"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040245"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>将基于 Java 的 MicroProfile 服务部署到用于容器的 Azure Web 应用
 
@@ -137,7 +137,7 @@ public class API {
 在本地计算机上成功生成并运行 MicroProfile 应用程序后，下一步是将此容器推送到容器注册表中。 本教程使用 Azure 容器注册表，但可以使用任何容器注册表（前提是将 `pom.xml` 文件编辑为指向相关位置）。
 
 1. 运行 `mvn clean package` 来清理、编译并创建本地 Docker 映像。
-2. 运行 `mvn dockerfile:push` 以推送到 Azure 容器存储库。
+2. 运行 `mvn dockerfile:push` 以推送到 Azure 容器注册表。
 
 在此阶段，Docker 容器映像已上传到 Azure 容器注册表但尚未运行，因为我们必须将其部署到用于容器的 Azure Web 应用实例。 现在我们就这样做。
 
