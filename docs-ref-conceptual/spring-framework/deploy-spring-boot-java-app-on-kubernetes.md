@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: cb83a7d6ec3a9a83fbfd3b2e34e5a4e498aa36d3
-ms.sourcegitcommit: 51dc05a96a8cbc8a6c9b45e094d8f3cfec16a607
+ms.openlocfilehash: 546aa2dc18143ca173d72198ea8e6c30bda3c97f
+ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2018
-ms.locfileid: "39189667"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45639720"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
 
@@ -30,7 +30,7 @@ ms.locfileid: "39189667"
 
 ### <a name="prerequisites"></a>先决条件
 
-* Azure 订阅；若尚未拥有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册获取[免费 Azure 帐户]。
+* Azure 订阅；若尚未拥有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册获取[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
 * 最新的 [Java 开发人员工具包 (JDK)]。
 * Apache 的 [Maven] 生成工具（版本 3）。
@@ -237,7 +237,7 @@ ms.locfileid: "39189667"
 
 1. 显示“资源创建”页时，请指定以下选项：
 
-   a. 选择“创建应用”。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 选择“创建应用”。
 
    b. 在“应用名称”中输入 Spring Boot 应用程序名称；例如：gs-spring-boot-docker。
 
@@ -321,7 +321,7 @@ ms.locfileid: "39189667"
 
 以下链接提供了将 Kubernetes 与 Azure 配合使用的详细信息：
 
-* [Azure Kubernetes 服务中的 Kubernetes 群集入门](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes)
+* [Azure Kubernetes 服务中的 Kubernetes 群集入门](https://docs.microsoft.com/azure/aks/intro-kubernetes)
 
 有关使用 Kubernetes 命令行接口的详细信息，请在 <https://kubernetes.io/docs/user-guide/kubectl/> 处参阅 **kubectl** 用户指南。
 
@@ -342,7 +342,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image
 [Docker]: https://www.docker.com/
-[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java 开发人员工具包 (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
@@ -358,7 +358,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 [从私有注册表拉取映像]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 
 <!-- Newly added -->
-[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]: https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-aks/
+[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]: https://docs.microsoft.com/azure/container-registry/container-registry-auth-aks/
 [Visual Studio Code Java 教程]: https://code.visualstudio.com/docs/java/java-kubernetes/
 
 <!-- IMG List -->

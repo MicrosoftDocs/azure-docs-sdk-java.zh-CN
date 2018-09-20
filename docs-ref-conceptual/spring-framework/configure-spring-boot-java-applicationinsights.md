@@ -14,12 +14,12 @@ ms.service: Azure Monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 0e57bfb304185b8b98dedfdecb2e0374c4a72fe5
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: e78987a05527aef739bc1467511381665513a3ab
+ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090770"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45639730"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>将 Spring Boot Initializer 应用配置为使用 Application Insights
 
@@ -33,7 +33,7 @@ ms.locfileid: "37090770"
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * Java 开发工具包 (JDK) 版本 1.7 和 1.8。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
@@ -91,7 +91,7 @@ ms.locfileid: "37090770"
  <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>applicationinsights-spring-boot-starter</artifactId>
-    <version>1.0.0-BETA</version>
+    <version>1.0.1-BETA</version>
 </dependency>
 ```
 
@@ -222,7 +222,7 @@ ms.locfileid: "37090770"
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>applicationinsights-spring-boot-starter</artifactId>
-        <version>1.0.0-BETA</version>
+        <version>1.0.1-BETA</version>
     </dependency>
 
     <dependency>
@@ -278,7 +278,7 @@ ms.locfileid: "37090770"
 
 * [在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Application Insights 支持收集外部依赖项及其与传入请求之间的关联。 目前支持自动收集 Oracle、MsSQL、MySQL 和 Redis 数据。 有关启用自动收集的更多详细信息，请参阅[如何使用 Application Insights Java 代理](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-java-agent)一文。
+Application Insights 支持收集外部依赖项及其与传入请求之间的关联。 目前支持自动收集 Oracle、MsSQL、MySQL 和 Redis 数据。 有关启用自动收集的更多详细信息，请参阅[如何使用 Application Insights Java 代理](https://docs.microsoft.com/azure/application-insights/app-insights-java-agent)一文。
 
 有关 Azure Application Insights 的详细信息及其监视功能，请参阅 **[Application Insights]** 主页。
 
@@ -293,14 +293,14 @@ Application Insights 支持收集外部依赖项及其与传入请求之间的�
 <!-- URL List -->
 
 [面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
-[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot 配置文件的特定属性]: https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-profile-specific-properties
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
-[Application Insights]: https://docs.microsoft.com/en-us/azure/application-insights/
+[Application Insights]: https://docs.microsoft.com/azure/application-insights/
 
 <!-- IMG List -->
 

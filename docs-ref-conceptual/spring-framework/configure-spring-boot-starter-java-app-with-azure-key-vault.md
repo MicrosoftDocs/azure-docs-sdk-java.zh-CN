@@ -14,12 +14,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: a2734fc08f2f59f64ba6c6c20ff18d75070b68d5
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: 78b7a9a2e26168b19dc8a1d12e47456752b57ffc
+ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090710"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45639770"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>如何使用适用于 Azure Key Vault 的 Spring Boot 起动器
 
@@ -31,7 +31,7 @@ ms.locfileid: "37090710"
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
@@ -102,7 +102,7 @@ ms.locfileid: "37090710"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    |---|---|
    | `name` | 指定资源组的唯一名称。 |
    | `location` | 指定要在其中托管资源组的 [Azure 区域](https://azure.microsoft.com/regions/)。 |
@@ -128,7 +128,7 @@ ms.locfileid: "37090710"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    |---|---|
    | `name` | 指定 Azure 服务主体的名称。 |
 
@@ -150,14 +150,14 @@ ms.locfileid: "37090710"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    |---|---|
    | `name` | 指定 Key Vault 的唯一名称。 |
    | `location` | 指定要在其中托管资源组的 [Azure 区域](https://azure.microsoft.com/regions/)。 |
-   | `enabled-for-deployment` | 指定 [Key Vault 部署选项](https://docs.microsoft.com/en-us/cli/azure/keyvault)。 |
-   | `enabled-for-disk-encryption` | 指定 [Key Vault 加密选项](https://docs.microsoft.com/en-us/cli/azure/keyvault)。 |
-   | `enabled-for-template-deployment` | 指定 [Key Vault 加密选项](https://docs.microsoft.com/en-us/cli/azure/keyvault)。 |
-   | `sku` | 指定 [Key Vault SKU 选项](https://docs.microsoft.com/en-us/cli/azure/keyvault)。 |
+   | `enabled-for-deployment` | 指定 [Key Vault 部署选项](https://docs.microsoft.com/cli/azure/keyvault)。 |
+   | `enabled-for-disk-encryption` | 指定 [Key Vault 加密选项](https://docs.microsoft.com/cli/azure/keyvault)。 |
+   | `enabled-for-template-deployment` | 指定 [Key Vault 加密选项](https://docs.microsoft.com/cli/azure/keyvault)。 |
+   | `sku` | 指定 [Key Vault SKU 选项](https://docs.microsoft.com/cli/azure/keyvault)。 |
    | `query` | 指定要从响应中检索的值，即完成本教程所需的 Key Vault URI。 |
 
    Azure CLI 将显示稍后要使用的 Key Vault URI，例如：  
@@ -172,10 +172,10 @@ ms.locfileid: "37090710"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    |---|---|
    | `name` | 指定前面创建的 Key Vault 名称。 |
-   | `secret-permission` | 指定 Key Vault 的[安全策略](https://docs.microsoft.com/en-us/cli/azure/keyvault)。 |
+   | `secret-permission` | 指定 Key Vault 的[安全策略](https://docs.microsoft.com/cli/azure/keyvault)。 |
    | `spn` | 指定前面创建的应用程序注册的 GUID。 |
 
    Azure CLI 将显示安全策略的创建结果，例如：  
@@ -202,7 +202,7 @@ ms.locfileid: "37090710"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    |---|---|
    | `vault-name` | 指定前面创建的 Key Vault 名称。 |
    | `name` | 指定机密的名称。 |
@@ -245,7 +245,7 @@ ms.locfileid: "37090710"
    ```
    其中：
 
-   |          参数          |                                 说明                                 |
+   |          参数          |                                 Description                                 |
    |-----------------------------|-----------------------------------------------------------------------------|
    |    `azure.keyvault.uri`     |           指定创建 Key Vault 时使用的 URI。           |
    | `azure.keyvault.client-id`  |  指定创建服务主体时使用的 *appId* GUID。   |
@@ -326,7 +326,7 @@ ms.locfileid: "37090710"
 [Key Vault 文档]: /azure/key-vault/
 [Azure 密钥保管库入门]: /azure/key-vault/key-vault-get-started
 [面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
-[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
