@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: a2677c06a1d295d6b5ed5142d26cf16a1c591dbd
-ms.sourcegitcommit: 3d0896f821907278547c283c54b53fbd7f4f30f0
+ms.openlocfilehash: 3d14dbbce444506c3aea9a0443c15424cdde08d3
+ms.sourcegitcommit: fd67d4088be2cad01c642b9ecf3f9475d9cb4f3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43153867"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46505935"
 documentType: LandingData
 title: Azure 上的 Eclipse MicroProfile
 metadata:
@@ -43,6 +43,10 @@ sections:
         src: https://docs.microsoft.com/en-us/azure/media/index/keyvault.svg
       text: Azure Key Vault 的配置源
       href: configure-microprofile-with-keyvault.md
+    - image:
+        src: https://docs.microsoft.com/azure/devops/_img/index/devopssuite.png
+      text: 使用 Azure DevOps 对 MicroProfile 应用程序进行 CI/CD
+      href: cicd-microprofile-vsts.md
 - title: 适用于 Azure 的示例
   items:
   - type: list
