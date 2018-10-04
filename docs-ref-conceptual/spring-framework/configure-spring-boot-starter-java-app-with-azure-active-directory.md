@@ -14,12 +14,12 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 6d20593620c7fb73f8481be8705bdc42d4e9ce32
-ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
+ms.openlocfilehash: d3b6bdc4aaae79864d370c581585167cf3732160
+ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37864047"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48047175"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>如何使用适用于 Azure Active Directory 的 Spring Boot 起动器
 
@@ -31,7 +31,7 @@ ms.locfileid: "37864047"
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
@@ -39,7 +39,7 @@ ms.locfileid: "37864047"
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版。
+1. 指定要使用 **Java** 生成 **Maven** 项目，输入应用程序的“组”名称和“项目”名称，然后单击 Spring Initializr 的“切换到完整版”链接。
 
    ![指定组和项目名称][security-01]
 
@@ -207,7 +207,7 @@ ms.locfileid: "37864047"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    |---|---|
    | `azure.activedirectory.tenant-id` | 包含前面复制的 Active Directory“目录 ID”。 |
    | `spring.security.oauth2.client.registration.azure.client-id` | 包含前面填写的、应用注册的“应用程序 ID”。 |
@@ -373,7 +373,7 @@ ms.locfileid: "37864047"
 [AAD app manifest]: /azure/active-directory/develop/active-directory-application-manifest
 [Get started with Azure AD]: /azure/active-directory/get-started-azure-ad
 [面向 Java 开发人员的 Azure]: /java/azure/
-[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
