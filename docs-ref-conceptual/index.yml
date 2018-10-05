@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: ec352a8db1d35e175fd53a2ea94bf793a87bcd93
-ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
+ms.openlocfilehash: 7e86525ea7538b20ded93fb093e8ee7032876855
+ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45639780"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48047134"
 documentType: LandingData
 title: 面向 Java 开发人员的 Azure
 metadata:
@@ -37,11 +37,11 @@ sections:
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
       title: 入门
-    - href: https://azure.microsoft.com/resources/samples/?platform=java&view=azure-java
-      html: <p>使用 Java 的 Azure 代码示例</p>
+    - href: https://docs.microsoft.com/java/azure/spring-framework/
+      html: <p>将 Azure 服务与 Spring Boot 配合使用</p>
       image:
-        src: https://docs.microsoft.com/media/common/i_code-samples.svg
-      title: 代码示例
+        src: https://docs.microsoft.com/java/docs-ref-conceptual/media/spring.svg
+      title: Azure 上的 Spring
     - href: java-azure-tools.md
       html: <p>IDE 插件 &amp; 工具</p>
       image:
@@ -51,7 +51,7 @@ sections:
       html: <p>API 参考</p>
       image:
         src: https://docs.microsoft.com/media/common/i_api-reference.svg
-      title: 用于 Java 的 Azure 库
+      title: 用于 Java 的 Azure SDK
 - title: 入门指南
   items:
   - type: paragraph
