@@ -10,12 +10,12 @@ ms.service: Azure
 ms.technology: Azure
 ms.date: 4/10/2017
 ms.author: routlaw;asirveda
-ms.openlocfilehash: 425d4c3a5a347e4706e9c37ebd7247cf0d8c9846
-ms.sourcegitcommit: f0dadb22efb191182c3b79dcaa97a76cfcdcc324
+ms.openlocfilehash: fad860e19382fb320892dcc5eada95e6d663739e
+ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2017
-ms.locfileid: "26288302"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48047114"
 ---
 # <a name="azure-tools-for-java-developers"></a>面向 Java 开发人员的 Azure 工具
 
@@ -29,7 +29,7 @@ ms.locfileid: "26288302"
 
 ## <a name="visual-studio-code"></a>Visual Studio Code
 
-VS Code 是适用于 MacOS、Windows 和 Linux 的精简而强大的代码编辑器。 VS Code 通过一系列可提供项目支持、代码完成、调试、检查和导航的扩展，支持简单新式的 Java 开发工作流。
+[VS Code](https://code.visualstudio.com/) 是适用于 MacOS、Windows 和 Linux 的精简而强大的代码编辑器。 VS Code 通过一系列可提供项目支持、代码完成、调试、检查和导航的扩展，支持简单新式的 Java 开发工作流。
 
 [VS Code 和 Java 入门](https://code.visualstudio.com/docs/java)
 [VS Code 的 Java 扩展包](https://code.visualstudio.com/docs/java/extensions)  
