@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 3d21cdd890912c1fc58fc65a79ba972b8327edeb
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931083"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892538"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>通过 Java 应用创建和管理 Azure 虚拟网络
 

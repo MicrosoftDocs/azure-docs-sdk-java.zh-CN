@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: 88eb64c07ad4f480dc2d2c2869e710c0ae910c4d
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090790"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892678"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
 
@@ -36,7 +36,7 @@ ms.locfileid: "37090790"
 
 完成本教程中的步骤需要具备以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
 * 最新 [Java 开发工具包 (JDK)] 1.7 版或更高版本。
 * Apache 的 [Maven] 生成工具（版本 3）。
@@ -116,7 +116,7 @@ ms.locfileid: "37090790"
    ```
    其中：
 
-   | 参数  |                    说明                     |
+   | 参数  |                    Description                     |
    |------------|----------------------------------------------------|
    | `uuuuuuuu` | 指定服务主体的用户名。 |
    | `pppppppp` | 指定服务主体的密码。  |
@@ -192,7 +192,7 @@ ms.locfileid: "37090790"
    ```
    其中：
 
-   |   元素    |                                 说明                                  |
+   |   元素    |                                 Description                                  |
    |--------------|------------------------------------------------------------------------------|
    |    `<id>`    |         包含私有 Azure 容器注册表的名称。          |
    | `<username>` |         包含私有 Azure 容器注册表的名称。          |
@@ -216,7 +216,7 @@ ms.locfileid: "37090790"
    ```
    其中：
 
-   |     元素     |                                                                                   说明                                                                                   |
+   |     元素     |                                                                                   Description                                                                                   |
    |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |     `<id>`      |                                指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。                                |
    |   `<client>`    |                                                             包含服务主体的 `appId` 值。                                                             |
@@ -243,7 +243,7 @@ ms.locfileid: "37090790"
    ```
    其中：
 
-   |           元素           |                                                                       说明                                                                       |
+   |           元素           |                                                                       Description                                                                       |
    |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
    | `<azure.containerRegistry>` |                                              指定私有 Azure 容器注册表的名称。                                               |
    |   `<docker.image.prefix>`   | 指定私有 Azure 容器注册表的 URL，将“.azurecr.io”附加到私有容器注册表名称后即可派生为此 URL。 |
@@ -273,7 +273,7 @@ ms.locfileid: "37090790"
    ```
    其中：
 
-   |     元素     |                                       说明                                       |
+   |     元素     |                                       Description                                       |
    |-----------------|-----------------------------------------------------------------------------------------|
    |  `<serverId>`   |  指定包含私有 Azure 容器注册表名称的属性。   |
    | `<registryUrl>` | 指定包含私有 Azure 容器注册表 URL 的属性。 |
@@ -322,7 +322,7 @@ ms.locfileid: "37090790"
 
 可以为 Maven 插件修改几个值，[适用于 Azure Web 应用的 Maven 插件]文档中提供了这些元素各自的详细描述。 尽管如此，在本文中有仍几个值得注意的值：
 
-| 元素 | 说明 |
+| 元素 | Description |
 |---|---|
 | `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
 | `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。 |
@@ -404,7 +404,7 @@ Web 部署完成后即可使用 [Azure 门户]进行管理。
 [Using a custom Docker image for Azure Web App on Linux]: /azure/app-service/containers/tutorial-custom-docker-image
 [Docker]: https://www.docker.com/
 [适用于 Maven 的 Docker 插件]: https://github.com/spotify/docker-maven-plugin
-[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/

@@ -16,11 +16,11 @@ ms.topic: article
 ms.workload: web
 ms.custom: mvc
 ms.openlocfilehash: 49d94d11ad6a4e103ded849e477d99f01955c693
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090860"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48898721"
 ---
 # <a name="deploy-a-spring-boot-application-on-linux-in-the-azure-container-service"></a>在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上
 
@@ -30,7 +30,7 @@ ms.locfileid: "37090860"
 
 完成本教程中的步骤需要具备以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
 * 最新的 [Java 开发人员工具包 (JDK)]。
 * Apache 的 [Maven] 生成工具（版本 3）。
@@ -199,7 +199,7 @@ ms.locfileid: "37090860"
 
 3. 当显示“Linux 上的 Web 应用”页时，输入以下信息：
 
-   a. 为“应用名称”输入唯一名称；例如：“wingtiptoyslinux”。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 为“应用名称”输入唯一名称；例如：“wingtiptoyslinux”。
 
    b. 从下拉列表中选择一个订阅。
 
@@ -287,7 +287,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [使用 Azure 门户创建专用 Docker 容器注册表]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image
 [Docker]: https://www.docker.com/
-[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java 开发人员工具包 (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/

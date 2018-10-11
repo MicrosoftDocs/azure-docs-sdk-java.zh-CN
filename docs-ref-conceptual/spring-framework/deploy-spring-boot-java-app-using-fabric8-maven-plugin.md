@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: f05dca50f84b27f157892d63cda02286c6755795
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090810"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48898810"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>使用 Fabric8 Maven 插件部署 Spring Boot 应用
 
@@ -31,7 +31,7 @@ ms.locfileid: "37090810"
 
 完成本教程中的步骤需要具备以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
 * 最新的 [Java 开发人员工具包 (JDK)]。
 * Apache 的 [Maven] 生成工具（版本 3）。
@@ -256,7 +256,7 @@ ms.locfileid: "37090810"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    |---|---|
    | `wingtiptoys-kubernetes` | 指定本文前面的资源组的名称。 |
    | `wingtiptoysregistry` | 指定专用注册表的唯一名称。 |
@@ -382,7 +382,7 @@ ms.locfileid: "37090810"
 
 1. 在新的 *fabric8* 文件夹中创建三个 YAML 片段文件：
 
-   a. 使用以下内容创建名为 **deployment.yml** 的文件：
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 使用以下内容创建名为 **deployment.yml** 的文件：
       ```yaml
       apiVersion: extensions/v1beta1
       kind: Deployment
@@ -519,7 +519,7 @@ ms.locfileid: "37090810"
 
 如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 <https://start.spring.io/> 上的 **Spring Initializr**。
 
-有关开始创建简单 Spring Boot 应用程序的详细信息，请参阅 <https://start.spring.io/> 上的“Spring Initializr”。
+有关开始创建简单 Spring Boot 应用程序入门的详细信息，请参阅 <https://start.spring.io/> 上的“Spring Initializr”。
 
 有关如何使用 Azure 的自定义 Docker 映像的其他示例，请参阅[使用 Linux 上 Azure Web 应用的自定义 Docker 映像]。
 
@@ -533,7 +533,7 @@ ms.locfileid: "37090810"
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image
 [Docker]: https://www.docker.com/
 [Fabric8]: https://fabric8.io/
-[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java 开发人员工具包 (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/

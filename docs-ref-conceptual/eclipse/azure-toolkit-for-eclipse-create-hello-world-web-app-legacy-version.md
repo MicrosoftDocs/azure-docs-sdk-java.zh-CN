@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: 896e7eff389bc7d3ac119d315c50aae505a381da
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090800"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892558"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>使用用于 Eclipse 的旧工具包创建适用于 Azure 的 Hello World Web 应用
 
@@ -97,7 +97,7 @@ ms.locfileid: "37090800"
 
 6. 如果前面尚未创建 Azure Web 应用容器，或你想要将应用程序发布到新的容器，请使用以下步骤。 否则，请选择现有的 Web 应用容器，并跳到下面的步骤 7。
    
-   a. 单击“新建...”
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 单击“新建...”
       
       ![部署到 Azure Web 应用容器对话框][15]
 

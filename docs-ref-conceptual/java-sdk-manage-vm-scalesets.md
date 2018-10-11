@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 4653726b387369c18942b6c11392f15b9f0351f3
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931153"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893488"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>从 Java 应用程序管理 Azure 虚拟机规模集
 

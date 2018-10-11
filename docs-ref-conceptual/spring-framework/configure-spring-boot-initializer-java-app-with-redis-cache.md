@@ -15,11 +15,11 @@ ms.tgt_pltfrm: cache-redis
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 8bfe7c2ddd238e0e5a259de9078b831a97b1b1a4
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954578"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892908"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存
 
@@ -29,7 +29,7 @@ ms.locfileid: "28954578"
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费 Azure 帐户]。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
@@ -60,7 +60,7 @@ ms.locfileid: "28954578"
 
 ## <a name="create-a-redis-cache-on-azure"></a>在 Azure 上创建 Redis 缓存
 
-1. 浏览到 Azure 门户（网址：<https://portal.azure.com/>），然后单击“+新建”。
+1. 浏览到位于 <https://portal.azure.com/> 的 Azure 门户，然后单击“+ 新建”。
 
    ![Azure 门户][AZ01]
 
@@ -188,7 +188,7 @@ ms.locfileid: "28954578"
    mvn spring-boot:run
    ```
 
-1. 使用 Web 浏览器浏览到 http://localhost:8080 以测试 Web 应用，如果有可用的 Curl，也可使用如以下示例所示的语法：
+1. 使用 Web 浏览器浏览到 http://localhost:8080 以测试 Web 应用；如果有可用的 Curl，也可使用以下示例所示的语法：
 
    ```shell
    curl http://localhost:8080
@@ -208,12 +208,12 @@ ms.locfileid: "28954578"
 
 若要深入了解如何在 Azure 上开始将 Redis 缓存用于 Java，请参阅[如何将 Azure Redis 缓存用于 Java][Redis Cache with Java]。
 
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，在 <https://github.com/spring-guides/> 网站中提供了几个 Spring Boot 包。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
 
 <!-- URL List -->
 
 [面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
-[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/

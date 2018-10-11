@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 678d4b279cecb83c95b3bf0f6bcdf1581924aa62
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954438"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893498"
 ---
 # <a name="spring-boot-starters-for-azure"></a>适用于 Azure 的 Spring Boot 起动器
 
@@ -233,7 +233,7 @@ ms.locfileid: "28954438"
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
 
-若要获取 Spring Boot 应用程序入门的相关帮助，请参阅 https://start.spring.io/ 中的“Spring Initializr”。
+如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr**。
 
 <!-- URL List -->
 

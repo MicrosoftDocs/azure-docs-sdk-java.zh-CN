@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: dd76cb3a0355e4e8471b7a32b6b33cb71bd3f16b
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954788"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892788"
 ---
 # <a name="azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ
 借助适用于 IntelliJ 的 Azure 工具包提供的模板和功能，可利用 IntelliJ 集成开发环境 (IDE) 轻松地创建、开发、测试和部署 Azure 应用程序。

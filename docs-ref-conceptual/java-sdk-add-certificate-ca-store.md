@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 07/02/2018
 ms.author: robmcm
 ms.openlocfilehash: 3f2de63f7eb1422ff1dd6db45d68e02f4af188b8
-ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37864037"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48898716"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>将根证书添加到 Java CA 证书存储
 
@@ -68,7 +68,7 @@ Baltimore 证书可能已安装在你的 cacerts 存储中，因此你需要使�
    ```
    其中：
 
-   |  参数   |                              说明                               |
+   |  参数   |                              Description                               |
    |--------------|------------------------------------------------------------------------|
    | `keystore`   | 指定证书存储。                                       |
    | `importcert` | 指定要导入证书。                        |

@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: compute
 ms.openlocfilehash: a54bc40e1d28ba6ee1d8b0638cb259adbb69d78d
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823750"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893038"
 ---
 # <a name="azure-virtual-machine-libraries"></a>Azure 虚拟机库
 

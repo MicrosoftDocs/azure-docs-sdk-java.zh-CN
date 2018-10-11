@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 2d3f2363bd0b41808cd409417327b924cb86d85b
-ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38075416"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48898895"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理 Redis 缓存
 
@@ -43,7 +43,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    ![“创建新的 Redis 缓存”对话框][CR02]
 
-   a. **DNS 名称**：为新的 Redis 缓存指定 DNS 子域，该子域名称将添加到“redis.cache.windows.net”之前，例如：*wingtiptoys.redis.cache.windows.net*。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 **DNS 名称**：为新的 Redis 缓存指定 DNS 子域，该子域名称将添加到“redis.cache.windows.net”之前，例如：*wingtiptoys.redis.cache.windows.net*。
 
    b. 订阅：指定要用于新的 redis 缓存的 Azure 订阅。
 

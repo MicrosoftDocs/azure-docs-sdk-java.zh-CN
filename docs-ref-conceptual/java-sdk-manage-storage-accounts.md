@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 5945164b2b04e1fa9169590a71f6c5f9f45842d6
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931053"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893058"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>从 Java 应用程序管理 Azure 存储帐户
 

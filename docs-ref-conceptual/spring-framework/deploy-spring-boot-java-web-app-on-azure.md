@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: adf779e2ba6ca73ea3a2406613f9622cc9ecbf99
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954520"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893158"
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>使用 Azure 应用服务将 Spring Boot 应用程序部署到云中
 
@@ -49,7 +49,7 @@ ms.locfileid: "28954520"
    cd /users/robert/SpringBoot
    ```
 
-1. 将 [Spring Boot 启动入门]示例项目克隆到刚刚创建的目录；例如：
+1. 将 [Spring Boot 入门]示例项目克隆到刚刚创建的目录；例如：
    ```
    git clone https://github.com/spring-guides/gs-spring-boot.git
    ```
@@ -71,7 +71,7 @@ ms.locfileid: "28954520"
    java -jar gs-spring-boot-0.1.0.jar
    ```
 
-1. 使用 Web 浏览器浏览到 http://localhost:8080 以测试 Web 应用，如果有可用的 Curl，也可使用如以下示例所示的语法：
+1. 使用 Web 浏览器浏览到 http://localhost:8080 以测试 Web 应用；如果有可用的 Curl，也可使用以下示例所示的语法：
    ```
    curl http://localhost:8080
    ```
@@ -112,13 +112,13 @@ ms.locfileid: "28954520"
 
 1. 显示 Web 应用时，请执行以下步骤以指定 Java 版本：
 
-   a. 单击“应用程序设置”菜单项。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 单击“应用程序设置”菜单项。
 
    b. Java 版本选择 "Java 8"。
 
    c. Java 次要版本选择“最新版”。
 
-   d.单击“下一步”。 Web 容器选择“最新的 Tomcat 8.5”。 （实际上不会使用此容器；Azure 会使用 Spring Boot 应用程序中的容器。）
+   d. Web 容器选择“最新的 Tomcat 8.5”。 （实际上不会使用此容器；Azure 会使用 Spring Boot 应用程序中的容器。）
 
    e. 单击“ **保存**”。
 
@@ -126,7 +126,7 @@ ms.locfileid: "28954520"
 
 1. 通过执行以下步骤指定 FTP 部署凭据：
 
-   a. 单击“部署凭据”菜单项。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 单击“部署凭据”菜单项。
 
    b. 指定用户名和密码。
 
@@ -136,7 +136,7 @@ ms.locfileid: "28954520"
 
 1. 通过使用以下步骤检索 FTP 连接信息：
 
-   a. 单击“部署凭据”菜单项。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 单击“部署凭据”菜单项。
 
    b. 复制完整的 FTP 用户名和 URL并保存，以供本教程下一节使用。
 
@@ -201,9 +201,9 @@ ms.locfileid: "28954520"
 
 有关使用 FTP 将 Web 应用部署到 Azure 的其他信息，请参阅[使用 FTP/S 将应用部署到 Azure 应用服务]。
 
-有关 Spring Boot 示例项目的详细信息，请参阅 [Spring Boot 启动入门]。
+有关 Spring Boot 示例项目的详细信息，请参阅 [Spring Boot 入门]。
 
-若要获取 Spring Boot 应用程序入门的相关帮助，请参阅 https://start.spring.io/ 中的“Spring Initializr”。
+如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr**。
 
 有关配置 Web 应用的其他设置的详细信息，请参阅[在 Azure 应用服务中配置 Web 应用]。
 
@@ -222,7 +222,7 @@ ms.locfileid: "28954520"
 [Maven]: http://maven.apache.org/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring Boot 启动入门]: https://github.com/spring-guides/gs-spring-boot
+[Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/
 
 <!-- IMG List -->

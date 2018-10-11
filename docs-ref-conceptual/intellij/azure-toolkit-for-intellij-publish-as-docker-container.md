@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 05fb81466202547cb1bad34caae0f94f16a9d21b
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090657"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893648"
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包将 Web 应用发布为 Docker 容器
 
@@ -57,7 +57,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
 
 3. 在“键入映像名称，选择项目的路径，并检查要使用的 Docker 主机”窗口中执行以下操作： 
 
-   a. 在“Docker 映像名称”框中输入 Docker 主机的唯一名称。 （向导会自动创建名称，但你可以修改该名称。） 
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 在“Docker 映像名称”框中输入 Docker 主机的唯一名称。 （向导会自动创建名称，但你可以修改该名称。） 
 
    b. “主机”区域将显示已创建的所有 Docker 主机。 执行下列操作之一： 
    * 如果有现有的 Docker 主机，可以在其中部署 Web 应用。
@@ -68,7 +68,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
 
 4. 在“配置新虚拟机”窗口中提供有关 Docker 主机的以下信息。 （向导会自动生成大多数信息，但你可以修改其中的任何信息。） 
 
-   a. 在“名称”框中输入 Docker 主机的唯一名称。 （这与前面指定的 Docker 映像名称不同。） 
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 在“名称”框中输入 Docker 主机的唯一名称。 （这与前面指定的 Docker 映像名称不同。） 
     
    b. 在“订阅”框中，输入主机要使用的 Azure 订阅。 
       
@@ -104,7 +104,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
 
    * **新建登录凭据**：创建一组新的登录凭据。 如果选择此选项，请执行以下操作：
 
-     a. 在“VM 凭据”选项卡上，为 Docker 主机的虚拟机登录凭据提供以下信息：
+     a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 在“VM 凭据”选项卡上，为 Docker 主机的虚拟机登录凭据提供以下信息：
 
      * **用户名**：输入虚拟机登录凭据的用户名。
 
@@ -154,7 +154,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
 
 9. 在“配置要创建的 Docker 容器”窗口中提供以下信息： 
 
-   a. 在“Docker 容器名称”框中，输入 Docker 容器的唯一名称。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 在“Docker 容器名称”框中，输入 Docker 容器的唯一名称。
 
    b. 选择以下 Docker 映像之一： 
 

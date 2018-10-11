@@ -12,17 +12,17 @@ ms.technology: azure
 ms.devlang: java
 ms.service: cdn
 ms.openlocfilehash: 199e9b4b2b2431e23954d24e4adeb4326eb4741c
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823730"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893066"
 ---
 # <a name="azure-cdn-libraries-for-java"></a>用于 Java 的 Azure CDN 库
 
 ## <a name="overview"></a>概述
 
-使用 [Azure 内容交付网络](/azure/cdn/cdn-overview) (CDN) 将静态 Web 内容缓存在按特定策略布置好的位置，以便为用户提供最大的吞吐量。
+使用 [Azure 内容分发网络](/azure/cdn/cdn-overview) (CDN) 将静态 Web 内容缓存在按特定策略布置好的位置，以便为用户提供最大的吞吐量。
 
 若要开始使用 Azure CDN，请参阅 [Azure CDN 入门](/azure/cdn/cdn-create-new-endpoint)。
 

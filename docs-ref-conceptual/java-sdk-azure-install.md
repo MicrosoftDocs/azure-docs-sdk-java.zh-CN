@@ -11,11 +11,11 @@ ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
 ms.openlocfilehash: 5c8bb4b81080461285551573eefc0d76b47b2d3d
-ms.sourcegitcommit: 61030d025614b084e897809e603b2ec79900ec8d
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30302545"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892528"
 ---
 # <a name="azure-libraries-for-java"></a>用于 Java 的 Azure 库
 

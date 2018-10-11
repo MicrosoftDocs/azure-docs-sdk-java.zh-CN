@@ -11,11 +11,11 @@ ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
 ms.openlocfilehash: 0aaa83ceb42192441decb5972baae56fed337fb2
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090680"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48898875"
 ---
 # <a name="release-notes"></a>发行说明 
 

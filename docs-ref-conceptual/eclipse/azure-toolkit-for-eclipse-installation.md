@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: d5f685fa62ad74c8b8cd842b3667f8161e7c5760
-ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33887747"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893000"
 ---
 # <a name="install-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
 
@@ -52,7 +52,7 @@ ms.locfileid: "33887747"
 
 1. 如果展开“用于 Eclipse 的 Azure 工具包”，会看到一个要安装的组件的列表，例如：
 
-   | 功能 | 说明 | 
+   | 功能 | Description | 
    |---|---| 
    | **用于 Java 的 Application Insights 插件** | 可通过此组件将 Azure 的遥测日志记录和分析服务用于应用程序和服务器实例。 | 
    | **Azure 常用插件** | 提供其他工具包组件所需的常见功能。 | 
@@ -62,7 +62,7 @@ ms.locfileid: "33887747"
    | **Microsoft JDBC Driver 6.1 for SQL Server** | 提供适用于 SQL Server 的 JDBC API 以及适用于 Java Platform Enterprise Edition 8 的 Microsoft Azure SQL 数据库。 | 
    | **Microsoft Azure Java 库包** | 提供用于访问 Microsoft Azure 服务（例如存储、服务总线、服务运行时等）的 API。 | 
 
-1. 单击“资源组名称” 的 Azure 数据工厂。 （如果在安装该工具包时遇到不正常的延迟，请确保未选中“在安装过程中访问所有更新站点以查找所需的软件”。）
+1. 单击“下一步”。 （如果在安装该工具包时遇到不正常的延迟，请确保未选中“在安装过程中访问所有更新站点以查找所需的软件”。）
 
 1. 在“安装详细信息”对话框中，单击“下一步”。
    

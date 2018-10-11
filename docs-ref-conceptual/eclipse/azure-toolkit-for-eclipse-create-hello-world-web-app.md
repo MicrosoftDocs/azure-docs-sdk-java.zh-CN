@@ -15,15 +15,15 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: 5e025c90c2619ec72ffddf5815fd49c3ac59c00f
-ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33883644"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893088"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-eclipse"></a>使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用
 
-本教程说明如何使用[用于 Eclipse 的 Azure 工具包]创建一个基本的 Hello World 应用程序，并将其部署到 Azure 作为 Web 应用。
+本教程说明如何使用[用于 Eclipse 的 Azure 工具]创建一个基本的 Hello World 应用程序，并将其部署到 Azure 作为 Web 应用。
 
 > [!NOTE]
 >
@@ -53,7 +53,7 @@ ms.locfileid: "33883644"
    
    ![“新建动态 Web 项目”属性][dynamic-web-project-properties]
 
-3. 单击“完成” 。
+3. 单击“完成”。
 
 4. 在 Eclipse 的项目资源管理器视图中，展开“MyWebApp”。 右键单击“WebContent”，单击“新建”，并单击“JSP 文件”。
 
@@ -119,7 +119,7 @@ ms.locfileid: "33883644"
 
 <!-- URL List -->
 
-[用于 Eclipse 的 Azure 工具包]: azure-toolkit-for-eclipse.md
+[用于 Eclipse 的 Azure 工具]: azure-toolkit-for-eclipse.md
 [用于 IntelliJ 的 Azure 工具包]: ../intellij/azure-toolkit-for-intellij.md
 [intellij-hello-world]: ../intellij/azure-toolkit-for-intellij-create-hello-world-web-app.md
 [Web 应用概述]: /azure/app-service/app-service-web-overview

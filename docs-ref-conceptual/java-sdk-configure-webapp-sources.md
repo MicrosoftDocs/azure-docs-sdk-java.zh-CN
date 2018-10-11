@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 910d1e43c9942d6402aeccb8757ba819b7453dab
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931183"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893138"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>从 Java 应用程序配置 Azure 应用服务部署源
 

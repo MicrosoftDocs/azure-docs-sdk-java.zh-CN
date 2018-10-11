@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 046ae0428d50a7f173f5ad15be53ffd8e66c11c5
-ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38075366"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892518"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存
 
@@ -43,7 +43,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    ![“新建 Redis 缓存”对话框][CR02]
 
-   a. DNS 名称：为新的 redis 缓存指定 DNS 子域，预设为“redis.cache.windows.net”，例如：wingtiptoys.redis.cache.windows.net。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 DNS 名称：为新的 redis 缓存指定 DNS 子域，预设为“redis.cache.windows.net”，例如：wingtiptoys.redis.cache.windows.net。
 
    b. 订阅：指定要用于新的 redis 缓存的 Azure 订阅。
 

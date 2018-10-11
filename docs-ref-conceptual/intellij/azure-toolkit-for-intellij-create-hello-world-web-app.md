@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: cc68e16a6940a1f0f2b08f0b63c90c58ec6dbc4e
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954188"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892858"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-intellij"></a>使用 IntelliJ 创建适用于 Azure 的 Hello World Web 应用
 
@@ -27,7 +27,7 @@ ms.locfileid: "28954188"
 
 > [!NOTE]
 >
-> 如需使用[用于 Eclipse 的 Azure 工具包]的本文版本，请参阅[使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用][eclipse-hello-world]。
+> 如需使用[用于 Eclipse 的 Azure 工具]的本文版本，请参阅[使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用][eclipse-hello-world]。
 >
 
 > [!IMPORTANT]
@@ -120,7 +120,7 @@ ms.locfileid: "28954188"
 <!-- URL List -->
 
 [用于 IntelliJ 的 Azure 工具包]: azure-toolkit-for-intellij.md
-[用于 Eclipse 的 Azure 工具包]: ../eclipse/azure-toolkit-for-eclipse.md
+[用于 Eclipse 的 Azure 工具]: ../eclipse/azure-toolkit-for-eclipse.md
 [eclipse-hello-world]: ../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md
 [Web 应用概述]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/
