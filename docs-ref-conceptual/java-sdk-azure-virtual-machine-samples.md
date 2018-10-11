@@ -13,14 +13,14 @@ ms.devlang: java
 ms.service: multiple
 ms.assetid: 1eeb166f-8253-4fde-82d2-43997fda7819
 ms.openlocfilehash: f514ff8fed79e9e440590efc8ffec5516939f3dc
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21930803"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893278"
 ---
-# <a name="azure-management-libraries-for-java-samples-for-virtual-machines"></a><span data-ttu-id="b564c-104">用于 Java 的 Azure 管理库的虚拟机示例</span><span class="sxs-lookup"><span data-stu-id="b564c-104">Azure management libraries for Java samples for virtual machines</span></span>
+# <a name="azure-management-libraries-for-java-samples-for-virtual-machines"></a><span data-ttu-id="db696-104">用于 Java 的 Azure 管理库的虚拟机示例</span><span class="sxs-lookup"><span data-stu-id="db696-104">Azure management libraries for Java samples for virtual machines</span></span>
 
-<span data-ttu-id="b564c-105">下表提供了可用于创建和配置 Azure 虚拟机的 Java 源代码的链接。</span><span class="sxs-lookup"><span data-stu-id="b564c-105">The following table links to Java source you can use to create and configure Azure virtual machines.</span></span>
+<span data-ttu-id="db696-105">下表提供了可用于创建和配置 Azure 虚拟机的 Java 源代码的链接。</span><span class="sxs-lookup"><span data-stu-id="db696-105">The following table links to Java source you can use to create and configure Azure virtual machines.</span></span>
 
 [!INCLUDE [java-vm-samples](includes/java-vm-samples.md)]
