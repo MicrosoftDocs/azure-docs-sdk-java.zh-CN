@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 4228352efa4354bfe4969c1a5ecd3f3b40483f85
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954728"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893578"
 ---
 # <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用适用于 IntelliJ 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
 
@@ -51,7 +51,7 @@ ms.locfileid: "28954728"
 
       ![用于输入 GitHub 令牌的对话框][CL02b]
 
-1. 针对存储库 URL 输入 https://github.com/spring-guides/gs-spring-boot-docker.git，指定本地路径和文件夹信息，然后单击“克隆”。
+1. 输入 https://github.com/spring-guides/gs-spring-boot-docker.git 作为存储库 URL，指定本地路径和文件夹信息，然后单击“克隆”。
 
    ![“克隆存储库”对话框][CL03]
 
@@ -147,7 +147,7 @@ IntelliJ 会将 Spring Boot 应用作为项目导入，并在导入完成后显�
 
       ![找到主类][ART04c]
 
-   d.单击“下一步”。 选择主类，然后单击“OK”（确定）。
+   d. 选择主类，然后单击“OK”（确定）。
 
       ![指定主类][ART04d]
 
@@ -183,7 +183,7 @@ IntelliJ 应在项目工具窗口中显示 Spring Boot 应用的已完成项目�
 
 1. 当显示“在 Azure 上部署 Docker 容器”对话框时，任何现有的 Docker 主机均会显示。 如果选择部署到现有主机，可以跳到步骤 4。 否则，使用以下步骤创建主机：
 
-   a. 单击绿色加号（“+”）符号。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 单击绿色加号（“+”）符号。
 
       ![添加新的 Docker 主机][PU02]
 
@@ -201,7 +201,7 @@ IntelliJ 应在项目工具窗口中显示 Spring Boot 应用的已完成项目�
 
 1. 在“在 Azure 上部署 Docker 容器”对话框的最后一页上，指定以下选项：
 
-   a. 可以选择为要托管 Docker 容器的容器指定一个自定义名称，也可以接受默认设置。
+   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 可以选择为要托管 Docker 容器的容器指定一个自定义名称，也可以接受默认设置。
 
    b. 使用以下语法输入 Docker 主机的 TCP 端口：[外部端口]:[内部端口]。 例如，“80:8080”指定外部端口为“80”，默认的内部 Spring Boot 端口为“8080”。
    
