@@ -1,47 +1,40 @@
 ---
-title: 使用 Maven 和 Azure 将 Spring Boot 应用部署到云中
-description: 了解如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中。
+title: 使用 Maven 和 Azure 将 Spring Boot JAR 文件应用部署到云中
+description: 了解如何使用适用于 Linux 的 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中。
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: brborges
-ms.assetid: ''
 ms.author: robmcm;kevinzha;brborges
-ms.date: 06/01/2018
+ms.date: 10/04/2018
 ms.devlang: java
 ms.service: app-service
-ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: web
-ms.openlocfilehash: ca788354d26964bd9f1e21a0d3a8005ff65ce4bc
-ms.sourcegitcommit: 280d13b43cef94177d95e03879a5919da234a23c
+ms.openlocfilehash: 36afcc764c1cb984779518ddec004ecbfa1b7c57
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43324343"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48876391"
 ---
-# <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a>使用适用于 Azure 应用服务的 Maven 插件将 Spring Boot 应用部署到云中
+# <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>在 Linux 上将 Spring Boot JAR 文件 Web 应用部署到 Azure 应用服务
 
-本文演示如何使用适用于 Azure 应用服务 Web 应用的 Maven 插件来部署一个示例 Spring Boot 应用程序。
+本文演示如何使用[适用于 Azure 应用服务 Web 应用的 Maven 插件](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)将打包为 Java SE JAR 的 Spring Boot 应用程序部署到 [Linux 上的 Azure 应用服务](https://docs.microsoft.com/en-us/azure/app-service/containers/)。 如果要将应用的依赖关系、运行时和配置合并到单个可部署项目中，请选择通过 [Tomcat 和 WAR 文件](/azure/app-service/containers/quickstart-java)进行 Java SE 部署。
 
-> [!NOTE]
-> 
-> 用于 [Apache Maven](http://maven.apache.org/) 的[适用于 Azure 应用服务 Web 应用的 Maven 插件](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)将 Azure 应用服务无缝集成到 Maven 项目，简化了开发人员将 Web 应用部署到 Azure 应用服务的过程。
 
-在使用 Maven 插件之前，请在 Maven Central 中检查该插件的最新可用版本：[![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22) 
+如果还没有 Azure 订阅，可以在开始前创建一个[免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
 ## <a name="prerequisites"></a>先决条件
 
-完成本教程中的步骤需要具备以下先决条件：
+若要完成本教程中的步骤，需要安装和配置以下内容：
 
-* 一个 Azure 订阅；如果没有 Azure 订阅，可以注册[免费的 Azure 帐户]。
-* [Azure 命令行接口 (CLI)]。
-* 最新 [Java 开发工具包 (JDK)] 1.7 版或更高版本。
-* Apache 的 [Maven] 生成工具（版本 3）。
-* [Git] 客户端。
+* [Azure CLI](/cli/azure/)，在本地或通过 [Azure Cloud Shell](https://shell.azure.com)。
+* [Java 开发工具包 (JDK)](https://www.azul.com/downloads/azure-only/zulu/) 1.7 版或更高版本。
+* Apache 的 [Maven](https://maven.apache.org/) 版本 3）。
+* [Git](https://git-scm.com/downloads) 客户端。
 
-## <a name="clone-the-sample-spring-boot-web-app"></a>克隆示例 Spring Boot Web 应用
+## <a name="clone-the-sample-app"></a>克隆示例应用
 
 本部分将克隆完整的 Spring Boot 应用程序并进行本地测试。
 
@@ -83,85 +76,54 @@ ms.locfileid: "43324343"
 
 1. 应会显示以下消息：“来自 Spring Boot 的问候！”
 
-## <a name="adjust-project-for-war-based-deployment-on-azure-app-service"></a>根据 Azure 应用服务中基于 WAR 的部署调整项目
+## <a name="configure-maven-plugin-for-azure-app-service"></a>配置适用于 Azure 应用服务的 Maven 插件
 
-在本部分，我们将快速调整要在 Azure 应用服务中作为 WAR 文件部署的 Spring Boot 项目，该项目默认提供 Tomcat 作为运行时。 为此，需要修改两个文件：
+在本部分中，将配置 Spring Boot 项目 `pom.xml`，以便 Maven 可以将应用部署到 Linux 上的 Azure 应用服务。
 
-- Maven `pom.xml` 文件
-- `Application` Java 类
+1. 在代码编辑器中打开 `pom.xml`。
 
-让我们从 Maven 设置开始：
+1. 在 pom.xml 的 `<build>` 节的 `<plugins>` 标记内添加以下 `<plugin>` 条目。
 
-1. 打开 `pom.xml`
-
-1. 紧接在顶部的 `<artifactId>` 定义后面添加 `<packaging>war</packaging>`：
    ```xml
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.springframework</groupId>
-    <artifactId>gs-spring-boot</artifactId>
+  <plugin>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>azure-webapp-maven-plugin</artifactId>
+    <version>1.4.0</version>
+    <configuration>
+      <deploymentType>jar</deploymentType>
 
-    <packaging>war</packaging>
-   ```
+      <!-- configure app to run on port 80, required by App Service -->
+      <appSettings>
+        <property> 
+          <name>JAVA_OPTS</name> 
+          <value>-Dserver.port=80</value> 
+        </property> 
+      </appSettings>
 
-1. 添加以下依赖项：
-   ```xml
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
-   ```
+      <!-- Web App information -->
+      <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
+      <appName>${WEBAPP_NAME}</appName>
+      <region>${REGION}</region>  
 
-现在请打开类 `Application`（但愿此时 IDE 已拾取新的依赖项），然后继续进行以下修改：
+      <!-- Java Runtime Stack for Web App on Linux-->
+      <linuxRuntime>jre8</linuxRuntime>
+    </configuration>
+  </plugin>
+  ```
 
-1. 将 Application 类设为 `SpringBootServletInitializer` 的子类：
-   ```java
-   @SpringBootApplication
-   public class Application extends SpringBootServletInitializer {
-     // ...
-   }
-   ```
+1. 更新插件配置中的以下占位符：
 
-1. 将以下方法添加到 Application 类：
-   ```java
-       @Override
-       protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-           return application.sources(Application.class);
-       }
-   ```
-1. 组织导入以确保 `SpringApplicationBuilder` 和 `SpringBootServletInitializer` 正确导入。
+| 占位符 | Description |
+| ----------- | ----------- |
+| `RESOURCEGROUP_NAME` | 要在其中创建 Web 应用的新资源组的名称。 通过将应用的所有资源都放在一个组中，可以一起管理它们。 例如，删除资源组会删除与该应用关联的所有资源。 使用唯一的新资源组名称（例如 *TestResources*）更新此值。 将在后面的部分使用此资源组名称来清除所有 Azure 资源。 |
+| `WEBAPP_NAME` | 应用名称将成为部署到 Azure 时的 Web 应用 (WEBAPP_NAME.azurewebsites.net) 的主机名的一部分。 使用将用于托管 Java 应用的新 Azure Web 应用的唯一名称（例如 *contoso*）更新此值。 |
+| `REGION` | 托管着 Web 应用的 Azure 区域，例如 `westus2`。 可以从 Cloud Shell 或 CLI 使用 `az account list-locations` 命令获取区域列表。 |
 
-现在，可将应用程序部署到 Tomcat 和其他任何 Servlet 运行时（例如 Jetty）。
-
-## <a name="add-the-maven-plugin-for-azure-app-service-web-apps"></a>添加适用于 Azure 应用服务 Web 应用的 Maven 插件
-
-在本部分，我们将添加一个 Maven 插件，用于自动完成将此应用程序部署到 Azure 应用服务 Web 应用的整个过程。
-
-1. 再次打开 `pom.xml`。
-
-1. 在 `<properties>` 中，使用属性 `maven.build.timestamp.format` 设置自定义时间戳格式。 由于 Azure 应用服务将为应用程序创建公共 URL，因此，此设置将用于生成部署名称，并避免与其他用户的实时部署发生冲突。
-   ```xml
-    <properties>
-        <java.version>1.8</java.version>
-        <maven.build.timestamp.format>yyyyMMddHHmmssSSS</maven.build.timestamp.format>
-    </properties>
-   ```
-
-1. 在 `<plugins>` 元素中添加以下内容：
-   ```xml
-    <plugin>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-webapp-maven-plugin</artifactId>
-      <!-- Check latest version on Maven Central -->
-      <version>1.1.0</version>
-    </plugin>
-   ```
-
-现在，可以使用这些设置将 Maven 项目实时部署到 Azure 应用服务 Web 应用。
+可以在 [GitHub 上的 Maven 插件参考](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin)中找到完整的配置选项列表。
 
 ## <a name="install-and-log-in-to-azure-cli"></a>安装并登录到 Azure CLI
 
-获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](https://docs.microsoft.com/cli/azure/)。 确保已安装 Azure CLI。
+获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](https://docs.microsoft.com/cli/azure/)。
 
 1. 通过使用 Azure CLI 登录到 Azure 帐户：
    
@@ -171,40 +133,7 @@ ms.locfileid: "43324343"
    
    按照说明完成登录过程。
 
-## <a name="optionally-customize-pomxml-before-deploying"></a>（可选）在部署之前自定义 pom.xml
-
-在文本编辑器中打开 Spring Boot 应用程序的 `pom.xml` 文件，然后找到 `azure-webapp-maven-plugin` 的 `<plugin>` 元素。 该元素应类似于以下示例：
-
-   ```xml
-  <plugins>
-    <plugin>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-webapp-maven-plugin</artifactId>
-      <!-- Check latest version on Maven Central -->
-      <version>1.1.0</version>
-      <configuration>
-         <resourceGroup>maven-projects</resourceGroup>
-         <appName>${project.artifactId}-${maven.build.timestamp}</appName>
-         <region>westus</region>
-         <javaVersion>1.8</javaVersion>
-         <deploymentType>war</deploymentType>
-      </configuration>
-    </plugin>
-  </plugins>
-   ```
-
-可以为 Maven 插件修改几个值，[适用于 Azure Web 应用的 Maven 插件]文档中提供了这些元素各自的详细描述。 尽管如此，在本文中有仍几个值得注意的值：
-
-| 元素 | Description |
-|---|---|
-| `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 验证 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
-| `<resourceGroup>` | 指定目标资源组，在此示例中为 `maven-plugin`。 如果资源组不存在，则会在部署过程中进行创建。 |
-| `<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-web-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。） |
-| `<region>` | 指定目标区域，在此示例中为 `westus`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。） |
-| `<javaVersion>` | 为 Web 应用指定 Java 运行时版本。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。） |
-| `<deploymentType>` | 为 Web 应用指定部署类型。 默认为 `war`。 |
-
-## <a name="build-and-deploy-your-web-app-to-azure"></a>生成 Web 应用并将其部署到 Azure
+## <a name="deploy-the-app-to-azure"></a>将应用部署到 Azure
 
 配置了本文前面部分中的所有设置后，就可以将 Web 应用部署到 Azure。 为此，请按照以下步骤操作：
 
@@ -218,9 +147,9 @@ ms.locfileid: "43324343"
    mvn azure-webapp:deploy
    ```
 
-Maven 会将 Web 应用部署到 Azure；如果 Web 应用不存在，则将创建一个。
+Maven 会将 Web 应用部署到 Azure；如果 Web 应用或 Web 应用计划尚不存在，则将为你创建一个。
 
-Web 部署完成后即可使用 [Azure 门户]进行管理。
+Web 部署完成后即可通过 [Azure 门户]进行管理。
 
 * Web 应用将会在“应用服务”中列出：
 
@@ -230,34 +159,13 @@ Web 部署完成后即可使用 [Azure 门户]进行管理。
 
    ![确定 Web 应用的 URL][AP02]
 
-<!--
-##  OPTIONAL: Configure the embedded Tomcat server to run on a different port
-
-The embedded Tomcat server in the sample Spring Boot application is configured to run on port 8080 by default. However, if you want to run the embedded Tomcat server to run on a different port, such as port 80 for local testing, you can configure the port by using the following steps.
-
-1. Go to the *resources* directory (or create the directory if it does not exist); for example:
-   ```shell
-   cd src/main/resources
-   ```
-
-1. Open the *application.yml* file in a text editor if it exists, or create a new YAML file if it does not exist.
-
-1. Modify the **server** setting so that the server runs on port 80; for example:
-   ```yaml
-   server:
-      port: 80
-   ```
-
-1. Save and close the *application.yml* file.
--->
+通过与以前相同的 cURL 命令（使用来自门户的 Web 应用 URL而不是 `localhost`）验证部署是否成功。 应会显示以下消息：“来自 Spring Boot 的问候！” 
 
 ## <a name="next-steps"></a>后续步骤
 
 有关本文中讨论的各项技术的详细信息，请参阅以下文章：
 
 * [适用于 Azure Web 应用的 Maven 插件]
-
-* [通过 Azure CLI 登录到 Azure](/azure/xplat-cli-connect)
 
 * [如何使用适用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure](deploy-containerized-spring-boot-java-app-with-maven-plugin.md)
 
@@ -267,10 +175,10 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 <!-- URL List -->
 
-[Azure 命令行接口 (CLI)]: /cli/azure/overview
+[Azure Command-Line Interface (CLI)]: /cli/azure/overview
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [Azure 门户]: https://portal.azure.com/
-[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/

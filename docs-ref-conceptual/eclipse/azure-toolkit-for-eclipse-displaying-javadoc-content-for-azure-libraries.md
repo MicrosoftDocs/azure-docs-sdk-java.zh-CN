@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 6f1edcc1411e8ec716dbfe41271d21d2397515c5
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954498"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893188"
 ---
 # <a name="displaying-javadoc-content-in-eclipse-for-the-azure-libraries-package-for-java"></a>在 Eclipse 中显示 Azure Libraries Package for Java 的 Javadoc 内容
 
@@ -37,7 +37,7 @@ ms.locfileid: "28954498"
 
 1. 可以指定“Javadoc URL”或“存档中的 Javadoc”。
 
-   * 如果选择指定 **Javadoc URL**，请使用类似于 **http://dl.windowsazure.com/javadoc** 或 **http://dl.windowsazure.com/storage/javadoc** 的 URL。
+   * 如果选择指定 **Javadoc URL**，请使用 **http://dl.windowsazure.com/javadoc** 或 **http://dl.windowsazure.com/storage/javadoc** 等 URL。
 
    * 如果选择使用“存档中的 Javadoc”，可以指定外部文件或工作区文件。
 
