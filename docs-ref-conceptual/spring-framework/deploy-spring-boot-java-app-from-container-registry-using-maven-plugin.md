@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 88eb64c07ad4f480dc2d2c2869e710c0ae910c4d
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: e84960ebf79b89b2430924016a429518a935d086
+ms.sourcegitcommit: 9d9e2fa97ebd95a699adcb58e82c3fc0882f0a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892678"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49315931"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
 
@@ -65,7 +65,7 @@ ms.locfileid: "48892678"
 
 1. 将 [Docker 上的 Spring Boot 入门]示例项目克隆到创建的目录中；例如：
    ```shell
-   git clone -b private-registry https://github.com/spring-guides/gs-spring-boot-docker
+   git clone -b https://github.com/spring-guides/gs-spring-boot-docker
    ```
 
 1. 将目录更改为已完成项目；例如：
