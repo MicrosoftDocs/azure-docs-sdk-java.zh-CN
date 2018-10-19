@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: reference
 ms.devlang: java
 ms.date: 9/20/2018
-ms.openlocfilehash: 5e3887341ddb2fdcab336f0a8a232e6e8bfbe0f2
-ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
+ms.openlocfilehash: 1271f70fff876f4d24c8afa81123c54735f2d522
+ms.sourcegitcommit: 788b49d0b37909c575c9e5176e484cba627e7921
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48047154"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49120535"
 ---
 # <a name="hdinsight-java-management-sdk-preview"></a>HDInsight Java 管理 SDK（预览版）
 
 ## <a name="overview"></a>概述
 
-HDInsight Java SDK 提供用于管理 HDInsight 群集的类和方法。 该 SDK 包含用于创建、删除、更新、列出、缩放、执行脚本操作，以及监视、获取 HDInsight 群集属性等的操作。
+HDInsight Java SDK 提供用于管理 HDInsight 群集的类和方法。 该 SDK 包含用于创建、删除、更新、列出、调整大小、执行脚本操作，以及监视、获取 HDInsight 群集属性等操作。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -340,9 +340,9 @@ client.clusters.delete("<Resource Group Name>", "<Cluster Name>");
 client.clusters.update("<Resource Group Name>", "<Cluster Name>", <Map<String,String> of Tags>);
 ```
 
-### <a name="scale-cluster"></a>缩放群集
+### <a name="resize-cluster"></a>调整群集大小
 
-可以通过指定新大小来缩放给定群集的工作节点数，如下所示：
+可以通过指定新大小来调整给定群集的工作节点数，如下所示：
 
 ```java
 client.clusters.resize("<Resource Group Name>", "<Cluster Name>", <Num of Worker Nodes (int)>)
