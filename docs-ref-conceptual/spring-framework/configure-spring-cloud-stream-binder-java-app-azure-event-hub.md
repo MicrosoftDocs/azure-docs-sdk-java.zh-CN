@@ -14,12 +14,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 3f7eeffe8bd36196f9b79edd60830b5d202ea285
-ms.sourcegitcommit: fd67d4088be2cad01c642b9ecf3f9475d9cb4f3c
+ms.openlocfilehash: dfc3b6121bddcb637735047e2e7bc7485da9a4fe
+ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46506324"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49799943"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
 
@@ -57,7 +57,7 @@ ms.locfileid: "46506324"
    * 选择需要用于命名空间的“订阅”。
    * 指定是为命名空间创建新的“资源组”，还是选择现有资源组。
    * 指定事件中心命名空间的“位置”。
-   
+
    ![指定 Azure 事件中心命名空间选项][IMG02]
 
 1. 指定上面列出的选项后，请单击“创建”以创建命名空间。
@@ -97,7 +97,7 @@ ms.locfileid: "46506324"
    * 指定存储帐户的“位置”。
    * 选择需要用于存储帐户的“订阅”。
    * 指定是为存储帐户创建新的“资源组”，还是选择现有资源组。
-   
+
    ![指定 Azure 存储帐户选项][IMG08]
 
 1. 指定上面列出的选项后，请单击“创建”以创建存储帐户。
@@ -236,7 +236,7 @@ ms.locfileid: "46506324"
 
    `/users/example/home/eventhub/src/main/resources/application.properties`
 
-1.  在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为事件中心的相应属性：
+2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为事件中心的相应属性：
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
@@ -250,18 +250,20 @@ ms.locfileid: "46506324"
    spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
    ```
    其中：
-   | 字段 | Description |
-   | ---|---|
-   | `spring.cloud.azure.credential-file-path` | 指定之前在本教程中创建的 Azure 凭据文件。 |
-   | `spring.cloud.azure.resource-group` | 指定包含 Azure 事件中心的 Azure 资源组。 |
-   | `spring.cloud.azure.region` | 指定你在创建 Azure 事件中心时指定的地理区域。 |
-   | `spring.cloud.azure.eventhub.namespace` | 指定你在创建 Azure 事件中心命名空间时指定的唯一名称。 |
-   | `spring.cloud.azure.eventhub.checkpoint-storage-account` | 指定之前在本教程中创建的 Azure 存储帐户。
-   | `spring.cloud.stream.bindings.input.destination` | 指定输入目标 Azure 事件中心。在本教程中，它是你此前在本教程中创建的中心。 |
-   | `spring.cloud.stream.bindings.input.group `| 在 Azure 事件中心指定一个使用者组，该组可以设置为“$Default”，以便使用你在创建 Azure 事件中心时创建的基本使用者组。 |
-   | `spring.cloud.stream.bindings.output.destination` | 指定输出目标 Azure 事件中心。在本教程中，它与输入目标相同。 |
 
-1. 保存并关闭 application.properties 文件。
+   |                          字段                           |                                                                                   Description                                                                                    |
+   |----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   |        `spring.cloud.azure.credential-file-path`         |                                                    指定之前在本教程中创建的 Azure 凭据文件。                                                    |
+   |           `spring.cloud.azure.resource-group`            |                                                      指定包含 Azure 事件中心的 Azure 资源组。                                                      |
+   |               `spring.cloud.azure.region`                |                                           指定你在创建 Azure 事件中心时指定的地理区域。                                            |
+   |         `spring.cloud.azure.eventhub.namespace`          |                                          指定你在创建 Azure 事件中心命名空间时指定的唯一名称。                                           |
+   | `spring.cloud.azure.eventhub.checkpoint-storage-account` |                                                    指定之前在本教程中创建的 Azure 存储帐户。                                                    |
+   |     `spring.cloud.stream.bindings.input.destination`     |                            指定输入目标 Azure 事件中心。在本教程中，它是你此前在本教程中创建的中心。                            |
+   |       `spring.cloud.stream.bindings.input.group `        | 在 Azure 事件中心指定一个使用者组，该组可以设置为“$Default”，以便使用你在创建 Azure 事件中心时创建的基本使用者组。 |
+   |    `spring.cloud.stream.bindings.output.destination`     |                               指定输出目标 Azure 事件中心。在本教程中，它与输入目标相同。                               |
+
+
+3. 保存并关闭 application.properties 文件。
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>添加示例代码以实现事件中心的基本功能
 
@@ -281,10 +283,10 @@ ms.locfileid: "46506324"
 
    ```java
    package com.wingtiptoys.eventhub;
-   
+
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
-   
+
    @SpringBootApplication
    public class EventhubApplication {
       public static void main(String[] args) {
@@ -301,7 +303,7 @@ ms.locfileid: "46506324"
 
    ```java
    package com.wingtiptoys.eventhub;
-   
+
    import org.springframework.beans.factory.annotation.Autowired;
    import org.springframework.cloud.stream.annotation.EnableBinding;
    import org.springframework.cloud.stream.messaging.Source;
@@ -309,14 +311,14 @@ ms.locfileid: "46506324"
    import org.springframework.web.bind.annotation.PostMapping;
    import org.springframework.web.bind.annotation.RequestBody;
    import org.springframework.web.bind.annotation.RestController;
-   
+
    @EnableBinding(Source.class)
    @RestController
    public class EventhubSource {
-   
+
       @Autowired
       private Source source;
-   
+
       @PostMapping("/messages")
       public String postMessage(@RequestBody String message) {
          this.source.output().send(new GenericMessage<>(message));
@@ -332,7 +334,7 @@ ms.locfileid: "46506324"
 
    ```java
    package com.wingtiptoys.eventhub;
-   
+
    import com.microsoft.azure.spring.integration.core.AzureHeaders;
    import com.microsoft.azure.spring.integration.core.api.Checkpointer;
    import org.slf4j.Logger;
@@ -341,10 +343,10 @@ ms.locfileid: "46506324"
    import org.springframework.cloud.stream.annotation.StreamListener;
    import org.springframework.cloud.stream.messaging.Sink;
    import org.springframework.messaging.handler.annotation.Header;
-   
+
    @EnableBinding(Sink.class)
    public class EventhubSink {
-   
+
       private static final Logger LOGGER = LoggerFactory.getLogger(EventhubSink.class);
 
       @StreamListener(Sink.INPUT)

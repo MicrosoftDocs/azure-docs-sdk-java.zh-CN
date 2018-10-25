@@ -11,12 +11,12 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: cosmosdb
-ms.openlocfilehash: 6fc9f90cb3c8130aa82b20554a94a8b5ab78c083
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: d8748dc6fcc0c839a8b2d2f817c0477bcac5baa2
+ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48898735"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49799883"
 ---
 # <a name="azure-cosmos-db-libraries-for-java"></a>用于 Java 的 Azure Cosmos DB 库
 
@@ -55,7 +55,6 @@ List<Document> results = client.queryDocuments("dbs/" + DATABASE_ID + "/colls/" 
         null)
     .getQueryIterable()
     .toList();
-
 ```
 
 > [!div class="nextstepaction"]

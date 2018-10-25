@@ -14,12 +14,12 @@ ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 1a219a066f0f89adbf3f541856b36b842520bfbb
-ms.sourcegitcommit: fd67d4088be2cad01c642b9ecf3f9475d9cb4f3c
+ms.openlocfilehash: 4838b6dbd354ad941df12933dddfa7f3e7eef905
+ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46505915"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49799963"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>如何使用适用于 Azure 存储的 Spring Boot 起动器
 
@@ -31,7 +31,7 @@ ms.locfileid: "46505915"
 
 为遵循本文介绍的步骤，需要以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)或注册[免费 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/)。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)或注册[免费的 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/)。
 * [Azure 命令行接口 (CLI)](http://docs.microsoft.com/cli/azure/overview)。
 * 最新的 [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 或更高版本。
 * Apache 的 [Maven](http://maven.apache.org/) 3.0 或更高版本。
@@ -56,7 +56,7 @@ ms.locfileid: "46505915"
    * 指定存储帐户的“位置”。
    * 选择需要用于存储帐户的“订阅”。
    * 指定是为存储帐户创建新的“资源组”，还是选择现有资源组。
-   
+
    ![指定 Azure 存储帐户选项][IMG02]
 
 1. 指定上面列出的选项后，请单击“创建”以创建存储帐户。
@@ -207,7 +207,7 @@ ms.locfileid: "46505915"
 
    `/users/example/home/storage/src/main/resources/application.properties`
 
-1.  在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为存储帐户的相应属性：
+2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为存储帐户的相应属性：
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
@@ -216,14 +216,16 @@ ms.locfileid: "46505915"
    spring.cloud.azure.storage.account=wingtiptoysstorage
    ```
    其中：
-   | 字段 | Description |
-   | ---|---|
-   | `spring.cloud.azure.credential-file-path` | 指定之前在本教程中创建的 Azure 凭据文件。 |
-   | `spring.cloud.azure.resource-group` | 指定包含 Azure 存储帐户的 Azure 资源组。 |
-   | `spring.cloud.azure.region` | 指定你在创建 Azure 存储帐户时指定的地理区域。 |
-   | `spring.cloud.azure.storage.account` | 指定之前在本教程中创建的 Azure 存储帐户。
 
-1. 保存并关闭 application.properties 文件。
+   |                   字段                   |                                            Description                                            |
+   |-------------------------------------------|---------------------------------------------------------------------------------------------------|
+   | `spring.cloud.azure.credential-file-path` |            指定之前在本教程中创建的 Azure 凭据文件。             |
+   |    `spring.cloud.azure.resource-group`    |           指定包含 Azure 存储帐户的 Azure 资源组。            |
+   |        `spring.cloud.azure.region`        | 指定你在创建 Azure 存储帐户时指定的地理区域。 |
+   |   `spring.cloud.azure.storage.account`    |            指定之前在本教程中创建的 Azure 存储帐户。             |
+
+
+3. 保存并关闭 application.properties 文件。
 
 ## <a name="add-sample-code-to-implement-basic-azure-storage-functionality"></a>添加示例代码以实现 Azure 存储的基本功能
 
@@ -243,10 +245,10 @@ ms.locfileid: "46505915"
 
    ```java
    package com.wingtiptoys.storage;
-   
+
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
-   
+
    @SpringBootApplication
    public class StorageApplication {
       public static void main(String[] args) {
@@ -271,7 +273,7 @@ ms.locfileid: "46505915"
 
    ```java
    package com.wingtiptoys.storage;
-   
+
    import org.springframework.beans.factory.annotation.Value;
    import org.springframework.core.io.Resource;
    import org.springframework.core.io.WritableResource;
@@ -280,14 +282,14 @@ ms.locfileid: "46505915"
    import org.springframework.web.bind.annotation.PostMapping;
    import org.springframework.web.bind.annotation.RequestBody;
    import org.springframework.web.bind.annotation.RestController;
-   
+
    import java.io.IOException;
    import java.io.OutputStream;
    import java.nio.charset.Charset;
-   
+
    @RestController
    public class WebController {
-   
+
       @Value("blob://test/myfile.txt")
       private Resource blobFile;
 
@@ -297,7 +299,7 @@ ms.locfileid: "46505915"
             this.blobFile.getInputStream(),
             Charset.defaultCharset()) + "\n";
       }
-   
+
       @PostMapping(value = "/")
       public String writeBlobFile(@RequestBody String data) throws IOException {
          try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
@@ -307,7 +309,7 @@ ms.locfileid: "46505915"
       }
    }
    ```
-   
+
    在 `@Value("blob://[container]/[blob]")` 语法分别定义容器和 Blob 的名称的位置，需存储数据。
 
 1. 保存并关闭 Web 控制器 Java 文件。

@@ -14,12 +14,12 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: d3b6bdc4aaae79864d370c581585167cf3732160
-ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
+ms.openlocfilehash: 665768ffe7bec977d553ffa62e1dbd6b968eb9de
+ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48047175"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49799903"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>如何使用适用于 Azure Active Directory 的 Spring Boot 起动器
 
@@ -85,54 +85,54 @@ ms.locfileid: "48047175"
 
    ![添加新的应用注册][directory-04]
 
-1. 单击“新建应用程序注册”，指定应用程序的“名称”，使用 http://localhost:8080 作为“登录 URL”，并单击“创建”。
+2. 单击“新建应用程序注册”，指定应用程序的“名称”，使用 http://localhost:8080 作为“登录 URL”，并单击“创建”。
 
    ![新建应用注册][directory-05]
 
-1. 创建应用程序注册后，请单击它。
+3. 创建应用程序注册后，请单击它。
 
    ![选择应用注册][directory-06]
 
-1. 当应用注册页出现时，复制你的**应用 ID**；在本教程中，稍后你将使用此值来配置 *application.properties* 文件。 单击“设置”，然后单击“密钥”。
+4. 当应用注册页出现时，复制你的**应用 ID**；在本教程中，稍后你将使用此值来配置 *application.properties* 文件。 单击“设置”，然后单击“密钥”。
 
    ![创建应用注册密钥][directory-07]
 
-1. 添加“说明”并指定新密钥的“持续时间”，单击“保存”；单击“保存”图标时，会自动填充密钥的值，你需要复制该密钥的值，本教程中稍后将使用该值来配置 *application.properties* 文件。 （以后无法检索此值。）
+5. 添加“说明”并指定新密钥的“持续时间”，单击“保存”；单击“保存”图标时，会自动填充密钥的值，你需要复制该密钥的值，本教程中稍后将使用该值来配置 *application.properties* 文件。 （以后无法检索此值。）
 
    ![指定应用注册密钥参数][directory-08]
 
-1. 在应用注册的主页上，依次单击“设置”、“所需的权限”。
+6. 在应用注册的主页上，依次单击“设置”、“所需的权限”。
 
    ![应用注册 - 所需的权限][directory-09]
 
-1. 单击“Windows Azure Active Directory”。
+7. 单击“Windows Azure Active Directory”。
 
    ![选择“Windows Azure Active Directory”][directory-10]
 
-1. 选中“以登录用户身份访问该目录”和“登录并读取用户个人资料”对应的框，单击“保存”。
+8. 选中“以登录用户身份访问该目录”和“登录并读取用户个人资料”对应的框，单击“保存”。
 
    ![启用访问权限][directory-11]
 
-1. 在“所需的权限”页上，单击“授予权限”，并在出现提示时单击“是”。
+9. 在“所需的权限”页上，单击“授予权限”，并在出现提示时单击“是”。
 
    ![授予访问权限][directory-12]
 
-1. 在应用注册的主页上，依次单击“设置”、“回复 URL”。
+10. 在应用注册的主页上，依次单击“设置”、“回复 URL”。
 
-   ![编辑回复 URL][directory-14]
+    ![编辑回复 URL][directory-14]
 
-1. 输入“http://localhost:8080/login/oauth2/code/azure”作为新的回复 URL，并单击“保存”。
+11. 输入“<http://localhost:8080/login/oauth2/code/azure>”作为新的回复 URL，并单击“保存”。
 
-   ![添加新的回复 URL][directory-15]
+    ![添加新的回复 URL][directory-15]
 
-1. 从应用注册主页面上，单击“清单”，将 `oauth2AllowImplicitFlow` 参数的值设置为 `true`，然后单击“保存”。
+12. 从应用注册主页面上，单击“清单”，将 `oauth2AllowImplicitFlow` 参数的值设置为 `true`，然后单击“保存”。
 
-   ![配置应用清单][directory-16]
+    ![配置应用清单][directory-16]
 
-   > [!NOTE]
-   > 
-   > 有关 `oauth2AllowImplicitFlow` 参数和其他应用程序设置的详细信息，请参阅 [Azure Active Directory 应用程序清单][AAD app manifest]。 
-   >
+    > [!NOTE]
+    > 
+    > 有关 `oauth2AllowImplicitFlow` 参数和其他应用程序设置的详细信息，请参阅 [Azure Active Directory 应用程序清单][AAD app manifest]。 
+    >
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>将用户帐户添加到你的目录，并将该帐户添加到某个组
 
