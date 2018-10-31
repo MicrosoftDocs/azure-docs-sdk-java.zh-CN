@@ -6,17 +6,17 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: brborges
-ms.author: robmcm;kevinzha;brborges
-ms.date: 10/04/2018
+ms.author: robmcm
+ms.date: 10/18/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 36afcc764c1cb984779518ddec004ecbfa1b7c57
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: dc3038fed6859203f36e0c4dc9a9b01e81a7c4c5
+ms.sourcegitcommit: dae7511a9d93ca7f388d5b0e05dc098e22c2f2f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48876391"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49962491"
 ---
 # <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>在 Linux 上将 Spring Boot JAR 文件 Web 应用部署到 Azure 应用服务
 
@@ -33,6 +33,18 @@ ms.locfileid: "48876391"
 * [Java 开发工具包 (JDK)](https://www.azul.com/downloads/azure-only/zulu/) 1.7 版或更高版本。
 * Apache 的 [Maven](https://maven.apache.org/) 版本 3）。
 * [Git](https://git-scm.com/downloads) 客户端。
+
+## <a name="install-and-sign-in-to-azure-cli"></a>安装并登录 Azure CLI
+
+获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](https://docs.microsoft.com/cli/azure/)。
+
+通过使用 Azure CLI 登录到 Azure 帐户：
+   
+   ```shell
+   az login
+   ```
+   
+按照说明完成登录过程。
 
 ## <a name="clone-the-sample-app"></a>克隆示例应用
 
@@ -82,10 +94,10 @@ ms.locfileid: "48876391"
 
 1. 在代码编辑器中打开 `pom.xml`。
 
-1. 在 pom.xml 的 `<build>` 节的 `<plugins>` 标记内添加以下 `<plugin>` 条目。
+2. 在 pom.xml 的 `<build>` 节的 `<plugins>` 标记内添加以下 `<plugin>` 条目。
 
    ```xml
-  <plugin>
+   <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
     <version>1.4.0</version>
@@ -108,10 +120,10 @@ ms.locfileid: "48876391"
       <!-- Java Runtime Stack for Web App on Linux-->
       <linuxRuntime>jre8</linuxRuntime>
     </configuration>
-  </plugin>
-  ```
+   </plugin>
+   ```
 
-1. 更新插件配置中的以下占位符：
+3. 更新插件配置中的以下占位符：
 
 | 占位符 | Description |
 | ----------- | ----------- |
@@ -120,18 +132,6 @@ ms.locfileid: "48876391"
 | `REGION` | 托管着 Web 应用的 Azure 区域，例如 `westus2`。 可以从 Cloud Shell 或 CLI 使用 `az account list-locations` 命令获取区域列表。 |
 
 可以在 [GitHub 上的 Maven 插件参考](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin)中找到完整的配置选项列表。
-
-## <a name="install-and-log-in-to-azure-cli"></a>安装并登录到 Azure CLI
-
-获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](https://docs.microsoft.com/cli/azure/)。
-
-1. 通过使用 Azure CLI 登录到 Azure 帐户：
-   
-   ```shell
-   az login
-   ```
-   
-   按照说明完成登录过程。
 
 ## <a name="deploy-the-app-to-azure"></a>将应用部署到 Azure
 
