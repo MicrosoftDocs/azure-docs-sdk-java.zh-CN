@@ -14,28 +14,37 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 665768ffe7bec977d553ffa62e1dbd6b968eb9de
-ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
+ms.openlocfilehash: da44a40b7b52e75bb0a946b46ddfc033bfef54e9
+ms.sourcegitcommit: 473c3aec55f3e9b131dc87c62e2eac218ce9564e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49799903"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51571714"
 ---
-# <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>如何使用适用于 Azure Active Directory 的 Spring Boot 起动器
+# <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
 
 ## <a name="overview"></a>概述
 
 本文演示如何使用 **[Spring Initializr]** 创建一个应用，该应用使用适用于 Azure Active Directory (Azure AD) 的 Spring Boot 起动器。
 
+本教程介绍如何执行下列操作：
+
+> [!div class="checklist"]
+> * 使用 Spring Initializr 创建 Java 应用程序
+> * 配置 Azure Active Directory
+> * 使用 Spring Boot 类和批注保护应用程序
+> * 生成和测试 Java 试应用程序
+
+如果还没有 Azure 订阅，可以在开始前创建一个[免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
+
 ## <a name="prerequisites"></a>先决条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
+* [Java 开发工具包 (JDK)](https://aka.ms/azure-jdks) 1.7 版或更高版本。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
-## <a name="create-a-custom-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序
+## <a name="create-an-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建应用程序
 
 1. 浏览到 <https://start.spring.io/>。
 
@@ -171,9 +180,9 @@ ms.locfileid: "49799903"
 
 1. 将本教程中之前创建并下载的项目存档中的文件提取到某个目录中。
 
-1. 导航到项目的父文件夹，并在文本编辑器中打开 *pom.xml* 文件。
+1. 导航到项目的父文件夹，并在文本编辑器中打开 `pom.xml` Maven 项目文件。
 
-1. 添加 Spring OAuth2 安全性的依赖项，例如：
+1. 将 Spring OAuth2 安全性的依赖项添加到 `pom.xml`：
 
    ```xml
    <dependency>
@@ -351,31 +360,20 @@ ms.locfileid: "49799903"
 
 ## <a name="next-steps"></a>后续步骤
 
-有关使用 Azure Active Directory 的详细信息，请参阅以下文章：
+在本教程中，使用 Azure Active Directory 起动器创建了新的 Java Web 应用程序，配置了新的 Azure AD 租户并在其中注册了新的应用程序，并且已将应用程序配置为使用 Spring 批注和类来保护 Web 应用。 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
 
-* [Azure Active Directory 文档]。
-
-有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：
-
-* [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-web-app-on-azure.md)
-
-* [在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序](deploy-spring-boot-java-app-on-kubernetes.md)
-
-有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
-
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
-
-有关更详细示例，请参阅 GitHub 上的 [Azure Active Directory Spring Boot 示例][AAD Spring Boot Sample]。
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
 
 <!-- URL List -->
 
-[Azure Active Directory 文档]: /azure/active-directory/
+[Azure Active Directory Documentation]: /azure/active-directory/
 [AAD app manifest]: /azure/active-directory/develop/active-directory-application-manifest
 [Get started with Azure AD]: /azure/active-directory/get-started-azure-ad
-[面向 Java 开发人员的 Azure]: /java/azure/
-[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
-[用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
-[MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Azure for Java Developers]: /java/azure/
+[free Azure account]: https://azure.microsoft.com/pricing/free-trial/
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
+[MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
