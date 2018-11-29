@@ -4,31 +4,31 @@ description: 了解用于 IntelliJ 的 Azure 工具包中的最新功能。
 services: ''
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: 46ed791f-df59-416a-809e-f52345ad973c
-ms.author: robmcm;asirveda;martinsawicki
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 11/13/2018
 ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: dcbd7e8a78470df0ab3bc2d7c87137a97fc4665c
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 6c9e79b7fc39a23c3768d93d60d35aace5cde6d1
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893418"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338821"
 ---
-# <a name="whats-new-in-the-azure-toolkit-for-intellij"></a><span data-ttu-id="a0e30-103">用于 IntelliJ 的 Azure 工具包中的新增功能</span><span class="sxs-lookup"><span data-stu-id="a0e30-103">What's New in the Azure Toolkit for IntelliJ</span></span>
+# <a name="whats-new-in-the-azure-toolkit-for-intellij"></a><span data-ttu-id="c191d-103">用于 IntelliJ 的 Azure 工具包中的新增功能</span><span class="sxs-lookup"><span data-stu-id="c191d-103">What's New in the Azure Toolkit for IntelliJ</span></span>
 
-<span data-ttu-id="a0e30-104">以下网页包含有关用于 IntelliJ 的 Azure 工具包的不同版本和最新更新的信息。</span><span class="sxs-lookup"><span data-stu-id="a0e30-104">The following web page contains information on the various releases and latest updates to the Azure Toolkit for IntelliJ.</span></span>
+<span data-ttu-id="c191d-104">以下网页包含有关用于 IntelliJ 的 Azure 工具包的不同版本和最新更新的信息。</span><span class="sxs-lookup"><span data-stu-id="c191d-104">The following web page contains information on the various releases and latest updates to the Azure Toolkit for IntelliJ.</span></span>
 
 <https://github.com/Microsoft/azure-tools-for-java/releases>
 
 > [!NOTE] 
-> <span data-ttu-id="a0e30-105">另外还有 Azure Toolkit for Eclipse IDE。</span><span class="sxs-lookup"><span data-stu-id="a0e30-105">There is also an Azure Toolkit for the Eclipse IDE.</span></span> <span data-ttu-id="a0e30-106">有关详细信息，请参阅[用于 Eclipse 的 Azure 工具]。</span><span class="sxs-lookup"><span data-stu-id="a0e30-106">For more information, see [Azure Toolkit for Eclipse].</span></span> 
+> <span data-ttu-id="c191d-105">另外还有 Azure Toolkit for Eclipse IDE。</span><span class="sxs-lookup"><span data-stu-id="c191d-105">There is also an Azure Toolkit for the Eclipse IDE.</span></span> <span data-ttu-id="c191d-106">有关详细信息，请参阅[用于 Eclipse 的 Azure 工具]。</span><span class="sxs-lookup"><span data-stu-id="c191d-106">For more information, see [Azure Toolkit for Eclipse].</span></span> 
 > 
 
 <!--
@@ -72,7 +72,7 @@ The Azure Toolkit for IntelliJ - April 2016 release includes the following enhan
 
 -->
 
-## <a name="next-steps"></a><span data-ttu-id="a0e30-107">后续步骤</span><span class="sxs-lookup"><span data-stu-id="a0e30-107">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="c191d-107">后续步骤</span><span class="sxs-lookup"><span data-stu-id="c191d-107">Next steps</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
