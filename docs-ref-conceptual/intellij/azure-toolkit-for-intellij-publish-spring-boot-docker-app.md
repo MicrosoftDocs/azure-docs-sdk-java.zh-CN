@@ -4,22 +4,22 @@ description: 了解如何使用用于 IntelliJ 的 Azure 工具包将 Web 应用
 services: ''
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 11/13/2018
 ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 4228352efa4354bfe4969c1a5ecd3f3b40483f85
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 4b8527ced4aa8010a26b6d1f99f76943a875e66e
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893578"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338701"
 ---
 # <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用适用于 IntelliJ 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
 
