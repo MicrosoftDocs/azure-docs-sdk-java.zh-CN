@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 09/10/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: dfc3b6121bddcb637735047e2e7bc7485da9a4fe
-ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
+ms.openlocfilehash: 49fd85690d21fa2eb4a2830e3958ef21cbd2e8c1
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49799943"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338891"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
 
@@ -32,7 +32,7 @@ ms.locfileid: "49799943"
 为遵循本文介绍的步骤，需要以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 > [!IMPORTANT]
@@ -251,7 +251,7 @@ ms.locfileid: "49799943"
    ```
    其中：
 
-   |                          字段                           |                                                                                   Description                                                                                    |
+   |                          字段                           |                                                                                   说明                                                                                    |
    |----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |        `spring.cloud.azure.credential-file-path`         |                                                    指定之前在本教程中创建的 Azure 凭据文件。                                                    |
    |           `spring.cloud.azure.resource-group`            |                                                      指定包含 Azure 事件中心的 Azure 资源组。                                                      |

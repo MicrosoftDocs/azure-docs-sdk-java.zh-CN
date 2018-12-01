@@ -4,22 +4,22 @@ description: 本教程介绍使用适用于 Apache Maven 的 Fabric8 插件在 M
 services: container-service
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: yuwzho;robmcm
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: f05dca50f84b27f157892d63cda02286c6755795
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: ab3babf358cf4899709a9a9d2d7917cb2c6d220e
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48898810"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338831"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>使用 Fabric8 Maven 插件部署 Spring Boot 应用
 
@@ -33,7 +33,7 @@ ms.locfileid: "48898810"
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
-* 最新的 [Java 开发人员工具包 (JDK)]。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * Apache 的 [Maven] 生成工具（版本 3）。
 * [Git] 客户端。
 * [Docker] 客户端。
@@ -256,7 +256,7 @@ ms.locfileid: "48898810"
    ```
    其中：
 
-   | 参数 | Description |
+   | 参数 | 说明 |
    |---|---|
    | `wingtiptoys-kubernetes` | 指定本文前面的资源组的名称。 |
    | `wingtiptoysregistry` | 指定专用注册表的唯一名称。 |
@@ -535,7 +535,6 @@ ms.locfileid: "48898810"
 [Fabric8]: https://fabric8.io/
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[Java 开发人员工具包 (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [Kubernetes]: https://kubernetes.io/
 [Maven]: http://maven.apache.org/
@@ -543,6 +542,9 @@ ms.locfileid: "48898810"
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Docker 上的 Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
+
+[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+<!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->
 

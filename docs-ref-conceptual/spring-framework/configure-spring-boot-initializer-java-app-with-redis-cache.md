@@ -4,22 +4,22 @@ description: 将使用 Spring Initializer 创建的 Spring Boot 应用程序配�
 services: redis-cache
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: robmcm;zhijzhao;yidon
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 8bfe7c2ddd238e0e5a259de9078b831a97b1b1a4
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 2c4dfe35ed2f4728e5704aac938410f847fe5b1f
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892908"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338671"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存
 
@@ -30,7 +30,7 @@ ms.locfileid: "48892908"
 为完成本文介绍的步骤，需要满足以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序

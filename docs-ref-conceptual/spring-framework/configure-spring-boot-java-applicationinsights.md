@@ -8,18 +8,18 @@ manager: alexklim
 editor: ''
 ms.assetid: ''
 ms.author: dhdoshi
-ms.date: 05/19/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: Azure Monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: e78987a05527aef739bc1467511381665513a3ab
-ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
+ms.openlocfilehash: eef5afa1bcd8ceb92eca1584df8816b73ac78948
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45639730"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338731"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>将 Spring Boot Initializer 应用配置为使用 Application Insights
 
@@ -34,7 +34,7 @@ ms.locfileid: "45639730"
 为完成本文介绍的步骤，需要满足以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* Java 开发工具包 (JDK) 版本 1.7 和 1.8。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序

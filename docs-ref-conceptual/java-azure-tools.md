@@ -8,14 +8,14 @@ ms.devlang: java
 ms.topic: article
 ms.service: Azure
 ms.technology: Azure
-ms.date: 4/10/2017
-ms.author: routlaw;asirveda
-ms.openlocfilehash: dac0a1c576974a141950919292129890f4e15be4
-ms.sourcegitcommit: 19876d17fed0afd9af0cb8e161f5a463696e74cf
+ms.date: 11/13/2018
+ms.author: routlaw
+ms.openlocfilehash: 9e9828540ddc678f69eab11f5a61eef8bf8e916c
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49634450"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339011"
 ---
 # <a name="azure-tools-for-java-developers"></a>面向 Java 开发人员的 Azure 工具
 
@@ -23,7 +23,7 @@ ms.locfileid: "49634450"
 
 Azure 和 Azure Stack 的 Java 开发人员可以使用 [OpenJDK 的 Azul Systems Zulu Enterprise 内部版本](https://www.azul.com/downloads/azure-only/zulu/)生成并运行生产性 Java 7、8、11 应用程序，不需付出更多的支持成本。 如果目前正通过其他 JDK 运行 Java 应用，请考虑迁移到 Azure 上的 Zulu，以便获取免费支持和维护。 
 
-[详细了解](java-supported-jdk-runtime.md) Azure 支持的 Java 运行时。
+有关在 Azure 上进行开发时可供使用的受支持 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 
 ## <a name="eclipse-and-intellij-plugins"></a>Eclipse 和 IntelliJ 插件
 

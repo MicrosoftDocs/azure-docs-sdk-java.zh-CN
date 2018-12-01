@@ -4,19 +4,19 @@ description: 了解如何使用适用于 Linux 的 Azure Web 应用的 Maven 插
 services: app-service
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: brborges
 ms.author: robmcm
-ms.date: 10/18/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: dc3038fed6859203f36e0c4dc9a9b01e81a7c4c5
-ms.sourcegitcommit: dae7511a9d93ca7f388d5b0e05dc098e22c2f2f6
+ms.openlocfilehash: 066ac30697c6adccc0c6a7b9d57205de488bdc53
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49962491"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339001"
 ---
 # <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>在 Linux 上将 Spring Boot JAR 文件 Web 应用部署到 Azure 应用服务
 
@@ -30,7 +30,7 @@ ms.locfileid: "49962491"
 若要完成本教程中的步骤，需要安装和配置以下内容：
 
 * [Azure CLI](/cli/azure/)，在本地或通过 [Azure Cloud Shell](https://shell.azure.com)。
-* [Java 开发工具包 (JDK)](https://www.azul.com/downloads/azure-only/zulu/) 1.7 版或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * Apache 的 [Maven](https://maven.apache.org/) 版本 3）。
 * [Git](https://git-scm.com/downloads) 客户端。
 
@@ -125,7 +125,7 @@ ms.locfileid: "49962491"
 
 3. 更新插件配置中的以下占位符：
 
-| 占位符 | Description |
+| 占位符 | 说明 |
 | ----------- | ----------- |
 | `RESOURCEGROUP_NAME` | 要在其中创建 Web 应用的新资源组的名称。 通过将应用的所有资源都放在一个组中，可以一起管理它们。 例如，删除资源组会删除与该应用关联的所有资源。 使用唯一的新资源组名称（例如 *TestResources*）更新此值。 将在后面的部分使用此资源组名称来清除所有 Azure 资源。 |
 | `WEBAPP_NAME` | 应用名称将成为部署到 Azure 时的 Web 应用 (WEBAPP_NAME.azurewebsites.net) 的主机名的一部分。 使用将用于托管 Java 应用的新 Azure Web 应用的唯一名称（例如 *contoso*）更新此值。 |
@@ -180,7 +180,6 @@ Web 部署完成后即可通过 [Azure 门户]进行管理。
 [Azure 门户]: https://portal.azure.com/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
@@ -188,6 +187,9 @@ Web 部署完成后即可通过 [Azure 门户]进行管理。
 [Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/
 [适用于 Azure Web 应用的 Maven 插件]: https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+
+[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+<!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->
 

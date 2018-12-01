@@ -10,4 +10,5 @@
 
 * [面向 Java 开发人员的 Azure](https://docs.microsoft.com/java/azure/) 
 * [用于 Visual Studio Team Services 的 Java 工具](https://java.visualstudio.com/) 
+* [在针对 Azure 进行开发时获取 Java JDK 下载内容和支持](https://aka.ms/azure-jdks)
 <!-- TODO: Add URLs for Java in VSCode here --> 

@@ -4,23 +4,23 @@ description: 本教程将指导用户完成在 Microsoft Azure 中将 Spring Boo
 services: container-service
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: asirveda;robmcm
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: container-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 49d94d11ad6a4e103ded849e477d99f01955c693
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 30be16aebb18e3c9e18f9a023ea9b82e5d614e94
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48898721"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339141"
 ---
 # <a name="deploy-a-spring-boot-application-on-linux-in-the-azure-container-service"></a>在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上
 
@@ -32,7 +32,7 @@ ms.locfileid: "48898721"
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
-* 最新的 [Java 开发人员工具包 (JDK)]。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * Apache 的 [Maven] 生成工具（版本 3）。
 * [Git] 客户端。
 * [Docker] 客户端。
@@ -289,13 +289,15 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [Docker]: https://www.docker.com/
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[Java 开发人员工具包 (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Docker 上的 Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
+
+[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+<!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->
 

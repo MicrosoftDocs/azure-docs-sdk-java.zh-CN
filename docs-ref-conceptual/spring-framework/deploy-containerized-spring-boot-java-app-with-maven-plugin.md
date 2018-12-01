@@ -4,22 +4,22 @@ description: 了解如何使用适用于 Azure Web 应用的 Maven 插件将 Spr
 services: app-service
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: robmcm;kevinzha
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: d9f2cf5c15bb8f990c8e82fddd6455ecbf8cc02c
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: cc14ac8dfd393d60924c39be0870c3caedc9741c
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892688"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339081"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>如何使用适用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "48892688"
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
-* 最新 [Java 开发工具包 (JDK)] 1.7 版或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * Apache 的 [Maven] 生成工具（版本 3）。
 * [Git] 客户端。
 * [Docker] 客户端。
@@ -108,7 +108,7 @@ ms.locfileid: "48892688"
    ```
    其中：
 
-   | 参数  |                    Description                     |
+   | 参数  |                    说明                     |
    |------------|----------------------------------------------------|
    | `uuuuuuuu` | 指定服务主体的用户名。 |
    | `pppppppp` | 指定服务主体的密码。  |
@@ -157,7 +157,7 @@ ms.locfileid: "48892688"
    ```
    其中：
 
-   |     元素     |                                                                                   Description                                                                                   |
+   |     元素     |                                                                                   说明                                                                                   |
    |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |     `<id>`      |                                指定在将 Web 应用部署到 Azure 时，Maven 用于查找安全设置的唯一名称。                                |
    |   `<client>`    |                                                             包含服务主体的 `appId` 值。                                                             |
@@ -227,7 +227,7 @@ ms.locfileid: "48892688"
 
 可以为 Maven 插件修改几个值，[适用于 Azure Web 应用的 Maven 插件]文档中提供了这些元素各自的详细描述。 尽管如此，在本文中有仍几个值得注意的值：
 
-| 元素 | Description |
+| 元素 | 说明 |
 |---|---|
 | `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
 | `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。 |
@@ -333,7 +333,6 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [适用于 Maven 的 Docker 插件]: https://github.com/spotify/docker-maven-plugin
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
@@ -341,6 +340,9 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [Docker 上的 Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
 [适用于 Azure Web 应用的 Maven 插件]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
+
+[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+<!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->
 

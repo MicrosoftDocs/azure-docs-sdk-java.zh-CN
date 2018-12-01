@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: article
-ms.date: 07/02/2018
+ms.date: 11/13/2018
 ms.author: robmcm
-ms.openlocfilehash: 3f2de63f7eb1422ff1dd6db45d68e02f4af188b8
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 477cb9347255928f8583af8fbe4ea90a42ce6c18
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48898716"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339041"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>将根证书添加到 Java CA 证书存储
 
@@ -68,7 +68,7 @@ Baltimore 证书可能已安装在你的 cacerts 存储中，因此你需要使�
    ```
    其中：
 
-   |  参数   |                              Description                               |
+   |  参数   |                              说明                               |
    |--------------|------------------------------------------------------------------------|
    | `keystore`   | 指定证书存储。                                       |
    | `importcert` | 指定要导入证书。                        |
@@ -93,3 +93,5 @@ Baltimore 证书可能已安装在你的 cacerts 存储中，因此你需要使�
 有关 Java 的详细信息，请参阅[面向 Java 开发人员的 Azure](/java/azure)。
 
 <!-- For more information about the root certificates used by Azure, see [Azure Root Certificate Migration](http://blogs.msdn.com/b/windowsazure/archive/2013/03/15/windows-azure-root-certificate-migration.aspx). -->
+
+有关在 Azure 上进行开发时可供使用的受支持 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。

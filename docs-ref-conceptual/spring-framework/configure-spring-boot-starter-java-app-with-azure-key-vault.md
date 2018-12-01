@@ -4,22 +4,22 @@ description: 了解如何使用 Azure Key Vault 起动器配置 Spring Boot Init
 services: key-vault
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 78b7a9a2e26168b19dc8a1d12e47456752b57ffc
-ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
+ms.openlocfilehash: fcb18de809f4465239f1f360a755624a5095e03a
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45639770"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339151"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>如何使用适用于 Azure Key Vault 的 Spring Boot 起动器
 
@@ -32,10 +32,10 @@ ms.locfileid: "45639770"
 为完成本文介绍的步骤，需要满足以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
-## <a name="create-an-app-using-the-spring-initialzr"></a>使用 Spring Initialzr 创建应用
+## <a name="create-an-app-using-spring-initializr"></a>使用 Spring Initialzr 创建应用
 
 1. 浏览到 <https://start.spring.io/>。
 
@@ -53,7 +53,7 @@ ms.locfileid: "45639770"
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
-## <a name="sign-into-azure-and-select-the-subscription-to-use"></a>登录到 Azure 并选择要使用的订阅
+## <a name="sign-into-azure"></a>登录 Azure
 
 1. 打开命令提示符。
 
@@ -94,7 +94,7 @@ ms.locfileid: "45639770"
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
    ```
 
-## <a name="create-and-configure-a-new-azure-key-vault-using-the-azure-cli"></a>使用 Azure CLI 创建并配置新的 Azure Key Vault
+## <a name="create-a-new-azure-key-vault"></a>创建新的 Azure 密钥保管库
 
 1. 为要用于 Key Vault 的 Azure 资源创建资源组，例如：
    ```azurecli
@@ -102,7 +102,7 @@ ms.locfileid: "45639770"
    ```
    其中：
 
-   | 参数 | Description |
+   | 参数 | 说明 |
    |---|---|
    | `name` | 指定资源组的唯一名称。 |
    | `location` | 指定要在其中托管资源组的 [Azure 区域](https://azure.microsoft.com/regions/)。 |
@@ -128,7 +128,7 @@ ms.locfileid: "45639770"
    ```
    其中：
 
-   | 参数 | Description |
+   | 参数 | 说明 |
    |---|---|
    | `name` | 指定 Azure 服务主体的名称。 |
 
@@ -150,7 +150,7 @@ ms.locfileid: "45639770"
    ```
    其中：
 
-   | 参数 | Description |
+   | 参数 | 说明 |
    |---|---|
    | `name` | 指定 Key Vault 的唯一名称。 |
    | `location` | 指定要在其中托管资源组的 [Azure 区域](https://azure.microsoft.com/regions/)。 |
@@ -172,7 +172,7 @@ ms.locfileid: "45639770"
    ```
    其中：
 
-   | 参数 | Description |
+   | 参数 | 说明 |
    |---|---|
    | `name` | 指定前面创建的 Key Vault 名称。 |
    | `secret-permission` | 指定 Key Vault 的[安全策略](https://docs.microsoft.com/cli/azure/keyvault)。 |
@@ -202,7 +202,7 @@ ms.locfileid: "45639770"
    ```
    其中：
 
-   | 参数 | Description |
+   | 参数 | 说明 |
    |---|---|
    | `vault-name` | 指定前面创建的 Key Vault 名称。 |
    | `name` | 指定机密的名称。 |
@@ -231,7 +231,7 @@ ms.locfileid: "45639770"
    }
    ```
 
-## <a name="configure-and-compile-your-spring-boot-application"></a>配置并编译 Spring Boot 应用程序
+## <a name="configure-and-compile-your-app"></a>配置并编译你的应用
 
 1. 将前面下载的 Spring Boot 项目存档中的文件提取到某个目录中。
 
@@ -245,7 +245,7 @@ ms.locfileid: "45639770"
    ```
    其中：
 
-   |          参数          |                                 Description                                 |
+   |          参数          |                                 说明                                 |
    |-----------------------------|-----------------------------------------------------------------------------|
    |    `azure.keyvault.uri`     |           指定创建 Key Vault 时使用的 URI。           |
    | `azure.keyvault.client-id`  |  指定创建服务主体时使用的 *appId* GUID。   |
@@ -305,7 +305,9 @@ ms.locfileid: "45639770"
 
    ![Spring Boot 运行时消息][build-application-02]
 
-## <a name="next-steps"></a>后续步骤
+## <a name="summary"></a>摘要
+
+在本教程中，你使用 **[Spring Initializr]** 创建了一个新的 Java Web 应用程序，创建了一个 Azure 密钥保管库来存储敏感信息，然后将你的应用程序配置为从密钥保管库检索信息。
 
 有关使用 Azure Key Vault 的详细信息，请参阅以下文章：
 
@@ -320,6 +322,13 @@ ms.locfileid: "45639770"
 * [在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序](deploy-spring-boot-java-app-on-kubernetes.md)
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
+
+## <a name="next-steps"></a>后续步骤
+
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
 
 <!-- URL List -->
 

@@ -4,22 +4,22 @@ description: 了解如何为使用 Spring Boot Initializer 创建的应用程序
 services: cosmos-db
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 08/10/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: aa753692b1a3f342a47a07d3bb0cd4e90558a0f8
-ms.sourcegitcommit: a168dc8c2396b6c4749abef03debb1f69298da38
+ms.openlocfilehash: 6675b3f76f19ec0bfdb28351681258b8c4792104
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50747008"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339101"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -34,7 +34,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 为遵循本文介绍的步骤，需要以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 ## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a>使用 Azure 门户创建 Azure Cosmos DB

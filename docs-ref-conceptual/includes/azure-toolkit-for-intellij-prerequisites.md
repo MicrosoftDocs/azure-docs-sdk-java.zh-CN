@@ -2,7 +2,7 @@
 若要完成文章中的步骤，需要安装用于 IntelliJ 的 Azure 工具包，该工具包需要以下软件组件：
 
 * IntelliJ IDEA 旗舰版或社区版，可从 [JetBrains 网站](https://www.jetbrains.com/idea/download/)下载。
-* Java 开发人员工具包 (JDK) 1.8 或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * 操作系统。 用于 IntelliJ 的 Azure 工具包已在以下操作系统上通过测试：
   
   * Windows 10、Windows 8.1、Windows 8 和 Windows 7

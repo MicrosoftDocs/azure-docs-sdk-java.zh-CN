@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 09/10/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: ccef834d0ff1c40b061946f8ab1852584da80d7b
-ms.sourcegitcommit: a168dc8c2396b6c4749abef03debb1f69298da38
+ms.openlocfilehash: ab465b56c05c7d480109fc97a4f1c74beaf53856
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50746998"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339111"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>如何将适用于 Apache Kafka 的 Spring Boot Starter 与 Azure 事件中心配合使用
 
@@ -32,7 +32,7 @@ ms.locfileid: "50746998"
 为遵循本文介绍的步骤，需要以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 > [!IMPORTANT]
@@ -237,7 +237,7 @@ ms.locfileid: "50746998"
    ```
    其中：
 
-   |                       字段                       |                                                                                   Description                                                                                    |
+   |                       字段                       |                                                                                   说明                                                                                    |
    |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |     `spring.cloud.azure.credential-file-path`     |                                                    指定之前在本教程中创建的 Azure 凭据文件。                                                    |
    |        `spring.cloud.azure.resource-group`        |                                                      指定包含 Azure 事件中心的 Azure 资源组。                                                      |

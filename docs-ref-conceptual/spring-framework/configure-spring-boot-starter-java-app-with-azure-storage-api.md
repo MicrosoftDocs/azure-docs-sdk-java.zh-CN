@@ -4,22 +4,22 @@ description: 了解如何使用 Azure 存储 API 配置 Spring Boot Initializer 
 services: storage
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 09/10/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 8ee985f28b7fa80548e13681089e0a5a9226851d
-ms.sourcegitcommit: fd67d4088be2cad01c642b9ecf3f9475d9cb4f3c
+ms.openlocfilehash: 94f7b1148d9282d33bc67da0e0d97a284a81d4d4
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46506344"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339051"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-storage-api"></a>如何将 Spring Boot Starter 与 Azure 存储 API 配合使用
 
@@ -31,9 +31,9 @@ ms.locfileid: "46506344"
 
 为遵循本文介绍的步骤，需要以下先决条件：
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)或注册[免费 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/)。
+* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)或注册[免费的 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/)。
 * [Azure 命令行接口 (CLI)](http://docs.microsoft.com/cli/azure/overview)。
-* 最新的 [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * Apache 的 [Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序
@@ -110,7 +110,7 @@ ms.locfileid: "46506344"
    ```
    其中：
 
-   | 参数 | Description |
+   | 参数 | 说明 |
    |---|---|
    | `name` | 指定资源组的唯一名称。 |
    | `location` | 指定要在其中托管资源组的 [Azure 区域](https://azure.microsoft.com/regions/)。 |
@@ -136,7 +136,7 @@ ms.locfileid: "46506344"
    ```
    其中：
 
-   | 参数 | Description |
+   | 参数 | 说明 |
    |---|---|
    | `name` | 指定存储帐户的唯一名称。 |
    | `resource-group` | 指定在上一步骤中创建的资源组的名称。 |
@@ -166,7 +166,7 @@ ms.locfileid: "46506344"
    ```
    其中：
 
-   | 参数 | Description |
+   | 参数 | 说明 |
    | ---|---|
    | `name` | 指定在前面步骤中创建的存储帐户的唯一名称。 |
    | `resource-group` | 指定在前面步骤中创建的资源组的名称。 |

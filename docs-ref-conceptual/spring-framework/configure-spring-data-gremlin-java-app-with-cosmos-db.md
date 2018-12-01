@@ -7,18 +7,18 @@ author: rmcmurray
 manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.date: 08/20/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 561dba84b0c1662fa6575e1816ff3dd2f0c6093b
-ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
+ms.openlocfilehash: 47251c6bca1186a400020ba38e4b6596c7c5f2f1
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48047164"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339021"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -33,7 +33,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 为遵循本文介绍的步骤，需要以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 版或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 > [!IMPORTANT]
@@ -166,7 +166,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    
    其中：
    
-   | 字段 | Description |
+   | 字段 | 说明 |
    |---|---|
    | `endpoint` | 指定数据库的 Gremlin URI，此 URI 派生自前面在本教程中创建 Azure Cosmos DB 时指定的唯一“ID”。 |
    | `port` | 指定 TCP/IP 端口，对于 HTTPS 通信，应是 **443**。 |

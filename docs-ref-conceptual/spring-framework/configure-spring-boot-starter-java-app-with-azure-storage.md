@@ -4,22 +4,22 @@ description: 了解如何使用 Azure 存储起动器配置 Spring Boot Initiali
 services: storage
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 09/10/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 4838b6dbd354ad941df12933dddfa7f3e7eef905
-ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
+ms.openlocfilehash: f94b2981f1e641a6e4b2d9d3028608a56a6590e7
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49799963"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338871"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>如何使用适用于 Azure 存储的 Spring Boot 起动器
 
@@ -33,7 +33,7 @@ ms.locfileid: "49799963"
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)或注册[免费的 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/)。
 * [Azure 命令行接口 (CLI)](http://docs.microsoft.com/cli/azure/overview)。
-* 最新的 [Java 开发工具包 (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) 1.7 或更高版本。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * Apache 的 [Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 > [!IMPORTANT]
@@ -217,7 +217,7 @@ ms.locfileid: "49799963"
    ```
    其中：
 
-   |                   字段                   |                                            Description                                            |
+   |                   字段                   |                                            说明                                            |
    |-------------------------------------------|---------------------------------------------------------------------------------------------------|
    | `spring.cloud.azure.credential-file-path` |            指定之前在本教程中创建的 Azure 凭据文件。             |
    |    `spring.cloud.azure.resource-group`    |           指定包含 Azure 存储帐户的 Azure 资源组。            |
