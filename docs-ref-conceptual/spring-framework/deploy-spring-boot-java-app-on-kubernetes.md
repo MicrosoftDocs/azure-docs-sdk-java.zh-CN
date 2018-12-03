@@ -4,23 +4,23 @@ description: 本教程将指导用户完成在 Microsoft Azure 的 Kubernetes �
 services: container-service
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: asirveda;robmcm
-ms.date: 07/05/2018
+ms.author: robmcm
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: 8e8f9088146af504ba2d9d45e2e82118c4081359
-ms.sourcegitcommit: dae7511a9d93ca7f388d5b0e05dc098e22c2f2f6
+ms.openlocfilehash: d5ebfb7fc7279c745f77848dae397509662f0c0d
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49962501"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338721"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
 
@@ -30,9 +30,9 @@ ms.locfileid: "49962501"
 
 ### <a name="prerequisites"></a>先决条件
 
-* Azure 订阅；若尚未拥有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册获取[免费的 Azure 帐户]。
+* Azure 订阅；若尚未拥有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册获取[免费 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
-* 最新的 [Java 开发人员工具包 (JDK)]。
+* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * Apache 的 [Maven] 生成工具（版本 3）。
 * [Git] 客户端。
 * [Docker] 客户端。
@@ -342,9 +342,8 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image
 [Docker]: https://www.docker.com/
-[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[Java 开发人员工具包 (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
 [Kubernetes]: https://kubernetes.io/
 [Kubernetes Command-Line Interface (kubectl)]: https://kubernetes.io/docs/user-guide/kubectl-overview/
@@ -356,6 +355,9 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 [为 Pod 配置服务帐户]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
 [命名空间]: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 [从私有注册表拉取映像]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+
+[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+<!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- Newly added -->
 [使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]: https://docs.microsoft.com/azure/container-registry/container-registry-auth-aks/

@@ -3,23 +3,23 @@ title: 使用用于 IntelliJ 的旧工具包创建适用于 Azure 的 Hello Worl
 description: 本教程说明如何使用用于 IntelliJ 的 Azure 工具包 3.0.6（或更低版本）创建适用于 Azure 的 Hello World Web 应用。
 services: app-service
 documentationcenter: java
-author: selvasingh
-manager: routlaw
+author: rmcmurray
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: robmcm;asirveda
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 11/13/2018
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: efc1dffa248987772827bbe7bc0caa9f10a0b4ef
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 4a1d9ee79fdc4284dff65f6b026ec103b3d623ce
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893388"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338971"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>使用用于 IntelliJ 的旧工具包创建适用于 Azure 的 Hello World Web 应用
 
@@ -27,7 +27,7 @@ ms.locfileid: "48893388"
 
 > [!NOTE]
 >
-> 如需使用[用于 Eclipse 的 Azure 工具]的本文版本，请参阅[使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用][eclipse-hello-world]。
+> 如需使用[用于 Eclipse 的 Azure 工具包]的本文版本，请参阅[使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用][eclipse-hello-world]。
 >
 
 > [!IMPORTANT]
@@ -127,7 +127,7 @@ ms.locfileid: "48893388"
 
    d. 在“Web 容器”下拉菜单中，为应用程序选择适当的软件。
       
-      当前，可以从 Tomcat 8、Tomcat 7 或 Jetty 9 中选择。 Azure 将提供所选软件的最新分发版，并且该版本将基于由 JDK 8 创建并由 Azure 提供的 JDK 最新分发版运行。
+      当前，可以从 Tomcat 8、Tomcat 7 或 Jetty 9 中选择。 Azure 将提供所选软件的最新分发版，并且该版本将基于由 Azure 提供的 JDK 最新分发版运行。
 
    e. 在“订阅”下拉菜单中，选择要用于此部署的订阅。
 
@@ -242,7 +242,7 @@ ms.locfileid: "48893388"
 <!-- URL List -->
 
 [用于 IntelliJ 的 Azure 工具包]: azure-toolkit-for-intellij.md
-[用于 Eclipse 的 Azure 工具]: ../eclipse/azure-toolkit-for-eclipse.md
+[用于 Eclipse 的 Azure 工具包]: ../eclipse/azure-toolkit-for-eclipse.md
 [eclipse-hello-world]: ../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md
 [Web 应用概述]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/

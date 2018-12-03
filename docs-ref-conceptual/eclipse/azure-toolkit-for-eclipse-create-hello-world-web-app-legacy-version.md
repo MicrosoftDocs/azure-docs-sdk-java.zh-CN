@@ -3,27 +3,27 @@ title: ''
 description: 本教程说明如何使用用于 Eclipse 的 Azure 工具包 3.0.6（或更低版本）创建适用于 Azure 的 Hello World Web 应用。
 services: app-service
 documentationcenter: java
-author: selvasingh
-manager: routlaw
+author: rmcmurray
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: robmcm;asirveda
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 11/13/2018
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 896e7eff389bc7d3ac119d315c50aae505a381da
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: b05dcd52f36524ab17652f83c6ced4006f874365
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892558"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338711"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>使用用于 Eclipse 的旧工具包创建适用于 Azure 的 Hello World Web 应用
 
-本教程说明如何使用[用于 Eclipse 的 Azure 工具] 3.0.6（或更低版本）创建一个基本的 Hello World 应用程序，并将其部署到 Azure 作为 Web 应用。
+本教程说明如何使用[用于 Eclipse 的 Azure 工具包] 3.0.6（或更低版本）创建一个基本的 Hello World 应用程序，并将其部署到 Azure 作为 Web 应用。
 
 > [!NOTE]
 >
@@ -109,7 +109,7 @@ ms.locfileid: "48892558"
 
    d. 在“Web 容器”下拉菜单中，为应用程序选择适当的软件。
       
-      当前，可以从 Tomcat 8、Tomcat 7 或 Jetty 9 中选择。 Azure 将提供所选软件的最新分发版，并且该版本将基于由 JDK 8 创建并由 Azure 提供的 JDK 最新分发版运行。
+      当前，可以从 Tomcat 8、Tomcat 7 或 Jetty 9 中选择。 Azure 将提供所选软件的最新分发版，并且该版本将基于由 Azure 提供的 JDK 最新分发版运行。
 
    e. 在“订阅”下拉菜单中，选择要用于此部署的订阅。
 
@@ -124,7 +124,7 @@ ms.locfileid: "48892558"
    * 在“名称”文本框中，为新的资源组指定名称。
    * 在“区域”下拉菜单中，为资源组选择适当的 Azure 数据中心位置。
    * 可选：默认情况下，Azure 自动将最新的 Java 8 分发版作为 JVM 部署到 Web 应用容器。 但是，可以根据 Web 应用的需要指定 JVM 的其他版本和分发版。 要指定 Web 应用的 JDK，请单击“JDK”选项卡，并选择下列选项之一：
-     * **部署由 Azure Web 应用服务提供的默认 JDK**：此选项部署最新的 Java 8 分发版。
+     * **部署由 Azure Web 应用服务提供的默认 JDK**：此选项部署将最新的 Java 分发版。
      * **部署 Azure 上可用的第三方 JDK**：使用此选项可从由 Microsoft Azure 提供的 JDK 列表中选择。
      * **从此下载位置部署我自己的 JDK**：此选项可以指定自己的 JDK 分发版，此 JDK 必须打包为 ZIP 文件并上传到公开可用的下载位置或可以访问的 Azure 存储帐户。
           
@@ -210,7 +210,7 @@ ms.locfileid: "48892558"
 
 <!-- URL List -->
 
-[用于 Eclipse 的 Azure 工具]: azure-toolkit-for-eclipse.md
+[用于 Eclipse 的 Azure 工具包]: azure-toolkit-for-eclipse.md
 [用于 IntelliJ 的 Azure 工具包]: ../intellij/azure-toolkit-for-intellij.md
 [intellij-hello-world]: ../intellij/azure-toolkit-for-intellij-create-hello-world-web-app.md
 [Web 应用概述]: /azure/app-service/app-service-web-overview
