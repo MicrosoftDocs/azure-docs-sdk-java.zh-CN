@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 94f7b1148d9282d33bc67da0e0d97a284a81d4d4
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 984a3edb89608c806537f991b42e309f31130896
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339051"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991441"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-storage-api"></a>如何将 Spring Boot Starter 与 Azure 存储 API 配合使用
 
@@ -110,7 +110,7 @@ ms.locfileid: "52339051"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    |---|---|
    | `name` | 指定资源组的唯一名称。 |
    | `location` | 指定要在其中托管资源组的 [Azure 区域](https://azure.microsoft.com/regions/)。 |
@@ -136,7 +136,7 @@ ms.locfileid: "52339051"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    |---|---|
    | `name` | 指定存储帐户的唯一名称。 |
    | `resource-group` | 指定在上一步骤中创建的资源组的名称。 |
@@ -166,7 +166,7 @@ ms.locfileid: "52339051"
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | Description |
    | ---|---|
    | `name` | 指定在前面步骤中创建的存储帐户的唯一名称。 |
    | `resource-group` | 指定在前面步骤中创建的资源组的名称。 |
@@ -316,6 +316,13 @@ ms.locfileid: "52339051"
    > 
 
 ## <a name="next-steps"></a>后续步骤
+
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>其他资源
 
 有关适用于 Microsoft Azure 的其他 Spring Boot 起动器的详细信息，请参阅[适用于 Azure 的 Spring Boot 起动器](spring-boot-starters-for-azure.md)。
 

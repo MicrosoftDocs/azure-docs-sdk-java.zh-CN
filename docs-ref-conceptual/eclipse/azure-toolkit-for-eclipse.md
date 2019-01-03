@@ -7,19 +7,19 @@ author: rmcmurray
 manager: routlaw
 editor: ''
 ms.assetid: ef2f3839-2549-4471-9b53-0deb7f4c128b
-ms.author: robmcm;asirveda
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 12/12/2018
 ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: d8ab3de791d1a4893efb77a51418c437f81c86ff
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 88d92cfd82244d5df2ad34304155d41c5aab0ee9
+ms.sourcegitcommit: 8e530a2ce58ea0e2bf5c136e427a9be863231a1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893458"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53638956"
 ---
 # <a name="azure-toolkit-for-eclipse"></a>用于 Eclipse 的 Azure 工具包
 
@@ -67,7 +67,7 @@ ms.locfileid: "48893458"
 
 * [Eclipse Marketplace 中用于 Eclipse 的 Azure 工具包](http://marketplace.eclipse.org/content/azure-toolkit-eclipse)
 
-有关将 Java 与 Azure 配合使用的详细信息，请参阅[面向 Java 开发人员的Azure](https://docs.microsoft.com/java/azure/) 和[用于 Visual Studio Team Services 的 Java 工具](https://java.visualstudio.com/)。
+有关将 Java 与 Azure 配合使用的详细信息，请参阅[面向 Java 开发人员的Azure](https://docs.microsoft.com/java/azure/) 和[用于 Visual Studio Team Services 的 Java 工具](/azure/devops/java/)。
 
 <!-- [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)] -->
 
@@ -79,7 +79,6 @@ ms.locfileid: "48893458"
 <!-- URL List -->
 
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure
-[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 
 <!-- Temporarily Deprecated URLs -->
 
