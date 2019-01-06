@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 4edb8c1ceef508dd251db693ccc3b98d77ec452b
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: bf5d5ad1c4ccd24e3e0174e70bcbae568f0e839d
+ms.sourcegitcommit: 24f037d133875f86761ec893dfa74e723de040b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48898858"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53636432"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
 
@@ -55,9 +55,9 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    * **位置**：指定将创建存储帐户的位置（例如“美国西部”）。
 
-   * **资源组**：指定你的虚拟机的资源组。 选择以下选项之一：
+   * **资源组**：指定虚拟机的资源组。 选择以下选项之一：
       * **新建**：指定要创建新的资源组。
-      * **使用现有**：指定将从与你的 Azure 帐户关联的资源组列表中进行选择。
+      * **使用现有项**：指定将从与 Azure 帐户关联的资源组列表中进行选择。
 
 4. 指定了上述所有选项后，单击“确定”。
 
@@ -123,8 +123,8 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
 [Azure 中的 Windows 存储帐户的大小]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Azure 中的 Linux 存储帐户的大小]: /azure/virtual-machines/virtual-machines-linux-sizes
-[Windows 存储帐户定价]: /pricing/details/virtual-machines/windows/
-[Linux 存储帐户定价]: /pricing/details/virtual-machines/linux/
+[Windows 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
+[Linux 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 
 <!-- IMG List -->
 

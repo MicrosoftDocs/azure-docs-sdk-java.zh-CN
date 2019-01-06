@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 53dfbfb0de2bcb56ebfc4d5ca2c4c19528edcfbf
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 7f3b4a6adb4234bbf11f0f7cddafbe99fa0ff3df
+ms.sourcegitcommit: 24f037d133875f86761ec893dfa74e723de040b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338691"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53636693"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理虚拟机
 
@@ -49,13 +49,13 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    * **位置**：指定将创建虚拟机的位置（例如“美国西部”）。
 
-   * 发布者：指定创建了用于创建虚拟机的映像的发布者（例如“Microsoft”）。
+   * **发布者**：指定创建了用于创建虚拟机的映像的发布者（例如 *Microsoft*）。
 
-   * **产品/服务**： 指定所选发布者提供的可以使用的虚拟机产品/服务（例如 *JDK* ）。
+   * **产品/服务**：指定所选发布者提供的可以使用的虚拟机产品/服务（例如 *JDK*）。
 
-   * Sku：从所选产品/服务中指定要使用的库存单位 (SKU)（例如“JDK_8”）。
+   * **Sku**：从所选产品/服务中指定要使用的库存单位 (SKU)（例如 *JDK_8*）。
 
-   * 版本号：从所选 SKU 中指定要使用哪个版本。
+   * **版本号**：指定要使用所选 SKU 的哪个版本。
 
    ![“选择虚拟机映像”窗口][CR03]
 
@@ -77,23 +77,23 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 8. 在“创建新存储帐户”窗口输入以下信息：
 
-   * 资源组：指定虚拟机的资源组。 选择以下选项之一：
-     * 新建：指定要创建新的资源组。
-     * 使用现有资源：指定选择已与 Azure 帐户关联的资源组。
+   * **资源组**：指定虚拟机的资源组。 选择以下选项之一：
+     * **新建**：指定要创建新的资源组。
+     * **使用现有项**：指定要选择已与 Azure 帐户关联的资源组。
 
        ![“创建新存储帐户”对话框][CR05]
 
-   * 存储帐户：指定用于存储虚拟机的存储帐户。 可使用现有存储帐户，也可以创建新帐户。
+   * **存储帐户**：指定用于存储虚拟机的存储帐户。 可使用现有存储帐户，也可以创建新帐户。
 
-   * 虚拟网络和子网：指定虚拟机将连接到的虚拟网络和子网。 可使用现有网络和子网，也可以创建新网络和子网。 如果选择“新建”，会显示以下对话框：
+   * **虚拟网络**和**子网**：指定虚拟机将连接到的虚拟网络和子网。 可使用现有网络和子网，也可以创建新网络和子网。 如果选择“新建”，会显示以下对话框：
 
       ![“新建虚拟网络”对话框][CR06]
 
 9. 在“关联的资源”窗口输入以下信息：
 
-   * 公共 IP 地址：为虚拟机指定面向外部的 IP 地址。 可选择创建新 IP 地址，也可以选择“(无)”（如果虚拟机将不具有公共 IP 地址）。
+   * **公共 IP 地址**：为虚拟机指定面向外部的 IP 地址。 可选择创建新 IP 地址，也可以选择“(无)”（如果虚拟机将不具有公共 IP 地址）。
 
-   * 网络安全组：指定虚拟机的可选网络防火墙。 可以选择现有防火墙，也可以选择“(无)”（如果虚拟机不使用网络防火墙）。
+   * **网络安全组**：指定虚拟机的可选网络防火墙。 可以选择现有防火墙，也可以选择“(无)”（如果虚拟机不使用网络防火墙）。
 
    * **可用性集**：指定虚拟机可能属于的可选可用性集。 可选择现有可用性集，或创建新可用性集，也可选择“(无)”（如果虚拟机将不属于可用性集）。
 
@@ -158,8 +158,8 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 [Azure 中 Windows 虚拟机的大小]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Azure 中 Linux 虚拟机的大小]: /azure/virtual-machines/virtual-machines-linux-sizes
-[Windows 虚拟机定价]: /pricing/details/virtual-machines/windows/
-[Linux 虚拟机定价]: /pricing/details/virtual-machines/linux/
+[Windows 虚拟机定价]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
+[Linux 虚拟机定价]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 
 <!-- IMG List -->
 

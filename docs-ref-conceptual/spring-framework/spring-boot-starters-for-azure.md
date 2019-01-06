@@ -8,18 +8,18 @@ manager: routlaw
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 678d4b279cecb83c95b3bf0f6bcdf1581924aa62
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 69c0381313994796af31d5301ceadb9f6f40dcb5
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893498"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991551"
 ---
 # <a name="spring-boot-starters-for-azure"></a>适用于 Azure 的 Spring Boot 起动器
 
@@ -48,7 +48,7 @@ ms.locfileid: "48893498"
 <a name="azure-support"></a>
 ## <a name="azure-support"></a>Azure 支持
 
-此 Spring Boot 起动器为服务总线、存储、Active Directory、Cosmos DB、Key Vault 等 Azure 服务提供自动配置支持。
+此 Spring Boot 起动器为 Azure 服务提供了自动配置支持，这些服务包括：服务总线、存储、Active Directory、Cosmos DB、Key Vault，等等。
 
 有关如何使用此起动器提供的各种 Azure 功能的示例，请参阅以下文章：
 
@@ -229,18 +229,25 @@ ms.locfileid: "48893498"
 
 ## <a name="next-steps"></a>后续步骤
 
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>其他资源
+
 有关使用 Azure 上的 [Spring Boot] 应用程序的详细信息，请参阅 [Azure 上的 Spring]。
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
+有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
 如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr**。
 
 <!-- URL List -->
 
-[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
-[用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
+[面向 Java 开发人员的 Azure]: /java/azure/
+[使用 Azure DevOps 和 Java]: /azure/devops/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Azure 上的 Spring]: https://docs.microsoft.com/java/azure/spring-framework/
+[Azure 上的 Spring]: /java/azure/spring-framework/
 [Spring Framework]: https://spring.io/
 [Spring Initializr]: https://start.spring.io/
 

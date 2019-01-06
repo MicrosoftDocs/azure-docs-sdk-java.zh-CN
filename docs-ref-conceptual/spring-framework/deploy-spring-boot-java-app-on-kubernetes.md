@@ -8,19 +8,19 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: d5ebfb7fc7279c745f77848dae397509662f0c0d
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 89a7a6900e5e0a544b4dc3fde960f62aeab6ebef
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338721"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991471"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
 
@@ -78,7 +78,7 @@ ms.locfileid: "52338721"
    curl http://localhost:8080
    ```
 
-1. 应会显示以下消息：“Hello Docker World”
+1. 应当会看到显示了以下消息：**Hello Docker World**
 
    ![本地浏览示例应用][SB01]
 
@@ -237,7 +237,7 @@ ms.locfileid: "52338721"
 
 1. 显示“资源创建”页时，请指定以下选项：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 选择“创建应用”。
+   a. 选择“创建应用”。
 
    b. 在“应用名称”中输入 Spring Boot 应用程序名称；例如：gs-spring-boot-docker。
 
@@ -304,14 +304,21 @@ ms.locfileid: "52338721"
 
 ## <a name="next-steps"></a>后续步骤
 
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>其他资源
+
 有关使用 Azure 上的 Spring Boot 的详细信息，请参阅以下文章：
 
 * [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-web-app-on-azure.md)
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上](deploy-spring-boot-java-app-on-linux.md)
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
+有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
-<!-- Newly added --> 有关使用 Visual Studio Code 将 Java 应用程序部署到 Kubernetes 的详细信息，请参阅 [Visual Studio Code Java 教程]。
+有关使用 Visual Studio Code 将 Java 应用程序部署到 Kubernetes 的详细信息，请参阅 [Visual Studio Code Java 教程]。
 
 有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅[Docker 上的 Spring Boot 入门]。
 
@@ -321,7 +328,7 @@ ms.locfileid: "52338721"
 
 以下链接提供了将 Kubernetes 与 Azure 配合使用的详细信息：
 
-* [Azure Kubernetes 服务中的 Kubernetes 群集入门](https://docs.microsoft.com/azure/aks/intro-kubernetes)
+* [Azure Kubernetes 服务中的 Kubernetes 群集入门](/azure/aks/intro-kubernetes)
 
 有关使用 Kubernetes 命令行接口的详细信息，请在 <https://kubernetes.io/docs/user-guide/kubectl/> 处参阅 **kubectl** 用户指南。
 
@@ -337,14 +344,14 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure Kubernetes 服务 (AKS)]: https://azure.microsoft.com/services/kubernetes-service/
-[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
+[面向 Java 开发人员的 Azure]: /java/azure/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image
 [Docker]: https://www.docker.com/
 [免费 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
+[使用 Azure DevOps 和 Java]: /azure/devops/java/
 [Kubernetes]: https://kubernetes.io/
 [Kubernetes Command-Line Interface (kubectl)]: https://kubernetes.io/docs/user-guide/kubectl-overview/
 [Maven]: http://maven.apache.org/
@@ -360,7 +367,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- Newly added -->
-[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]: https://docs.microsoft.com/azure/container-registry/container-registry-auth-aks/
+[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]: /azure/container-registry/container-registry-auth-aks/
 [Visual Studio Code Java 教程]: https://code.visualstudio.com/docs/java/java-kubernetes/
 
 <!-- IMG List -->

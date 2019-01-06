@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: f94b2981f1e641a6e4b2d9d3028608a56a6590e7
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: cdd157abdb993517f7c880a7edaff10f0e3d1033
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338871"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991581"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>如何使用适用于 Azure 存储的 Spring Boot 起动器
 
@@ -331,7 +331,7 @@ ms.locfileid: "52338871"
 
 1. 应用程序运行以后，即可使用 *curl* 对其进行测试，例如：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 发送一个要求更新文件内容的 POST 请求：
+   a. 发送一个要求更新文件内容的 POST 请求：
 
       ```shell
       curl -X POST -H "Content-Type: text/plain" -d "Hello World" http://localhost:8080/
@@ -347,11 +347,20 @@ ms.locfileid: "52338871"
 
      此时会看到已发布的“Hello World”文本。
 
+## <a name="summary"></a>摘要
+
+在本教程中，你已使用 **[Spring Initializr]** 创建了一个新的 Java 应用程序，将 Azure Storage Starter 添加到了该应用程序，然后对应用程序进行了配置来将 Blob 上传到 Azure 存储帐户。
+
 ## <a name="next-steps"></a>后续步骤
 
-有关适用于 Microsoft Azure 的其他 Spring Boot 起动器的详细信息，请参阅[适用于 Azure 的 Spring Boot 起动器](spring-boot-starters-for-azure.md)。
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
 
-有关将 Azure 功能集成到基于 Spring 的应用程序的其他信息，请参阅 [Azure 上的 Spring Framework](/java/azure/spring-framework/)。
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>其他资源
+
+有关适用于 Microsoft Azure 的其他 Spring Boot 起动器的详细信息，请参阅[适用于 Azure 的 Spring Boot 起动器](spring-boot-starters-for-azure.md)。
 
 有关可从 Spring Boot 应用程序调用的其他 Azure 存储 API 的详细信息，请参阅以下文章：
 * [如何通过 Java 使用 Azure Blob 存储](/azure/storage/blobs/storage-java-how-to-use-blob-storage)

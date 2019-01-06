@@ -7,20 +7,20 @@ author: rmcmurray
 manager: mbaldwin
 editor: brborges
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 066ac30697c6adccc0c6a7b9d57205de488bdc53
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 950b360eb525b0c6b97daad0798c27ded0582b8b
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339001"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991341"
 ---
 # <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>在 Linux 上将 Spring Boot JAR 文件 Web 应用部署到 Azure 应用服务
 
-本文演示如何使用[适用于 Azure 应用服务 Web 应用的 Maven 插件](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)将打包为 Java SE JAR 的 Spring Boot 应用程序部署到 [Linux 上的 Azure 应用服务](https://docs.microsoft.com/en-us/azure/app-service/containers/)。 如果要将应用的依赖关系、运行时和配置合并到单个可部署项目中，请选择通过 [Tomcat 和 WAR 文件](/azure/app-service/containers/quickstart-java)进行 Java SE 部署。
+本文演示如何使用[适用于 Azure 应用服务 Web 应用的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)将打包为 Java SE JAR 的 Spring Boot 应用程序部署到 [Linux 上的 Azure 应用服务](/azure/app-service/containers/)。 如果要将应用的依赖关系、运行时和配置合并到单个可部署项目中，请选择通过 [Tomcat 和 WAR 文件](/azure/app-service/containers/quickstart-java)进行 Java SE 部署。
 
 
 如果还没有 Azure 订阅，可以在开始前创建一个[免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
@@ -36,7 +36,7 @@ ms.locfileid: "52339001"
 
 ## <a name="install-and-sign-in-to-azure-cli"></a>安装并登录 Azure CLI
 
-获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](https://docs.microsoft.com/cli/azure/)。
+获取用于部署 Spring Boot 应用程序的 Maven 插件的最简单方法是使用 [Azure CLI](/cli/azure/)。
 
 通过使用 Azure CLI 登录到 Azure 帐户：
    
@@ -86,7 +86,7 @@ ms.locfileid: "52339001"
    curl http://localhost:8080
    ```
 
-1. 应会显示以下消息：“来自 Spring Boot 的问候！”
+1. 应当会看到显示了以下消息：**Greetings from Spring Boot!**
 
 ## <a name="configure-maven-plugin-for-azure-app-service"></a>配置适用于 Azure 应用服务的 Maven 插件
 
@@ -159,9 +159,16 @@ Web 部署完成后即可通过 [Azure 门户]进行管理。
 
    ![确定 Web 应用的 URL][AP02]
 
-通过与以前相同的 cURL 命令（使用来自门户的 Web 应用 URL而不是 `localhost`）验证部署是否成功。 应会显示以下消息：“来自 Spring Boot 的问候！” 
+通过与以前相同的 cURL 命令（使用来自门户的 Web 应用 URL而不是 `localhost`）验证部署是否成功。 应当会看到显示了以下消息：**Greetings from Spring Boot!** 
 
 ## <a name="next-steps"></a>后续步骤
+
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>其他资源
 
 有关本文中讨论的各项技术的详细信息，请参阅以下文章：
 
@@ -176,17 +183,17 @@ Web 部署完成后即可通过 [Azure 门户]进行管理。
 <!-- URL List -->
 
 [Azure Command-Line Interface (CLI)]: /cli/azure/overview
-[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
+[Azure for Java Developers]: /java/azure/
 [Azure 门户]: https://portal.azure.com/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
+[Working with Azure DevOps and Java]: /azure/devops/
 [Maven]: http://maven.apache.org/
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/
-[适用于 Azure Web 应用的 Maven 插件]: https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+[适用于 Azure Web 应用的 Maven 插件]: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
 
 [Java Development Kit (JDK)]: https://aka.ms/azure-jdks
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->

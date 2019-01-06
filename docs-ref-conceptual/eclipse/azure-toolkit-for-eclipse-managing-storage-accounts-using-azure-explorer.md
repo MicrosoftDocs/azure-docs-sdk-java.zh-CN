@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 310d95436189af09f794154f4c9f0e71c47d88c8
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: dc39298d88f2fb0b2f56d6fbc0071b68b8d27989
+ms.sourcegitcommit: 24f037d133875f86761ec893dfa74e723de040b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48898871"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53636653"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
 
@@ -122,8 +122,8 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 [Azure 中的 Windows 存储帐户的大小]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Azure 中的 Linux 存储帐户的大小]: /azure/virtual-machines/virtual-machines-linux-sizes
-[Windows 存储帐户定价]: /pricing/details/virtual-machines/windows/
-[Linux 存储帐户定价]: /pricing/details/virtual-machines/linux/
+[Windows 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
+[Linux 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 
 <!-- IMG List -->
 
