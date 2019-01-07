@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: fcb18de809f4465239f1f360a755624a5095e03a
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 78dadcf93bfc57ab669271495393fa9ba164c89d
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339151"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991361"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>如何使用适用于 Azure Key Vault 的 Spring Boot 起动器
 
@@ -154,10 +154,10 @@ ms.locfileid: "52339151"
    |---|---|
    | `name` | 指定 Key Vault 的唯一名称。 |
    | `location` | 指定要在其中托管资源组的 [Azure 区域](https://azure.microsoft.com/regions/)。 |
-   | `enabled-for-deployment` | 指定 [Key Vault 部署选项](https://docs.microsoft.com/cli/azure/keyvault)。 |
-   | `enabled-for-disk-encryption` | 指定 [Key Vault 加密选项](https://docs.microsoft.com/cli/azure/keyvault)。 |
-   | `enabled-for-template-deployment` | 指定 [Key Vault 加密选项](https://docs.microsoft.com/cli/azure/keyvault)。 |
-   | `sku` | 指定 [Key Vault SKU 选项](https://docs.microsoft.com/cli/azure/keyvault)。 |
+   | `enabled-for-deployment` | 指定 [Key Vault 部署选项](/cli/azure/keyvault)。 |
+   | `enabled-for-disk-encryption` | 指定 [Key Vault 加密选项](/cli/azure/keyvault)。 |
+   | `enabled-for-template-deployment` | 指定 [Key Vault 加密选项](/cli/azure/keyvault)。 |
+   | `sku` | 指定 [Key Vault SKU 选项](/cli/azure/keyvault)。 |
    | `query` | 指定要从响应中检索的值，即完成本教程所需的 Key Vault URI。 |
 
    Azure CLI 将显示稍后要使用的 Key Vault URI，例如：  
@@ -175,7 +175,7 @@ ms.locfileid: "52339151"
    | 参数 | 说明 |
    |---|---|
    | `name` | 指定前面创建的 Key Vault 名称。 |
-   | `secret-permission` | 指定 Key Vault 的[安全策略](https://docs.microsoft.com/cli/azure/keyvault)。 |
+   | `secret-permission` | 指定 Key Vault 的[安全策略](/cli/azure/keyvault)。 |
    | `spn` | 指定前面创建的应用程序注册的 GUID。 |
 
    Azure CLI 将显示安全策略的创建结果，例如：  
@@ -254,7 +254,7 @@ ms.locfileid: "52339151"
 
 4. 导航到项目的主源代码文件，例如：*/src/main/java/com/wingtiptoys/secrets*。
 
-5. 在文本编辑器中的某个文件内打开应用程序的主 Java 文件，例如：*SecretsApplication.java*，并将以下行添加到该文件：
+5. 在文本编辑器中打开应用程序的主 Java 文件；例如：*SecretsApplication.java*，并向文件中添加以下行：
 
    ```java
    package com.wingtiptoys.secrets;
@@ -309,6 +309,15 @@ ms.locfileid: "52339151"
 
 在本教程中，你使用 **[Spring Initializr]** 创建了一个新的 Java Web 应用程序，创建了一个 Azure 密钥保管库来存储敏感信息，然后将你的应用程序配置为从密钥保管库检索信息。
 
+## <a name="next-steps"></a>后续步骤
+
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>其他资源
+
 有关使用 Azure Key Vault 的详细信息，请参阅以下文章：
 
 * [Key Vault 文档]。
@@ -321,22 +330,15 @@ ms.locfileid: "52339151"
 
 * [在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序](deploy-spring-boot-java-app-on-kubernetes.md)
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
-
-## <a name="next-steps"></a>后续步骤
-
-若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
-
-> [!div class="nextstepaction"]
-> [Azure 上的 Spring](/java/azure/spring-framework)
+有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
 <!-- URL List -->
 
 [Key Vault 文档]: /azure/key-vault/
 [Azure 密钥保管库入门]: /azure/key-vault/key-vault-get-started
-[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
+[面向 Java 开发人员的 Azure]: /java/azure/
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
-[用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
+[使用 Azure DevOps 和 Java]: /azure/devops/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/

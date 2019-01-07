@@ -8,19 +8,19 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: container-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 30be16aebb18e3c9e18f9a023ea9b82e5d614e94
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: aa8fa6d15d868e55b252483993d001d19746244b
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339141"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991501"
 ---
 # <a name="deploy-a-spring-boot-application-on-linux-in-the-azure-container-service"></a>在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上
 
@@ -83,7 +83,7 @@ ms.locfileid: "52339141"
    curl http://localhost
    ```
 
-1. 应该会显示以下消息：Hello Docker World!
+1. 应当会看到显示了以下消息：**Hello Docker World!**
 
    ![本地浏览示例应用][SB01]
 
@@ -132,7 +132,7 @@ ms.locfileid: "52339141"
    </servers>
    ```
 
-1. 导航到 Spring Boot 应用程序的完整项目目录（例如，“C:\SpringBoot\gs-spring-boot-docker\complete”或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”），并使用文本编辑器打开 pom.xml 文件。
+1. 导航到 Spring Boot 应用程序的已完成项目目录（例如：“C:\SpringBoot\gs-spring-boot-docker\complete”或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”），并使用文本编辑器打开 pom.xml 文件。
 
 1. 使用本教程上一部分中的 Azure 容器注册表的登录服务器值更新 pom.xml 文件中的 `<properties>` 集合，例如：
 
@@ -199,7 +199,7 @@ ms.locfileid: "52339141"
 
 3. 当显示“Linux 上的 Web 应用”页时，输入以下信息：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 为“应用名称”输入唯一名称；例如：“wingtiptoyslinux”。
+   a. 为“应用名称”输入唯一名称；例如：“wingtiptoyslinux”。
 
    b. 从下拉列表中选择一个订阅。
 
@@ -209,11 +209,11 @@ ms.locfileid: "52339141"
 
    * 选择“专用注册表”。
 
-   * “映像和可选标记”：根据上文指定容器名称；例如：“wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest”
+   * **映像和可选标记**：根据上文指定容器名称；例如：“wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest”
 
-   * **服务器 URL**：指定前面记下的注册表 URL，例如“*<https://wingtiptoysregistry.azurecr.io>*”。
+   * **服务器 URL**：指定前面记下的注册表 URL，例如“*<https://wingtiptoysregistry.azurecr.io>*”
 
-   * “登录用户名”和“密码”：根据先前步骤中使用的“访问密钥”指定登录凭据。
+   * **登录用户名**和**密码**：根据先前步骤中使用的**访问密钥**指定登录凭据。
    
    e. 输入上述所有信息后，请单击“确定”。
 
@@ -263,12 +263,19 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 ## <a name="next-steps"></a>后续步骤
 
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>其他资源
+
 有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：
 
 * [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-web-app-on-azure.md)
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上](deploy-spring-boot-java-app-on-kubernetes.md)
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
+有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
 有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 入门]。
 
@@ -282,14 +289,14 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure 容器服务 (AKS)]: https://azure.microsoft.com/services/container-service/
-[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
+[面向 Java 开发人员的 Azure]: /java/azure/
 [Azure 门户]: https://portal.azure.com/
 [使用 Azure 门户创建专用 Docker 容器注册表]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image
 [Docker]: https://www.docker.com/
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
+[使用 Azure DevOps 和 Java]: /azure/devops/java/
 [Maven]: http://maven.apache.org/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/

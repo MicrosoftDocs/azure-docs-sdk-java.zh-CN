@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: ab3babf358cf4899709a9a9d2d7917cb2c6d220e
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 72eb49a764bdf15339e6cd17c6a7f997495dcf09
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338831"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991601"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>使用 Fabric8 Maven 插件部署 Spring Boot 应用
 
@@ -362,7 +362,7 @@ ms.locfileid: "52338831"
 
 ## <a name="configure-your-spring-boot-app-to-use-the-fabric8-maven-plugin"></a>将 Spring Boot 应用配置为使用 Fabric8 Maven 插件
 
-1. 导航到 Spring Boot 应用程序的已完成项目目录（例如，“*C:\SpringBoot\gs-spring-boot-docker\complete*”或“*/home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete*”），并使用文本编辑器打开 *pom.xml* 文件。
+1. 导航到 Spring Boot 应用程序的已完成项目目录（例如：“C:\SpringBoot\gs-spring-boot-docker\complete”或“/home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete”），并使用文本编辑器打开 *pom.xml* 文件。
 
 1. 更新 *pom.xml* 文件中的 `<plugins>` 集合以添加 Fabric8 Maven 插件：
 
@@ -378,11 +378,11 @@ ms.locfileid: "52338831"
    </plugin>
    ```
 
-1. 导航到 Spring Boot 应用程序的主要源目录（例如：“*C:\SpringBoot\gs-spring-boot-docker\complete\src\main*”或“*/home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete/src/main*”），并创建一个名为“*fabric8*”的新文件夹。
+1. 导航到 Spring Boot 应用程序的主要源目录（例如：“C:\SpringBoot\gs-spring-boot-docker\complete\src\main”或“/home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete/src/main”），并创建一个名为“fabric8”的新文件夹。
 
 1. 在新的 *fabric8* 文件夹中创建三个 YAML 片段文件：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 使用以下内容创建名为 **deployment.yml** 的文件：
+   a. 使用以下内容创建名为 **deployment.yml** 的文件：
       ```yaml
       apiVersion: extensions/v1beta1
       kind: Deployment
@@ -507,13 +507,20 @@ ms.locfileid: "52338831"
 
 ## <a name="next-steps"></a>后续步骤
 
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+
+> [!div class="nextstepaction"]
+> [Azure 上的 Spring](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>其他资源
+
 有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：
 
 * [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-web-app-on-azure.md)
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上](deploy-spring-boot-java-app-on-linux.md)
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上](deploy-spring-boot-java-app-on-kubernetes.md)
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[用于 Visual Studio Team Services 的 Java 工具]。
+有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
 有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 入门]。
 
@@ -527,7 +534,7 @@ ms.locfileid: "52338831"
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure 容器服务 (AKS)]: https://azure.microsoft.com/services/container-service/
-[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
+[面向 Java 开发人员的 Azure]: /java/azure/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image
@@ -535,7 +542,7 @@ ms.locfileid: "52338831"
 [Fabric8]: https://fabric8.io/
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[用于 Visual Studio Team Services 的 Java 工具]: https://java.visualstudio.com/
+[使用 Azure DevOps 和 Java]: /azure/devops/java/
 [Kubernetes]: https://kubernetes.io/
 [Maven]: http://maven.apache.org/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
