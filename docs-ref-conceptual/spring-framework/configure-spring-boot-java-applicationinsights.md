@@ -14,12 +14,12 @@ ms.service: Azure Monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: f69cdcc5b479e83b230f23a8a76f96284a1b785b
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: bf4f7e51f3108d684503465050d69461240f17e3
+ms.sourcegitcommit: 9df42bd342ef2d25d56a6045f1ab1baf6f2c250e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53991431"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54237288"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>将 Spring Boot Initializer 应用配置为使用 Application Insights
 
@@ -32,6 +32,7 @@ ms.locfileid: "53991431"
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
+* Application Insights Spring Boot Starter **目前不支持** Web Flux 和 Netty API。
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序
 
