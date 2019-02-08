@@ -8,18 +8,17 @@ manager: routlaw
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 12/20/2018
 ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: d281f37b027d4011ea2e3106990c5e45b69ebc88
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: fdff8dc2bd7a29473314d5c0bc99b7bcda369156
+ms.sourcegitcommit: 54e7f077d694a5b1dd7fa6c8870b7d476af9829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892588"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55648721"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包将 Hello World Web 应用部署到云中的 Linux 容器
 
@@ -74,21 +73,13 @@ ms.locfileid: "48892588"
 
    登录到你在 Azure 门户的帐户后，可以按照[使用 Azure 门户创建专用 Docker 容器注册表]一文中的步骤操作，为方便起见，在以下步骤中进行了解释。
 
-1. 单击“+ 新建”菜单图标，然后依次单击“容器”、“Azure 容器注册表”。
+1. 依次单击“+ 创建资源”菜单图标、“容器”、“容器注册表”。
    
-   ![创建新的 Azure 容器注册表][AR01]
-
-1. 显示 Azure 容器注册表模板的信息页面时，请单击“创建”。 
-
-   ![创建新的 Azure 容器注册表][AR02]
+   ![创建新的 Azure 容器注册表][create-container-registry-01]
 
 1. 当显示“创建容器注册表”页时，输入你的“注册表名称”和“资源组”，为“管理员用户”选择“启用”，然后单击“创建”。
 
-   ![配置 Azure 容器注册表设置][AR03]
-
-1. 创建容器注册表后，在 Azure 门户中导航到你的容器注册表，然后单击“访问密钥”。 记下用户名和密码，以供后续步骤中使用。
-
-   ![Azure 容器注册表访问密钥][AR04]
+   ![配置 Azure 容器注册表设置][create-container-registry-02]
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>在 Docker 容器中部署 Web 应用
 
@@ -98,31 +89,37 @@ ms.locfileid: "48892588"
 
    ![添加 Docker 支持][add-docker-support]
 
-1. 添加 Docker 支持后，右键单击项目资源管理器中的项目，选择“Azure”，然后单击“在 Web 应用 (Linux) 上运行”。
+1. 添加 Docker 支持后，右键单击项目资源管理器中的项目，选择“Azure”，然后单击“在用于容器的 Web 应用上运行”。
 
-   ![在 Web 应用 (Linux) 上运行][run-on-web-app-linux]
+   ![在用于容器的 Web 应用上运行][run-on-web-app-for-containers]
 
-1. 出现“在 Web 应用 (Linux) 上运行”对话框时，填写必要信息：
+1. 显示“在用于容器的 Web 应用上运行”对话框时，填写必要信息：
 
-   * 名称：用于指定显示在 Azure Toolkit 中的友好名称。 
+   * **名称**：指定在 Azure Toolkit 中显示的易记名称。 
 
-   * 服务器 URL：用于指定上文所述的容器注册表 URL，通常使用以下语法：“registry.azurecr.io”。 
+   * **容器注册表**：从下拉菜单中选择在本文的上一部分创建的容器注册表。 “服务器 URL”、“用户名”和“密码”字段会自动填充。
 
-   * 用户名和密码：用于指定上文所述的容器注册表 URL 的访问密钥。 
-
-   * 映像和标记：用于指定容器映像名称；通常使用以下语法：“registry.azurecr.io/appname:latest”，其中： 
+   * **映像和标记**：指定容器映像名称；通常使用以下语法：“*registry*.azurecr.io/*appname*:latest”，其中： 
       * 注册表是上文所述的容器注册表 
       * appname 是 Web 应用的名称 
 
-   * “使用现有的 Web 应用”或“创建新的 Web 应用”：用于指定是将容器部署到现有 Web 应用还是创建新的 Web 应用。 
+   * **使用现有的 Web 应用**或**创建新的 Web 应用**：指定是将容器部署到现有 Web 应用还是创建新的 Web 应用。 指定的“应用名称”将创建 Web 应用的 URL，例如 *wingtiptoys.azurewebsites.net*。
 
-   * 资源组：指定是要使用现有资源组还是创建新的资源组。 
+   * **资源组**：指定是要使用现有资源组还是创建新的资源组。 
 
-   * 应用服务计划：指定是要使用现有应用服务计划还是创建新的应用服务计划。 
+   * **应用服务计划**：指定是要使用现有应用服务计划还是创建新的应用服务计划。 
 
-1. 配置完上面列出的设置后，单击“运行”。
+   ![在用于容器的 Web 应用上运行][run-on-web-app-linux]
 
-   ![创建 Web 应用][create-web-app]
+1. 配置完上面列出的设置后，单击“运行”。 成功部署 Web 应用以后，状态会显示在“运行”窗口中。
+
+   ![成功部署的 Web 应用][successfully-deployed]
+
+1. 发布 Web 应用以后，即可浏览到此前为 Web 应用指定的 URL，例如 *wingtiptoys.azurewebsites.net*。
+
+   ![浏览到 Web 应用][browsing-to-web-app]
+
+## <a name="optional-modify-your-web-app-publish-settings"></a>可选：修改 Web 应用发布设置
 
 1. 发布 Web 应用后，所做设置会保存为默认设置，可单击工具栏上的绿色箭头图标在 Azure 上运行应用程序。 可通过单击 Web 应用的下拉菜单来修改这些设置，然后单击“编辑配置”。
 
@@ -151,20 +148,18 @@ ms.locfileid: "48892588"
 
 <!-- IMG List -->
 
-[AR01]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/AR01.png
-[AR02]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/AR02.png
-[AR03]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/AR03.png
-[AR04]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/AR04.png
-
+[add-docker-support]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/add-docker-support.png
+[browsing-to-web-app]:  media/azure-toolkit-for-intellij-hello-world-web-app-linux/browsing-to-web-app.png
+[create-container-registry-01]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/create-container-registry-01.png
+[create-container-registry-02]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/create-container-registry-02.png
 [docker-settings-menu]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/docker-settings-menu.png
+[edit-configuration-dialog]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/edit-configuration-dialog.png
+[edit-configuration-menu]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/edit-configuration-menu.png
 [file-new-project]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/file-new-project.png
-[maven-archetype-webapp]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/maven-archetype-webapp.png
 [groupid-and-artifactid]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/groupid-and-artifactid.png
+[maven-archetype-webapp]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/maven-archetype-webapp.png
 [maven-options]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/maven-options.png
 [project-name]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/project-name.png
-[add-docker-support]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/add-docker-support.png
+[run-on-web-app-for-containers]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/run-on-web-app-for-containers.png
 [run-on-web-app-linux]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/run-on-web-app-linux.png
-[create-web-app]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/create-web-app.png
-[edit-configuration-menu]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/edit-configuration-menu.png
-[edit-configuration-dialog]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/edit-configuration-dialog.png
 [successfully-deployed]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/successfully-deployed.png
