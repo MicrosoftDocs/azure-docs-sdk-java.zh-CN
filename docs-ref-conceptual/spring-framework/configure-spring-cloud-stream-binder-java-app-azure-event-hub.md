@@ -14,12 +14,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 98b3dc1243bf293ede121eafd51b041649d165db
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: 9223cc425fcef28369431fa1c7a7b93062a210c2
+ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53991421"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57335400"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
 
@@ -143,12 +143,10 @@ ms.locfileid: "53991421"
    ```xml
    <dependency>
       <groupId>com.microsoft.azure</groupId>
-      <artifactId>spring-cloud-azure-eventhub-stream-binder</artifactId>
-      <version>1.0.0.M2</version>
+      <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
+      <version>1.1.0.RC2</version>
    </dependency>
    ```
-
-   ![编辑 pom.xml 文件][SI03]
 
 1. 保存并关闭 pom.xml 文件。
 
@@ -197,6 +195,7 @@ ms.locfileid: "53991421"
      }
    ]
    ```
+   
 1. 指定要用于 Azure 的订阅的 GUID；例如：
 
    ```azurecli
@@ -417,6 +416,7 @@ ms.locfileid: "53991421"
 <!-- URL List -->
 
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
+[面向 Java 开发人员的 Azure]: https://docs.microsoft.com/java/azure/
 [使用 Azure DevOps 和 Java]: /azure/devops/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
