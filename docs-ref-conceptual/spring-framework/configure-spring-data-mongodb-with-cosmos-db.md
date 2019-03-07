@@ -59,11 +59,11 @@ ms.locfileid: "53992038"
 
    ![指定 Cosmos DB 帐户设置][COSMOSDB02]
    
-1. 输入上述所有信息后，单击“复查 + 创建”。
+1. 输入上述所有信息后，单击“查看 + 创建”。
 
 1. 如果复查页面上的所有信息看起来都是正确的，则单击“创建”。
 
-   ![复查 Cosmos DB 帐户设置][COSMOSDB03]
+   ![查看 Cosmos DB 帐户设置][COSMOSDB03]
 
 ### <a name="retrieve-the-connection-string-for-your-azure-cosmos-db-account"></a>检索 Azure Cosmos DB 帐户的连接字符串
 

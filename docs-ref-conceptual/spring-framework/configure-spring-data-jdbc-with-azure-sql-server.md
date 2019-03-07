@@ -70,7 +70,7 @@ ms.locfileid: "53992018"
 
 1. 输入上述所有信息后，单击“选择”。
 
-1. 对于本教程，请指定最经济的**定价层**，然后单击“创建”。
+1. 对于本教程，请指定价格最低的**定价层**，然后单击“创建”。
 
    ![创建 SQL 数据库][SQL04]
 
@@ -123,7 +123,7 @@ ms.locfileid: "53992018"
 
    | 参数 | 说明 |
    |---|---|
-   | `spring.datasource.url` | 指定本文上文中所述的 SQL JDBC 字符串的编辑后版本。 |
+   | `spring.datasource.url` | 指定上文中所述的 SQL JDBC 字符串的编辑后版本。 |
    | `spring.datasource.username` | 指定本文上文中所述的 SQL 管理员名称，并将缩短的服务器名称追加到其末尾。 |
    | `spring.datasource.password` | 指定本文上文中所述的 SQL 管理员密码。 |
 
@@ -171,7 +171,7 @@ ms.locfileid: "53992018"
    [{"id":1,"name":"dog","species":"canine"},{"id":2,"name":"cat","species":"feline"}]
    ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 JDBC 在 Azure SQL 数据库中存储和检索信息。
 
