@@ -14,112 +14,114 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 5e025c90c2619ec72ffddf5815fd49c3ac59c00f
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: c98f966eb17e3fbde877451c8f8fefb21e6bf686
+ms.sourcegitcommit: dca98b953fa3149fb2e6aa49e27e843b6df0c6c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893088"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57786886"
 ---
-# <a name="create-a-hello-world-web-app-for-azure-using-eclipse"></a><span data-ttu-id="c08db-103">使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用</span><span class="sxs-lookup"><span data-stu-id="c08db-103">Create a Hello World web app for Azure using Eclipse</span></span>
+# <a name="create-a-hello-world-web-app-for-azure-using-eclipse"></a><span data-ttu-id="5fc78-103">使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用</span><span class="sxs-lookup"><span data-stu-id="5fc78-103">Create a Hello World web app for Azure using Eclipse</span></span>
 
-<span data-ttu-id="c08db-104">本教程说明如何使用[用于 Eclipse 的 Azure 工具]创建一个基本的 Hello World 应用程序，并将其部署到 Azure 作为 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="c08db-104">This tutorial shows how to create and deploy a basic Hello World application to Azure as a web app by using the [Azure Toolkit for Eclipse].</span></span>
+<span data-ttu-id="5fc78-104">本教程说明如何使用[用于 Eclipse 的 Azure 工具包]创建一个基本的 Hello World 应用程序，并将其部署到 Azure 作为 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="5fc78-104">This tutorial shows how to create and deploy a basic Hello World application to Azure as a web app by using the [Azure Toolkit for Eclipse].</span></span>
 
 > [!NOTE]
 >
-> <span data-ttu-id="c08db-105">如需使用[用于 IntelliJ 的 Azure 工具包]的本文版本，请参阅[使用 IntelliJ 创建适用于 Azure 的 Hello World Web 应用][intellij-hello-world]。</span><span class="sxs-lookup"><span data-stu-id="c08db-105">For a version of this article that uses the [Azure Toolkit for IntelliJ], see [Create a Hello World web app for Azure using IntelliJ][intellij-hello-world].</span></span>
+> <span data-ttu-id="5fc78-105">如需使用[用于 IntelliJ 的 Azure 工具包]的本文版本，请参阅[使用 IntelliJ 创建适用于 Azure 的 Hello World Web 应用][intellij-hello-world]。</span><span class="sxs-lookup"><span data-stu-id="5fc78-105">For a version of this article that uses the [Azure Toolkit for IntelliJ], see [Create a Hello World web app for Azure using IntelliJ][intellij-hello-world].</span></span>
 >
 
 > [!IMPORTANT]
 > 
-> <span data-ttu-id="c08db-106">用于 Eclipse 的 Azure 工具包于 2017 年 8 月进行了更新，采用了不同的工作流。</span><span class="sxs-lookup"><span data-stu-id="c08db-106">The Azure Toolkit for Eclipse was updated in August 2017 with a different workflow.</span></span> <span data-ttu-id="c08db-107">本文详述如何使用用于 Eclipse 的 Azure 工具包 3.0.7（或更高版本）创建 Hello World Web 应用。</span><span class="sxs-lookup"><span data-stu-id="c08db-107">This article illustrates creating a Hello World web app by using version 3.0.7 (or later) of the Azure Toolkit for Eclipse.</span></span> <span data-ttu-id="c08db-108">如果使用的是工具包 3.0.6（或更低版本），则需执行[使用旧工具包在 Eclipse 中创建适用于 Azure 的 Hello World Web 应用][Legacy Version]中的步骤。</span><span class="sxs-lookup"><span data-stu-id="c08db-108">If you are using the version 3.0.6 (or earlier) of the toolkit, you will need to follow the steps in [Create a Hello World web app for Azure in Eclipse using the legacy toolkit][Legacy Version].</span></span>
+> <span data-ttu-id="5fc78-106">用于 Eclipse 的 Azure 工具包于 2017 年 8 月进行了更新，采用了不同的工作流。</span><span class="sxs-lookup"><span data-stu-id="5fc78-106">The Azure Toolkit for Eclipse was updated in August 2017 with a different workflow.</span></span> <span data-ttu-id="5fc78-107">本文详述如何使用用于 Eclipse 的 Azure 工具包 3.0.7（或更高版本）创建 Hello World Web 应用。</span><span class="sxs-lookup"><span data-stu-id="5fc78-107">This article illustrates creating a Hello World web app by using version 3.0.7 (or later) of the Azure Toolkit for Eclipse.</span></span> <span data-ttu-id="5fc78-108">如果使用的是工具包 3.0.6（或更低版本），则需执行[使用旧工具包在 Eclipse 中创建适用于 Azure 的 Hello World Web 应用][Legacy Version]中的步骤。</span><span class="sxs-lookup"><span data-stu-id="5fc78-108">If you are using the version 3.0.6 (or earlier) of the toolkit, you will need to follow the steps in [Create a Hello World web app for Azure in Eclipse using the legacy toolkit][Legacy Version].</span></span>
 > 
 
-<span data-ttu-id="c08db-109">完成本教程后，应用程序会在 Web 浏览器中如下图所示：</span><span class="sxs-lookup"><span data-stu-id="c08db-109">When you have completed this tutorial, your application will look similar to the following illustration when you view it in a web browser:</span></span>
+<span data-ttu-id="5fc78-109">完成本教程后，应用程序会在 Web 浏览器中如下图所示：</span><span class="sxs-lookup"><span data-stu-id="5fc78-109">When you have completed this tutorial, your application will look similar to the following illustration when you view it in a web browser:</span></span>
 
 ![Hello World 应用预览][browse-web-app]
 
 [!INCLUDE [azure-toolkit-for-eclipse-prerequisites](../includes/azure-toolkit-for-eclipse-prerequisites.md)]
 
-## <a name="create-a-new-web-app-project"></a><span data-ttu-id="c08db-111">创建新 Web 应用项目</span><span class="sxs-lookup"><span data-stu-id="c08db-111">Create a new web app project</span></span>
+## <a name="create-a-new-web-app-project"></a><span data-ttu-id="5fc78-111">创建新 Web 应用项目</span><span class="sxs-lookup"><span data-stu-id="5fc78-111">Create a new web app project</span></span>
 
-1. <span data-ttu-id="c08db-112">启动 Eclipse，然后根据[用于 Eclipse 的 Azure 工具包的 Azure 登录说明][eclipse-sign-in-instructions]一文中的说明登录到 Azure 帐户。</span><span class="sxs-lookup"><span data-stu-id="c08db-112">Start Eclipse, and sign into your Azure account by using the instructions in the [Azure Sign In Instructions for the Azure Toolkit for Eclipse][eclipse-sign-in-instructions] article.</span></span>
+1. <span data-ttu-id="5fc78-112">启动 Eclipse，然后根据[用于 Eclipse 的 Azure 工具包的 Azure 登录说明][eclipse-sign-in-instructions]一文中的说明登录到 Azure 帐户。</span><span class="sxs-lookup"><span data-stu-id="5fc78-112">Start Eclipse, and sign into your Azure account by using the instructions in the [Azure Sign In Instructions for the Azure Toolkit for Eclipse][eclipse-sign-in-instructions] article.</span></span>
 
-1. <span data-ttu-id="c08db-113">依次单击“文件”、“新建”和“动态 Web 项目”。</span><span class="sxs-lookup"><span data-stu-id="c08db-113">Click **File**, click **New**, and then click **Dynamic Web Project**.</span></span> <span data-ttu-id="c08db-114">（如果在单击“文件”、“新建”后未看到“动态 Web 项目”作为可用项目列出，则执行以下操作：依次单击“文件”、“新建”、“项目...”，展开“Web”，单击“动态 Web 项目”，并单击“下一步”。）</span><span class="sxs-lookup"><span data-stu-id="c08db-114">(If you don't see **Dynamic Web Project** listed as an available project after clicking **File** and **New**, then do the following: click **File**, click **New**, click **Project...**, expand **Web**, click **Dynamic Web Project**, and click **Next**.)</span></span>
+1. <span data-ttu-id="5fc78-113">依次单击“文件”、“新建”和“动态 Web 项目”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-113">Click **File**, click **New**, and then click **Dynamic Web Project**.</span></span> <span data-ttu-id="5fc78-114">（如果在单击“文件”、“新建”后未看到“动态 Web 项目”作为可用项目列出，则执行以下操作：依次单击“文件”、“新建”、“项目...”，展开“Web”，单击“动态 Web 项目”，并单击“下一步”。）</span><span class="sxs-lookup"><span data-stu-id="5fc78-114">(If you don't see **Dynamic Web Project** listed as an available project after clicking **File** and **New**, then do the following: click **File**, click **New**, click **Project...**, expand **Web**, click **Dynamic Web Project**, and click **Next**.)</span></span>
 
    ![创建新的动态 Web 项目][file-new-dynamic-web-project]
 
-2. <span data-ttu-id="c08db-116">在本教程中，项目命名为 **MyWebApp**。</span><span class="sxs-lookup"><span data-stu-id="c08db-116">For purposes of this tutorial, name the project **MyWebApp**.</span></span> <span data-ttu-id="c08db-117">屏幕应与下图中所示类似：</span><span class="sxs-lookup"><span data-stu-id="c08db-117">Your screen will appear similar to the following:</span></span>
+2. <span data-ttu-id="5fc78-116">在本教程中，项目命名为 **MyWebApp**。</span><span class="sxs-lookup"><span data-stu-id="5fc78-116">For purposes of this tutorial, name the project **MyWebApp**.</span></span> <span data-ttu-id="5fc78-117">屏幕应与下图中所示类似：</span><span class="sxs-lookup"><span data-stu-id="5fc78-117">Your screen will appear similar to the following:</span></span>
    
    ![“新建动态 Web 项目”属性][dynamic-web-project-properties]
 
-3. <span data-ttu-id="c08db-119">单击“完成”。</span><span class="sxs-lookup"><span data-stu-id="c08db-119">Click **Finish**.</span></span>
+3. <span data-ttu-id="5fc78-119">单击“完成”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-119">Click **Finish**.</span></span>
 
-4. <span data-ttu-id="c08db-120">在 Eclipse 的项目资源管理器视图中，展开“MyWebApp”。</span><span class="sxs-lookup"><span data-stu-id="c08db-120">Within Eclipse's Project Explorer view, expand **MyWebApp**.</span></span> <span data-ttu-id="c08db-121">右键单击“WebContent”，单击“新建”，并单击“JSP 文件”。</span><span class="sxs-lookup"><span data-stu-id="c08db-121">Right-click **WebContent**, click **New**, and then click **JSP File**.</span></span>
+4. <span data-ttu-id="5fc78-120">在 Eclipse 的项目资源管理器视图中，展开“MyWebApp”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-120">Within Eclipse's Project Explorer view, expand **MyWebApp**.</span></span> <span data-ttu-id="5fc78-121">右键单击“WebContent”，单击“新建”，并单击“JSP 文件”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-121">Right-click **WebContent**, click **New**, and then click **JSP File**.</span></span>
 
    ![新建 JSP 文件][create-new-jsp-file]
 
-5. <span data-ttu-id="c08db-123">在“新建 JSP 文件”对话框中，将文件命名为“index.jsp”，将父文件夹保留为“MyWebApp/WebContent”，然后单击“下一步”。</span><span class="sxs-lookup"><span data-stu-id="c08db-123">In the **New JSP File** dialog box, name the file **index.jsp**, keep the parent folder as **MyWebApp/WebContent**, and then click **Next**.</span></span>
+5. <span data-ttu-id="5fc78-123">在“新建 JSP 文件”对话框中，将文件命名为“index.jsp”，将父文件夹保留为“MyWebApp/WebContent”，然后单击“下一步”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-123">In the **New JSP File** dialog box, name the file **index.jsp**, keep the parent folder as **MyWebApp/WebContent**, and then click **Next**.</span></span>
 
    ![“新建 JSP 文件”对话框][new-jsp-file-dialog]
 
-6. <span data-ttu-id="c08db-125">基于本教程的目的，在“选择 JSP 模板”对话框中选择“新建 JSP 文件(html)”，并单击“完成”。</span><span class="sxs-lookup"><span data-stu-id="c08db-125">In the **Select JSP Template** dialog box, for purposes of this tutorial select **New JSP File (html)**, and then click **Finish**.</span></span>
+6. <span data-ttu-id="5fc78-125">基于本教程的目的，在“选择 JSP 模板”对话框中选择“新建 JSP 文件(html)”，并单击“完成”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-125">In the **Select JSP Template** dialog box, for purposes of this tutorial select **New JSP File (html)**, and then click **Finish**.</span></span>
 
    ![选择 JSP 模板][select-jsp-template]
 
-7. <span data-ttu-id="c08db-127">在 Eclipse 中打开 index.jsp 文件后，添加文本以将 **Hello World!** 动态显示</span><span class="sxs-lookup"><span data-stu-id="c08db-127">When your index.jsp file opens in Eclipse, add in text to dynamically display **Hello World!**</span></span> <span data-ttu-id="c08db-128">在现有 `<body>` 元素中。</span><span class="sxs-lookup"><span data-stu-id="c08db-128">within the existing `<body>` element.</span></span> <span data-ttu-id="c08db-129">更新后的 `<body>` 内容应类似于以下示例：</span><span class="sxs-lookup"><span data-stu-id="c08db-129">Your updated `<body>` content should resemble the following example:</span></span>
+7. <span data-ttu-id="5fc78-127">在 Eclipse 中打开 index.jsp 文件后，添加文本以将 **Hello World!** 动态显示</span><span class="sxs-lookup"><span data-stu-id="5fc78-127">When your index.jsp file opens in Eclipse, add in text to dynamically display **Hello World!**</span></span> <span data-ttu-id="5fc78-128">在现有 `<body>` 元素中。</span><span class="sxs-lookup"><span data-stu-id="5fc78-128">within the existing `<body>` element.</span></span> <span data-ttu-id="5fc78-129">更新后的 `<body>` 内容应类似于以下示例：</span><span class="sxs-lookup"><span data-stu-id="5fc78-129">Your updated `<body>` content should resemble the following example:</span></span>
    
    ```jsp
    <body><b><% out.println("Hello World!"); %></b></body>
    ```
 
-8. <span data-ttu-id="c08db-130">保存 index.jsp。</span><span class="sxs-lookup"><span data-stu-id="c08db-130">Save index.jsp.</span></span>
+8. <span data-ttu-id="5fc78-130">保存 index.jsp。</span><span class="sxs-lookup"><span data-stu-id="5fc78-130">Save index.jsp.</span></span>
 
-## <a name="deploy-your-web-app-to-azure"></a><span data-ttu-id="c08db-131">将 Web 应用部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="c08db-131">Deploy your web app to Azure</span></span>
+## <a name="deploy-your-web-app-to-azure"></a><span data-ttu-id="5fc78-131">将 Web 应用部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="5fc78-131">Deploy your web app to Azure</span></span>
 
-1. <span data-ttu-id="c08db-132">在 Eclipse 的“项目资源管理器”视图中，右键单击项目，选择“Azure”，然后选择“发布为 Azure Web 应用”。</span><span class="sxs-lookup"><span data-stu-id="c08db-132">Within Eclipse's Project Explorer view, right-click your project, choose **Azure**, and then choose **Publish as Azure Web App**.</span></span>
+1. <span data-ttu-id="5fc78-132">在 Eclipse 的“项目资源管理器”视图中，右键单击项目，选择“Azure”，然后选择“发布为 Azure Web 应用”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-132">Within Eclipse's Project Explorer view, right-click your project, choose **Azure**, and then choose **Publish as Azure Web App**.</span></span>
    
    ![发布为 Azure Web 应用][publish-as-azure-web-app]
 
-1. <span data-ttu-id="c08db-134">当“部署 Web 应用”对话框显示时，可选择以下某个选项：</span><span class="sxs-lookup"><span data-stu-id="c08db-134">When the **Deploy Web App** dialog box appears, you can choose one of the following options:</span></span>
+1. <span data-ttu-id="5fc78-134">当“部署 Web 应用”对话框显示时，可选择以下某个选项：</span><span class="sxs-lookup"><span data-stu-id="5fc78-134">When the **Deploy Web App** dialog box appears, you can choose one of the following options:</span></span>
 
-   * <span data-ttu-id="c08db-135">选择现有的 Web 应用（如果存在）。</span><span class="sxs-lookup"><span data-stu-id="c08db-135">Select an existing web app if one exists.</span></span>
+   * <span data-ttu-id="5fc78-135">选择现有的 Web 应用（如果存在）。</span><span class="sxs-lookup"><span data-stu-id="5fc78-135">Select an existing web app if one exists.</span></span>
 
       ![选择应用服务][select-app-service]
 
-   * <span data-ttu-id="c08db-137">单击“创建新 Web 应用”。</span><span class="sxs-lookup"><span data-stu-id="c08db-137">Click **Create New Web App**.</span></span>
+   * <span data-ttu-id="5fc78-137">单击“创建新 Web 应用”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-137">Click **Create New Web App**.</span></span>
 
       ![创建应用服务][create-app-service]
 
-      <span data-ttu-id="c08db-139">在“创建应用服务”对话框中为 Web 应用指定必要信息，然后单击“创建”。</span><span class="sxs-lookup"><span data-stu-id="c08db-139">Specify the requisite information for your web app in the **Create App Service** dialog box, and then click **Create**.</span></span>
+      <span data-ttu-id="5fc78-139">在“创建应用服务”对话框中为 Web 应用指定必要信息，然后单击“创建”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-139">Specify the requisite information for your web app in the **Create App Service** dialog box, and then click **Create**.</span></span>
+
+      <span data-ttu-id="5fc78-140">在这里可以配置运行时环境、应用设置、服务计划和资源组。</span><span class="sxs-lookup"><span data-stu-id="5fc78-140">Here you can configure the runtime environment, app settings, service plan and resource group.</span></span>
 
       ![“创建应用服务”对话框][create-app-service-dialog]
 
-1. <span data-ttu-id="c08db-141">选择 Web 应用，然后单击“部署”。</span><span class="sxs-lookup"><span data-stu-id="c08db-141">Select your web app and then click **Deploy**.</span></span>
+1. <span data-ttu-id="5fc78-142">选择 Web 应用，然后单击“部署”。</span><span class="sxs-lookup"><span data-stu-id="5fc78-142">Select your web app and then click **Deploy**.</span></span>
 
    ![部署应用服务][deploy-app-service]
 
-1. <span data-ttu-id="c08db-143">工具包在成功部署 Web 应用后会在“Azure 活动日志”选项卡下显示“已发布”状态，这是已部署 Web 应用的 URL 超链接。</span><span class="sxs-lookup"><span data-stu-id="c08db-143">The toolkit will display a **Published** status under the **Azure Activity Log** tab when it has successfully deployed your web app, which is a hyperlink for the URL of your deployed web app.</span></span>
+1. <span data-ttu-id="5fc78-144">工具包在成功部署 Web 应用后会在“Azure 活动日志”选项卡下显示“已发布”状态，这是已部署 Web 应用的 URL 超链接。</span><span class="sxs-lookup"><span data-stu-id="5fc78-144">The toolkit will display a **Published** status under the **Azure Activity Log** tab when it has successfully deployed your web app, which is a hyperlink for the URL of your deployed web app.</span></span>
 
    ![发布状态][publish-status]
 
-1. <span data-ttu-id="c08db-145">可使用状态消息中提供的链接转到 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="c08db-145">You can browse to your web app using the link provided in the status message.</span></span>
+1. <span data-ttu-id="5fc78-146">可使用状态消息中提供的链接转到 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="5fc78-146">You can browse to your web app using the link provided in the status message.</span></span>
 
    ![转到你的 Web 应用][browse-web-app]
 
-1. <span data-ttu-id="c08db-147">将 Web 发布到 Azure 以后，即可对应用进行管理，方法是右键单击该应用，然后在上下文菜单中选择一个选项。</span><span class="sxs-lookup"><span data-stu-id="c08db-147">After you have published your web to Azure, you can manage your app by right-clicking on it and selecting one of the options on the context menu.</span></span> <span data-ttu-id="c08db-148">例如，可以**启动**、**停止**或**删除** Web 应用。</span><span class="sxs-lookup"><span data-stu-id="c08db-148">For example, you can **Start**, **Stop**, or **Delete** your web app.</span></span>
+1. <span data-ttu-id="5fc78-148">将 Web 发布到 Azure 以后，即可对应用进行管理，方法是右键单击该应用，然后在上下文菜单中选择一个选项。</span><span class="sxs-lookup"><span data-stu-id="5fc78-148">After you have published your web to Azure, you can manage your app by right-clicking on it and selecting one of the options on the context menu.</span></span> <span data-ttu-id="5fc78-149">例如，可以**启动**、**停止**或**删除** Web 应用。</span><span class="sxs-lookup"><span data-stu-id="5fc78-149">For example, you can **Start**, **Stop**, or **Delete** your web app.</span></span>
 
    ![管理应用服务][manage-app-service]
 
-## <a name="next-steps"></a><span data-ttu-id="c08db-150">后续步骤</span><span class="sxs-lookup"><span data-stu-id="c08db-150">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="5fc78-151">后续步骤</span><span class="sxs-lookup"><span data-stu-id="5fc78-151">Next steps</span></span>
 
 [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
-<span data-ttu-id="c08db-151">有关创建 Azure Web 应用的其他信息，请参阅 [Web 应用概述]。</span><span class="sxs-lookup"><span data-stu-id="c08db-151">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
+<span data-ttu-id="5fc78-152">有关创建 Azure Web 应用的其他信息，请参阅 [Web 应用概述]。</span><span class="sxs-lookup"><span data-stu-id="5fc78-152">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
 
 <!-- URL List -->
 
-[用于 Eclipse 的 Azure 工具]: azure-toolkit-for-eclipse.md
+[用于 Eclipse 的 Azure 工具包]: azure-toolkit-for-eclipse.md
 [Azure Toolkit for Eclipse]: azure-toolkit-for-eclipse.md
 [用于 IntelliJ 的 Azure 工具包]: ../intellij/azure-toolkit-for-intellij.md
 [Azure Toolkit for IntelliJ]: ../intellij/azure-toolkit-for-intellij.md
