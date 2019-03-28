@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: reference
 ms.devlang: java
 ms.date: 11/21/2018
-ms.openlocfilehash: 3827b5744a5d08c53cbbff1db29eca34194c1625
-ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
+ms.openlocfilehash: 0ae8d78a0618c4dbcc5e734fce311f7c2e5684bd
+ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57335430"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58489645"
 ---
 # <a name="hdinsight-java-management-sdk-preview"></a>HDInsight Java 管理 SDK（预览版）
 
@@ -25,7 +25,7 @@ HDInsight Java SDK 提供用于管理 HDInsight 群集的类和方法。 该 SDK
 
 * 一个 Azure 帐户。 如果没有帐户，可[获取一个免费试用帐户](https://azure.microsoft.com/free/)。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
-* [Maven](https://maven.apache.org/install.html)
+* [Maven](https://maven.apache.org/download.cgi)
 
 ## <a name="sdk-installation"></a>SDK 安装
 
