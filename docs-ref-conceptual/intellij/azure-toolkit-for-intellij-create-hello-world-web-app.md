@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: cc68e16a6940a1f0f2b08f0b63c90c58ec6dbc4e
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 7055751d1b1c37e019ef4ed59f1710ce6905e9f8
+ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892858"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58489635"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-intellij"></a>使用 IntelliJ 创建适用于 Azure 的 Hello World Web 应用
 
@@ -27,7 +27,7 @@ ms.locfileid: "48892858"
 
 > [!NOTE]
 >
-> 如需使用[用于 Eclipse 的 Azure 工具]的本文版本，请参阅[使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用][eclipse-hello-world]。
+> 如需使用[用于 Eclipse 的 Azure 工具包]的本文版本，请参阅[使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用][eclipse-hello-world]。
 >
 
 > [!IMPORTANT]
@@ -91,7 +91,7 @@ ms.locfileid: "48892858"
 
       ![“在 Web 应用上运行”对话框][run-on-web-app-dialog]
 
-   * 单击“创建新 Web 应用”。 如果选择创建新 Web 应用，请为 Web 应用指定必要信息，然后单击“运行”。
+   * 单击 WebApp 下拉列表中的“创建新的 Web 应用”。 如果选择创建新的 Web 应用，请为 Web 应用指定必要信息，然后在 Web 应用创建后单击“运行”。
 
       ![创建新 Web 应用][create-new-web-app-dialog]
 
@@ -120,7 +120,7 @@ ms.locfileid: "48892858"
 <!-- URL List -->
 
 [用于 IntelliJ 的 Azure 工具包]: azure-toolkit-for-intellij.md
-[用于 Eclipse 的 Azure 工具]: ../eclipse/azure-toolkit-for-eclipse.md
+[用于 Eclipse 的 Azure 工具包]: ../eclipse/azure-toolkit-for-eclipse.md
 [eclipse-hello-world]: ../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md
 [Web 应用概述]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/
