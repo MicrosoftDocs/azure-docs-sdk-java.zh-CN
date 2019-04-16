@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: 87bbf46fe5b22c4a147d6010d3813334caa774fb
-ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
+ms.openlocfilehash: 42bb030a916cc5aaf1e20242518a0a400b8baa88
+ms.sourcegitcommit: 3b10fe30dcc83e4c2e4c94d5b55e37ddbaa23c7a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57335410"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59071006"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
 
@@ -103,98 +103,54 @@ ms.locfileid: "57335410"
 
 1. 在资源组中创建私有 Azure 容器注册表。 本教程的后续步骤会将示例应用作为 Docker 映像推送到此注册表。 用注册表的唯一名称替换 `wingtiptoysregistry`。
    ```azurecli
-   az acr create --admin-enabled --resource-group wingtiptoys-kubernetes--location eastus \
+   az acr create --resource-group wingtiptoys-kubernetes --location eastus \
     --name wingtiptoysregistry --sku Basic
    ```
 
-## <a name="push-your-app-to-the-container-registry"></a>将应用推送到容器注册表
+## <a name="push-your-app-to-the-container-registry-via-jib"></a>通过 Jib 将应用推送到容器注册表
 
-1. 导航到 Maven 安装的配置目录 (default ~/.m2/ or C:\Users\username\.m2)，并使用文本编辑器打开 settings.xml 文件。
-
-1. 从 Azure CLI 检索容器注册表的密码。
+1. 通过 Azure CLI 登录到 Azure 容器注册表。
    ```azurecli
-   az acr credential show --name wingtiptoysregistry --query passwords[0]
-   ```
-
-   ```json
-   {
-     "name": "password",
-     "value": "AbCdEfGhIjKlMnOpQrStUvWxYz"
-   }
-   ```
-
-1. 将你的 Azure 容器注册表 ID 和密码添加到 settings.xml 文件的 `<server>` 集合。
-`id` 和 `username` 是注册表的名称。 使用上一个命令中的 `password` 值（不带引号）。
-
-   ```xml
-   <servers>
-      <server>
-         <id>wingtiptoysregistry</id>
-         <username>wingtiptoysregistry</username>
-         <password>AbCdEfGhIjKlMnOpQrStUvWxYz</password>
-      </server>
-   </servers>
+   # set the default name for Azure Container Registry, otherwise you will need to specify the name in "az acr login"
+   az configure --defaults acr=wingtiptoysregistry
+   az acr login
    ```
 
 1. 导航到 Spring Boot 应用程序的完整项目目录（例如，“C:\SpringBoot\gs-spring-boot-docker\complete”或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”），并使用文本编辑器打开 pom.xml 文件。
 
-1. 使用 Azure 容器注册表的登录服务器值更新 pom.xml 文件中的 `<properties>` 集合。
+1. 将 *pom.xml* 文件中的 `<properties>` 集合更新为你的 Azure 容器注册表的注册表名称和 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 的最新版本。
 
    ```xml
    <properties>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
+      <jib-maven-plugin.version>1.0.2</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
 
-1. 更新 pom.xml 文件中的 `<plugins>` 集合，使 `<plugin>` 包含 Azure 容器注册表的登录服务器地址和注册表名称。
+1. 更新 *pom.xml* 文件中的 `<plugins>` 集合，使 `<plugin>` 包含 `jib-maven-plugin`。
 
    ```xml
    <plugin>
-      <groupId>com.spotify</groupId>
-      <artifactId>docker-maven-plugin</artifactId>
-      <version>0.4.11</version>
-      <configuration>
-         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         <buildArgs>
-            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-         </buildArgs>
-         <baseImage>java</baseImage>
-         <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-         <resources>
-            <resource>
-               <targetPath>/</targetPath>
-               <directory>${project.build.directory}</directory>
-               <include>${project.build.finalName}.jar</include>
-            </resource>
-         </resources>
-         <serverId>wingtiptoysregistry</serverId>
-         <registryUrl>https://wingtiptoysregistry.azurecr.io</registryUrl>
-      </configuration>
+     <artifactId>jib-maven-plugin</artifactId>
+     <groupId>com.google.cloud.tools</groupId>
+     <version>${jib-maven-plugin.version}</version>
+     <configuration>
+        <from>              
+            <image>openjdk:8-jre-alpine</image>
+        </from>
+        <to>                
+            <image>${docker.image.prefix}/${project.artifactId}</image>
+        </to>
+     </configuration>
    </plugin>
    ```
 
-1. 导航到 Spring Boot 应用程序的完成项目目录，然后运行以下命令以生成 Docker 容器并将映像推送到注册表：
+1. 导航到 Spring Boot 应用程序的完成项目目录，然后运行以下命令以生成映像并将映像推送到注册表：
 
    ```
-   mvn package dockerfile:build -DpushImage
+   mvn compile jib:build
    ```
-
-> [!NOTE]
->
->  Maven 将映像推送到 Azure 时，你可能会收到类似于以下内容的错误消息：
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: no basic auth credentials`
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: Incomplete Docker registry authorization credentials. Please provide all of username, password, and email or none.`
->
-> 如果收到此错误消息，请从 Docker 命令行登录到 Azure。
->
-> `docker login -u wingtiptoysregistry -p "AbCdEfGhIjKlMnOpQrStUvWxYz" wingtiptoysregistry.azurecr.io`
->
-> 然后推送你的容器：
->
-> `docker push wingtiptoysregistry.azurecr.io/gs-spring-boot-docker`
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>使用 Azure CLI 在 AKS 上创建 Kubernetes 群集
 
@@ -205,8 +161,31 @@ ms.locfileid: "57335410"
    ```
    此命令可能需要一段时间才能完成。
 
-1. 结合使用 Azure 容器注册表 (ACR) 和 Azure Kubernetes 服务 (AKS) 时，需要建立身份验证机制。 按照[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]中的步骤授予 AKS 对 ACR 的访问权限。
+1. 将 Azure 容器注册表 (ACR) 与 Azure Kubernetes 服务 (AKS) 配合使用时，需要向 Azure Kubernetes 服务授予对 Azure 容器注册表的拉取访问权限。 创建 Azure Kubernetes 服务时，Azure 会创建一个默认的服务主体。 请在 bash 或 Powershell 中运行以下脚本以授予 AKS 对 ACR 的访问权限，可以在[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]中查看更多详细信息。
 
+```bash
+   # Get the id of the service principal configured for AKS
+   CLIENT_ID=$(az aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv)
+   
+   # Get the ACR registry resource id
+   ACR_ID=$(az acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv)
+   
+   # Create role assignment
+   az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
+```
+
+  - 或 -
+
+```PowerShell
+   # Get the id of the service principal configured for AKS
+   $CLIENT_ID = az aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv
+   
+   # Get the ACR registry resource id
+   $ACR_ID = az acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv
+   
+   # Create role assignment
+   az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
+```
 
 1. 使用 Azure CLI 安装 `kubectl`。 Linux 用户可能必须将 `sudo` 作为此命令的前缀，因为它将 Kubernetes CLI 部署到 `/usr/local/bin`。
    ```azurecli
@@ -221,6 +200,44 @@ ms.locfileid: "57335410"
 ## <a name="deploy-the-image-to-your-kubernetes-cluster"></a>将映像部署到 Kubernetes 群集
 
 本教程使用 `kubectl` 部署应用，以便让你通过 Kubernetes Web 界面浏览部署。
+
+### <a name="deploy-with-kubectl"></a>使用 kubectl 进行部署
+
+1. 打开命令提示符。
+
+1. 使用 `kubectl run` 命令在 Kubernetes 群集中运行容器。 指定 Kubernetes 中应用的服务名称和完整映像名称。 例如：
+   ```
+   kubectl run gs-spring-boot-docker --image=wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest
+   ```
+   在此命令中：
+
+   * 容器名称 `gs-spring-boot-docker` 会立即在 `run` 命令后指定
+
+   * `--image` 参数将组合的登录服务器和映像名称指定为 `wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest`
+
+1. 使用 `kubectl expose` 命令外部公开你的 Kubernetes 群集。 指定你的服务名称、用于访问应用的公开 TCP 端口以及应用侦听的内部目标端口。 例如：
+   ```
+   kubectl expose deployment gs-spring-boot-docker --type=LoadBalancer --port=80 --target-port=8080
+   ```
+   在此命令中：
+
+   * 容器名称 `gs-spring-boot-docker` 会立即在 `expose deployment` 命令后指定
+
+   * `--type` 参数指定此群集使用负载均衡器
+
+   * `--port` 参数指定面向公众的 TCP 端口 80。 在此端口访问应用。
+
+   * `--target-port` 参数指定内部 TCP 端口 8080。 负载均衡器在此端口将请求转发到你的应用。
+
+1. 将应用部署到群集后，请查询外部 IP 地址并在 Web 浏览器中打开：
+
+   ```
+   kubectl get services -o jsonpath={.items[*].status.loadBalancer.ingress[0].ip} --namespace=default
+   ```
+
+   ![在 Azure 上浏览示例应用][SB02]
+
+
 
 ### <a name="deploy-with-the-kubernetes-web-interface"></a>使用 Kubernetes Web 界面进行部署
 
@@ -264,44 +281,6 @@ ms.locfileid: "57335410"
 
    ![在 Azure 上浏览示例应用][SB02]
 
-
-### <a name="deploy-with-kubectl"></a>使用 kubectl 进行部署
-
-1. 打开命令提示符。
-
-1. 使用 `kubectl run` 命令在 Kubernetes 群集中运行容器。 指定 Kubernetes 中应用的服务名称和完整映像名称。 例如：
-   ```
-   kubectl run gs-spring-boot-docker --image=wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest
-   ```
-   在此命令中：
-
-   * 容器名称 `gs-spring-boot-docker` 会立即在 `run` 命令后指定
-
-   * `--image` 参数将组合的登录服务器和映像名称指定为 `wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest`
-
-1. 使用 `kubectl expose` 命令外部公开你的 Kubernetes 群集。 指定你的服务名称、用于访问应用的公开 TCP 端口以及应用侦听的内部目标端口。 例如：
-   ```
-   kubectl expose deployment gs-spring-boot-docker --type=LoadBalancer --port=80 --target-port=8080
-   ```
-   在此命令中：
-
-   * 容器名称 `gs-spring-boot-docker` 会立即在 `expose deployment` 命令后指定
-
-   * `--type` 参数指定此群集使用负载均衡器
-
-   * `--port` 参数指定面向公众的 TCP 端口 80。 在此端口访问应用。
-
-   * `--target-port` 参数指定内部 TCP 端口 8080。 负载均衡器在此端口将请求转发到你的应用。
-
-1. 将应用部署到群集后，请查询外部 IP 地址并在 Web 浏览器中打开：
-
-   ```
-   kubectl get services -o jsonpath={.items[*].status.loadBalancer.ingress[0].ip} --namespace=${namespace}
-   ```
-
-   ![在 Azure 上浏览示例应用][SB02]
-
-
 ## <a name="next-steps"></a>后续步骤
 
 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
@@ -311,10 +290,9 @@ ms.locfileid: "57335410"
 
 ### <a name="additional-resources"></a>其他资源
 
-有关使用 Azure 上的 Spring Boot 的详细信息，请参阅以下文章：
+有关在 Azure 上使用 Spring Boot 的详细信息，请参阅以下文章：
 
 * [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-web-app-on-azure.md)
-* [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Linux 上](deploy-spring-boot-java-app-on-linux.md)
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
@@ -339,6 +317,8 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 * [从私有注册表拉取映像]
 
 有关如何使用 Azure 的自定义 Docker 映像的其他示例，请参阅[使用 Linux 上 Azure Web 应用的自定义 Docker 映像]。
+
+有关使用 Azure Dev Spaces 直接在 Azure Kubernetes 服务 (AKS) 中迭代运行和调试容器的详细信息，请参阅[通过 Java 开始使用 Azure Dev Spaces]
 
 <!-- URL List -->
 
@@ -369,7 +349,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 <!-- Newly added -->
 [使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]: /azure/container-registry/container-registry-auth-aks/
 [Visual Studio Code Java 教程]: https://code.visualstudio.com/docs/java/java-kubernetes/
-
+[通过 Java 开始使用 Azure Dev Spaces]: https://docs.microsoft.com/en-us/azure/dev-spaces/get-started-java
 <!-- IMG List -->
 
 [SB01]: ./media/deploy-spring-boot-java-app-on-kubernetes/SB01.png
