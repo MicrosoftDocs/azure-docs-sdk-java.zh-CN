@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: batch-ai
 ms.openlocfilehash: 798c13012fcb87357ddb28e7d2fb2080cac40a7d
-ms.sourcegitcommit: 3b10fe30dcc83e4c2e4c94d5b55e37ddbaa23c7a
+ms.sourcegitcommit: f33befab25a66a252b4c91c7aeb1b77cb32821bb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59188846"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59745145"
 ---
 # <a name="azure-batch-ai-libraries-for-java"></a>用于 Java 的 Azure Batch AI 库
 

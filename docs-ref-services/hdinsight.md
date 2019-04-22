@@ -1,25 +1,25 @@
 ---
-title: Azure HDInsight Java SDK
-description: Azure HDInsight Java SDK 参考。 HDInsight Java SDK 提供用于管理 HDInsight 群集的类和方法。
+title: 用于 Java 的 Azure HDInsight SDK
+description: 用于 Java 的 Azure HDInsight SDK 参考。 用于 Java 的 HDInsight SDK 提供用于管理 HDInsight 群集的类和方法。
 author: tylerfox
 ms.author: tyfox
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: reference
 ms.devlang: java
-ms.date: 11/21/2018
-ms.openlocfilehash: 0ae8d78a0618c4dbcc5e734fce311f7c2e5684bd
-ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
+ms.date: 04/15/2019
+ms.openlocfilehash: fe87c9214e2a620230cf2f1f52261fd66a2b8857
+ms.sourcegitcommit: f33befab25a66a252b4c91c7aeb1b77cb32821bb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58489645"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59705115"
 ---
-# <a name="hdinsight-java-management-sdk-preview"></a>HDInsight Java 管理 SDK（预览版）
+# <a name="hdinsight-sdk-for-java"></a>用于 Java 的 HDInsight SDK
 
 ## <a name="overview"></a>概述
 
-HDInsight Java SDK 提供用于管理 HDInsight 群集的类和方法。 该 SDK 包含用于创建、删除、更新、列出、调整大小、执行脚本操作，以及监视、获取 HDInsight 群集属性等操作。
+用于 Java 的 HDInsight SDK 提供用于管理 HDInsight 群集的类和方法。 该 SDK 包含用于创建、删除、更新、列出、调整大小、执行脚本操作，以及监视、获取 HDInsight 群集属性等操作。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -29,7 +29,7 @@ HDInsight Java SDK 提供用于管理 HDInsight 群集的类和方法。 该 SDK
 
 ## <a name="sdk-installation"></a>SDK 安装
 
-若要通过 Maven 获取 HDInsight Java SDK，请单击[此处](https://mvnrepository.com/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight)。 将以下依赖项添加到 pom.xml：
+若要通过 Maven 获取用于 Java 的 HDInsight SDK，请单击[此处](https://search.maven.org/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight)。 将以下依赖项添加到 pom.xml：
 
 ```
 <dependency>
@@ -41,21 +41,21 @@ HDInsight Java SDK 提供用于管理 HDInsight 群集的类和方法。 该 SDK
 
 此外还需将以下依赖项添加到 pom.xml：
 
-* [Azure 客户端身份验证库：](https://mvnrepository.com/artifact/com.microsoft.azure/azure-client-authentication/1.6.2)
+* [Azure 客户端身份验证库：](https://search.maven.org/artifact/com.microsoft.azure/azure-client-authentication)
   ```
   <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-client-authentication</artifactId>
-    <version>1.6.2</version>
+    <version>1.6.5</version>
   </dependency>
   ```
 
-* [适用于 ARM 的 Azure Java 客户端运行时：](https://mvnrepository.com/artifact/com.microsoft.azure/azure-arm-client-runtime/1.6.2)
+* [适用于 ARM 的 Azure Java 客户端运行时：](https://search.maven.org/artifact/com.microsoft.azure/azure-arm-client-runtime)
   ```
   <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-arm-client-runtime</artifactId>
-    <version>1.6.2</version>
+    <version>1.6.5</version>
   </dependency>
   ```
 
@@ -153,7 +153,6 @@ public class Main {
                 .withSubscriptionId(SUBSCRIPTION_ID);
 ```
 
-
 ## <a name="cluster-management"></a>群集管理
 
 > [!NOTE]
@@ -162,6 +161,10 @@ public class Main {
 ### <a name="create-a-cluster"></a>创建群集
 
 可以通过调用 `client.clusters().create()` 来创建新群集。
+
+#### <a name="samples"></a>示例
+
+用于创建几个常见类型的 HDInsight 群集的代码示例可供使用：[HDInsight Java 示例](https://github.com/Azure-Samples/hdinsight-java-sdk-samples)。
 
 #### <a name="example"></a>示例
 
