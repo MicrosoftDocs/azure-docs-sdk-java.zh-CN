@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: c116e0712afd8e48983f946f43eddfd0c79c0ba8
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 5f70d8dd7e9b59c365d83c185f430a5a9c75e838
+ms.sourcegitcommit: 4f1acf05e3bbb7eb6bca9b65300c1c5b9772185a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48898714"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63456319"
 ---
 # <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>使用适用于 Eclipse 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
 
@@ -45,7 +45,7 @@ ms.locfileid: "48898714"
 
 1. “导入”对话框打开后：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 展开 Git。
+   a. 展开 Git。
 
    b. 选择“来自 Git 的项目”。
    
@@ -55,7 +55,7 @@ ms.locfileid: "48898714"
 
 1. 在“选择存储库源”页上：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 选择“克隆 URI”。
+   a. 选择“克隆 URI”。
    
    b. 单击“下一步”。
 
@@ -63,7 +63,7 @@ ms.locfileid: "48898714"
 
 1. 在“源 Git 存储库”页上：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 对于“URI”，输入 `https://github.com/spring-guides/gs-spring-boot-docker.git`。 此步骤应该会为“主机”和“存储库路径”字段自动填充正确的值。
+   a. 对于“URI”，输入 `https://github.com/spring-guides/gs-spring-boot-docker.git`。 此步骤应该会为“主机”和“存储库路径”字段自动填充正确的值。
    
    b. Spring Boot 存储库是公开的，因此，你不必输入 Git 用户名和密码。
    
@@ -77,7 +77,7 @@ ms.locfileid: "48898714"
 
 1. 在“本地目标”页上：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 指定放置本地存储库的本地文件夹。
+   a. 指定放置本地存储库的本地文件夹。
    
    b. 单击“下一步”。
 
@@ -85,7 +85,7 @@ ms.locfileid: "48898714"
 
 1. 在“选择用于导入项目的向导”页上：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 选择“作为常规项目导入”。
+   a. 选择“作为常规项目导入”。
    
    b. 单击“下一步”。
 
@@ -93,9 +93,9 @@ ms.locfileid: "48898714"
 
 1. 在“导入项目”页上：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 指定项目名称。
+   a. 指定项目名称。
    
-   b.在“磁贴徽标”下面，选择“删除上传的徽标”。 单击“完成”。
+   b. 单击“完成”。
 
    ![“导入项目”页][CL08]
 
@@ -113,7 +113,7 @@ Spring Boot Docker 存储库包含一个已完成的 Maven 项目，可用于本
 
 1. “导入”对话框打开后：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 展开 Maven。
+   a. 展开 Maven。
    
    b. 选择“现有 Maven 项目”。
    
@@ -123,7 +123,7 @@ Spring Boot Docker 存储库包含一个已完成的 Maven 项目，可用于本
 
 1. 在“Maven 项目”页上：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 对于“根目录”，在本地存储库中指定“complete”文件夹。
+   a. 对于“根目录”，在本地存储库中指定“complete”文件夹。
    
    b. 展开“高级”部分，并为“名称模板”输入自定义名称。
    
@@ -159,7 +159,7 @@ Spring Boot Docker 存储库包含一个已完成的 Maven 项目，可用于本
 
 1. 出现“在 Azure 上部署 Docker 容器”对话框时：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 输入自定义的 Docker 映像名称。
+   a. 输入自定义的 Docker 映像名称。
    
    b. 对于“要部署的项目”，指定刚生成的 gs-spring-boot-docker-0.1.0.jar 文件的路径。
 
@@ -169,7 +169,7 @@ Spring Boot Docker 存储库包含一个已完成的 Maven 项目，可用于本
 
 1. 如果选择部署到现有主机，可以跳到步骤 5。 否则，使用以下步骤创建主机：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 单击 **“添加”**。
+   a. 单击“添加”。
 
       ![添加新的 Docker 主机][PU03]
 
@@ -187,7 +187,7 @@ Spring Boot Docker 存储库包含一个已完成的 Maven 项目，可用于本
 
 1. 在“在 Azure 上部署 Docker 容器”对话框的最后一页上，指定以下选项：
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 可以选择为要托管 Docker 容器的容器指定一个自定义名称，也可以接受默认设置。
+   a. 可以选择为要托管 Docker 容器的容器指定一个自定义名称，也可以接受默认设置。
 
    b. 使用以下语法输入 Docker 主机的 TCP 端口：[外部端口]:[内部端口]。 例如，“80:8080”指定外部端口为“80”，默认的内部 Spring Boot 端口为“8080”。
    

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 0a9b06932baa51c3cf003a4485a3a25261ffe91d
+ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61592497"
+---
 创建一个[身份验证文件](../java-sdk-azure-authenticate.md#mgmt-file)，并在命令行中将包含完整路径的环境变量 `AZURE_AUTH_LOCATION` 导出到该文件。
 
 ```bash

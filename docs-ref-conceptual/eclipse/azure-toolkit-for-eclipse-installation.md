@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: d5f685fa62ad74c8b8cd842b3667f8161e7c5760
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: bcc5ed04143eebaff89e5688a818e464f077390e
+ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61590641"
 ---
 # <a name="install-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
 
@@ -52,7 +52,7 @@ ms.locfileid: "48893000"
 
 1. 如果展开“用于 Eclipse 的 Azure 工具包”，会看到一个要安装的组件的列表，例如：
 
-   | 功能 | Description | 
+   | Feature | 说明 | 
    |---|---| 
    | **用于 Java 的 Application Insights 插件** | 可通过此组件将 Azure 的遥测日志记录和分析服务用于应用程序和服务器实例。 | 
    | **Azure 常用插件** | 提供其他工具包组件所需的常见功能。 | 

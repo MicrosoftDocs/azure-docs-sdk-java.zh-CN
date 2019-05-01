@@ -10,12 +10,12 @@ ms.service: Azure
 ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
-ms.openlocfilehash: e3048b3317477f4b1fb8edf93e4bebad6b7fafce
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 388b68bfb0fdac70efed5ad5d0f7c957ce915449
+ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61592562"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a>从 Java 应用程序管理 Azure 虚拟机
 
