@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 046ae0428d50a7f173f5ad15be53ffd8e66c11c5
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: ee5d286f3c5979b3a10e3e3be08a68caa6eef31d
+ms.sourcegitcommit: 420fcd58e3a907d629c9c15fda56ad818d9dfe7c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892518"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65470183"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存
 
@@ -43,19 +43,19 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    ![“新建 Redis 缓存”对话框][CR02]
 
-   a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，并单击“添加引用”。 DNS 名称：为新的 redis 缓存指定 DNS 子域，预设为“redis.cache.windows.net”，例如：wingtiptoys.redis.cache.windows.net。
+   a. **DNS 名称**：为新的 Redis 缓存指定 DNS 子域，该子域名称将添加到“redis.cache.windows.net”之前，例如：*wingtiptoys.redis.cache.windows.net*。
 
-   b. 订阅：指定要用于新的 redis 缓存的 Azure 订阅。
+   b. **订阅**：指定要用于新的 redis 缓存的 Azure 订阅。
 
-   c. 资源组：为 redis 缓存指定资源组；需要选择以下一种选项： 
+   c. **资源组**：为 redis 缓存指定资源组；需要选择以下一种选项： 
       * **新建**：指定要创建新的资源组。 
-      * 使用现有资源组：指定将从与 Azure 帐户关联的资源组列表中选择。 
+      * **使用现有**：指定你将从与 Azure 帐户关联的资源组列表中选择。 
 
-   d. 位置：指定创建 redis 缓存的位置，例如：美国西部。
+   d. **位置**：指定创建 redis 缓存的位置，例如：美国西部。
 
-   e. 定价层： 指定 redis 缓存使用的定价层；此设置将确定客户端连接数。 （有关详细信息，请参阅 [Redis 缓存定价]。）
+   e. **定价层**：指定 redis 缓存使用的定价层；此设置将确定客户端连接数。 （有关详细信息，请参阅 [Redis 缓存定价]。）
 
-   f. 非 SSL 端口：指定 redis 缓存是否允许非 SSL 连接；默认情况下，仅允许 SSL 连接。
+   f. **非 SSL 端口**：指定 redis 缓存是否允许非 SSL 连接；默认情况下，仅允许 SSL 连接。
 
 1. 指定 redis 缓存的所有设置后，单击“确定”。
 
