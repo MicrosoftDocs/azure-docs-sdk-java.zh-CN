@@ -13,12 +13,12 @@ ms.devlang: java
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 7119283bec250a4ab0854ba2c29b0906624448e9
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: 02b6eff059c8b7dff1c7473d0460ca44e76f6f2e
+ms.sourcegitcommit: 04cff6e3c6d3a9c15f7d88d5d3c238f0bdc787fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53992021"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64673956"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>如何将 Spring Data JPA 用于 Azure SQL 数据库
 
@@ -36,7 +36,7 @@ ms.locfileid: "53992021"
 * 用来测试功能的 [Curl](https://curl.haxx.se/) 或类似的 HTTP 实用工具。
 * [Git](https://git-scm.com/downloads) 客户端。
 
-## <a name="create-an-azure-sql-satabase"></a>创建 Azure SQL 数据库
+## <a name="create-an-azure-sql-database"></a>创建 Azure SQL 数据库
 
 ### <a name="create-a-sql-database-server-using-the-azure-portal"></a>使用 Azure 门户创建 SQL 数据库服务器
 
@@ -46,7 +46,7 @@ ms.locfileid: "53992021"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 依次单击“+创建资源”、“数据库”和“SQL 数据库”。
+1. 依次单击“+创建资源”、“数据库”和“SQL 数据库”。   
 
    ![创建 SQL 数据库][SQL01]
 
@@ -59,7 +59,7 @@ ms.locfileid: "53992021"
 
    ![指定 SQL 数据库属性][SQL02]
    
-1. 依次单击“服务器”、“创建新服务器”，然后指定以下信息：
+1. 依次单击“服务器”、“创建新服务器”   ，然后指定以下信息：
 
    - **服务器名称**：为 SQL 服务器选择一个唯一名称；这将用来创建完全限定的域名，例如 *wingtiptoyssql.database.windows.net*。
    - **服务器管理员登录名**：指定数据库管理员名称。
@@ -68,9 +68,9 @@ ms.locfileid: "53992021"
 
    ![指定 SQL Server][SQL03]
 
-1. 输入上述所有信息后，单击“选择”。
+1. 输入上述所有信息后，单击“选择”  。
 
-1. 对于本教程，请指定最经济的**定价层**，然后单击“创建”。
+1. 对于本教程，请指定价格最低的**定价层**，然后单击“创建”  。
 
    ![创建 SQL 数据库][SQL04]
 
@@ -78,15 +78,15 @@ ms.locfileid: "53992021"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 单击“所有资源”，然后单击你刚才创建的 SQL Server。
+1. 单击“所有资源”  ，然后单击你刚才创建的 SQL Server。
 
    ![选择 SQL Server][SQL05]
 
-1. 在“概述”部分中，单击“显示防火墙设置”
+1. 在“概述”  部分中，单击“显示防火墙设置” 
 
    ![显示防火墙设置][SQL06]
 
-1. 在“防火墙和虚拟网络”部分中，通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”。
+1. 在“防火墙和虚拟网络”  部分中，通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。
 
    ![配置防火墙设置][SQL07]
 
@@ -94,11 +94,11 @@ ms.locfileid: "53992021"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 单击“所有资源”，然后单击你刚才创建的 SQL 数据库。
+1. 单击“所有资源”  ，然后单击你刚才创建的 SQL 数据库。
 
    ![选择 SQL 数据库][SQL08]
 
-1. 单击“连接字符串”，然后单击“JDBC”并复制 JDBC 文本字段中的值。
+1. 单击“连接字符串”  ，然后单击“JDBC”  并复制 JDBC 文本字段中的值。
 
    ![检索 JDBC 连接字符串][SQL09]
 
@@ -123,11 +123,11 @@ ms.locfileid: "53992021"
 
    | 参数 | 说明 |
    |---|---|
-   | `spring.datasource.url` | 指定本文上文中所述的 SQL JDBC 字符串的编辑后版本。 |
+   | `spring.datasource.url` | 指定上文中所述的 SQL JDBC 字符串的编辑后版本。 |
    | `spring.datasource.username` | 指定本文上文中所述的 SQL 管理员名称，并将缩短的服务器名称追加到其末尾。 |
    | `spring.datasource.password` | 指定本文上文中所述的 SQL 管理员密码。 |
 
-1. 保存并关闭 application.properties 文件。
+1. 保存并关闭 application.properties 文件  。
 
 ## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序 
 
