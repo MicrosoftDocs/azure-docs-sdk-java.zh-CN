@@ -1,19 +1,19 @@
 - name: 用于 Eclipse 的 Azure 工具包
   href: azure-toolkit-for-eclipse.md
   items:
-    - name: 安装
-      href: azure-toolkit-for-eclipse-installation.md
     - name: 入门
       href: azure-toolkit-for-eclipse-create-hello-world-web-app.md
     - name: 教程
       items:
         - name: 将容器部署到 Azure VM
           href: azure-toolkit-for-eclipse-publish-as-docker-container.md
-        - name: 将 Web 应用部署到 Azure 应用服务
+        - name: 将 Spring Boot 应用作为 Docker 容器发布
           href: azure-toolkit-for-eclipse-publish-spring-boot-docker-app.md
     - name: 操作说明
       items:
-        - name: 设置身份验证
+        - name: 安装工具包
+          href: azure-toolkit-for-eclipse-installation.md
+        - name: 登录到 Azure 帐户
           href: azure-toolkit-for-eclipse-sign-in-instructions.md
         - name: 管理 Azure 资源
           items:
@@ -25,3 +25,5 @@
               href: azure-toolkit-for-eclipse-managing-redis-caches-using-azure-explorer.md
     - name: 发行说明
       href: 'https://github.com/Microsoft/azure-tools-for-java/releases'
+    - name: 市场
+      href: 'https://marketplace.eclipse.org/content/azure-toolkit-eclipse'

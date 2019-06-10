@@ -1,7 +1,8 @@
 ---
-title: 使用 IntelliJ 创建适用于 Azure 的 Hello World Web 应用
+title: 使用 IntelliJ 创建适用于 Azure 应用服务的 Hello World Web 应用
 description: 本教程说明如何使用 Azure Toolkit for IntelliJ 创建 Azure 的 Hello World Web 应用。
 services: app-service
+keywords: java, intellij, web 应用, azure 应用服务, hello world, 快速入门
 documentationcenter: java
 author: selvasingh
 manager: routlaw
@@ -14,114 +15,140 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 7055751d1b1c37e019ef4ed59f1710ce6905e9f8
-ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
+ms.openlocfilehash: ae0749ce1ddab971f1a83e2e5e58492fd8ccb287
+ms.sourcegitcommit: 733115fe0a7b5109b511b4a32490f8264cf91217
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58489635"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65626104"
 ---
-# <a name="create-a-hello-world-web-app-for-azure-using-intellij"></a><span data-ttu-id="ae348-103">使用 IntelliJ 创建适用于 Azure 的 Hello World Web 应用</span><span class="sxs-lookup"><span data-stu-id="ae348-103">Create a Hello World web app for Azure using IntelliJ</span></span>
+# <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a><span data-ttu-id="28dbe-104">使用 IntelliJ 创建适用于 Azure 应用服务的 Hello World Web 应用</span><span class="sxs-lookup"><span data-stu-id="28dbe-104">Create a Hello World web app for Azure App Service using IntelliJ</span></span>
 
-<span data-ttu-id="ae348-104">本教程介绍如何使用[用于 IntelliJ 的 Azure 工具包]创建基本 Hello World 应用程序，并将其作为 Web 应用部署到 Azure。</span><span class="sxs-lookup"><span data-stu-id="ae348-104">This tutorial shows how to create and deploy a basic Hello World application to Azure as a web app by using the [Azure Toolkit for IntelliJ].</span></span>
+<span data-ttu-id="28dbe-105">使用开源的 [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) 插件可以快速创建一个基本的 Hello World 应用程序并将其作为 Web 应用部署到 Azure 应用服务。</span><span class="sxs-lookup"><span data-stu-id="28dbe-105">Using open sourced [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) plugin, creating and deploying a basic Hello World application to Azure App Service as a web app can be done in a few minutes.</span></span>
 
 > [!NOTE]
 >
-> <span data-ttu-id="ae348-105">如需使用[用于 Eclipse 的 Azure 工具包]的本文版本，请参阅[使用 Eclipse 创建适用于 Azure 的 Hello World Web 应用][eclipse-hello-world]。</span><span class="sxs-lookup"><span data-stu-id="ae348-105">For a version of this article that uses the [Azure Toolkit for Eclipse], see [Create a Hello World web app for Azure using Eclipse][eclipse-hello-world].</span></span>
+> <span data-ttu-id="28dbe-106">如果你偏爱使用 Eclipse，请查看[适用于 Eclipse 的类似教程][eclipse-hello-world]。</span><span class="sxs-lookup"><span data-stu-id="28dbe-106">If you prefer using Eclipse, check out our [similar tutorial for Eclipse][eclipse-hello-world].</span></span>
+>
+>[!INCLUDE [quickstarts-free-trial-note](../includes/quickstarts-free-trial-note.md)]
+>
+> <span data-ttu-id="28dbe-107">请勿忘记在完成本教程后清理资源。</span><span class="sxs-lookup"><span data-stu-id="28dbe-107">Don't forget to clean up the resources after you complete this tutorial.</span></span> <span data-ttu-id="28dbe-108">在这种情况下，运行本指南不会超出免费帐户配额。</span><span class="sxs-lookup"><span data-stu-id="28dbe-108">In that case, running this guide will not exceed your free account quota.</span></span>
 >
 
-> [!IMPORTANT]
-> 
-> <span data-ttu-id="ae348-106">用于 IntelliJ 的 Azure 工具包于 2017 年 8 月进行了更新，采用了不同的工作流。</span><span class="sxs-lookup"><span data-stu-id="ae348-106">The Azure Toolkit for IntelliJ was updated in August 2017 with a different workflow.</span></span> <span data-ttu-id="ae348-107">本文详述如何使用用于 IntelliJ 的 Azure 工具包 3.0.7（或更高版本）创建 Hello World Web 应用。</span><span class="sxs-lookup"><span data-stu-id="ae348-107">This article illustrates creating a Hello World web app by using version 3.0.7 (or later) of the Azure Toolkit for IntelliJ.</span></span> <span data-ttu-id="ae348-108">如果使用的是工具包 3.0.6（或更低版本），则需执行[使用旧工具包在 IntelliJ 中创建适用于 Azure 的 Hello World Web 应用][Legacy Version]中的步骤。</span><span class="sxs-lookup"><span data-stu-id="ae348-108">If you are using the version 3.0.6 (or earlier) of the toolkit, you will need to follow the steps in [Create a Hello World web app for Azure in IntelliJ using the legacy toolkit][Legacy Version].</span></span>
-> 
+[!INCLUDE [azure-toolkit-for-intellij-basic-prerequisites](../includes/azure-toolkit-for-intellij-basic-prerequisites.md)]
 
-<span data-ttu-id="ae348-109">完成本教程后，应用程序会在 Web 浏览器中如下图所示：</span><span class="sxs-lookup"><span data-stu-id="ae348-109">When you have completed this tutorial, your application will look similar to the following illustration when you view it in a web browser:</span></span>
+## <a name="installation-and-sign-in"></a><span data-ttu-id="28dbe-109">安装和登录</span><span class="sxs-lookup"><span data-stu-id="28dbe-109">Installation and Sign-in</span></span>
 
-![Hello World 应用预览][browse-web-app]
+1. <span data-ttu-id="28dbe-110">在 IntelliJ IDEA 的“设置/首选项”对话框中 (Ctrl+Alt+S) 中，选择“插件”。 </span><span class="sxs-lookup"><span data-stu-id="28dbe-110">In IntelliJ IDEA's Settings/Preferences dialog (Ctrl+Alt+S), select **Plugins**.</span></span> <span data-ttu-id="28dbe-111">然后，在“市场”中找到“Azure Toolkit for IntelliJ”并单击“安装”。   </span><span class="sxs-lookup"><span data-stu-id="28dbe-111">Then, find the **Azure Toolkit for IntelliJ** in the **Marketplace** and click **Install**.</span></span> <span data-ttu-id="28dbe-112">安装后，单击“重启”以激活该插件。 </span><span class="sxs-lookup"><span data-stu-id="28dbe-112">After installed, click **Restart** to activate the plugin.</span></span> 
 
-[!INCLUDE [azure-toolkit-for-intellij-prerequisites](../includes/azure-toolkit-for-intellij-prerequisites.md)]
+   ![市场中的 Azure Toolkit for IntelliJ 插件][marketplace]
 
-## <a name="create-a-new-web-app-project"></a><span data-ttu-id="ae348-111">创建新 Web 应用项目</span><span class="sxs-lookup"><span data-stu-id="ae348-111">Create a new web app project</span></span>
+2. <span data-ttu-id="28dbe-114">若要登录到你的 Azure 帐户，请打开边栏中的“Azure 资源管理器”，然后单击顶部栏中的“Azure 登录”图标（或者在 IDEA 菜单中选择“工具”>“Azure”>“Azure 登录”）。   </span><span class="sxs-lookup"><span data-stu-id="28dbe-114">To sign in to your Azure account, open sidebar **Azure Explorer**, and then click the **Azure Sign In** icon in the bar on top (or from IDEA menu **Tools/Azure/Azure Sign in**).</span></span>
 
-1. <span data-ttu-id="ae348-112">启动 IntelliJ，然后根据[用于 IntelliJ 的 Azure 工具包的 Azure 登录说明][intelliJ-sign-in-instructions]一文中的说明登录到 Azure 帐户。</span><span class="sxs-lookup"><span data-stu-id="ae348-112">Start IntelliJ, and sign into your Azure account by using the instructions in the [Azure Sign In Instructions for the Azure Toolkit for IntelliJ][intelliJ-sign-in-instructions] article.</span></span>
+   ![“IntelliJ Azure 登录”命令][I01]
 
-1. <span data-ttu-id="ae348-113">依次单击“文件”菜单、“新建”、“项目”。</span><span class="sxs-lookup"><span data-stu-id="ae348-113">Click the **File** menu, then click **New**, and then click **Project**.</span></span>
-   
+3. <span data-ttu-id="28dbe-116">在“Azure 登录”窗口中选择“设备登录”，然后单击“登录”（[其他登录选项](azure-toolkit-for-intellij-sign-in-instructions.md)）。   </span><span class="sxs-lookup"><span data-stu-id="28dbe-116">In the **Azure Sign In** window, select **Device Login**, and then click **Sign in** ([other sign in options](azure-toolkit-for-intellij-sign-in-instructions.md)).</span></span>
+
+   ![“Azure 登录”窗口，其中已选择“设备登录”][I02]
+
+4. <span data-ttu-id="28dbe-118">在“Azure 设备登录”对话框中单击“复制并打开”。  </span><span class="sxs-lookup"><span data-stu-id="28dbe-118">Click **Copy&Open** in **Azure Device Login** dialog .</span></span>
+
+   ![“Azure 登录”对话框窗口][I03]
+
+5. <span data-ttu-id="28dbe-120">在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。  </span><span class="sxs-lookup"><span data-stu-id="28dbe-120">In the browser, paste your device code (which has been copied when you click **Copy&Open** in last step) and then click **Next**.</span></span>
+
+   ![设备登录浏览器][I04]
+
+6. <span data-ttu-id="28dbe-122">在“选择订阅”对话框中选择要使用的订阅，并单击“确定”。  </span><span class="sxs-lookup"><span data-stu-id="28dbe-122">In the **Select Subscriptions** dialog box, select the subscriptions that you want to use, and then click **OK**.</span></span>
+
+   ![“选择订阅”对话框][I05]
+
+## <a name="creating-web-app-project"></a><span data-ttu-id="28dbe-124">创建 Web 应用项目</span><span class="sxs-lookup"><span data-stu-id="28dbe-124">Creating web app project</span></span>
+
+1. <span data-ttu-id="28dbe-125">在 IntelliJ 中，依次单击“文件”菜单、“新建”、“项目”。   </span><span class="sxs-lookup"><span data-stu-id="28dbe-125">In IntelliJ, click the **File** menu, then click **New**, and then click **Project**.</span></span>
+
    ![创建新项目][file-new-project]
 
-1. <span data-ttu-id="ae348-115">在“新建项目”对话框中，选择 Maven，然后选择 maven-archetype-webapp，然后单击“下一步”。</span><span class="sxs-lookup"><span data-stu-id="ae348-115">In the **New Project** dialog box, select **Maven**, then **maven-archetype-webapp**, and then click **Next**.</span></span>
-   
-   ![选择 Maven archetype webapp][maven-archetype-webapp]
-   
-1. <span data-ttu-id="ae348-117">为 Web 应用指定 GroupId 和 ArtifactId，然后单击“下一步”。</span><span class="sxs-lookup"><span data-stu-id="ae348-117">Specify the **GroupId** and **ArtifactId** for your web app, and then click **Next**.</span></span>
-   
+2. <span data-ttu-id="28dbe-127">在“新建项目”对话框中，选择 Maven，然后选择 maven-archetype-webapp，然后单击“下一步”     。</span><span class="sxs-lookup"><span data-stu-id="28dbe-127">In the **New Project** dialog box, select **Maven**, then **maven-archetype-webapp**, and then click **Next**.</span></span>
+
+   ![选择 Maven archetype Webapp][maven-archetype-webapp]
+
+3. <span data-ttu-id="28dbe-129">为 Web 应用指定 GroupId 和 ArtifactId，然后单击“下一步”    。</span><span class="sxs-lookup"><span data-stu-id="28dbe-129">Specify the **GroupId** and **ArtifactId** for your web app, and then click **Next**.</span></span>
+
    ![指定 GroupId 和 ArtifactId][groupid-and-artifactid]
 
-1. <span data-ttu-id="ae348-119">自定义任何 Maven 设置或接受默认设置，然后单击“下一步”。</span><span class="sxs-lookup"><span data-stu-id="ae348-119">Customize any Maven settings or accept the defaults, and then click **Next**.</span></span>
-   
+4. <span data-ttu-id="28dbe-131">自定义任何 Maven 设置或接受默认设置，然后单击“下一步”  。</span><span class="sxs-lookup"><span data-stu-id="28dbe-131">Customize any Maven settings or accept the defaults, and then click **Next**.</span></span>
+
    ![指定 Maven 设置][maven-options]
 
-1. <span data-ttu-id="ae348-121">指定项目名称和位置，并单击“完成”。</span><span class="sxs-lookup"><span data-stu-id="ae348-121">Specify your project name and location, and then click **Finish**.</span></span>
-   
+5. <span data-ttu-id="28dbe-133">指定项目名称和位置，并单击“完成”  。</span><span class="sxs-lookup"><span data-stu-id="28dbe-133">Specify your project name and location, and then click **Finish**.</span></span>
+
    ![指定项目名称][project-name]
 
-1. <span data-ttu-id="ae348-123">在 IntelliJ 的项目资源管理器视图中，依次展开 src、main、webapp，然后双击 index.jsp。</span><span class="sxs-lookup"><span data-stu-id="ae348-123">Within IntelliJ's Project Explorer view, expand **src**, then **main**, then **webapp**, and then double-click **index.jsp**.</span></span>
-   
-   ![打开索引页面][open-index-page]
+6. <span data-ttu-id="28dbe-135">在“项目资源管理器”视图下，按如下所示打开并编辑文件 **src/main/webapp/index.jsp**，然后**保存更改**：</span><span class="sxs-lookup"><span data-stu-id="28dbe-135">Under Project Explorer view, open and edit the file **src/main/webapp/index.jsp** as following and **save the changes**:</span></span>
 
-1. <span data-ttu-id="ae348-125">在 IntelliJ 中打开 index.jsp 文件后，添加文本以将 **Hello World!** 动态显示</span><span class="sxs-lookup"><span data-stu-id="ae348-125">When your index.jsp file opens in IntelliJ, add in text to dynamically display **Hello World!**</span></span> <span data-ttu-id="ae348-126">在现有 `<body>` 元素中。</span><span class="sxs-lookup"><span data-stu-id="ae348-126">within the existing `<body>` element.</span></span> <span data-ttu-id="ae348-127">更新后的 `<body>` 内容应类似于以下示例：</span><span class="sxs-lookup"><span data-stu-id="ae348-127">Your updated `<body>` content should resemble the following example:</span></span>
-   
-   ```java
-   <body><b><% out.println("Hello World!"); %></b></body>
-   ``` 
+   ```html
+   <html>
+    <body>
+      <b><% out.println("Hello World!"); %></b>
+    </body>
+   </html>
+   ```
 
    ![编辑索引页面][edit-index-page]
 
-1. <span data-ttu-id="ae348-129">保存 index.jsp。</span><span class="sxs-lookup"><span data-stu-id="ae348-129">Save index.jsp.</span></span>
+## <a name="deploying-web-app-to-azure"></a><span data-ttu-id="28dbe-137">将 Web 应用部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="28dbe-137">Deploying web app to Azure</span></span>
 
-## <a name="deploy-your-web-app-to-azure"></a><span data-ttu-id="ae348-130">将 Web 应用部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="ae348-130">Deploy your web app to Azure</span></span>
+1. <span data-ttu-id="28dbe-138">在“项目资源管理器”视图下右键单击你的项目，展开“Azure”，然后单击“部署到 Azure”。  </span><span class="sxs-lookup"><span data-stu-id="28dbe-138">Under Project Explorer view, right-click your project, expand **Azure**, then click **Deploy to Azure**.</span></span>
 
-1. <span data-ttu-id="ae348-131">在 IntelliJ 的项目资源管理器视图中，右键单击项目，选择“Azure”，然后选择“在 Web 应用上运行”。</span><span class="sxs-lookup"><span data-stu-id="ae348-131">Within IntelliJ's Project Explorer view, right-click your project, choose **Azure**, and then choose **Run on Web App**.</span></span>
-   
-   ![“在 Web 应用上运行”菜单][run-on-web-app-menu]
+   ![“部署到 Azure”菜单][deploy-to-azure-menu]
 
-1. <span data-ttu-id="ae348-133">在“在 Web 应用上运行”对话框中，可选择以下任一选项：</span><span class="sxs-lookup"><span data-stu-id="ae348-133">In the Run on Web App dialog box, you can choose one of the following options:</span></span>
+1. <span data-ttu-id="28dbe-140">在“部署到 Azure”对话框中，如果已有现有的 Tomcat Web 应用，则可将该应用程序直接部署到该 Web 应用，否则应该先创建一个 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="28dbe-140">In the Deploy to Azure dialog box, you can directly deploy the application to an existing Tomcat webapp if you already have one, otherwise you should create a new one first.</span></span>
+   1. <span data-ttu-id="28dbe-141">单击“没有可用的 Web 应用，单击此处以新建一个”链接以创建新的 Web 应用；如果订阅中已有现有的 Web 应用，可以从“Web 应用”下拉列表中选择“创建新的 Web 应用”。  </span><span class="sxs-lookup"><span data-stu-id="28dbe-141">Click the link **No Available webapp, click to create a new one** to crete a new web app, you could choose **Create New WebApp** from WebApp dropdown if there are existing webapps in your subscription.</span></span>
 
-   * <span data-ttu-id="ae348-134">选择现有 Web 应用（如果有），然后单击“运行”。</span><span class="sxs-lookup"><span data-stu-id="ae348-134">Choose an existing web app (if one exists), and then click **Run**.</span></span>
+      ![“部署到 Azure”对话框][deploy-to-azure-dialog]
 
-      ![“在 Web 应用上运行”对话框][run-on-web-app-dialog]
-
-   * <span data-ttu-id="ae348-136">单击 WebApp 下拉列表中的“创建新的 Web 应用”。</span><span class="sxs-lookup"><span data-stu-id="ae348-136">Click **Create New Web App** from WebApp dropdown.</span></span> <span data-ttu-id="ae348-137">如果选择创建新的 Web 应用，请为 Web 应用指定必要信息，然后在 Web 应用创建后单击“运行”。</span><span class="sxs-lookup"><span data-stu-id="ae348-137">If you choose to create a new web app, specify the requisite information for your web app, and then click **Run** after web app creation.</span></span>
+   1. <span data-ttu-id="28dbe-143">在弹出对话框中，选择“TOMCAT 8.5-jre8”作为 Web 容器，指定其他所需信息，然后单击“确定”创建 Web 应用。  </span><span class="sxs-lookup"><span data-stu-id="28dbe-143">In the pop-up dialog box, chose **TOMCAT 8.5-jre8** as Web Container and specify other required information, then click **OK** to create the webapp.</span></span>
 
       ![创建新 Web 应用][create-new-web-app-dialog]
 
-1. <span data-ttu-id="ae348-139">成功部署 Web 应用后，该工具包会显示一条状态消息，其中还含有所部署 Web 应用的 URL。</span><span class="sxs-lookup"><span data-stu-id="ae348-139">The toolkit will display a status message when it has successfully deployed your web app, which will also display the URL of your deployed web app.</span></span>
+   1. <span data-ttu-id="28dbe-145">从“Web 应用”下拉列表中选择 Web 应用，然后单击“运行”。（若要部署到现有的 Web 应用，则可以从此处开始） </span><span class="sxs-lookup"><span data-stu-id="28dbe-145">Choose the web app from WebApp drop down, and then click **Run**.(You could start from here if you want deploy to an existing webapp)</span></span>
+
+      ![部署到现有的 Web 应用][deploy-to-existing-webapp]
+
+1. <span data-ttu-id="28dbe-147">成功部署 Web 应用后，工具包会显示一条状态消息，以及成功部署的 Web 应用的 URL。</span><span class="sxs-lookup"><span data-stu-id="28dbe-147">The toolkit will display a status message when it has successfully deployed your web app, along with the URL of your deployed web app if succeed.</span></span>
 
    ![成功部署][successfully-deployed]
 
-1. <span data-ttu-id="ae348-141">可使用状态消息中提供的链接转到 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="ae348-141">You can browse to your web app using the link provided in the status message.</span></span>
+1. <span data-ttu-id="28dbe-149">可使用状态消息中提供的链接转到 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="28dbe-149">You can browse to your web app using the link provided in the status message.</span></span>
 
    ![转到你的 Web 应用][browse-web-app]
 
-1. <span data-ttu-id="ae348-143">发布 Web 应用后，所做设置会保存为默认设置，可单击工具栏上的绿色箭头图标在 Azure 上运行应用程序。</span><span class="sxs-lookup"><span data-stu-id="ae348-143">After you have published your web app, your settings will be saved as the default, and you can run your application on Azure by clicking the green arrow icon on the toolbar.</span></span> <span data-ttu-id="ae348-144">可通过单击 Web 应用的下拉菜单来修改设置，然后单击“编辑配置”。</span><span class="sxs-lookup"><span data-stu-id="ae348-144">You can modify your settings by clicking the drop-down menu for your web app and click **Edit Configurations**.</span></span>
+## <a name="managing-deploy-configurations"></a><span data-ttu-id="28dbe-151">管理部署配置</span><span class="sxs-lookup"><span data-stu-id="28dbe-151">Managing deploy configurations</span></span>
+
+1. <span data-ttu-id="28dbe-152">发布 Web 应用后，你的设置将保存为默认设置。可以通过单击工具栏上的绿色箭头图标来运行部署。</span><span class="sxs-lookup"><span data-stu-id="28dbe-152">After you have published your web app, your settings will be saved as the default, and you can run the deployment by clicking the green arrow icon on the toolbar.</span></span> <span data-ttu-id="28dbe-153">可通过单击 Web 应用的下拉菜单来修改设置，然后单击“编辑配置”  。</span><span class="sxs-lookup"><span data-stu-id="28dbe-153">You can modify your settings by clicking the drop-down menu for your web app and click **Edit Configurations**.</span></span>
 
    ![“编辑配置”菜单][edit-configuration-menu]
 
-1. <span data-ttu-id="ae348-146">出现“运行/调试配置”对话框后，可修改任意默认设置，然后单击“确定”。</span><span class="sxs-lookup"><span data-stu-id="ae348-146">When the **Run/Debug Configurations** dialog box is displayed, you can modify any of the default settings, and then click **OK**.</span></span>
+1. <span data-ttu-id="28dbe-155">出现“运行/调试配置”对话框后，可修改任意默认设置，然后单击“确定”   。</span><span class="sxs-lookup"><span data-stu-id="28dbe-155">When the **Run/Debug Configurations** dialog box is displayed, you can modify any of the default settings, and then click **OK**.</span></span>
 
    ![“编辑配置”对话框][edit-configuration-dialog]
 
-## <a name="next-steps"></a><span data-ttu-id="ae348-148">后续步骤</span><span class="sxs-lookup"><span data-stu-id="ae348-148">Next steps</span></span>
+## <a name="cleaning-up-resources"></a><span data-ttu-id="28dbe-157">清理资源</span><span class="sxs-lookup"><span data-stu-id="28dbe-157">Cleaning up resources</span></span>
+
+1. <span data-ttu-id="28dbe-158">在 Azure 资源管理器中删除 Web 应用</span><span class="sxs-lookup"><span data-stu-id="28dbe-158">Deleting Web Apps in Azure Explorer</span></span>
+
+     ![清理资源][clean-resources]
+
+## <a name="next-steps"></a><span data-ttu-id="28dbe-160">后续步骤</span><span class="sxs-lookup"><span data-stu-id="28dbe-160">Next steps</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
-<span data-ttu-id="ae348-149">有关创建 Azure Web 应用的其他信息，请参阅 [Web 应用概述]。</span><span class="sxs-lookup"><span data-stu-id="ae348-149">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
+<span data-ttu-id="28dbe-161">有关创建 Azure Web 应用的其他信息，请参阅 [Web 应用概述]。</span><span class="sxs-lookup"><span data-stu-id="28dbe-161">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
 
 <!-- URL List -->
 
-[用于 IntelliJ 的 Azure 工具包]: azure-toolkit-for-intellij.md
 [Azure Toolkit for IntelliJ]: azure-toolkit-for-intellij.md
-[用于 Eclipse 的 Azure 工具包]: ../eclipse/azure-toolkit-for-eclipse.md
 [Azure Toolkit for Eclipse]: ../eclipse/azure-toolkit-for-eclipse.md
 [eclipse-hello-world]: ../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md
 [Web 应用概述]: /azure/app-service/app-service-web-overview
@@ -132,7 +159,7 @@ ms.locfileid: "58489635"
 [intelliJ-sign-in-instructions]: azure-toolkit-for-intellij-sign-in-instructions.md
 
 <!-- IMG List -->
-
+[marketplace]:./media/azure-toolkit-for-intellij-create-hello-world-web-app/marketplace.png
 [file-new-project]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/file-new-project.png
 [maven-archetype-webapp]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/maven-archetype-webapp.png
 [groupid-and-artifactid]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/groupid-and-artifactid.png
@@ -140,10 +167,17 @@ ms.locfileid: "58489635"
 [project-name]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/project-name.png
 [open-index-page]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/open-index-page.png
 [edit-index-page]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/edit-index-page.png
-[run-on-web-app-menu]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/run-on-web-app-menu.png
-[run-on-web-app-dialog]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/run-on-web-app-dialog.png
+[deploy-to-azure-menu]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/run-on-web-app-menu.png
+[deploy-to-azure-dialog]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/run-on-web-app-dialog.png
+[deploy-to-existing-webapp]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/deploy-to-existing-webapp.png
 [create-new-web-app-dialog]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/create-new-web-app-dialog.png
 [successfully-deployed]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/successfully-deployed.png
 [browse-web-app]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/browse-web-app.png
 [edit-configuration-menu]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/edit-configuration-menu.png
 [edit-configuration-dialog]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/edit-configuration-dialog.png
+[clean-resources]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/clean-resource.png
+[I01]: media/azure-toolkit-for-intellij-sign-in-instructions/I01.png
+[I02]: media/azure-toolkit-for-intellij-sign-in-instructions/I02.png
+[I03]: media/azure-toolkit-for-intellij-sign-in-instructions/I03.png
+[I04]: media/azure-toolkit-for-intellij-sign-in-instructions/I04.png
+[I05]: media/azure-toolkit-for-intellij-sign-in-instructions/I05.png

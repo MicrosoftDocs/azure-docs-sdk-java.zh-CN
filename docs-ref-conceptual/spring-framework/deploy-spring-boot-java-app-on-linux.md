@@ -15,227 +15,207 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: a9d4bd5a1677078431b5502b276b17cd973cbea0
-ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
+ms.openlocfilehash: 407b852e24ef88d2fb075bd064f1acf2b107ddc1
+ms.sourcegitcommit: 394521c47ac9895d00d9f97535cc9d1e27d08fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58489655"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270868"
 ---
-# <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a><span data-ttu-id="cb39f-103">在用于容器的 Azure 应用服务上部署 Spring Boot 应用程序</span><span class="sxs-lookup"><span data-stu-id="cb39f-103">Deploy a Spring Boot application on Azure App Service for Container</span></span>
+# <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a><span data-ttu-id="816bf-103">在用于容器的 Azure 应用服务上部署 Spring Boot 应用程序</span><span class="sxs-lookup"><span data-stu-id="816bf-103">Deploy a Spring Boot application on Azure App Service for Container</span></span>
 
-<span data-ttu-id="cb39f-104">本教程介绍如何使用 [Docker] 将 [Spring Boot] 应用程序容器化并将自己的 docker 映像部署到 [Azure 应用服务](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro)中的 Linux 主机。</span><span class="sxs-lookup"><span data-stu-id="cb39f-104">This tutorial walks you through using [Docker] to containerize your [Spring Boot] application and deploy your own docker image to a Linux host in the [Azure App Service](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro).</span></span>
+<span data-ttu-id="816bf-104">本教程介绍如何使用 [Docker] 将 [Spring Boot] 应用程序容器化并将自己的 docker 映像部署到 [Azure 应用服务](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro)中的 Linux 主机。</span><span class="sxs-lookup"><span data-stu-id="816bf-104">This tutorial walks you through using [Docker] to containerize your [Spring Boot] application and deploy your own docker image to a Linux host in the [Azure App Service](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="cb39f-105">先决条件</span><span class="sxs-lookup"><span data-stu-id="cb39f-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="816bf-105">先决条件</span><span class="sxs-lookup"><span data-stu-id="816bf-105">Prerequisites</span></span>
 
-<span data-ttu-id="cb39f-106">完成本教程中的步骤需要具备以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="cb39f-106">In order to complete the steps in this tutorial, you need to have the following prerequisites:</span></span>
+<span data-ttu-id="816bf-106">完成本教程中的步骤需要具备以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="816bf-106">In order to complete the steps in this tutorial, you need to have the following prerequisites:</span></span>
 
-* <span data-ttu-id="cb39f-107">Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="cb39f-107">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="cb39f-108">[Azure 命令行接口 (CLI)]。</span><span class="sxs-lookup"><span data-stu-id="cb39f-108">The [Azure Command-Line Interface (CLI)].</span></span>
-* <span data-ttu-id="cb39f-109">一个受支持的 Java 开发工具包 (JDK)。</span><span class="sxs-lookup"><span data-stu-id="cb39f-109">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="cb39f-110">有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。</span><span class="sxs-lookup"><span data-stu-id="cb39f-110">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
-* <span data-ttu-id="cb39f-111">Apache 的 [Maven] 生成工具（版本 3）。</span><span class="sxs-lookup"><span data-stu-id="cb39f-111">Apache's [Maven] build tool (Version 3).</span></span>
-* <span data-ttu-id="cb39f-112">[Git] 客户端。</span><span class="sxs-lookup"><span data-stu-id="cb39f-112">A [Git] client.</span></span>
-* <span data-ttu-id="cb39f-113">[Docker] 客户端。</span><span class="sxs-lookup"><span data-stu-id="cb39f-113">A [Docker] client.</span></span>
+* <span data-ttu-id="816bf-107">Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="816bf-107">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="816bf-108">[Azure 命令行接口 (CLI)]。</span><span class="sxs-lookup"><span data-stu-id="816bf-108">The [Azure Command-Line Interface (CLI)].</span></span>
+* <span data-ttu-id="816bf-109">一个受支持的 Java 开发工具包 (JDK)。</span><span class="sxs-lookup"><span data-stu-id="816bf-109">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="816bf-110">有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。</span><span class="sxs-lookup"><span data-stu-id="816bf-110">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
+* <span data-ttu-id="816bf-111">Apache 的 [Maven] 生成工具（版本 3）。</span><span class="sxs-lookup"><span data-stu-id="816bf-111">Apache's [Maven] build tool (Version 3).</span></span>
+* <span data-ttu-id="816bf-112">[Git] 客户端。</span><span class="sxs-lookup"><span data-stu-id="816bf-112">A [Git] client.</span></span>
+* <span data-ttu-id="816bf-113">[Docker] 客户端。</span><span class="sxs-lookup"><span data-stu-id="816bf-113">A [Docker] client.</span></span>
 
 > [!NOTE]
 >
-> <span data-ttu-id="cb39f-114">由于本教程中的虚拟化要求，无法在虚拟机上执行本文中的步骤；必须使用启用了虚拟化功能的物理计算机。</span><span class="sxs-lookup"><span data-stu-id="cb39f-114">Due to the virtualization requirements of this tutorial, you cannot follow the steps in this article on a virtual machine; you must use a physical computer with virtualization features enabled.</span></span>
+> <span data-ttu-id="816bf-114">由于本教程中的虚拟化要求，无法在虚拟机上执行本文中的步骤；必须使用启用了虚拟化功能的物理计算机。</span><span class="sxs-lookup"><span data-stu-id="816bf-114">Due to the virtualization requirements of this tutorial, you cannot follow the steps in this article on a virtual machine; you must use a physical computer with virtualization features enabled.</span></span>
 >
 
-## <a name="create-the-spring-boot-on-docker-getting-started-web-app"></a><span data-ttu-id="cb39f-115">创建 Docker 上的 Spring Boot 入门 Web 应用</span><span class="sxs-lookup"><span data-stu-id="cb39f-115">Create the Spring Boot on Docker Getting Started web app</span></span>
+## <a name="create-the-spring-boot-on-docker-getting-started-web-app"></a><span data-ttu-id="816bf-115">创建 Docker 上的 Spring Boot 入门 Web 应用</span><span class="sxs-lookup"><span data-stu-id="816bf-115">Create the Spring Boot on Docker Getting Started web app</span></span>
 
-<span data-ttu-id="cb39f-116">以下步骤将引导你完成以下步骤：创建一个简单的 Spring Boot Web 应用程序并对其进行本地测试。</span><span class="sxs-lookup"><span data-stu-id="cb39f-116">The following steps walk you through the steps that are required to create a simple Spring Boot web application and test it locally.</span></span>
+<span data-ttu-id="816bf-116">以下步骤将引导你完成以下步骤：创建一个简单的 Spring Boot Web 应用程序并对其进行本地测试。</span><span class="sxs-lookup"><span data-stu-id="816bf-116">The following steps walk you through the steps that are required to create a simple Spring Boot web application and test it locally.</span></span>
 
-1. <span data-ttu-id="cb39f-117">打开命令提示符，创建本地目录以存放应用程序，并更改为以下目录；例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-117">Open a command-prompt and create a local directory to hold your application, and change to that directory; for example:</span></span>
+1. <span data-ttu-id="816bf-117">打开命令提示符，创建本地目录以存放应用程序，并更改为以下目录；例如：</span><span class="sxs-lookup"><span data-stu-id="816bf-117">Open a command-prompt and create a local directory to hold your application, and change to that directory; for example:</span></span>
    ```
    md C:\SpringBoot
    cd C:\SpringBoot
    ```
-   <span data-ttu-id="cb39f-118">- 或 -</span><span class="sxs-lookup"><span data-stu-id="cb39f-118">-- or --</span></span>
+   <span data-ttu-id="816bf-118">- 或 -</span><span class="sxs-lookup"><span data-stu-id="816bf-118">-- or --</span></span>
    ```
    md /users/robert/SpringBoot
    cd /users/robert/SpringBoot
    ```
 
-1. <span data-ttu-id="cb39f-119">将 [Docker 上的 Spring Boot 入门]示例项目克隆到创建的目录中；例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-119">Clone the [Spring Boot on Docker Getting Started] sample project into the directory you created; for example:</span></span>
+1. <span data-ttu-id="816bf-119">将 [Docker 上的 Spring Boot 入门]示例项目克隆到创建的目录中；例如：</span><span class="sxs-lookup"><span data-stu-id="816bf-119">Clone the [Spring Boot on Docker Getting Started] sample project into the directory you created; for example:</span></span>
    ```
    git clone https://github.com/spring-guides/gs-spring-boot-docker.git
    ```
 
-1. <span data-ttu-id="cb39f-120">将目录更改为已完成项目；例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-120">Change directory to the completed project; for example:</span></span>
+1. <span data-ttu-id="816bf-120">将目录更改为已完成项目；例如：</span><span class="sxs-lookup"><span data-stu-id="816bf-120">Change directory to the completed project; for example:</span></span>
    ```
    cd gs-spring-boot-docker/complete
    ```
 
-1. <span data-ttu-id="cb39f-121">使用 Maven 生成 JAR 文件；例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-121">Build the JAR file using Maven; for example:</span></span>
+1. <span data-ttu-id="816bf-121">使用 Maven 生成 JAR 文件；例如：</span><span class="sxs-lookup"><span data-stu-id="816bf-121">Build the JAR file using Maven; for example:</span></span>
    ```
    mvn package
    ```
 
-1. <span data-ttu-id="cb39f-122">创建 Web 应用后，将目录更改为 JAR 文件所在的 `target` 目录并启动 Web 应用；例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-122">Once the web app has been created, change directory to the `target` directory where the JAR file is located and start the web app; for example:</span></span>
+1. <span data-ttu-id="816bf-122">创建 Web 应用后，将目录更改为 JAR 文件所在的 `target` 目录并启动 Web 应用；例如：</span><span class="sxs-lookup"><span data-stu-id="816bf-122">Once the web app has been created, change directory to the `target` directory where the JAR file is located and start the web app; for example:</span></span>
    ```
    cd target
    java -jar gs-spring-boot-docker-0.1.0.jar
    ```
 
-1. <span data-ttu-id="cb39f-123">使用 Web 浏览器在本地浏览到 Web 应用并对其进行测试。</span><span class="sxs-lookup"><span data-stu-id="cb39f-123">Test the web app by browsing to it locally using a web browser.</span></span> <span data-ttu-id="cb39f-124">例如，如果你有可用的 curl，并且已将 Tomcat 服务器配置为在端口 80 上运行：</span><span class="sxs-lookup"><span data-stu-id="cb39f-124">For example, if you have curl available and you configured the Tomcat server to run on port 80:</span></span>
+1. <span data-ttu-id="816bf-123">使用 Web 浏览器在本地浏览到 Web 应用并对其进行测试。</span><span class="sxs-lookup"><span data-stu-id="816bf-123">Test the web app by browsing to it locally using a web browser.</span></span> <span data-ttu-id="816bf-124">例如，如果你有可用的 curl，并且已将 Tomcat 服务器配置为在端口 80 上运行：</span><span class="sxs-lookup"><span data-stu-id="816bf-124">For example, if you have curl available and you configured the Tomcat server to run on port 80:</span></span>
    ```
    curl http://localhost
    ```
 
-1. <span data-ttu-id="cb39f-125">应当会看到显示了以下消息：**Hello Docker World!**</span><span class="sxs-lookup"><span data-stu-id="cb39f-125">You should see the following message displayed: **Hello Docker World!**</span></span>
+1. <span data-ttu-id="816bf-125">应当会看到显示了以下消息：**Hello Docker World!**</span><span class="sxs-lookup"><span data-stu-id="816bf-125">You should see the following message displayed: **Hello Docker World!**</span></span>
 
    ![本地浏览示例应用][SB01]
 
-## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a><span data-ttu-id="cb39f-127">创建 Azure 容器注册表以用作专用 Docker 注册表</span><span class="sxs-lookup"><span data-stu-id="cb39f-127">Create an Azure Container Registry to use as a Private Docker Registry</span></span>
+## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a><span data-ttu-id="816bf-127">创建 Azure 容器注册表以用作专用 Docker 注册表</span><span class="sxs-lookup"><span data-stu-id="816bf-127">Create an Azure Container Registry to use as a Private Docker Registry</span></span>
 
-<span data-ttu-id="cb39f-128">以下步骤将引导你完成使用 Azure 门户来创建 Azure 容器注册表的步骤。</span><span class="sxs-lookup"><span data-stu-id="cb39f-128">The following steps walk you through using the Azure portal to create an Azure Container Registry.</span></span>
+<span data-ttu-id="816bf-128">以下步骤将引导你完成使用 Azure 门户来创建 Azure 容器注册表的步骤。</span><span class="sxs-lookup"><span data-stu-id="816bf-128">The following steps walk you through using the Azure portal to create an Azure Container Registry.</span></span>
 
 > [!NOTE]
 >
-> <span data-ttu-id="cb39f-129">如果你想要使用 Azure CLI（而不是 Azure 门户），请按照[使用 Azure CLI 2.0 创建专用 Docker 容器注册表](/azure/container-registry/container-registry-get-started-azure-cli)中的步骤操作。</span><span class="sxs-lookup"><span data-stu-id="cb39f-129">If you want to use the Azure CLI instead of the Azure portal, follow the steps in [Create a private Docker container registry using the Azure CLI 2.0](/azure/container-registry/container-registry-get-started-azure-cli).</span></span>
+> <span data-ttu-id="816bf-129">如果你想要使用 Azure CLI（而不是 Azure 门户），请按照[使用 Azure CLI 2.0 创建专用 Docker 容器注册表](/azure/container-registry/container-registry-get-started-azure-cli)中的步骤操作。</span><span class="sxs-lookup"><span data-stu-id="816bf-129">If you want to use the Azure CLI instead of the Azure portal, follow the steps in [Create a private Docker container registry using the Azure CLI 2.0](/azure/container-registry/container-registry-get-started-azure-cli).</span></span>
 >
 
-1. <span data-ttu-id="cb39f-130">浏览到 [Azure 门户]并登录。</span><span class="sxs-lookup"><span data-stu-id="cb39f-130">Browse to the [Azure portal] and sign in.</span></span>
+1. <span data-ttu-id="816bf-130">浏览到 [Azure 门户]并登录。</span><span class="sxs-lookup"><span data-stu-id="816bf-130">Browse to the [Azure portal] and sign in.</span></span>
 
-   <span data-ttu-id="cb39f-131">登录到你在 Azure 门户的帐户后，可以按照[使用 Azure 门户创建专用 Docker 容器注册表]一文中的步骤操作，为方便起见，在以下步骤中进行了解释。</span><span class="sxs-lookup"><span data-stu-id="cb39f-131">Once you have signed in to your account on the Azure portal, you can follow the steps in the [Create a private Docker container registry using the Azure portal] article, which are paraphrased in the following steps for the sake of expediency.</span></span>
+   <span data-ttu-id="816bf-131">登录到你在 Azure 门户的帐户后，可以按照[使用 Azure 门户创建专用 Docker 容器注册表]一文中的步骤操作，为方便起见，在以下步骤中进行了解释。</span><span class="sxs-lookup"><span data-stu-id="816bf-131">Once you have signed in to your account on the Azure portal, you can follow the steps in the [Create a private Docker container registry using the Azure portal] article, which are paraphrased in the following steps for the sake of expediency.</span></span>
 
-1. <span data-ttu-id="cb39f-132">单击“+ 新建”菜单图标，然后依次单击“容器”、“Azure 容器注册表”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-132">Click the menu icon for **+ New**, then click **Containers**, and then click **Azure Container Registry**.</span></span>
+1. <span data-ttu-id="816bf-132">单击“+ 新建”  菜单图标，然后依次单击“容器”、  “Azure 容器注册表”  。</span><span class="sxs-lookup"><span data-stu-id="816bf-132">Click the menu icon for **+ New**, then click **Containers**, and then click **Azure Container Registry**.</span></span>
    
    ![创建新的 Azure 容器注册表][AR01]
 
-1. <span data-ttu-id="cb39f-134">显示 Azure 容器注册表模板的信息页面时，请单击“创建”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-134">When the information page for the Azure Container Registry template is displayed, click **Create**.</span></span> 
+1. <span data-ttu-id="816bf-134">显示 Azure 容器注册表模板的信息页面时，请单击“创建”  。</span><span class="sxs-lookup"><span data-stu-id="816bf-134">When the information page for the Azure Container Registry template is displayed, click **Create**.</span></span> 
 
    ![创建新的 Azure 容器注册表][AR02]
 
-1. <span data-ttu-id="cb39f-136">当显示“创建容器注册表”页时，输入你的“注册表名称”和“资源组”，为“管理员用户”选择“启用”，然后单击“创建”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-136">When the **Create container registry** page is displayed, enter your **Registry name** and **Resource group**, choose **Enable** for the **Admin user**, and then click **Create**.</span></span>
+1. <span data-ttu-id="816bf-136">当显示“创建容器注册表”  页时，输入你的“注册表名称”  和“资源组”  ，为“管理员用户”  选择“启用”  ，然后单击“创建”  。</span><span class="sxs-lookup"><span data-stu-id="816bf-136">When the **Create container registry** page is displayed, enter your **Registry name** and **Resource group**, choose **Enable** for the **Admin user**, and then click **Create**.</span></span>
 
    ![配置 Azure 容器注册表设置][AR03]
 
-1. <span data-ttu-id="cb39f-138">创建容器注册表后，在 Azure 门户中导航到你的容器注册表，然后单击“访问密钥”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-138">Once your container registry has been created, navigate to your container registry in the Azure portal, and then click **Access Keys**.</span></span> <span data-ttu-id="cb39f-139">记下用户名和密码，以供后续步骤中使用。</span><span class="sxs-lookup"><span data-stu-id="cb39f-139">Take note of the username and password for the next steps.</span></span>
+1. <span data-ttu-id="816bf-138">创建容器注册表后，在 Azure 门户中导航到你的容器注册表，然后单击“访问密钥”  。</span><span class="sxs-lookup"><span data-stu-id="816bf-138">Once your container registry has been created, navigate to your container registry in the Azure portal, and then click **Access Keys**.</span></span> <span data-ttu-id="816bf-139">记下用户名和密码，以供后续步骤中使用。</span><span class="sxs-lookup"><span data-stu-id="816bf-139">Take note of the username and password for the next steps.</span></span>
 
    ![Azure 容器注册表访问密钥][AR04]
 
-## <a name="configure-maven-to-use-your-azure-container-registry-access-keys"></a><span data-ttu-id="cb39f-141">配置 Maven 以使用你的 Azure 容器注册表访问密钥</span><span class="sxs-lookup"><span data-stu-id="cb39f-141">Configure Maven to use your Azure Container Registry access keys</span></span>
+## <a name="configure-maven-to-use-your-azure-container-registry-access-keys"></a><span data-ttu-id="816bf-141">配置 Maven 以使用你的 Azure 容器注册表访问密钥</span><span class="sxs-lookup"><span data-stu-id="816bf-141">Configure Maven to use your Azure Container Registry access keys</span></span>
 
-1. <span data-ttu-id="cb39f-142">导航到 Maven 安装的配置目录，并使用文本编辑器打开 settings.xml 文件。</span><span class="sxs-lookup"><span data-stu-id="cb39f-142">Navigate to the configuration directory for your Maven installation and open the *settings.xml* file with a text editor.</span></span>
+1. <span data-ttu-id="816bf-142">导航到 Spring Boot 应用程序的已完成项目目录（例如：“C:\SpringBoot\gs-spring-boot-docker\complete”  或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”  ），并使用文本编辑器打开 pom.xml  文件。</span><span class="sxs-lookup"><span data-stu-id="816bf-142">Navigate to the completed project directory for your Spring Boot application, (for example: "*C:\SpringBoot\gs-spring-boot-docker\complete*" or "*/users/robert/SpringBoot/gs-spring-boot-docker/complete*"), and open the *pom.xml* file with a text editor.</span></span>
 
-1. <span data-ttu-id="cb39f-143">将本教程上一部分中的 Azure 容器注册表访问设置添加到 settings.xml 文件中的 `<servers>` 集合；例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-143">Add your Azure Container Registry access settings from the previous section of this tutorial to the `<servers>` collection in the *settings.xml* file; for example:</span></span>
-
-   ```xml
-   <servers>
-      <server>
-         <id>wingtiptoysregistry</id>
-         <username>wingtiptoysregistry</username>
-         <password>AbCdEfGhIjKlMnOpQrStUvWxYz</password>
-      </server>
-   </servers>
-   ```
-
-1. <span data-ttu-id="cb39f-144">导航到 Spring Boot 应用程序的已完成项目目录（例如：“C:\SpringBoot\gs-spring-boot-docker\complete”或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”），并使用文本编辑器打开 pom.xml 文件。</span><span class="sxs-lookup"><span data-stu-id="cb39f-144">Navigate to the completed project directory for your Spring Boot application, (for example: "*C:\SpringBoot\gs-spring-boot-docker\complete*" or "*/users/robert/SpringBoot/gs-spring-boot-docker/complete*"), and open the *pom.xml* file with a text editor.</span></span>
-
-1. <span data-ttu-id="cb39f-145">使用本教程上一部分中的 Azure 容器注册表的登录服务器值更新 pom.xml 文件中的 `<properties>` 集合，例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-145">Update the `<properties>` collection in the *pom.xml* file with the login server value for your Azure Container Registry from the previous section of this tutorial; for example:</span></span>
+1. <span data-ttu-id="816bf-143">使用本教程上一部分提供的最新版 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin)、登录服务器值以及 Azure 容器注册表的访问设置更新 pom.xml  文件中的 `<properties>` 集合。</span><span class="sxs-lookup"><span data-stu-id="816bf-143">Update the `<properties>` collection in the *pom.xml* file with the latest version of [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) and login server value and access settings for your Azure Container Registry from the previous section of this tutorial.</span></span> <span data-ttu-id="816bf-144">例如：</span><span class="sxs-lookup"><span data-stu-id="816bf-144">For example:</span></span>
 
    ```xml
    <properties>
+      <jib-maven-plugin.version>1.2.0</jib-maven-plugin.version>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
       <java.version>1.8</java.version>
+      <username>wingtiptoysregistry</username>
+      <password>{put your Azure Container Registry access key here}</password>
    </properties>
    ```
 
-1. <span data-ttu-id="cb39f-146">更新 pom.xml 文件中的 `<plugins>` 集合，使 `<plugin>` 包含本教程上一部分中 Azure 容器注册表的登录服务器地址和注册表名称。</span><span class="sxs-lookup"><span data-stu-id="cb39f-146">Update the `<plugins>` collection in the *pom.xml* file so that the `<plugin>` contains the login server address and registry name for your Azure Container Registry from the previous section of this tutorial.</span></span> <span data-ttu-id="cb39f-147">例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-147">For example:</span></span>
+1. <span data-ttu-id="816bf-145">将 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 添加到 *pom.xml* 文件中的 `<plugins>` 集合，在 `<from>/<image>` 中指定基础映像，指定最终映像名称 `<to>/<image>`，并在 `<to>/<auth>` 中指定上一部分提供的用户名和密码。</span><span class="sxs-lookup"><span data-stu-id="816bf-145">Add [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) to the `<plugins>` collection in the *pom.xml* file, specify the base image at `<from>/<image>` and  final image name `<to>/<image>`, specify the username and password from previous section at `<to>/<auth>`.</span></span> <span data-ttu-id="816bf-146">例如：</span><span class="sxs-lookup"><span data-stu-id="816bf-146">For example:</span></span>
 
    ```xml
    <plugin>
-      <groupId>com.spotify</groupId>
-      <artifactId>docker-maven-plugin</artifactId>
-      <version>0.4.11</version>
-      <configuration>
-         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         <dockerDirectory>src/main/docker</dockerDirectory>
-         <resources>
-            <resource>
-               <targetPath>/</targetPath>
-               <directory>${project.build.directory}</directory>
-               <include>${project.build.finalName}.jar</include>
-            </resource>
-         </resources>
-         <serverId>wingtiptoysregistry</serverId>
-         <registryUrl>https://wingtiptoysregistry.azurecr.io</registryUrl>
-      </configuration>
+     <artifactId>jib-maven-plugin</artifactId>
+     <groupId>com.google.cloud.tools</groupId>
+     <version>${jib-maven-plugin.version}</version>
+     <configuration>
+        <from>
+            <image>openjdk:8-jre-alpine</image>
+        </from>
+        <to>
+            <image>${docker.image.prefix}/${project.artifactId}</image>
+            <auth>
+               <username>${username}</username>
+               <password>${password}</password>
+            </auth>
+        </to>
+     </configuration>
    </plugin>
    ```
 
-1. <span data-ttu-id="cb39f-148">导航到 Spring Boot 应用程序的已完成项目目录，然后运行以下命令以重新生成应用程序，并将容器推送到 Azure 容器注册表：</span><span class="sxs-lookup"><span data-stu-id="cb39f-148">Navigate to the completed project directory for your Spring Boot application and run the following command to rebuild the application and push the container to your Azure Container Registry:</span></span>
+1. <span data-ttu-id="816bf-147">导航到 Spring Boot 应用程序的已完成项目目录，然后运行以下命令以重新生成应用程序，并将容器推送到 Azure 容器注册表：</span><span class="sxs-lookup"><span data-stu-id="816bf-147">Navigate to the completed project directory for your Spring Boot application and run the following command to rebuild the application and push the container to your Azure Container Registry:</span></span>
 
-   ```
-   mvn package docker:build -DpushImage 
+   ```cmd
+   mvn compile jib:build
    ```
 
 > [!NOTE]
 >
-> <span data-ttu-id="cb39f-149">将 Docker 容器推送到 Azure 时，即使已成功创建 Docker 容器，也可能会收到类似于以下内容的错误消息：</span><span class="sxs-lookup"><span data-stu-id="cb39f-149">When you are pushing your Docker container to Azure, you may receive an error message that is similar to one of the following even though your Docker container was created successfully:</span></span>
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: no basic auth credentials`
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: Incomplete Docker registry authorization credentials. Please provide all of username, password, and email or none.`
->
-> <span data-ttu-id="cb39f-150">如果发生这种情况，可能需要从 Docker 命令行登录到 Azure 帐户，例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-150">If this happens, you may need to sign in to your Azure account from the Docker command line; for example:</span></span>
->
-> `docker login -u wingtiptoysregistry -p "AbCdEfGhIjKlMnOpQrStUvWxYz" wingtiptoysregistry.azurecr.io`
->
-> <span data-ttu-id="cb39f-151">然后可以从命令行推送容器；例如：</span><span class="sxs-lookup"><span data-stu-id="cb39f-151">You can then push your container from the command line; for example:</span></span>
->
-> `docker push wingtiptoysregistry.azurecr.io/gs-spring-boot-docker`
+> <span data-ttu-id="816bf-148">使用 Jib 将映像推送到 Azure 容器注册表时，该映像不会认可 *Dockerfile*。有关详细信息，请参阅[此](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html)文档。</span><span class="sxs-lookup"><span data-stu-id="816bf-148">When you are using Jib to push your image to the Azure Container Registry, the image will not honor *Dockerfile*, see [this](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html) document for details.</span></span>
 >
 
-## <a name="create-a-web-app-on-linux-on-azure-app-service-using-your-container-image"></a><span data-ttu-id="cb39f-152">在 Azure 应用服务中使用容器映像创建 Linux 上的 Web 应用</span><span class="sxs-lookup"><span data-stu-id="cb39f-152">Create a web app on Linux on Azure App Service using your container image</span></span>
+## <a name="create-a-web-app-on-linux-on-azure-app-service-using-your-container-image"></a><span data-ttu-id="816bf-149">在 Azure 应用服务中使用容器映像创建 Linux 上的 Web 应用</span><span class="sxs-lookup"><span data-stu-id="816bf-149">Create a web app on Linux on Azure App Service using your container image</span></span>
 
-1. <span data-ttu-id="cb39f-153">浏览到 [Azure 门户]并登录。</span><span class="sxs-lookup"><span data-stu-id="cb39f-153">Browse to the [Azure portal] and sign in.</span></span>
+1. <span data-ttu-id="816bf-150">浏览到 [Azure 门户]并登录。</span><span class="sxs-lookup"><span data-stu-id="816bf-150">Browse to the [Azure portal] and sign in.</span></span>
 
-2. <span data-ttu-id="cb39f-154">单击“+ 新建”菜单图标，然后依次单击“Web + 移动”、“Linux 上的 Web 应用”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-154">Click the menu icon for **+ New**, then click **Web + Mobile**, and then click **Web App on Linux**.</span></span>
+2. <span data-ttu-id="816bf-151">依次单击“+ 创建资源”  菜单图标、“Web”、  “用于容器的 Web 应用”  。</span><span class="sxs-lookup"><span data-stu-id="816bf-151">Click the menu icon for **+ Create a resource**, then click **Web**, and then click **Web App for Containers**.</span></span>
    
    ![在 Azure 门户中创建新的 Web 应用][LX01]
 
-3. <span data-ttu-id="cb39f-156">当显示“Linux 上的 Web 应用”页时，输入以下信息：</span><span class="sxs-lookup"><span data-stu-id="cb39f-156">When the **Web App on Linux** page is displayed, enter the following information:</span></span>
+3. <span data-ttu-id="816bf-153">当显示“Linux 上的 Web 应用”  页时，输入以下信息：</span><span class="sxs-lookup"><span data-stu-id="816bf-153">When the **Web App on Linux** page is displayed, enter the following information:</span></span>
 
-   <span data-ttu-id="cb39f-157">a.</span><span class="sxs-lookup"><span data-stu-id="cb39f-157">a.</span></span> <span data-ttu-id="cb39f-158">为“应用名称”输入唯一名称；例如：“wingtiptoyslinux”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-158">Enter a unique name for the **App name**; for example: "*wingtiptoyslinux*."</span></span>
+   <span data-ttu-id="816bf-154">a.</span><span class="sxs-lookup"><span data-stu-id="816bf-154">a.</span></span> <span data-ttu-id="816bf-155">为“应用名称”输入唯一名称；例如：“wingtiptoyslinux”   。</span><span class="sxs-lookup"><span data-stu-id="816bf-155">Enter a unique name for the **App name**; for example: "*wingtiptoyslinux*"</span></span>
 
-   <span data-ttu-id="cb39f-159">b.</span><span class="sxs-lookup"><span data-stu-id="cb39f-159">b.</span></span> <span data-ttu-id="cb39f-160">从下拉列表中选择一个订阅。</span><span class="sxs-lookup"><span data-stu-id="cb39f-160">Choose your **Subscription** from the drop-down list.</span></span>
+   <span data-ttu-id="816bf-156">b.</span><span class="sxs-lookup"><span data-stu-id="816bf-156">b.</span></span> <span data-ttu-id="816bf-157">从下拉列表中选择一个订阅  。</span><span class="sxs-lookup"><span data-stu-id="816bf-157">Choose your **Subscription** from the drop-down list.</span></span>
 
-   <span data-ttu-id="cb39f-161">c.</span><span class="sxs-lookup"><span data-stu-id="cb39f-161">c.</span></span> <span data-ttu-id="cb39f-162">选择现有资源组，或指定名称以创建新资源组。</span><span class="sxs-lookup"><span data-stu-id="cb39f-162">Choose an existing **Resource Group**, or specify a name to create a new resource group.</span></span>
+   <span data-ttu-id="816bf-158">c.</span><span class="sxs-lookup"><span data-stu-id="816bf-158">c.</span></span> <span data-ttu-id="816bf-159">选择现有资源组  ，或指定名称以创建新资源组。</span><span class="sxs-lookup"><span data-stu-id="816bf-159">Choose an existing **Resource Group**, or specify a name to create a new resource group.</span></span>
 
-   <span data-ttu-id="cb39f-163">d.</span><span class="sxs-lookup"><span data-stu-id="cb39f-163">d.</span></span> <span data-ttu-id="cb39f-164">单击“配置容器”边栏选项卡，然后输入以下信息：</span><span class="sxs-lookup"><span data-stu-id="cb39f-164">Click **Configure container** and enter the following information:</span></span>
+   <span data-ttu-id="816bf-160">d.</span><span class="sxs-lookup"><span data-stu-id="816bf-160">d.</span></span> <span data-ttu-id="816bf-161">选择 *Linux* 作为 **OS**。</span><span class="sxs-lookup"><span data-stu-id="816bf-161">Choose *Linux* as the **OS**.</span></span>
 
-   * <span data-ttu-id="cb39f-165">选择“专用注册表”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-165">Choose **Private registry**.</span></span>
+   <span data-ttu-id="816bf-162">e.</span><span class="sxs-lookup"><span data-stu-id="816bf-162">e.</span></span> <span data-ttu-id="816bf-163">单击“应用服务计划/位置”，选择现有的应用服务计划；或者单击“新建”，创建新的应用服务计划。  </span><span class="sxs-lookup"><span data-stu-id="816bf-163">Click **App Service plan/Location** and choose an existing app service plan, or click **Create new** to create a new app service plan.</span></span>
 
-   * <span data-ttu-id="cb39f-166">**映像和可选标记**：根据上文指定容器名称；例如：“wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest”</span><span class="sxs-lookup"><span data-stu-id="cb39f-166">**Image and optional tag**: Specify your container name from earlier; for example: "*wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*"</span></span>
+   <span data-ttu-id="816bf-164">f.</span><span class="sxs-lookup"><span data-stu-id="816bf-164">f.</span></span> <span data-ttu-id="816bf-165">单击“配置容器”  边栏选项卡，然后输入以下信息：</span><span class="sxs-lookup"><span data-stu-id="816bf-165">Click **Configure container** and enter the following information:</span></span>
 
-   * <span data-ttu-id="cb39f-167">**服务器 URL**：指定前面记下的注册表 URL，例如“*<https://wingtiptoysregistry.azurecr.io>*”</span><span class="sxs-lookup"><span data-stu-id="cb39f-167">**Server URL**: Specify your registry URL from earlier; for example: "*<https://wingtiptoysregistry.azurecr.io>*"</span></span>
+   * <span data-ttu-id="816bf-166">选择“单一容器”和“Azure 容器注册表”。  </span><span class="sxs-lookup"><span data-stu-id="816bf-166">Choose **Single Container** and  **Azure Container Registry**.</span></span>
 
-   * <span data-ttu-id="cb39f-168">**登录用户名**和**密码**：根据先前步骤中使用的**访问密钥**指定登录凭据。</span><span class="sxs-lookup"><span data-stu-id="cb39f-168">**Login username** and **Password**: Specify your login credentials from your **Access Keys** that you used in previous steps.</span></span>
+   * <span data-ttu-id="816bf-167">**注册表**：选择此前创建的容器名称，例如“*wingtiptoysregistry*”</span><span class="sxs-lookup"><span data-stu-id="816bf-167">**Registry**: Choose your container name created earlier; for example: "*wingtiptoysregistry*"</span></span>
+
+   * <span data-ttu-id="816bf-168">**映像**：选择映像名称，例如“*gs-spring-boot-docker*”</span><span class="sxs-lookup"><span data-stu-id="816bf-168">**Image**: Choose the image name; for example: "*gs-spring-boot-docker*"</span></span>
    
-   <span data-ttu-id="cb39f-169">e.</span><span class="sxs-lookup"><span data-stu-id="cb39f-169">e.</span></span> <span data-ttu-id="cb39f-170">输入上述所有信息后，请单击“确定”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-170">Once you have entered all of the above information, click **OK**.</span></span>
+   * <span data-ttu-id="816bf-169">**标记**：选择映像的标记，例如“*latest*”</span><span class="sxs-lookup"><span data-stu-id="816bf-169">**Tag**: Choose the tag for the image; for example: "*latest*"</span></span>
+   
+   * <span data-ttu-id="816bf-170">**启动文件**：将此项留空，因为映像已经有启动命令</span><span class="sxs-lookup"><span data-stu-id="816bf-170">**Startup File**: Keep it blank since the image already has the start up command</span></span>
+   
+   <span data-ttu-id="816bf-171">e.</span><span class="sxs-lookup"><span data-stu-id="816bf-171">e.</span></span> <span data-ttu-id="816bf-172">输入上述所有信息后，请单击“应用”  。</span><span class="sxs-lookup"><span data-stu-id="816bf-172">Once you have entered all of the above information, click **Apply**.</span></span>
 
    ![配置 Web 应用设置][LX02]
 
-4. <span data-ttu-id="cb39f-172">单击“创建”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-172">Click **Create**.</span></span>
+4. <span data-ttu-id="816bf-174">单击“创建”。 </span><span class="sxs-lookup"><span data-stu-id="816bf-174">Click **Create**.</span></span>
 
 > [!NOTE]
 >
-> <span data-ttu-id="cb39f-173">Azure 会将 Internet 请求自动映射到在标准端口 80 或 8080 上运行的嵌入式 Tomcat 服务器。</span><span class="sxs-lookup"><span data-stu-id="cb39f-173">Azure will automatically map Internet requests to embedded Tomcat server that is running on the standard ports of 80 or 8080.</span></span> <span data-ttu-id="cb39f-174">但是，如果已将嵌入式 Tomcat 服务器配置为在自定义端口上运行，则需要将一个环境变量添加到为嵌入式 Tomcat 服务器定义端口的 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="cb39f-174">However, if you configured your embedded Tomcat server to run on a custom port, you need to add an environment variable to your web app that defines the port for your embedded Tomcat server.</span></span> <span data-ttu-id="cb39f-175">为此，请按照以下步骤操作：</span><span class="sxs-lookup"><span data-stu-id="cb39f-175">To do so, use the following steps:</span></span>
+> <span data-ttu-id="816bf-175">Azure 会将 Internet 请求自动映射到在标准端口 80 或 8080 上运行的嵌入式 Tomcat 服务器。</span><span class="sxs-lookup"><span data-stu-id="816bf-175">Azure will automatically map Internet requests to embedded Tomcat server that is running on the standard ports of 80 or 8080.</span></span> <span data-ttu-id="816bf-176">但是，如果已将嵌入式 Tomcat 服务器配置为在自定义端口上运行，则需要将一个环境变量添加到为嵌入式 Tomcat 服务器定义端口的 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="816bf-176">However, if you configured your embedded Tomcat server to run on a custom port, you need to add an environment variable to your web app that defines the port for your embedded Tomcat server.</span></span> <span data-ttu-id="816bf-177">为此，请按照以下步骤操作：</span><span class="sxs-lookup"><span data-stu-id="816bf-177">To do so, use the following steps:</span></span>
 >
-> 1. <span data-ttu-id="cb39f-176">浏览到 [Azure 门户]并登录。</span><span class="sxs-lookup"><span data-stu-id="cb39f-176">Browse to the [Azure portal] and sign in.</span></span>
+> 1. <span data-ttu-id="816bf-178">浏览到 [Azure 门户]并登录。</span><span class="sxs-lookup"><span data-stu-id="816bf-178">Browse to the [Azure portal] and sign in.</span></span>
 > 
-> 2. <span data-ttu-id="cb39f-177">单击“应用服务”图标。</span><span class="sxs-lookup"><span data-stu-id="cb39f-177">Click the icon for **App Services**.</span></span> <span data-ttu-id="cb39f-178">（请参阅下图中的第 1 项。）</span><span class="sxs-lookup"><span data-stu-id="cb39f-178">(See item #1 in the image below.)</span></span>
+> 2. <span data-ttu-id="816bf-179">单击**应用服务**的图标，然后从列表中选择你的 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="816bf-179">Click the icon for **App Services**, and select your web app from the list.</span></span>
 >
-> 3. <span data-ttu-id="cb39f-179">从列表中选择你的 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="cb39f-179">Select your web app from the list.</span></span> <span data-ttu-id="cb39f-180">（请参阅下图中的第 2 项。）</span><span class="sxs-lookup"><span data-stu-id="cb39f-180">(Item #2 in the image below.)</span></span>
+> 4. <span data-ttu-id="816bf-180">单击“配置”  。</span><span class="sxs-lookup"><span data-stu-id="816bf-180">Click **Configuration**.</span></span> <span data-ttu-id="816bf-181">（下图中的第 1 项。）</span><span class="sxs-lookup"><span data-stu-id="816bf-181">(Item #1 in the image below.)</span></span>
 >
-> 4. <span data-ttu-id="cb39f-181">单击“应用程序设置”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-181">Click **Application Settings**.</span></span> <span data-ttu-id="cb39f-182">（请参阅下图中的第 3 项。）</span><span class="sxs-lookup"><span data-stu-id="cb39f-182">(Item #3 in the image below.)</span></span>
+> 5. <span data-ttu-id="816bf-182">在“应用程序设置”  部分中，添加一个名为 **PORT** 的新设置，并为该值输入自定义端口号。</span><span class="sxs-lookup"><span data-stu-id="816bf-182">In the **Application settings** section, add a new setting named **PORT** and enter your custom port number for the value.</span></span> <span data-ttu-id="816bf-183">（下图中的第 2、3、4 项。）</span><span class="sxs-lookup"><span data-stu-id="816bf-183">(Item #2, #3, #4 in the image below.)</span></span>
 >
-> 5. <span data-ttu-id="cb39f-183">在“应用设置”部分中，添加一个名为 **PORT** 的新环境变量，并为该值输入自定义端口号。</span><span class="sxs-lookup"><span data-stu-id="cb39f-183">In the **App settings** section, add a new environment variable named **PORT** and enter your custom port number for the value.</span></span> <span data-ttu-id="cb39f-184">（请参阅下图中的第 4 项。）</span><span class="sxs-lookup"><span data-stu-id="cb39f-184">(Item #4 in the image below.)</span></span>
->
-> 6. <span data-ttu-id="cb39f-185">单击“ **保存**”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-185">Click **Save**.</span></span> <span data-ttu-id="cb39f-186">（请参阅下图中的第 5 项。）</span><span class="sxs-lookup"><span data-stu-id="cb39f-186">(Item #5 in the image below.)</span></span>
+> 6. <span data-ttu-id="816bf-184">单击“ **保存**”。</span><span class="sxs-lookup"><span data-stu-id="816bf-184">Click **Save**.</span></span> <span data-ttu-id="816bf-185">（请参阅下图中的第 5 项。）</span><span class="sxs-lookup"><span data-stu-id="816bf-185">(Item #5 in the image below.)</span></span>
 >
 > ![在 Azure 门户中保存自定义端口号][LX03]
 >
@@ -261,29 +241,29 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 1. Save and close the *application.yml* file.
 -->
 
-## <a name="next-steps"></a><span data-ttu-id="cb39f-188">后续步骤</span><span class="sxs-lookup"><span data-stu-id="cb39f-188">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="816bf-187">后续步骤</span><span class="sxs-lookup"><span data-stu-id="816bf-187">Next steps</span></span>
 
-<span data-ttu-id="cb39f-189">若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。</span><span class="sxs-lookup"><span data-stu-id="cb39f-189">To learn more about Spring and Azure, continue to the Spring on Azure documentation center.</span></span>
+<span data-ttu-id="816bf-188">若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。</span><span class="sxs-lookup"><span data-stu-id="816bf-188">To learn more about Spring and Azure, continue to the Spring on Azure documentation center.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="cb39f-190">Azure 上的 Spring</span><span class="sxs-lookup"><span data-stu-id="cb39f-190">Spring on Azure</span></span>](/java/azure/spring-framework)
+> [<span data-ttu-id="816bf-189">Azure 上的 Spring</span><span class="sxs-lookup"><span data-stu-id="816bf-189">Spring on Azure</span></span>](/java/azure/spring-framework)
 
-### <a name="additional-resources"></a><span data-ttu-id="cb39f-191">其他资源</span><span class="sxs-lookup"><span data-stu-id="cb39f-191">Additional Resources</span></span>
+### <a name="additional-resources"></a><span data-ttu-id="816bf-190">其他资源</span><span class="sxs-lookup"><span data-stu-id="816bf-190">Additional Resources</span></span>
 
-<span data-ttu-id="cb39f-192">有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="cb39f-192">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
+<span data-ttu-id="816bf-191">有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="816bf-191">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
 
-* [<span data-ttu-id="cb39f-193">将 Spring Boot 应用程序部署到 Azure 应用服务</span><span class="sxs-lookup"><span data-stu-id="cb39f-193">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
-* [<span data-ttu-id="cb39f-194">在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上</span><span class="sxs-lookup"><span data-stu-id="cb39f-194">Deploy a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
+* [<span data-ttu-id="816bf-192">将 Spring Boot 应用程序部署到 Azure 应用服务</span><span class="sxs-lookup"><span data-stu-id="816bf-192">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
+* [<span data-ttu-id="816bf-193">在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上</span><span class="sxs-lookup"><span data-stu-id="816bf-193">Deploy a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
 
-<span data-ttu-id="cb39f-195">有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。</span><span class="sxs-lookup"><span data-stu-id="cb39f-195">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Working with Azure DevOps and Java].</span></span>
+<span data-ttu-id="816bf-194">有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。</span><span class="sxs-lookup"><span data-stu-id="816bf-194">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Working with Azure DevOps and Java].</span></span>
 
-<span data-ttu-id="cb39f-196">有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 入门]。</span><span class="sxs-lookup"><span data-stu-id="cb39f-196">For further details about the Spring Boot on Docker sample project, see [Spring Boot on Docker Getting Started].</span></span>
+<span data-ttu-id="816bf-195">有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 入门]。</span><span class="sxs-lookup"><span data-stu-id="816bf-195">For further details about the Spring Boot on Docker sample project, see [Spring Boot on Docker Getting Started].</span></span>
 
-<span data-ttu-id="cb39f-197">如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr**。</span><span class="sxs-lookup"><span data-stu-id="cb39f-197">For help with getting started with your own Spring Boot applications, see the **Spring Initializr** at https://start.spring.io/.</span></span>
+<span data-ttu-id="816bf-196">如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr**。</span><span class="sxs-lookup"><span data-stu-id="816bf-196">For help with getting started with your own Spring Boot applications, see the **Spring Initializr** at https://start.spring.io/.</span></span>
 
-<span data-ttu-id="cb39f-198">有关开始创建简单 Spring Boot 应用程序入门的详细信息，请参阅 https://start.spring.io/ 上的“Spring Initializr”。</span><span class="sxs-lookup"><span data-stu-id="cb39f-198">For more information about getting started with creating a simple Spring Boot application, see the Spring Initializr at https://start.spring.io/.</span></span>
+<span data-ttu-id="816bf-197">有关开始创建简单 Spring Boot 应用程序入门的详细信息，请参阅 https://start.spring.io/ 上的“Spring Initializr”。</span><span class="sxs-lookup"><span data-stu-id="816bf-197">For more information about getting started with creating a simple Spring Boot application, see the Spring Initializr at https://start.spring.io/.</span></span>
 
-<span data-ttu-id="cb39f-199">有关如何使用 Azure 的自定义 Docker 映像的其他示例，请参阅[使用 Linux 上 Azure Web 应用的自定义 Docker 映像]。</span><span class="sxs-lookup"><span data-stu-id="cb39f-199">For additional examples for how to use custom Docker images with Azure, see [Using a custom Docker image for Azure Web App on Linux].</span></span>
+<span data-ttu-id="816bf-198">有关如何使用 Azure 的自定义 Docker 映像的其他示例，请参阅[使用 Linux 上 Azure Web 应用的自定义 Docker 映像]。</span><span class="sxs-lookup"><span data-stu-id="816bf-198">For additional examples for how to use custom Docker images with Azure, see [Using a custom Docker image for Azure Web App on Linux].</span></span>
 
 <!-- URL List -->
 
