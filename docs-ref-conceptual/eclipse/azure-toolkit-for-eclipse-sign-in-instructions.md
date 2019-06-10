@@ -14,127 +14,113 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 79f6cfd3b21d68c131a3f0052d86e4bcb3254e55
-ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
+ms.openlocfilehash: b4b13de38913ae6e7ae2bb09210ac742efc9d0ad
+ms.sourcegitcommit: d18d9dce22b7f7af178f756bd341433d24e3c3b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61590955"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66575319"
 ---
-# <a name="azure-sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>用于 Eclipse 的 Azure 工具包的 Azure 登录说明
+# <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>用于 Eclipse 的 Azure 工具包的登录说明
 
 用于 Eclipse 的 Azure 工具包提供了两种用于登录到 Azure 帐户的方法：
 
-  * **自动** - 如果使用此方法，将创建一个包含服务主体数据的凭据文件，之后可以使用该凭据文件自动登录到 Azure 帐户。
-  * **交互式** - 如果使用此方法，每次登录 Azure 帐户时，都需要输入 Azure 凭据。
+  - [通过设备登录名登录到 Azure 帐户](#sign-in-to-your-azure-account-by-device-login)
+  - [通过服务主体登录到 Azure 帐户](#sign-in-to-your-azure-account-by-service-principal)
 
-以下部分中的步骤介绍如何使用每个方法。
+还提供了[**注销**](#sign-out-of-your-azure-account)方法。
 
 [!INCLUDE [azure-toolkit-for-eclipse-prerequisites](../includes/azure-toolkit-for-eclipse-prerequisites.md)]
 
-## <a name="signing-into-your-azure-account-automatically-and-creating-a-credentials-file-to-use-in-the-future"></a>自动登录到 Azure 帐户并创建凭据文件，以便在将来使用
+## <a name="sign-in-to-your-azure-account-by-device-login"></a>通过设备登录名登录到 Azure 帐户
 
-以下步骤将引导完成创建一个包含服务主体数据的凭据文件。 完成这些步骤后，每次打开项目时，Eclipse 都会自动使用凭据文件自动登录到 Azure。
+若要通过设备登录名登录 Azure，请执行以下操作：
 
 1. 使用 Eclipse 打开项目。
 
-1. 依次单击“工具”、“Azure”、“登录”。
+2. 依次单击“工具”、“Azure”、“登录”。   
+   ![用于 Azure 登录的 Eclipse 菜单][I01]
 
-   ![用于 Azure 登录的 Eclipse 菜单][A01]
+3. 在“Azure 登录”窗口中选择“设备登录名”，然后单击“登录”。   
 
-1. 显示“Azure 登录”对话框时，选择“自动”，并单击“新建”。
+   ![“Azure 登录”窗口，其中已选择“设备登录”][I02]
 
-   ![“登录”对话框][A02]
+4. 在“Azure 设备登录”对话框中单击“复制并打开”。  
 
-1. 显示“Azure 登录”对话框时，输入 Azure 凭据，并单击“登录”。
+   ![“Azure 登录”对话框窗口][I03]
 
-   ![“Azure 登录”对话框][A03]
+> [!NOTE]
+>
+> 如果浏览器不打开，请将 Eclipse 配置为使用外部浏览器，例如 Internet Explorer、Firefox 或 Chrome：
+>
+> 1. 打开“首选项”->“常规”->“Web 浏览器”->“在 Eclipse 中使用外部 Web 浏览器”
+>
+> 2. 选择首选使用的浏览器
+>
 
-1. 显示“创建身份验证文件”对话框时，选择要使用的订阅，选择目标目录，并单击“启动”。
+5. 在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。  
 
-   ![“Azure 登录”对话框][A04]
+   ![设备登录浏览器][I04]
 
-1. 此时会显示“服务主体创建状态”对话框，成功创建文件后，单击“确定”。
+6. 最后，在“选择订阅”对话框中选择要使用的订阅，然后单击“确定”。  
+
+   ![“选择订阅”对话框][I05]
+
+## <a name="sign-in-to-your-azure-account-by-service-principal"></a>通过服务主体登录到 Azure 帐户
+
+本部分逐步引导创建一个包含服务主体数据的凭据文件。 完成此过程后，在打开项目时，Eclipse 会使用凭据文件将你自动登录到 Azure。
+
+1. 使用 Eclipse 打开项目。
+
+2. 依次单击“工具”、“Azure”、“登录”。   
+   ![Eclipse Azure 登录命令][A01]
+
+3. 在“Azure 登录”窗口中，选择“服务主体”。   如果还没有服务主体身份验证文件，请单击“新建”创建一个。  否则，可以单击“浏览”将其打开，然后跳到步骤 8。 
+
+   ![已选中“服务主体”的“Azure 登录”窗口][A02]
+
+4. 在“Azure 设备登录”对话框中单击“复制并打开”。  
+
+   ![“Azure 登录”对话框窗口][A08]
+
+> [!NOTE]
+>
+> 如果浏览器不打开，请将 Eclipse 配置为使用外部浏览器，例如 IE 或 Chrome：
+>
+> 1. 打开“首选项”->“常规”->“Web 浏览器”->“在 Eclipse 中使用外部 Web 浏览器”
+>
+> 2. 选择首选使用的浏览器
+>
+
+5. 在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。  
+
+   ![设备登录浏览器][A03]
+
+6. 在“创建身份验证文件”窗口中选择要使用的订阅，选择目标目录，并单击“启动”。  
+
+   ![“创建身份验证文件”窗口][A04]
+
+7. 成功创建文件后，请在“服务主体创建状态”对话框中单击“确定”。  
 
    ![“服务主体创建状态”对话框][A05]
 
-1. 显示“Azure 登录”对话框时，单击“登录”。
+8. 所创建文件的地址会自动填充在“Azure 登录”窗口中，此时请单击“登录”。  
 
    ![“Azure 登录”对话框][A06]
 
-1. 显示“选择订阅”对话框时，选择要使用的订阅，并单击“确定”。
+9. 最后，在“选择订阅”对话框中选择要使用的订阅，然后单击“确定”。  
 
    ![“选择订阅”对话框][A07]
 
-## <a name="signing-out-of-your-azure-account-when-you-signed-in-automatically"></a>已自动登录时，从 Azure 帐户中注销
+## <a name="sign-out-of-your-azure-account"></a>注销 Azure 帐户
 
-按照上一部分中的步骤配置后，每次重新启动 Eclipse 时，Azure 工具包都会你将自动登录到 Azure 帐户。 但是，要注销 Azure 帐户并禁止 Azure 工具包你将自动登录，请使用以下步骤。
+通过上述步骤配置帐户后，每次启动 Eclipse 时都会自动登录。 但是，若要注销 Azure 帐户，请使用以下步骤。
 
-1. 在 Eclipse 中，依次单击“工具”、“Azure”、“注销”。
-
-   ![用于 Azure 注销的 Eclipse 菜单][L01]
-
-1. 显示“Azure 注销”对话框时，单击“是”。
-
-   ![“注销”对话框][L03]
-
-## <a name="signing-into-your-azure-account-automatically-using-a-credentials-file-which-you-have-already-created"></a>使用已创建的凭据文件自动登录到 Azure 帐户
-
-如果在使用 Eclipse 时从 Azure 中注销，则需要重新配置用于 Eclipse 的 Azure 工具包以使用已创建的凭据文件，才能自动登录到 Azure 帐户。 以下步骤将引导完成配置 Azure 工具包以使用现有凭据文件。
-
-1. 使用 Eclipse 打开项目。
-
-1. 依次单击“工具”、“Azure”、“登录”。
-
-   ![用于 Azure 登录的 Eclipse 菜单][A01]
-
-1. 显示“Azure 登录”对话框时，选择“自动”，并单击“浏览”。
-
-   ![“登录”对话框][A02]
-
-1. 显示“选择已验证的文件”对话框时，选择先前创建的凭据文件，然后单击“打开”。
-
-   ![“登录”对话框][A08]
-
-1. 显示“Azure 登录”对话框时，单击“登录”。
-
-   ![“Azure 登录”对话框][A06]
-
-1. 显示“选择订阅”对话框时，选择要使用的订阅，并单击“确定”。
-
-   ![“选择订阅”对话框][A07]
-
-## <a name="signing-into-your-azure-account-interactively"></a>以交互方式登录到 Azure 帐户
-
-以下步骤将说明如何通过手动输入 Azure 凭据登录到 Azure。
-
-1. 使用 Eclipse 打开项目。
-
-1. 依次单击“工具”、“Azure”、“登录”。
-
-   ![用于 Azure 登录的 Eclipse 菜单][I01]
-
-1. 显示“Azure 登录”对话框时，选择“交互式”，并单击“登录”。
-
-   ![“登录”对话框][I02]
-
-1. 显示“Azure 登录”对话框时，输入 Azure 凭据，并单击“登录”。
-
-   ![“Azure 登录”对话框][I03]
-
-1. 显示“选择订阅”对话框时，选择要使用的订阅，并单击“确定”。
-
-   ![“选择订阅”对话框][I04]
-
-## <a name="signing-out-of-your-azure-account-when-you-signed-in-interactively"></a>已以交互方式登录时，从 Azure 帐户中注销
-
-按照上一部分中的步骤配置后，每次重新启动 Eclipse 时，都会自动从 Azure 帐户中注销。 但是，如果要在不重新启动 Eclipse 的情况下注销 Azure 帐户，请使用以下步骤。
-
-1. 在 Eclipse 中，依次单击“工具”、“Azure”、“注销”。
+1. 在 Eclipse 中，依次单击“工具”、“Azure”、“注销”。   
 
    ![用于 Azure 注销的 Eclipse 菜单][L01]
 
-1. 显示“Azure 注销”对话框时，单击“是”。
+2. 显示“Azure 注销”  对话框时，单击“是”  。
 
    ![“注销”对话框][L02]
 
@@ -151,6 +137,7 @@ ms.locfileid: "61590955"
 [I02]: media/azure-toolkit-for-eclipse-sign-in-instructions/I02.png
 [I03]: media/azure-toolkit-for-eclipse-sign-in-instructions/I03.png
 [I04]: media/azure-toolkit-for-eclipse-sign-in-instructions/I04.png
+[I05]: media/azure-toolkit-for-eclipse-sign-in-instructions/I05.png
 
 [A01]: media/azure-toolkit-for-eclipse-sign-in-instructions/A01.png
 [A02]: media/azure-toolkit-for-eclipse-sign-in-instructions/A02.png

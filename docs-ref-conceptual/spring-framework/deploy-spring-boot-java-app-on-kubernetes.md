@@ -15,18 +15,18 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: 42bb030a916cc5aaf1e20242518a0a400b8baa88
-ms.sourcegitcommit: f33befab25a66a252b4c91c7aeb1b77cb32821bb
+ms.openlocfilehash: 9ab781d27e8968ab867efc65f3ac422ac6253a6a
+ms.sourcegitcommit: 394521c47ac9895d00d9f97535cc9d1e27d08fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59745155"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270850"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
 
-[Kubernetes] 和 [Docker] 是开源解决方案，可帮助开发人员自动部署、缩放和管理在容器中运行的应用程序。
+[Kubernetes] 和 [Docker] 是开源解决方案，可帮助开发人员自动部署、缩放和管理在容器中运行的应用程序   。
 
-本教程将指导用户将这两种常用的开源技术进行结合，从而将 Spring Boot 应用程序开发和部署到 Microsoft Azure。 具体而言，将使用 [Spring Boot] 进行应用程序开发，使用 [Kubernetes] 进行容器部署，使用 [Azure Kubernetes 服务 (AKS)] 来托管应用程序。
+本教程将指导用户将这两种常用的开源技术进行结合，从而将 Spring Boot 应用程序开发和部署到 Microsoft Azure。 具体而言，将使用 [Spring Boot] 进行应用程序开发，使用 [Kubernetes] 进行容器部署，使用 [Azure Kubernetes 服务 (AKS)] 来托管应用程序   。
 
 ### <a name="prerequisites"></a>先决条件
 
@@ -116,14 +116,14 @@ ms.locfileid: "59745155"
    az acr login
    ```
 
-1. 导航到 Spring Boot 应用程序的完整项目目录（例如，“C:\SpringBoot\gs-spring-boot-docker\complete”或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”），并使用文本编辑器打开 pom.xml 文件。
+1. 导航到 Spring Boot 应用程序的完整项目目录（例如，“C:\SpringBoot\gs-spring-boot-docker\complete”或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”），并使用文本编辑器打开 pom.xml 文件    。
 
 1. 将 *pom.xml* 文件中的 `<properties>` 集合更新为你的 Azure 容器注册表的注册表名称和 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 的最新版本。
 
    ```xml
    <properties>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-      <jib-maven-plugin.version>1.0.2</jib-maven-plugin.version>
+      <jib-maven-plugin.version>1.2.0</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
@@ -136,10 +136,10 @@ ms.locfileid: "59745155"
      <groupId>com.google.cloud.tools</groupId>
      <version>${jib-maven-plugin.version}</version>
      <configuration>
-        <from>              
+        <from>
             <image>openjdk:8-jre-alpine</image>
         </from>
-        <to>                
+        <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
         </to>
      </configuration>
@@ -148,13 +148,18 @@ ms.locfileid: "59745155"
 
 1. 导航到 Spring Boot 应用程序的完成项目目录，然后运行以下命令以生成映像并将映像推送到注册表：
 
-   ```
+   ```cmd
    mvn compile jib:build
    ```
 
+> [!NOTE]
+>
+> 出于 Azure Cli 和 Azure 容器注册表的安全考虑，通过 `az acr login` 创建的凭据的有效时间为 1 小时。如果遇到“401 未授权”错误，  则可再次运行 `az acr login -n <your registry name>` 命令，以便重新进行身份验证。
+>
+
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>使用 Azure CLI 在 AKS 上创建 Kubernetes 群集
 
-1. 在 Azure Kubernetes 服务中创建 Kubernetes 群集。 以下命令在 wingtiptoys-kubernetes 资源组中创建 kubernetes 群集，将 wingtiptoys-akscluster 作为群集名称，wingtiptoys-kubernetes 作为 DNS 前缀：
+1. 在 Azure Kubernetes 服务中创建 Kubernetes 群集。 以下命令在 wingtiptoys-kubernetes 资源组中创建 kubernetes 群集，将 wingtiptoys-akscluster 作为群集名称，wingtiptoys-kubernetes 作为 DNS 前缀     ：
    ```azurecli
    az aks create --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster \ 
     --dns-name-prefix=wingtiptoys-kubernetes --generate-ssh-keys
@@ -248,34 +253,34 @@ ms.locfileid: "59745155"
    az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
 
-1. 在浏览器中打开 Kubernetes 配置网站后，单击“部署容器化应用”的链接：
+1. 在浏览器中打开 Kubernetes 配置网站后，单击“部署容器化应用”的链接  ：
 
    ![Kubernetes 配置网站][KB01]
 
-1. 显示“资源创建”页时，请指定以下选项：
+1. 显示“资源创建”页时，请指定以下选项  ：
 
-   a. 选择“创建应用”。
+   a. 选择“创建应用”。 
 
-   b. 在“应用名称”中输入 Spring Boot 应用程序名称；例如：gs-spring-boot-docker。
+   b. 在“应用名称”中输入 Spring Boot 应用程序名称；例如：gs-spring-boot-docker   。
 
-   c. 在容器映像中输入之前的登录服务器和容器映像；例如：“wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest”。
+   c. 在容器映像中输入之前的登录服务器和容器映像；例如：“wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest”   。
 
-   d. 选择“外部”服务。
+   d. 选择“外部”服务   。
 
-   e. 在“端口”和“目标端口”文本框中指定外部和内部端口。
+   e. 在“端口”和“目标端口”文本框中指定外部和内部端口   。
 
    ![Kubernetes 配置网站][KB02]
 
 
-1. 单击“部署”对容器进行部署。
+1. 单击“部署”对容器进行部署  。
 
    ![Kubernetes 部署][KB05]
 
-1. 部署应用程序后，Spring Boot 应用程序将列在“服务”下方。
+1. 部署应用程序后，Spring Boot 应用程序将列在“服务”下方  。
 
    ![Kubernetes 服务][KB06]
 
-1. 若单击“外部终结点”的链接，则可看见 Spring Boot 应用程序在 Azure 上运行。
+1. 若单击“外部终结点”的链接，则可看见 Spring Boot 应用程序在 Azure 上运行  。
 
    ![Kubernetes 服务][KB07]
 

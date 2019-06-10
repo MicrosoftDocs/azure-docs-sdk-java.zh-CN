@@ -14,14 +14,15 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 0cbb515a62e540fdc9decb8055bb57e0cb35e7b2
-ms.sourcegitcommit: 8e530a2ce58ea0e2bf5c136e427a9be863231a1b
+ms.openlocfilehash: 0b57e60df9a4439cf0acbac19288b6fecfce6ee5
+ms.sourcegitcommit: 733115fe0a7b5109b511b4a32490f8264cf91217
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53638986"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65626101"
 ---
 # <a name="azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ
+
 借助适用于 IntelliJ 的 Azure 工具包提供的模板和功能，可利用 IntelliJ 集成开发环境 (IDE) 轻松地创建、开发、测试和部署 Azure 应用程序。
 
 > [!NOTE]
@@ -29,17 +30,11 @@ ms.locfileid: "53638986"
 > 另外还有 Azure Toolkit for Eclipse IDE。 有关详细信息，请参阅[用于 Eclipse 的 Azure 工具包](../eclipse/azure-toolkit-for-eclipse.md)。
 > 
 
-## <a name="get-started-with-the-azure-toolkit-for-intellij"></a>适用于 IntelliJ 的 Azure 工具包入门
-以下文章可帮助你着手使用适用于 IntelliJ 的 Azure 工具包：
+## <a name="get-started-in-10-minutes"></a>10 分钟入门
 
-* [安装用于 IntelliJ 的 Azure 工具包](azure-toolkit-for-intellij-installation.md)
+* [创建用于 Azure 应用服务的 Hello World Web 应用](azure-toolkit-for-intellij-create-hello-world-web-app.md)
 
-* [用于 IntelliJ 的 Azure 工具包的登录说明](azure-toolkit-for-intellij-sign-in-instructions.md)
-
-* [在 IntelliJ 中创建适用于 Azure 的 Hello World Web 应用](azure-toolkit-for-intellij-create-hello-world-web-app.md)
-
-## <a name="use-the-azure-toolkit-for-intellij-with-your-java-projects"></a>将用于 IntelliJ 的 Azure 工具包用于 Java 项目
-以下文章演示了如何使用 Azure Toolkit for IntelliJ 将 Azure 功能添加到 Java 项目：
+## <a name="step-by-step-tutorials"></a>分步教程
 
 * [使用用于 IntelliJ 的 Azure 工具包运行 Hello World Web 应用](azure-toolkit-for-intellij-hello-world-web-app-linux.md)
 
@@ -49,36 +44,18 @@ ms.locfileid: "53638986"
 
 * [使用适用于 IntelliJ IDEA 的 HDInsight 工具插件为 HDInsight Spark Linux 群集创建 Spark 应用程序](/azure/hdinsight/hdinsight-apache-spark-intellij-tool-plugin)
 
-## <a name="manage-azure-resources-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包管理 Azure 资源
-以下文章演示了如何使用用于 IntelliJ 的 Azure 工具包管理 Azure 资源：
+## <a name="managing-azure-resources"></a>管理 Azure 资源
 
-* [使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存](azure-toolkit-for-intellij-managing-redis-caches-using-azure-explorer.md)
+* [Redis 缓存](azure-toolkit-for-intellij-managing-redis-caches-using-azure-explorer.md)
 
-* [使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户](azure-toolkit-for-intellij-managing-virtual-machines-using-azure-explorer.md)
+* [存储帐户](azure-toolkit-for-intellij-managing-virtual-machines-using-azure-explorer.md)
 
-* [使用用于 IntelliJ 的 Azure 资源管理器管理虚拟机](azure-toolkit-for-intellij-managing-storage-accounts-using-azure-explorer.md)
+* [虚拟机](azure-toolkit-for-intellij-managing-storage-accounts-using-azure-explorer.md)
 
-## <a name="next-steps"></a>后续步骤
+## <a name="whats-more"></a>更多内容
 
-有关用于 IntelliJ 的 Azure 工具包的详细信息，请参阅以下页面：
-
-* [Azure 工具包发行说明](https://github.com/Microsoft/azure-tools-for-java/releases)
-
-* [JetBrains 插件存储库中用于 IntelliJ 的 Azure 工具包](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij)
-
-有关将 Java 与 Azure 配合使用的详细信息，请参阅[面向 Java 开发人员的Azure](https://docs.microsoft.com/java/azure/) 和[用于 Visual Studio Team Services 的 Java 工具](/azure/devops/java/)。
-
+[!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 > [!NOTE]
 > 
 > 用于 IntelliJ 的 Azure 工具包是一个开源项目，其源代码可从[项目站点的 MIT 许可证](https://github.com/microsoft/azure-tools-for-java)下获取。
 > 
-
-<!-- [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)] -->
-
-<!-- URL List -->
-
-[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
-
-<!-- Temporarily Deprecated URLs -->
-
-<!-- [Debug a Java Web App on Azure in IntelliJ]: ./app-service-web/app-service-web-debug-java-web-app-in-intellij.md -->

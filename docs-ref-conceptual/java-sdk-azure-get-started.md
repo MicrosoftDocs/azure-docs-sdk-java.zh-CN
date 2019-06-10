@@ -12,12 +12,12 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: fdf0334a8796d636a1968943cc34d7ae98d6361c
-ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
+ms.openlocfilehash: 22389ce7346a1d97c072dcc82162c9286f21f178
+ms.sourcegitcommit: 04d0d92c46399976b58a9dfa107ba644378bf171
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040255"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65986201"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>在 Azure 上使用 Java 开始云开发
 
@@ -147,23 +147,23 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp  \
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>安装用于 IntelliJ 的 Azure 工具包
 
-若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](intellij/azure-toolkit-for-intellij-installation.md)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关详细步骤，请访问[安装用于 IntelliJ 的 Azure 工具包](intellij/azure-toolkit-for-intellij-installation.md)。
+若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](intellij/azure-toolkit-for-intellij-installation.md)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关快速入门，请访问[用于 IntelliJ 的 Azure 工具包快速入门](intellij/azure-toolkit-for-intellij-create-hello-world-web-app.md)。
 
-选择“文件”菜单，然后选择“设置...”。 
+- 选择“文件”菜单，然后选择“设置...”。   
 
-选择“浏览存储库...”，搜索“Azure”，然后安装“用于 Intellij 于 Azure 工具包”。
+- 选择“浏览存储库...”，搜索“Azure”，然后安装“用于 Intellij 于 Azure 工具包”。  
 
-重启 IntelliJ。
+- 重启 IntelliJ。
 
 ### <a name="install-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
 
-若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](eclipse/azure-toolkit-for-eclipse.md)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关详细步骤，请参阅[安装用于 Eclipse 的 Azure 工具包](eclipse/azure-toolkit-for-eclipse.md)。
+若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](eclipse/azure-toolkit-for-eclipse.md)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关快速入门，请访问[用于 Eclipse 的 Azure 工具包快速入门](eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md)。
 
-选择“帮助”菜单，然后选择“安装新软件”。
+- 选择“帮助”菜单，然后选择“安装新软件”。  
 
-在“使用:”字段中，输入 `http://dl.microsoft.com/eclipse` 并按 Enter。
+- 在“使用:”字段中，输入 `http://dl.microsoft.com/eclipse` 并按 Enter。 
 
-然后，选中“用于 Java 的 Azure 工具包”旁边的复选框，并取消选中“在安装过程中联系所有更新站点以查找所需的软件”对应的复选框。 然后选择“下一步”。
+- 然后，选中“用于 Java 的 Azure 工具包”旁边的复选框，并取消选中“在安装过程中联系所有更新站点以查找所需的软件”对应的复选框。   然后选择“下一步”。
 
 ## <a name="create-a-linux-virtual-machine"></a>创建 Linux 虚拟机
 
