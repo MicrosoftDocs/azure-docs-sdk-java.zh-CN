@@ -1,7 +1,7 @@
 ---
-title: 使用 Docker 和 Azure 将 MicroProfile 应用部署到云中
-description: 了解如何使用 Docker 和 Azure 容器实例将 MicroProfile 应用部署到云中。
-services: container-instances;container-retistry
+title: 使用 Docker 和 Azure 将 MicroProfile 应用部署到云
+description: 了解如何使用 Docker 和 Azure 容器实例将 MicroProfile 应用部署到云。
+services: container-instances;container-registry
 documentationcenter: java
 author: brunoborges
 manager: routlaw
@@ -14,36 +14,33 @@ ms.service: container-instances
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 22870b7ba32f115e7270c63d1bf42cbfc6531d7e
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 6ba12bb183969103676fa988199603df6cf36bba
+ms.sourcegitcommit: f8faa4a14c714e148c513fd46f119524f3897abf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338781"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67533605"
 ---
-# <a name="deploy-a-microprofile-application-to-the-cloud-with-docker-and-azure"></a><span data-ttu-id="0d64c-103">使用 Docker 和 Azure 将 MicroProfile 应用程序部署到云中</span><span class="sxs-lookup"><span data-stu-id="0d64c-103">Deploy a MicroProfile application to the cloud with Docker and Azure</span></span>
+# <a name="deploy-a-microprofile-app-to-the-cloud-by-using-docker-and-azure"></a><span data-ttu-id="90529-103">使用 Docker 和 Azure 将 MicroProfile 应用部署到云</span><span class="sxs-lookup"><span data-stu-id="90529-103">Deploy a MicroProfile app to the cloud by using Docker and Azure</span></span>
 
-<span data-ttu-id="0d64c-104">本文演示如何在 Docker 容器中打包 [MicroProfile.io] 应用程序，并在 Azure 容器实例上运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="0d64c-104">This article demonstrates how to pack a [MicroProfile.io] application in a Docker container and run it on Azure Container Instances.</span></span>
+<span data-ttu-id="90529-104">本文演示如何在 Docker 容器中打包 [MicroProfile.io] 应用程序，并在 Azure 容器实例上运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="90529-104">This article demonstrates how to pack a [MicroProfile.io] application in a Docker container and run it on Azure Container Instances.</span></span>
 
 > [!NOTE]
->
-> <span data-ttu-id="0d64c-105">只要 Docker 容器映像可自我执行（即包括运行时），此过程就适用于 MicroProfile.io 的任何实现。</span><span class="sxs-lookup"><span data-stu-id="0d64c-105">This procedure works with any implementation of MicroProfile.io as long the Docker container image is self-executable (i.e. includes the runtime).</span></span>
+> <span data-ttu-id="90529-105">只要 Docker 容器映像可自我执行（即映像包括运行时），此过程就适用于 MicroProfile.io 的任何实现。</span><span class="sxs-lookup"><span data-stu-id="90529-105">This procedure works with any implementation of MicroProfile.io, as long as the Docker container image is self-executable (that is, the image includes the runtime).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="0d64c-106">先决条件</span><span class="sxs-lookup"><span data-stu-id="0d64c-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="90529-106">先决条件</span><span class="sxs-lookup"><span data-stu-id="90529-106">Prerequisites</span></span>
 
-<span data-ttu-id="0d64c-107">完成本教程中的步骤需要具备以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="0d64c-107">In order to complete the steps in this tutorial, you will need to have the following prerequisites:</span></span>
+<span data-ttu-id="90529-107">若要完成本教程，需要具备以下先决条件：</span><span class="sxs-lookup"><span data-stu-id="90529-107">To complete this tutorial, you need the following prerequisites:</span></span>
 
-* <span data-ttu-id="0d64c-108">一个 Azure 订阅；如果没有 Azure 订阅，可以注册[免费的 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="0d64c-108">An Azure subscription; if you don't already have an Azure subscription, you can sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="0d64c-109">[Azure 命令行接口 (CLI)]。</span><span class="sxs-lookup"><span data-stu-id="0d64c-109">The [Azure Command-Line Interface (CLI)].</span></span>
-* <span data-ttu-id="0d64c-110">一个受支持的 Java 开发工具包 (JDK)。</span><span class="sxs-lookup"><span data-stu-id="0d64c-110">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="0d64c-111">有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。</span><span class="sxs-lookup"><span data-stu-id="0d64c-111">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
-* <span data-ttu-id="0d64c-112">Apache 的 [Maven] 生成工具（版本 3 以上）。</span><span class="sxs-lookup"><span data-stu-id="0d64c-112">Apache's [Maven] build tool (version 3+).</span></span>
-* <span data-ttu-id="0d64c-113">[Git] 客户端。</span><span class="sxs-lookup"><span data-stu-id="0d64c-113">A [Git] client.</span></span>
+* <span data-ttu-id="90529-108">Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="90529-108">An Azure subscription.</span></span> <span data-ttu-id="90529-109">如果没有 Azure 订阅，可以注册[免费的 Azure 帐户]。</span><span class="sxs-lookup"><span data-stu-id="90529-109">If you don't already have an Azure subscription, you can sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="90529-110">[Azure CLI]，已安装。</span><span class="sxs-lookup"><span data-stu-id="90529-110">The [Azure CLI], installed.</span></span>
+* <span data-ttu-id="90529-111">一个受支持的 Java 开发工具包 (JDK)。</span><span class="sxs-lookup"><span data-stu-id="90529-111">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="90529-112">有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅[针对 Azure 和 Azure Stack 的 Java 长期支持](https://aka.ms/azure-jdks)。</span><span class="sxs-lookup"><span data-stu-id="90529-112">For more information about the JDKs that are available to use when you develop on Azure, see [Java long-term support for Azure and Azure Stack](https://aka.ms/azure-jdks).</span></span>
+* <span data-ttu-id="90529-113">[Apache Maven] 生成工具（版本 3 或更高版本）。</span><span class="sxs-lookup"><span data-stu-id="90529-113">The [Apache Maven] build tool (version 3 or later).</span></span>
+* <span data-ttu-id="90529-114">[Git] 客户端。</span><span class="sxs-lookup"><span data-stu-id="90529-114">A [Git] client.</span></span>
 
-## <a name="microprofile-hello-azure-sample"></a><span data-ttu-id="0d64c-114">MicroProfile Hello Azure 示例</span><span class="sxs-lookup"><span data-stu-id="0d64c-114">MicroProfile Hello Azure sample</span></span>
+## <a name="microprofile-hello-azure-sample"></a><span data-ttu-id="90529-115">MicroProfile Hello Azure 示例</span><span class="sxs-lookup"><span data-stu-id="90529-115">MicroProfile Hello Azure sample</span></span>
 
-<span data-ttu-id="0d64c-115">本文使用 [MicroProfile Hello Azure](https://github.com/azure-samples/microprofile-hello-azure) 示例：</span><span class="sxs-lookup"><span data-stu-id="0d64c-115">For this article, we will use the [MicroProfile Hello Azure](https://github.com/azure-samples/microprofile-hello-azure) sample:</span></span>
-
-### <a name="clone-build-and-run-locally"></a><span data-ttu-id="0d64c-116">克隆、生成和本地运行</span><span class="sxs-lookup"><span data-stu-id="0d64c-116">Clone, build, and run locally</span></span>
+<span data-ttu-id="90529-116">在本文中，我们使用 [MicroProfile Hello Azure](https://github.com/azure-samples/microprofile-hello-azure) 示例。</span><span class="sxs-lookup"><span data-stu-id="90529-116">In this article, you use the [MicroProfile Hello Azure](https://github.com/azure-samples/microprofile-hello-azure) sample.</span></span> <span data-ttu-id="90529-117">通过以下命令在本地克隆、生成和运行它：</span><span class="sxs-lookup"><span data-stu-id="90529-117">Clone, build, and run it locally by using the following commands:</span></span>
 
 ```bash
 $ git clone https://github.com/Azure-Samples/microprofile-hello-azure.git
@@ -57,40 +54,40 @@ $ mvn payara-micro:start
 ...
 ```
 
-<span data-ttu-id="0d64c-117">可以通过调用 `curl` 来测试该应用程序，或者通过[浏览器](http://localhost:8080/api/hello)访问该应用程序进行测试：</span><span class="sxs-lookup"><span data-stu-id="0d64c-117">You can test the application by calling `curl` or visiting through a [browser](http://localhost:8080/api/hello):</span></span>
+<span data-ttu-id="90529-118">可以通过调用 `curl` 或通过[浏览器](http://localhost:8080/api/hello)来测试该应用程序：</span><span class="sxs-lookup"><span data-stu-id="90529-118">You can test the application by calling `curl` or by using a [browser](http://localhost:8080/api/hello):</span></span>
 
 ```bash
 $ curl http://localhost:8080/api/hello
 Hello, Azure!
 ```
 
-## <a name="deploy-to-azure"></a><span data-ttu-id="0d64c-118">“部署到 Azure”</span><span class="sxs-lookup"><span data-stu-id="0d64c-118">Deploy to Azure</span></span>
+## <a name="deploy-the-app-to-azure"></a><span data-ttu-id="90529-119">将应用部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="90529-119">Deploy the app to Azure</span></span>
 
-<span data-ttu-id="0d64c-119">现在，让我们使用 [Azure 容器实例]和 [Azure 容器注册表]服务将此应用程序部署到云中。</span><span class="sxs-lookup"><span data-stu-id="0d64c-119">Now let's bring this application to the cloud using [Azure Container Instances] and [Azure Container Registry] services.</span></span>
+<span data-ttu-id="90529-120">现在，使用 [Azure 容器实例]和 [Azure 容器注册表]服务将此应用程序部署到 Azure。</span><span class="sxs-lookup"><span data-stu-id="90529-120">Now bring this application to Azure by using the [Azure Container Instances] and [Azure Container Registry] services.</span></span>
 
-### <a name="build-a-docker-image"></a><span data-ttu-id="0d64c-120">生成 Docker 映像</span><span class="sxs-lookup"><span data-stu-id="0d64c-120">Build a Docker image</span></span>
+### <a name="build-a-docker-image"></a><span data-ttu-id="90529-121">生成 Docker 映像</span><span class="sxs-lookup"><span data-stu-id="90529-121">Build a Docker image</span></span>
 
-<span data-ttu-id="0d64c-121">示例项目已提供可用的 Dockerfile。</span><span class="sxs-lookup"><span data-stu-id="0d64c-121">The sample project already provides a Dockerfile you can use.</span></span> <span data-ttu-id="0d64c-122">不过，不需要安装 Docker，因为我们将使用 Azure 容器注册表生成功能在云中生成映像。</span><span class="sxs-lookup"><span data-stu-id="0d64c-122">You don't need Docker installed though, as we will use Azure Container Registry Build feature to build the image in the cloud.</span></span>
+<span data-ttu-id="90529-122">示例项目提供可用的 Dockerfile。</span><span class="sxs-lookup"><span data-stu-id="90529-122">The sample project provides a Dockerfile that you can use.</span></span> <span data-ttu-id="90529-123">不过，不需要安装 Docker，因为你将使用 Azure 容器注册表生成功能在云中生成映像。</span><span class="sxs-lookup"><span data-stu-id="90529-123">You don't need to have Docker installed, though, because you'll use the Azure Container Registry Build feature to build the image in the cloud.</span></span>
 
-<span data-ttu-id="0d64c-123">若要生成映像并准备好在 Azure 中运行它，必须执行以下步骤：</span><span class="sxs-lookup"><span data-stu-id="0d64c-123">To build the image and be ready to run on Azure, you will have to follow these steps:</span></span>
+<span data-ttu-id="90529-124">若要生成映像并准备好在 Azure 中运行它，请执行以下步骤：</span><span class="sxs-lookup"><span data-stu-id="90529-124">To build the image and prepare to run it on Azure, do the following:</span></span>
 
-1. <span data-ttu-id="0d64c-124">安装 Azure CLI 并使用它登录</span><span class="sxs-lookup"><span data-stu-id="0d64c-124">Install and log in with Azure CLI</span></span>
-1. <span data-ttu-id="0d64c-125">创建 Azure 资源组</span><span class="sxs-lookup"><span data-stu-id="0d64c-125">Create an Azure Resource Group</span></span>
-1. <span data-ttu-id="0d64c-126">创建 Azure 容器注册表 (ACR)</span><span class="sxs-lookup"><span data-stu-id="0d64c-126">Create an Azure Container Registry (ACR)</span></span>
-1. <span data-ttu-id="0d64c-127">生成 Docker 映像</span><span class="sxs-lookup"><span data-stu-id="0d64c-127">Build the Docker image</span></span>
-1. <span data-ttu-id="0d64c-128">将 Docker 映像发布到前面创建的 ACR</span><span class="sxs-lookup"><span data-stu-id="0d64c-128">Publish the Docker image to the ACR created before</span></span>
-1. <span data-ttu-id="0d64c-129">（可选）通过一条命令生成映像并将其发布到 ACR</span><span class="sxs-lookup"><span data-stu-id="0d64c-129">(Optionally) Build and publish to ACR in one command</span></span>
+1. <span data-ttu-id="90529-125">安装并登录 Azure CLI。</span><span class="sxs-lookup"><span data-stu-id="90529-125">Install and sign in to the Azure CLI.</span></span>
+1. <span data-ttu-id="90529-126">创建 Azure 资源组。</span><span class="sxs-lookup"><span data-stu-id="90529-126">Create an Azure resource group.</span></span>
+1. <span data-ttu-id="90529-127">创建 Azure 容器注册表实例。</span><span class="sxs-lookup"><span data-stu-id="90529-127">Create an Azure container registry instance.</span></span>
+1. <span data-ttu-id="90529-128">生成 Docker 映像。</span><span class="sxs-lookup"><span data-stu-id="90529-128">Build a Docker image.</span></span>
+1. <span data-ttu-id="90529-129">将 Docker 映像发布到以前创建的容器注册表实例。</span><span class="sxs-lookup"><span data-stu-id="90529-129">Publish the Docker image to the previously created container registry instance.</span></span>
+1. <span data-ttu-id="90529-130">（可选）通过一个命令生成映像并将其发布到容器注册表实例。</span><span class="sxs-lookup"><span data-stu-id="90529-130">(Optional) Build and publish the image to the container registry instance in one command.</span></span>
 
 
-#### <a name="set-up-azure-cli"></a><span data-ttu-id="0d64c-130">设置 Azure CLI</span><span class="sxs-lookup"><span data-stu-id="0d64c-130">Set up Azure CLI</span></span>
+#### <a name="set-up-the-azure-cli"></a><span data-ttu-id="90529-131">设置 Azure CLI</span><span class="sxs-lookup"><span data-stu-id="90529-131">Set up the Azure CLI</span></span>
 
-<span data-ttu-id="0d64c-131">确保有一个 Azure 订阅、[已安装 Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)，并已对帐户进行身份验证：</span><span class="sxs-lookup"><span data-stu-id="0d64c-131">Make sure you have an Azure subscription, [Azure CLI installed](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), and that you are authenticated to your account:</span></span>
+<span data-ttu-id="90529-132">确保有一个 Azure 订阅、已安装 [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)，并已向帐户进行身份验证：</span><span class="sxs-lookup"><span data-stu-id="90529-132">Make sure that you have an Azure subscription, that you've installed [the Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), and that you're authenticated to your account:</span></span>
 
 ```bash
 az login
 ```
 
-#### <a name="create-a-resource-group"></a><span data-ttu-id="0d64c-132">创建资源组。</span><span class="sxs-lookup"><span data-stu-id="0d64c-132">Create a Resource Group</span></span>
+#### <a name="create-a-resource-group"></a><span data-ttu-id="90529-133">创建资源组</span><span class="sxs-lookup"><span data-stu-id="90529-133">Create a resource group</span></span>
 
 ```bash
 export ARG=microprofileRG
@@ -98,9 +95,9 @@ export ADCL=eastus
 az group create --name $ARG --location $ADCL
 ```
 
-#### <a name="create-an-azure-container-registry-instance"></a><span data-ttu-id="0d64c-133">创建 Azure 容器注册表实例</span><span class="sxs-lookup"><span data-stu-id="0d64c-133">Create an Azure Container Registry instance</span></span>
+#### <a name="create-a-container-registry-instance"></a><span data-ttu-id="90529-134">创建容器注册表实例</span><span class="sxs-lookup"><span data-stu-id="90529-134">Create a container registry instance</span></span>
 
-<span data-ttu-id="0d64c-134">此命令使用包含随机数的基本名称创建一个全局唯一（希望如此）的容器注册表。</span><span class="sxs-lookup"><span data-stu-id="0d64c-134">This command will create a globally unique (hopefully) container registry using a basic name with a random number.</span></span>
+<span data-ttu-id="90529-135">此命令应该使用基本名称和随机数创建全局唯一的容器注册表实例。</span><span class="sxs-lookup"><span data-stu-id="90529-135">This command should create a globally unique container registry instance with a basic name and a random number.</span></span>
 
 ```bash
 export RANDINT=`date +"%m%d%y$RANDOM"`
@@ -108,16 +105,16 @@ export ACR=mydockerrepo$RANDINT
 az acr create --name $ACR -g $ARG --sku Basic --admin-enabled
 ```
 
-#### <a name="build-the-docker-image"></a><span data-ttu-id="0d64c-135">生成 Docker 映像</span><span class="sxs-lookup"><span data-stu-id="0d64c-135">Build the Docker image</span></span>
+#### <a name="build-the-docker-image"></a><span data-ttu-id="90529-136">生成 Docker 映像</span><span class="sxs-lookup"><span data-stu-id="90529-136">Build the Docker image</span></span>
 
-<span data-ttu-id="0d64c-136">尽管在本地使用 Docker 本身就能轻松生成 Docker 映像，但我们建议在云中生成该映像，原因如下：</span><span class="sxs-lookup"><span data-stu-id="0d64c-136">While you can easily build the Docker image locally using Docker itself, you may want to consider building it in the Cloud for few reasons:</span></span>
+<span data-ttu-id="90529-137">尽管在本地使用 Docker 本身就能轻松生成 Docker 映像，但可以考虑在云中生成该映像，原因如下：</span><span class="sxs-lookup"><span data-stu-id="90529-137">Although you can easily build the Docker image locally by using Docker itself, you might consider building it in the cloud for few reasons:</span></span>
 
-1. <span data-ttu-id="0d64c-137">无需在本地安装 Docker</span><span class="sxs-lookup"><span data-stu-id="0d64c-137">No need to install Docker locally</span></span>
-1. <span data-ttu-id="0d64c-138">速度要快得多，因为生成在其他位置进行（但需要花费一定的上下文上传时间）</span><span class="sxs-lookup"><span data-stu-id="0d64c-138">Much faster since build will happen elsewhere (except for context upload time)</span></span>
-1. <span data-ttu-id="0d64c-139">云中进程的 Internet 访问速度更快，因此下载速度也就更快</span><span class="sxs-lookup"><span data-stu-id="0d64c-139">Process in the Cloud has access to faster Internet, therefore faster downloads</span></span>
-1. <span data-ttu-id="0d64c-140">映像将直接进入容器注册表</span><span class="sxs-lookup"><span data-stu-id="0d64c-140">Image goes directly into the Container Registry</span></span>
+* <span data-ttu-id="90529-138">无需在本地安装 Docker。</span><span class="sxs-lookup"><span data-stu-id="90529-138">You don't have to install Docker locally.</span></span>
+* <span data-ttu-id="90529-139">速度要快得多，因为生成在其他位置进行（但需要花费一定的上下文上传时间）。</span><span class="sxs-lookup"><span data-stu-id="90529-139">It's much faster, because the build happens elsewhere (except for context upload time).</span></span>
+* <span data-ttu-id="90529-140">云中进程的 Internet 访问速度更快，因此下载速度也更快。</span><span class="sxs-lookup"><span data-stu-id="90529-140">The process in the cloud has faster access to the internet and, therefore, faster downloads.</span></span>
+* <span data-ttu-id="90529-141">映像直接进入容器注册表实例。</span><span class="sxs-lookup"><span data-stu-id="90529-141">The image goes directly into the container registry instance.</span></span>
 
-<span data-ttu-id="0d64c-141">出于上述原因，我们将使用 [Azure 容器注册表生成]功能来生成映像：</span><span class="sxs-lookup"><span data-stu-id="0d64c-141">Because of these reasons, we will build the image using the [Azure Container Registry Build] feature:</span></span>
+<span data-ttu-id="90529-142">出于上述原因，请使用 [Azure 容器注册表生成]功能来生成映像：</span><span class="sxs-lookup"><span data-stu-id="90529-142">For these reasons, you build the image by using the [Azure Container Registry Build] feature:</span></span>
 
 ```bash
 export IMG_NAME="mympapp:latest"
@@ -127,9 +124,9 @@ Build complete
 Build ID: aa1 was successful after 1m2.674577892s
 ```
 
-#### <a name="deploy-docker-image-from-azure-container-registry-acr-into-container-instances-aci"></a><span data-ttu-id="0d64c-142">将 Docker 映像从 Azure 容器注册表 (ACR) 部署到容器实例 (ACI)</span><span class="sxs-lookup"><span data-stu-id="0d64c-142">Deploy Docker Image from Azure Container Registry (ACR) into Container Instances (ACI)</span></span>
+#### <a name="deploy-the-docker-image-from-the-azure-container-registry-instance-to-container-instances"></a><span data-ttu-id="90529-143">将 Docker 映像从 Azure 容器注册表实例部署到 Azure 容器实例</span><span class="sxs-lookup"><span data-stu-id="90529-143">Deploy the Docker image from the Azure container registry instance to Container Instances</span></span>
 
-<span data-ttu-id="0d64c-143">在 ACR 中提供该映像后，让我们在 ACI 中推送并实例化容器实例。</span><span class="sxs-lookup"><span data-stu-id="0d64c-143">Now that the image is available on your ACR, let's push and instanciate a container instance on ACI.</span></span> <span data-ttu-id="0d64c-144">但是，首先需要确保可在 ACR 中进行身份验证：</span><span class="sxs-lookup"><span data-stu-id="0d64c-144">But first, we need to make sure we can authenticate into the ACR:</span></span>
+<span data-ttu-id="90529-144">在容器注册表实例中提供该映像后，请在 Azure 容器实例中推送并实例化容器实例。</span><span class="sxs-lookup"><span data-stu-id="90529-144">Now that the image is available on your container registry instance, push and instantiate a container instance on Container Instances.</span></span> <span data-ttu-id="90529-145">但是，首先请确保可在容器注册表实例中进行身份验证：</span><span class="sxs-lookup"><span data-stu-id="90529-145">But first, make sure that you can authenticate into the container registry instance:</span></span>
 
 ```bash
 export ACR_REPO=`az acr show --name $ACR -g $ARG --query loginServer -o tsv`
@@ -139,35 +136,34 @@ export ACI_INSTANCE=myapp`date +"%m%d%y$RANDOM"`
 az container create --resource-group $ARG --name $ACR --image $ACR_REPO/$IMG_NAME --cpu 1 --memory 1 --registry-login-server $ACR_REPO --registry-username $ACR --registry-password $ACR_PASS --dns-name-label $ACI_INSTANCE --ports 8080
 ```
 
-#### <a name="test-your-deployed-microprofile-application"></a><span data-ttu-id="0d64c-145">测试部署的 MicroProfile 应用程序</span><span class="sxs-lookup"><span data-stu-id="0d64c-145">Test Your Deployed MicroProfile Application</span></span>
+#### <a name="test-your-deployed-microprofile-application"></a><span data-ttu-id="90529-146">测试部署的 MicroProfile 应用程序</span><span class="sxs-lookup"><span data-stu-id="90529-146">Test your deployed MicroProfile application</span></span>
 
-<span data-ttu-id="0d64c-146">该应用程序现在应已启动并运行。</span><span class="sxs-lookup"><span data-stu-id="0d64c-146">Your application should now be up and running.</span></span> <span data-ttu-id="0d64c-147">若要从命令行测试它，请尝试以下命令：</span><span class="sxs-lookup"><span data-stu-id="0d64c-147">To test it from the command-line, try the following command:</span></span>
+<span data-ttu-id="90529-147">该应用程序现在应已启动并运行。</span><span class="sxs-lookup"><span data-stu-id="90529-147">Your application should now be up and running.</span></span> <span data-ttu-id="90529-148">若要从命令行界面测试它，请使用以下命令：</span><span class="sxs-lookup"><span data-stu-id="90529-148">To test it from the command-line interface, use the following command:</span></span>
 
 ```bash
 curl http://$ACI_INSTANCE.$ADCL.azurecontainer.io:8080/api/hello
 ````
 
-<span data-ttu-id="0d64c-148">祝贺你！</span><span class="sxs-lookup"><span data-stu-id="0d64c-148">Congratulations!</span></span> <span data-ttu-id="0d64c-149">现已成功生成一个 MicroProfile 应用程序，并已将其作为 Docker 容器部署到 Microsoft Azure。</span><span class="sxs-lookup"><span data-stu-id="0d64c-149">You have successfuly built and deployed a MicroProfile application as a Docker container onto Microsoft Azure.</span></span>
+<span data-ttu-id="90529-149">祝贺你！</span><span class="sxs-lookup"><span data-stu-id="90529-149">Congratulations!</span></span> <span data-ttu-id="90529-150">现已成功生成一个充当 Docker 容器的 MicroProfile 应用程序，并已将其部署到 Azure。</span><span class="sxs-lookup"><span data-stu-id="90529-150">You've successfully built a MicroProfile application as a Docker container and deployed it to Azure.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="0d64c-150">后续步骤</span><span class="sxs-lookup"><span data-stu-id="0d64c-150">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="90529-151">后续步骤</span><span class="sxs-lookup"><span data-stu-id="90529-151">Next steps</span></span>
 
-<span data-ttu-id="0d64c-151">有关本文中讨论的各项技术的详细信息，请参阅以下文章：</span><span class="sxs-lookup"><span data-stu-id="0d64c-151">For more information about the various technologies discussed in this article, see the following articles:</span></span>
+<span data-ttu-id="90529-152">有关本文中讨论的各项技术的详细信息，请参阅：</span><span class="sxs-lookup"><span data-stu-id="90529-152">For more information about the various technologies discussed in this article, see:</span></span>
 
-* [<span data-ttu-id="0d64c-152">通过 Azure CLI 登录到 Azure</span><span class="sxs-lookup"><span data-stu-id="0d64c-152">Log in to Azure from the Azure CLI</span></span>](/azure/xplat-cli-connect)
+* [<span data-ttu-id="90529-153">从 Azure CLI 登录 Azure</span><span class="sxs-lookup"><span data-stu-id="90529-153">Sign in to Azure from the Azure CLI</span></span>](/azure/xplat-cli-connect)
 
 <!-- URL List -->
 
 [Azure 容器注册表生成]: https://docs.microsoft.com/azure/container-registry/container-registry-build-overview
 [Azure Container Registry Build]: https://docs.microsoft.com/azure/container-registry/container-registry-build-overview
 [MicroProfile.io]: https://microprofile.io
-[Azure 命令行接口 (CLI)]: /cli/azure/overview
-[Azure Command-Line Interface (CLI)]: /cli/azure/overview
+[Azure CLI]: /cli/azure/overview
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [Azure portal]: https://portal.azure.com/
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[Maven]: http://maven.apache.org/
+[Apache Maven]: http://maven.apache.org/
 [Java Development Kit (JDK)]: https://aka.ms/azure-jdks
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 [Azure 容器实例]: https://docs.microsoft.com/azure/container-instances/
